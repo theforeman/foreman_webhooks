@@ -1,0 +1,12 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  TargetRailsVersion: 5.2
+
+Style/Documentation:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false

@@ -1,0 +1,13 @@
+<%= form_for @webhook_target, :url => (@webhook_target.new_record? ? webhook_targets_path : webhook_target_path(id: @webhook_target)) do |f| %>
+  <%= base_errors_for @webhook_target %>
+  <%= text_f f, :name %>
+  <%= text_f f, :target_url, :help_inline => _('Target URL that should be called by Foreman') %>
+
+  <% WebhookTarget.available_events.each do |event| %>
+
+    <%= checkbox_f f, :events, { multiple: true, :help_inline => _("Subscribe to %s events.") % event, :label => event, :label_size => "col-md-2" }, event, false %>
+
+  <% end %>
+
+  <%= submit_or_cancel f %>
+<% end %>
