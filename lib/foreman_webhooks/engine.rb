@@ -35,6 +35,8 @@ module ForemanWebhooks
         menu :admin_menu, :webhook_targets, url_hash: { controller: :webhook_targets, action: :index },
                                             caption: N_('Webhook Targets'),
                                             parent: :administer_menu
+        # event observer
+        register_event_observer '::ForemanWebhooks::EventObserver'
       end
     end
 

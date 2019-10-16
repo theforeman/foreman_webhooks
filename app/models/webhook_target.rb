@@ -12,7 +12,7 @@ class WebhookTarget < ApplicationRecord
   scope :for_event, ->(events) { where('events @> ARRAY[?]::varchar[]', Array(events)) }
 
   def self.available_events
-    %w[subnet_created subnet_changed subnet_deleted]
+    ::Foreman::EventSubscribers.all_observable_events
   end
 
   def self.deliver(event_name:, payload:)
@@ -27,6 +27,6 @@ class WebhookTarget < ApplicationRecord
   end
 
   def deliver(event_name:, payload:)
-    ::ForemanWebhooks::DeliverWebhookJob.new(event_name: event_name, payload: payload, webhook_target_id: id).perform_later
+    ::ForemanWebhooks::DeliverWebhookJob.perform_later(event_name: event_name, payload: payload, webhook_target_id: id)
   end
 end
