@@ -4,8 +4,7 @@ module ForemanWebhooks
   class Engine < ::Rails::Engine
     engine_name 'foreman_webhooks'
 
-    # config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
-    # config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
+    config.autoload_paths += Dir["#{config.root}/app/jobs"]
 
     # Add any db migrations
     initializer 'foreman_webhooks.load_app_instance_data' do |app|
