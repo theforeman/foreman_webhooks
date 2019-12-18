@@ -15,7 +15,7 @@ module ForemanWebhooks
 
     initializer 'foreman_webhooks.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_webhooks do
-        requires_foreman '>= 1.23'
+        requires_foreman '>= 2.0'
 
         apipie_documented_controllers ["#{ForemanWebhooks::Engine.root}/app/controllers/api/v2/*.rb"]
 
@@ -35,8 +35,8 @@ module ForemanWebhooks
         menu :admin_menu, :webhook_targets, url_hash: { controller: :webhook_targets, action: :index },
                                             caption: N_('Webhook Targets'),
                                             parent: :administer_menu
-        # event observer
-        register_event_observer '::ForemanWebhooks::EventObserver'
+
+        subscribe(/.event.foreman$/, ::ForemanWebhooks::EventSubscriber)
       end
     end
 
