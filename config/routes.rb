@@ -1,11 +1,40 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :webhook_targets, except: :show
+  resources :webhooks, except: :show
 
   namespace :api, defaults: { format: 'json' } do
-    scope '(:apiv)', module: :v2, defaults: { apiv: 'v2' }, apiv: /v1|v2/, constraints: ApiConstraints.new(version: 2, default: true) do
-      resources :webhook_targets, only: %i[index show create update destroy]
+    scope '(:apiv)',
+          module: :v2,
+          defaults: { apiv: 'v2' },
+          apiv: /v1|v2/,
+          constraints: ApiConstraints.new(version: 2, default: true) do
+      resources :webhooks, only: %i[index show create update destroy]
+      resources :payload_templates, except: [:new, :edit] do
+        member do
+          post :clone
+          get :export
+        end
+        collection do
+          post :import
+        end
+      end
+    end
+  end
+
+  scope 'templates' do
+    resources :payload_templates, except: :show do
+      member do
+        get 'clone_template'
+        get 'lock'
+        get 'unlock'
+        get 'export'
+        post 'preview'
+      end
+      collection do
+        post 'preview'
+        get 'auto_complete_search'
+      end
     end
   end
 end

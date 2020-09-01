@@ -1,0 +1,11 @@
+<%#
+name: Webhook Payload - Payload Default
+description: This template is used to define default content of payload for a webhook.
+snippet: false
+model: PayloadTemplate
+%>
+<%=
+as_json({
+  id: @object.id
+})
+%>

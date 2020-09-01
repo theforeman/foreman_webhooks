@@ -5,22 +5,23 @@ require 'test_plugin_helper'
 module ForemanWebhooks
   class WebhookServiceTest < ActiveSupport::TestCase
     let(:event_name) { 'subnet_created' }
-    let(:payload) { { id: 2 }.to_json }
-    let(:webhook_target) { FactoryBot.build(:webhook_target) }
+    let(:payload) { { id: 2 } }
+    let(:payload_json) { payload.to_json }
+    let(:webhook) { FactoryBot.build(:webhook, :with_template, template: '<%= as_json({ id: @payload[:id] }) %>') }
     let(:webhook_service) do
       WebhookService.new(
-        webhook_target: webhook_target,
+        webhook: webhook,
         event_name: event_name,
         payload: payload
       )
     end
 
-    it 'executes a request to the configured webhook target' do
+    it 'executes a request to the configured webhook' do
       expected = { status: :success, message: '', http_status: 200 }
 
       stub_request(:post, 'https://hook.example.com/api/callback')
         .with(
-          body: payload,
+          body: payload_json,
           headers: {
             'Content-Type' => 'application/json'
           }
@@ -35,7 +36,7 @@ module ForemanWebhooks
 
       stub_request(:post, 'https://hook.example.com/api/callback')
         .with(
-          body: payload,
+          body: payload_json,
           headers: {
             'Content-Type' => 'application/json'
           }

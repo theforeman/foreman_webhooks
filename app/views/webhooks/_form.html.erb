@@ -1,0 +1,14 @@
+<%= form_for @webhook, url: (@webhook.new_record? ? webhooks_path : webhook_path(id: @webhook)) do |f| %>
+  <%= base_errors_for @webhook %>
+  <%= text_f f, :name %>
+  <%= text_f f, :target_url, help_inline: _('Target URL that should be called by Foreman') %>
+  <%= render('templates', f: f) %>
+
+  <%= selectable_f f, :events, Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) },
+                   { include_blank: false },
+                   { label: _('Subscribe to'),
+                     label_help: _(f.object.try(:description)),
+                     required: true } %>
+
+  <%= submit_or_cancel f %>
+<% end %>

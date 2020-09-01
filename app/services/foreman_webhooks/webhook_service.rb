@@ -2,16 +2,16 @@
 
 module ForemanWebhooks
   class WebhookService
-    attr_accessor :webhook_target, :event_name, :payload
+    attr_accessor :webhook, :event_name, :payload
 
-    def initialize(webhook_target:, event_name:, payload:)
-      @webhook_target = webhook_target
+    def initialize(webhook:, event_name:, payload:)
+      @webhook = webhook
       @event_name = event_name
       @payload = payload
     end
 
     def execute
-      response = request(webhook_target.target_url, payload)
+      response = request(webhook.target_url, rendered_payload)
 
       status = case response.code.to_i
                when 400..599
@@ -26,7 +26,7 @@ module ForemanWebhooks
         http_status: response.code.to_i
       }
     rescue SocketError, OpenSSL::SSL::SSLError, Errno::ECONNREFUSED, Errno::ECONNRESET, Errno::EHOSTUNREACH, Net::OpenTimeout, Net::ReadTimeout => e
-      Foreman::Logging.exception("Failed to execute the webhook #{webhook_target.name} -> #{event_name}", e)
+      Foreman::Logging.exception("Failed to execute the webhook #{webhook.name} -> #{event_name}", e)
       {
         status: :error,
         message: e.to_s
@@ -34,6 +34,15 @@ module ForemanWebhooks
     end
 
     private
+
+    def rendered_payload
+      webhook.payload_template.render(
+        variables: {
+          event_name: event_name,
+          payload: payload
+        }
+      )
+    end
 
     def request(endpoint, payload)
       uri = URI.parse(endpoint)

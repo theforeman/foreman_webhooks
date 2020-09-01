@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-class WebhookTargetsController < ::ApplicationController
-  include ForemanWebhooks::Controller::Parameters::WebhookTarget
+class WebhooksController < ::ApplicationController
+  include ForemanWebhooks::Controller::Parameters::Webhook
 
   before_action :find_resource, only: %i[edit update destroy]
 
   def index
-    @webhook_targets = resource_base.all
+    @webhooks = resource_base.all
   end
 
   def new
-    @webhook_target = WebhookTarget.new
+    @webhook = Webhook.new
   end
 
   def create
-    @webhook_target = WebhookTarget.new(webhook_target_params)
-    if @webhook_target.save
+    @webhook = Webhook.new(webhook_params)
+    if @webhook.save
       process_success
     else
       process_error
@@ -25,7 +25,7 @@ class WebhookTargetsController < ::ApplicationController
   def edit; end
 
   def update
-    if @webhook_target.update(webhook_target_params)
+    if @webhook.update(webhook_params)
       process_success
     else
       process_error
@@ -33,7 +33,7 @@ class WebhookTargetsController < ::ApplicationController
   end
 
   def destroy
-    if @webhook_target.destroy
+    if @webhook.destroy
       process_success
     else
       process_error
