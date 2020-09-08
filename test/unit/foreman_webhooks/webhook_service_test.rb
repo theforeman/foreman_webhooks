@@ -7,12 +7,12 @@ module ForemanWebhooks
     let(:event_name) { 'subnet_created' }
     let(:payload) { { id: 2 } }
     let(:payload_json) { payload.to_json }
-    let(:webhook) { FactoryBot.build(:webhook, :with_template, template: '<%= as_json({ id: @payload[:id] }) %>') }
+    let(:webhook) { FactoryBot.build(:webhook, :with_template, template: '<%= payload({ id: @payload[:id] }, with_defaults: false) %>') }
     let(:webhook_service) do
       WebhookService.new(
         webhook: webhook,
         event_name: event_name,
-        payload: payload
+        payload: payload_json
       )
     end
 

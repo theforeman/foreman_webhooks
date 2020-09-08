@@ -16,11 +16,14 @@ class Webhook < ApplicationRecord
 
   DEFAULT_PAYLOAD_TEMPLATE = 'Webhook Payload - Payload Default'
 
+  ALLOWED_HTTP_METHODS = %w[POST GET PUT DELETE PATCH].freeze
+
   attribute :events, :string, array: true, default: []
 
   validates_lengths_from_database
   validates :name, :target_url, :events, presence: true
   validates :target_url, format: URI.regexp(%w[http https])
+  validates :http_method, inclusion: { in: ALLOWED_HTTP_METHODS }
 
   belongs_to :payload_template, foreign_key: :payload_template_id
 
@@ -47,7 +50,16 @@ class Webhook < ApplicationRecord
     super(self.class.available_events & events)
   end
 
+  def event=(event)
+    self.events = event
+  end
+
+  def event
+    self.events.first
+  end
+
   def deliver(event_name:, payload:)
+    payload = rendered_payload(event_name, payload)
     ::ForemanWebhooks::DeliverWebhookJob.perform_later(event_name: event_name, payload: payload, webhook_id: id)
   end
 
@@ -55,5 +67,15 @@ class Webhook < ApplicationRecord
 
   def set_default_template
     self.payload_template = PayloadTemplate.find_by!(name: DEFAULT_PAYLOAD_TEMPLATE)
+  end
+
+  def rendered_payload(event_name, payload)
+    self.payload_template.render(
+      variables: {
+        event_name: event_name,
+        payload: payload,
+        webhook_id: id
+      }
+    )
   end
 end

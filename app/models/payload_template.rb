@@ -49,7 +49,6 @@ class PayloadTemplate < Template
     [:user]
   end
 
-  # TODO: not sure
   def self.log_render_results?
     true
   end

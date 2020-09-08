@@ -2,4 +2,4 @@
 
 object @webhook
 
-attributes :id, :name, :target_url, :events
+attributes :id, :name

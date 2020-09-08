@@ -9,7 +9,8 @@ module ForemanWebhooks
         class_methods do
           def webhook_params_filter
             Foreman::ParameterFilter.new(::Webhook).tap do |filter|
-              filter.permit :name, :target_url, :payload_template_id, :events
+              filter.permit :name, :target_url, :payload_template_id, :event,
+                            :http_method, :http_content_type
             end
           end
         end

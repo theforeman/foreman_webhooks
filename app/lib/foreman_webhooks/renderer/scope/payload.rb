@@ -15,22 +15,26 @@ module ForemanWebhooks
           super
           @context ||= @payload&.dig(:context)
           @object ||= @payload&.dig(:object)
+          @defaults = {
+            context: @context,
+            event_name: @event_name,
+            webhook_id: @webhook_id
+          }
         end
 
-        apipie :method, 'Converts Hash object to JSON representation' do
-          required :hash, Hash, 'Hash object to convert'
-          raises error: ArgumentError, desc: 'If the object is not a hash'
-          returns String, desc: 'JSON representation of the passsed hash'
-          example 'as_json({ id: 1 }) #=> "{\"id\": 1}"'
+        apipie :method, 'Creates final payload' do
+          required :hash, Hash, 'Key=value object with with data that should be present in payload'
+          keyword :with_defaults, [true, false], 'If set to true, adds default entries to the payload', default: true
+          returns String, 'JSON string with the final payload'
+          example 'payload({ id: @object.id, name: @object.name }) #=> "{ "id": 1, "name": "host.example.com", "context": { ... }, "event_name": "host_created.event.foreman" }"'
         end
-        def as_json(hash)
-          raise ArgumentError, 'Must be a Hash object' unless hash.is_a?(Hash)
-
+        def payload(hash, with_defaults: true)
+          hash.merge!(@defaults) if with_defaults
           hash.to_json
         end
 
         def allowed_helpers
-          @allowed_helpers ||= super + %i[as_json]
+          @allowed_helpers ||= super + %i[payload]
         end
       end
     end

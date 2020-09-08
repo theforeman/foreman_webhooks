@@ -2,10 +2,19 @@
   <%= base_errors_for @webhook %>
   <%= text_f f, :name %>
   <%= text_f f, :target_url, help_inline: _('Target URL that should be called by Foreman') %>
+  <%= selectable_f f, :http_method, Webhook::ALLOWED_HTTP_METHODS,
+                   { include_blank: false,
+                     selected: @webhook.http_method },
+                   { label: _('HTTP Method'),
+                     label_help: _(f.object.try(:description)),
+                     required: true } %>
+  <%= text_f f, :http_content_type %>
+
   <%= render('templates', f: f) %>
 
-  <%= selectable_f f, :events, Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) },
-                   { include_blank: false },
+  <%= selectable_f f, :event, Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) },
+                   { include_blank: false,
+                     selected: @webhook.event.delete_suffix(Webhook::EVENT_POSTFIX) },
                    { label: _('Subscribe to'),
                      label_help: _(f.object.try(:description)),
                      required: true } %>

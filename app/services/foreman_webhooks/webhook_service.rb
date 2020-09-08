@@ -11,7 +11,7 @@ module ForemanWebhooks
     end
 
     def execute
-      response = request(webhook.target_url, rendered_payload)
+      response = request(webhook, payload)
 
       status = case response.code.to_i
                when 400..599
@@ -35,20 +35,13 @@ module ForemanWebhooks
 
     private
 
-    def rendered_payload
-      webhook.payload_template.render(
-        variables: {
-          event_name: event_name,
-          payload: payload
-        }
-      )
-    end
+    def request(webhook, payload)
+      uri = URI.parse(webhook.target_url)
 
-    def request(endpoint, payload)
-      uri = URI.parse(endpoint)
+      http_method = Object.const_get("Net::HTTP::#{webhook.http_method.capitalize}")
 
-      request = Net::HTTP::Post.new(uri.request_uri)
-      request['Content-Type'] = 'application/json'
+      request = http_method.new(uri.request_uri)
+      request['Content-Type'] = webhook.http_content_type
       request.body = payload
 
       http = Net::HTTP.new(uri.host, uri.port)

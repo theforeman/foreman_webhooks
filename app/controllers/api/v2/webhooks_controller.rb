@@ -23,7 +23,9 @@ module Api
         param :webhook, Hash, action_aware: true, required: true do
           param :name, String, required: true
           param :target_url, String, required: true
-          param :events, Array, required: true
+          param :http_method, Webhook.allowed_http_methods
+          param :http_content_type, String
+          param :event, String, required: true
           param :payload_template_id, :identifier
         end
       end
