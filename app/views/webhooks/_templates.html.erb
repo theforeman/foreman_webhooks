@@ -1,5 +1,5 @@
-<%= selectable_f f, :payload_template_id, PayloadTemplate.where(snippet: false).collect { |t| [t.name, t.id] },
+<%= selectable_f f, :webhook_template_id, WebhookTemplate.where(snippet: false).collect { |t| [t.name, t.id] },
                                           { include_blank: false },
-                                          { label: _('Payload Template'),
+                                          { label: _('Webhook Template'),
                                             label_help: _(f.object.try(:description)),
                                             required: true } %>

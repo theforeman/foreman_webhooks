@@ -33,21 +33,21 @@ module ForemanWebhooks
                                           'api/v2/webhooks': [:update] }, resource_type: 'Webhook'
           permission :destroy_webhooks, { webhooks: [:destroy],
                                           'api/v2/webhooks': [:destroy] }, resource_type: 'Webhook'
-          permission :view_payload_templates,     { payload_templates: [:index, :show, :auto_complete_search, :preview, :export],
-                                                    'api/v2/payload_templates': [:index, :show, :export] },
-                                                  resource_type: 'PayloadTemplate'
-          permission :create_payload_templates,   { payload_templates: [:new, :create, :clone_template],
-                                                    'api/v2/payload_templates': [:create, :clone, :import] },
-                                                  resource_type: 'PayloadTemplate'
-          permission :edit_payload_templates,     { payload_templates: [:edit, :update],
-                                                    'api/v2/payload_templates': [:update, :import] },
-                                                  resource_type: 'PayloadTemplate'
-          permission :destroy_payload_templates,  { payload_templates: [:destroy],
-                                                    'api/v2/payload_templates': [:destroy] },
-                                                  resource_type: 'PayloadTemplate'
-          permission :lock_payload_templates,     { payload_templates: [:lock, :unlock],
-                                                    'api/v2/payload_templates': [:lock, :unlock] },
-                                                  resource_type: 'PayloadTemplate'
+          permission :view_webhook_templates,     { webhook_templates: [:index, :show, :auto_complete_search, :preview, :export],
+                                                    'api/v2/webhook_templates': [:index, :show, :export] },
+                                                  resource_type: 'WebhookTemplate'
+          permission :create_webhook_templates,   { webhook_templates: [:new, :create, :clone_template],
+                                                    'api/v2/webhook_templates': [:create, :clone, :import] },
+                                                  resource_type: 'WebhookTemplate'
+          permission :edit_webhook_templates,     { webhook_templates: [:edit, :update],
+                                                    'api/v2/webhook_templates': [:update, :import] },
+                                                  resource_type: 'WebhookTemplate'
+          permission :destroy_webhook_templates,  { webhook_templates: [:destroy],
+                                                    'api/v2/webhook_templates': [:destroy] },
+                                                  resource_type: 'WebhookTemplate'
+          permission :lock_webhook_templates,     { webhook_templates: [:lock, :unlock],
+                                                    'api/v2/webhook_templates': [:lock, :unlock] },
+                                                  resource_type: 'WebhookTemplate'
         end
 
         # add menu entry
@@ -55,8 +55,8 @@ module ForemanWebhooks
         menu :admin_menu, :webhooks, url_hash: { controller: :webhooks, action: :index },
                                      caption: N_('Webhooks'),
                                      parent: :administer_menu
-        menu :admin_menu, :payload_templates, url_hash: { controller: :payload_templates, action: :index },
-                                              caption: N_('Payload Templates'),
+        menu :admin_menu, :webhook_templates, url_hash: { controller: :webhook_templates, action: :index },
+                                              caption: N_('Webhook Templates'),
                                               parent: :administer_menu
         subscribe(/.event.foreman$/, ::ForemanWebhooks::EventSubscriber)
       end

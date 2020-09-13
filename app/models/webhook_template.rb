@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PayloadTemplate < Template
+class WebhookTemplate < Template
   audited
 
   include Authorizable
@@ -18,7 +18,7 @@ class PayloadTemplate < Template
   self.table_name = 'templates'
 
   before_destroy EnsureNotUsedBy.new(:webhooks)
-  has_many :webhooks, foreign_key: :payload_template_id
+  has_many :webhooks, foreign_key: :webhook_template_id
 
   validates :name, uniqueness: true
 
@@ -38,11 +38,11 @@ class PayloadTemplate < Template
   }
 
   def self.default_render_scope_class
-    ForemanWebhooks::Renderer::Scope::Payload
+    ForemanWebhooks::Renderer::Scope::WebhookTemplate
   end
 
   def taxonomy_foreign_conditions
-    { payload_template_id: id }
+    { webhook_template_id: id }
   end
 
   def self.acceptable_template_input_types

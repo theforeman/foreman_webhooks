@@ -3,22 +3,20 @@
 module ForemanWebhooks
   module Renderer
     module Scope
-      class Payload < ::Foreman::Renderer::Scope::Template
+      class WebhookTemplate < ::Foreman::Renderer::Scope::Template
         extend ApipieDSL::Class
 
         apipie :class, 'Macros related to Webhook payload customization' do
-          name 'Payload'
+          name 'Webhook Template'
           sections only: %w[all webhooks]
         end
 
         def initialize(**args)
           super
-          @context ||= @payload&.dig(:context)
-          @object ||= @payload&.dig(:object)
           @defaults = {
-            context: @context,
             event_name: @event_name,
-            webhook_id: @webhook_id
+            webhook_id: @webhook_id,
+            context: @context
           }
         end
 

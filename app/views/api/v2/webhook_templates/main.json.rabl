@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-object @payload_template
+object @webhook_template
 
-extends "api/v2/payload_templates/base"
+extends "api/v2/webhook_templates/base"
 
 attributes :description, :created_at, :updated_at

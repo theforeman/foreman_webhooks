@@ -14,7 +14,7 @@
 
   <%= selectable_f f, :event, Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) },
                    { include_blank: false,
-                     selected: @webhook.event.delete_suffix(Webhook::EVENT_POSTFIX) },
+                     selected: @webhook.event&.delete_suffix(Webhook::EVENT_POSTFIX) },
                    { label: _('Subscribe to'),
                      label_help: _(f.object.try(:description)),
                      required: true } %>

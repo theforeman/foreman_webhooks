@@ -2,25 +2,25 @@
 
 module Api
   module V2
-    class PayloadTemplatesController < V2::BaseController
+    class WebhookTemplatesController < V2::BaseController
       include Api::Version2
-      include ForemanWebhooks::Controller::Parameters::PayloadTemplate
+      include ForemanWebhooks::Controller::Parameters::WebhookTemplate
 
       before_action :find_resource, only: %i[show update destroy]
 
-      api :GET, '/payload_templates/', N_('List payload templates')
+      api :GET, '/webhook_templates/', N_('List webhook templates')
       param_group :search_and_pagination, ::Api::V2::BaseController
-      add_scoped_search_description_for(PayloadTemplate)
+      add_scoped_search_description_for(WebhookTemplate)
       def index
-        @payload_templates = resource_scope_for_index
+        @webhook_templates = resource_scope_for_index
       end
 
-      api :GET, '/payload_templates/:id', N_('Show payload template details')
+      api :GET, '/webhook_templates/:id', N_('Show webhook template details')
       param :id, :identifier, required: true
       def show; end
 
-      def_param_group :payload_template do
-        param :payload_template, Hash, action_aware: true, required: true do
+      def_param_group :webhook_template do
+        param :webhook_template, Hash, action_aware: true, required: true do
         param :name, String, required: true
         param :description, String
         param :template, String, required: true
@@ -32,57 +32,57 @@ module Api
         end
       end
 
-      def_param_group :payload_template_clone do
-        param :payload_template, Hash, required: true, action_aware: true do
+      def_param_group :webhook_template_clone do
+        param :webhook_template, Hash, required: true, action_aware: true do
           param :name, String, required: true, desc: N_('Template name')
         end
       end
 
-      api :POST, '/payload_templates/', N_('Create a payload template')
-      param_group :payload_template, as: :create
+      api :POST, '/webhook_templates/', N_('Create a webhook template')
+      param_group :webhook_template, as: :create
       def create
-        @payload_template = PayloadTemplate.new(payload_template_params)
-        process_response @payload_template.save
+        @webhook_template = WebhookTemplate.new(webhook_template_params)
+        process_response @webhook_template.save
       end
 
-      api :POST, '/payload_templates/import', N_('Import a payload template')
-      param :payload_template, Hash, required: true, action_aware: true do
+      api :POST, '/webhook_templates/import', N_('Import a webhook template')
+      param :webhook_template, Hash, required: true, action_aware: true do
         param :name, String, required: true, desc: N_('Template name')
         param :template, String, required: true, desc: N_('Template contents including metadata')
         param_group :taxonomies, ::Api::V2::BaseController
       end
       param_group :template_import_options, ::Api::V2::BaseController
       def import
-        @payload_template = PayloadTemplate.import!(*import_attrs_for(:payload_template))
-        process_response @payload_template
+        @webhook_template = WebhookTemplate.import!(*import_attrs_for(:webhook_template))
+        process_response @webhook_template
       end
 
-      api :PUT, '/payload_templates/:id', N_('Update a payload template')
+      api :PUT, '/webhook_templates/:id', N_('Update a webhook template')
       param :id, :identifier, required: true
-      param_group :payload_template, as: :update
+      param_group :webhook_template, as: :update
       def update
-        process_response @payload_template.update(payload_template_params)
+        process_response @webhook_template.update(webhook_template_params)
       end
 
-      api :DELETE, '/payload_templates/:id', N_('Delete a payload template')
+      api :DELETE, '/webhook_templates/:id', N_('Delete a webhook template')
       param :id, :identifier, required: true
       def destroy
-        process_response @payload_template.destroy
+        process_response @webhook_template.destroy
       end
 
-      api :POST, '/payload_templates/:id/clone', N_('Clone a template')
+      api :POST, '/webhook_templates/:id/clone', N_('Clone a template')
       param :id, :identifier, required: true
-      param_group :payload_template_clone, as: :create
+      param_group :webhook_template_clone, as: :create
       def clone
-        @payload_template = @payload_template.dup
-        @payload_template.name = params[:payload_template][:name]
-        process_response @payload_template.save
+        @webhook_template = @webhook_template.dup
+        @webhook_template.name = params[:webhook_template][:name]
+        process_response @webhook_template.save
       end
 
-      api :GET, '/payload_templates/:id/export', N_('Export a payload template to ERB')
+      api :GET, '/webhook_templates/:id/export', N_('Export a webhook template to ERB')
       param :id, :identifier, required: true
       def export
-        send_data @payload_template.to_erb, type: 'text/plain', disposition: 'attachment', filename: @payload_template.filename
+        send_data @webhook_template.to_erb, type: 'text/plain', disposition: 'attachment', filename: @webhook_template.filename
       end
 
       private

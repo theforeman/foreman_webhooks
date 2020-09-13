@@ -14,7 +14,7 @@ class Webhook < ApplicationRecord
     build_entered build_exited status_changed
   ].map { |e| e + EVENT_POSTFIX }.freeze
 
-  DEFAULT_PAYLOAD_TEMPLATE = 'Webhook Payload - Payload Default'
+  DEFAULT_PAYLOAD_TEMPLATE = 'Webhook Template - Payload Default'
 
   ALLOWED_HTTP_METHODS = %w[POST GET PUT DELETE PATCH].freeze
 
@@ -22,12 +22,12 @@ class Webhook < ApplicationRecord
 
   validates_lengths_from_database
   validates :name, :target_url, :events, presence: true
-  validates :target_url, format: URI.regexp(%w[http https])
+  validates :target_url, format: { with: URI.regexp(%w[http https]), message: _('URL must be valid and schema must be one of: %s') % 'http, https' }
   validates :http_method, inclusion: { in: ALLOWED_HTTP_METHODS }
 
-  belongs_to :payload_template, foreign_key: :payload_template_id
+  belongs_to :webhook_template, foreign_key: :webhook_template_id
 
-  before_save :set_default_template, unless: :payload_template
+  before_save :set_default_template, unless: :webhook_template
 
   scope :for_event, ->(events) { where('events @> ARRAY[?]::varchar[]', Array(events)) }
 
@@ -66,13 +66,15 @@ class Webhook < ApplicationRecord
   private
 
   def set_default_template
-    self.payload_template = PayloadTemplate.find_by!(name: DEFAULT_PAYLOAD_TEMPLATE)
+    self.webhook_template = WebhookTemplate.find_by!(name: DEFAULT_PAYLOAD_TEMPLATE)
   end
 
   def rendered_payload(event_name, payload)
-    self.payload_template.render(
+    self.webhook_template.render(
       variables: {
         event_name: event_name,
+        object: payload.delete(:object),
+        context: payload.delete(:context),
         payload: payload,
         webhook_id: id
       }

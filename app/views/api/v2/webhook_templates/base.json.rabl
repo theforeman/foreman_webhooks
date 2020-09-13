@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-object @payload_template
+object @webhook_template
 
 attributes :name, :id

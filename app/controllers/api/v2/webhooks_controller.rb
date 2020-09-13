@@ -26,7 +26,7 @@ module Api
           param :http_method, Webhook.allowed_http_methods
           param :http_content_type, String
           param :event, String, required: true
-          param :payload_template_id, :identifier
+          param :webhook_template_id, :identifier
         end
       end
 
