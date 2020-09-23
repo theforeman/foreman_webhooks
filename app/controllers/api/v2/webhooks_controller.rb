@@ -27,6 +27,11 @@ module Api
           param :http_content_type, String
           param :event, String, required: true
           param :webhook_template_id, :identifier
+          param :enabled, :boolean
+          param :verify_ssl, :boolean
+          param :ssl_ca_file, String, N_('X509 Certification Authorities')
+          param :user, String
+          param :password, String
         end
       end
 

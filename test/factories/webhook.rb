@@ -5,6 +5,7 @@ FactoryBot.define do
     sequence(:name) { |n| "Webhook #{n}" }
     target_url { 'https://hook.example.com/api/callback' }
     events { ['subnet_created.event.foreman'] }
+    enabled { true }
     webhook_template
 
     trait :with_template do

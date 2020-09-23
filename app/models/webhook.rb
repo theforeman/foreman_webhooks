@@ -2,6 +2,7 @@
 
 class Webhook < ApplicationRecord
   include Authorizable
+  include Encryptable
 
   EVENT_POSTFIX = ".#{Foreman::Observable::DEFAULT_NAMESPACE}"
 
@@ -17,6 +18,8 @@ class Webhook < ApplicationRecord
   DEFAULT_PAYLOAD_TEMPLATE = 'Webhook Template - Payload Default'
 
   ALLOWED_HTTP_METHODS = %w[POST GET PUT DELETE PATCH].freeze
+
+  encrypts :password
 
   attribute :events, :string, array: true, default: []
 
@@ -37,7 +40,7 @@ class Webhook < ApplicationRecord
 
   def self.deliver(event_name:, payload:)
     for_event(event_name).each do |target|
-      target.deliver(event_name: event_name, payload: payload)
+      target.deliver(event_name: event_name, payload: payload) if target.enabled?
     end
   end
 

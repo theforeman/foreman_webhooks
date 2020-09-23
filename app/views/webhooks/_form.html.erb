@@ -2,6 +2,10 @@
   <%= base_errors_for @webhook %>
   <%= text_f f, :name %>
   <%= text_f f, :target_url, help_inline: _('Target URL that should be called by Foreman') %>
+
+  <%= text_f f, :user, help_block: _('Authentication credentials') %>
+  <%= password_f f, :password, keep_value: true %>
+
   <%= selectable_f f, :http_method, Webhook::ALLOWED_HTTP_METHODS,
                    { include_blank: false,
                      selected: @webhook.http_method },
@@ -18,6 +22,12 @@
                    { label: _('Subscribe to'),
                      label_help: _(f.object.try(:description)),
                      required: true } %>
+
+  <%= checkbox_f f, :enabled, help_inline: _('If unchecked, the webhook will be inactive') %>
+  <%= checkbox_f f, :verify_ssl, help_inline: _("Uncheck this option to disable validation of the receiver's SSL certificate") %>
+  <%= textarea_f f, :ssl_ca_file, label: _('X509 Certification Authorities'),
+                                  size: 'col-md-8',
+                                  placeholder: _("Optionally provide a CA, or a correctly ordered CA chain to verify the receiver's SSL certificate.") %>
 
   <%= submit_or_cancel f %>
 <% end %>
