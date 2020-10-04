@@ -10,7 +10,7 @@ Rails.application.routes.draw do
           apiv: /v1|v2/,
           constraints: ApiConstraints.new(version: 2, default: true) do
       resources :webhooks, only: %i[index show create update destroy]
-      resources :webhook_templates, except: [:new, :edit] do
+      resources :webhook_templates, except: %i[new edit] do
         member do
           post :clone
           get :export

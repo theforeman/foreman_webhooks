@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-object @webhooks
+object @webhook
 
 extends 'api/v2/webhooks/main'
 
-attributes :target_url, :events, :http_method, :http_content_type, :enabled,
+attributes :target_url, :event, :http_method, :http_content_type, :enabled,
            :verify_ssl
 
 child :webhook_template do

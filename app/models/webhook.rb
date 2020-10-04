@@ -25,7 +25,8 @@ class Webhook < ApplicationRecord
 
   validates_lengths_from_database
   validates :name, :target_url, :events, presence: true
-  validates :target_url, format: { with: URI.regexp(%w[http https]), message: _('URL must be valid and schema must be one of: %s') % 'http, https' }
+  validates :target_url, format: { with: URI::DEFAULT_PARSER.make_regexp(%w[http https]),
+                                   message: _('URL must be valid and schema must be one of: %s') % 'http, https' }
   validates :http_method, inclusion: { in: ALLOWED_HTTP_METHODS }
 
   belongs_to :webhook_template, foreign_key: :webhook_template_id
@@ -58,7 +59,7 @@ class Webhook < ApplicationRecord
   end
 
   def event
-    self.events.first
+    events.first
   end
 
   def deliver(event_name:, payload:)
@@ -73,7 +74,7 @@ class Webhook < ApplicationRecord
   end
 
   def rendered_payload(event_name, payload)
-    self.webhook_template.render(
+    webhook_template.render(
       variables: {
         event_name: event_name,
         object: payload.delete(:object),

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddColumnsToWebhooks < ActiveRecord::Migration[6.0]
   def change
     add_column :webhooks, :http_method, :string, default: 'POST', null: false

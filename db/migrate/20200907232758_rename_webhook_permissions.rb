@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class RenameWebhookPermissions < ActiveRecord::Migration[6.0]
   PERMISSIONS = {
-    "view_webhook_targets" => "view_webhooks",
-    "create_webhook_targets" => "create_webhooks",
-    "edit_webhook_targets" => "edit_webhooks",
-    "destroy_webhook_targets" => "destroy_webhooks",
-  }
+    'view_webhook_targets' => 'view_webhooks',
+    'create_webhook_targets' => 'create_webhooks',
+    'edit_webhook_targets' => 'edit_webhooks',
+    'destroy_webhook_targets' => 'destroy_webhooks'
+  }.freeze
 
   def up
     PERMISSIONS.each do |from, to|

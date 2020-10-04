@@ -5,8 +5,9 @@ module Api
     class WebhookTemplatesController < V2::BaseController
       include Api::Version2
       include ForemanWebhooks::Controller::Parameters::WebhookTemplate
+      include Foreman::Controller::TemplateImport
 
-      before_action :find_resource, only: %i[show update destroy]
+      before_action :find_resource, only: %i[show update destroy clone export]
 
       api :GET, '/webhook_templates/', N_('List webhook templates')
       param_group :search_and_pagination, ::Api::V2::BaseController
@@ -21,14 +22,14 @@ module Api
 
       def_param_group :webhook_template do
         param :webhook_template, Hash, action_aware: true, required: true do
-        param :name, String, required: true
-        param :description, String
-        param :template, String, required: true
-        param :snippet, :bool, allow_nil: true
-        param :audit_comment, String, allow_nil: true
-        param :locked, :bool, desc: N_('Whether or not the template is locked for editing')
-        param :default, :bool, desc: N_('Whether or not the template is added automatically to new organizations and locations')
-        param_group :taxonomies, ::Api::V2::BaseController
+          param :name, String, required: true
+          param :description, String
+          param :template, String, required: true
+          param :snippet, :bool, allow_nil: true
+          param :audit_comment, String, allow_nil: true
+          param :locked, :bool, desc: N_('Whether or not the template is locked for editing')
+          param :default, :bool, desc: N_('Whether or not the template is added automatically to new organizations and locations')
+          param_group :taxonomies, ::Api::V2::BaseController
         end
       end
 
@@ -82,7 +83,9 @@ module Api
       api :GET, '/webhook_templates/:id/export', N_('Export a webhook template to ERB')
       param :id, :identifier, required: true
       def export
-        send_data @webhook_template.to_erb, type: 'text/plain', disposition: 'attachment', filename: @webhook_template.filename
+        send_data @webhook_template.to_erb, type: 'text/plain',
+                                            disposition: 'attachment',
+                                            filename: @webhook_template.filename
       end
 
       private
@@ -94,12 +97,12 @@ module Api
 
       def action_permission
         case params[:action]
-          when 'clone', 'import'
-            'create'
-          when 'export'
-            'view'
-          else
-            super
+        when 'clone', 'import'
+          'create'
+        when 'export'
+          'view'
+        else
+          super
         end
       end
     end

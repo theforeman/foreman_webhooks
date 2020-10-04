@@ -2,4 +2,4 @@
 
 collection @webhook_templates
 
-extends "api/v2/webhook_templates/main"
+extends 'api/v2/webhook_templates/main'

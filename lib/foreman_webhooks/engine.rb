@@ -33,21 +33,21 @@ module ForemanWebhooks
                                           'api/v2/webhooks': [:update] }, resource_type: 'Webhook'
           permission :destroy_webhooks, { webhooks: [:destroy],
                                           'api/v2/webhooks': [:destroy] }, resource_type: 'Webhook'
-          permission :view_webhook_templates,     { webhook_templates: [:index, :show, :auto_complete_search, :preview, :export],
-                                                    'api/v2/webhook_templates': [:index, :show, :export] },
-                                                  resource_type: 'WebhookTemplate'
-          permission :create_webhook_templates,   { webhook_templates: [:new, :create, :clone_template],
-                                                    'api/v2/webhook_templates': [:create, :clone, :import] },
-                                                  resource_type: 'WebhookTemplate'
-          permission :edit_webhook_templates,     { webhook_templates: [:edit, :update],
-                                                    'api/v2/webhook_templates': [:update, :import] },
-                                                  resource_type: 'WebhookTemplate'
+          permission :view_webhook_templates,     { webhook_templates: %i[index show auto_complete_search preview export],
+                                                    'api/v2/webhook_templates': %i[index show export] },
+                     resource_type: 'WebhookTemplate'
+          permission :create_webhook_templates,   { webhook_templates: %i[new create clone_template],
+                                                    'api/v2/webhook_templates': %i[create clone import] },
+                     resource_type: 'WebhookTemplate'
+          permission :edit_webhook_templates,     { webhook_templates: %i[edit update],
+                                                    'api/v2/webhook_templates': %i[update import] },
+                     resource_type: 'WebhookTemplate'
           permission :destroy_webhook_templates,  { webhook_templates: [:destroy],
                                                     'api/v2/webhook_templates': [:destroy] },
-                                                  resource_type: 'WebhookTemplate'
-          permission :lock_webhook_templates,     { webhook_templates: [:lock, :unlock],
-                                                    'api/v2/webhook_templates': [:lock, :unlock] },
-                                                  resource_type: 'WebhookTemplate'
+                     resource_type: 'WebhookTemplate'
+          permission :lock_webhook_templates,     { webhook_templates: %i[lock unlock],
+                                                    'api/v2/webhook_templates': %i[lock unlock] },
+                     resource_type: 'WebhookTemplate'
         end
 
         # add menu entry
@@ -64,11 +64,9 @@ module ForemanWebhooks
 
     # Include concerns in this config.to_prepare block
     config.to_prepare do
-      begin
-        # Host::Managed.send(:include, ForemanWebhooks::HostExtensions)
-      rescue StandardError => e
-        Rails.logger.warn "ForemanWebhooks: skipping engine hook (#{e})"
-      end
+    # Host::Managed.send(:include, ForemanWebhooks::HostExtensions)
+    rescue StandardError => e
+      Rails.logger.warn "ForemanWebhooks: skipping engine hook (#{e})"
     end
   end
 end

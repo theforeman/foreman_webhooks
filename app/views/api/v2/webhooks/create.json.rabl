@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-object @webhooks
+object @webhook
 
 extends 'api/v2/webhooks/show'
