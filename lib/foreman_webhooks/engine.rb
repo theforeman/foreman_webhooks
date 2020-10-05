@@ -18,35 +18,55 @@ module ForemanWebhooks
         requires_foreman '>= 2.0'
 
         apipie_documented_controllers ["#{ForemanWebhooks::Engine.root}/app/controllers/api/v2/*.rb"]
+        ApipieDSL.configuration.sections += ['webhooks']
+        ApipieDSL.configuration.dsl_classes_matchers += [
+          "#{ForemanWebhooks::Engine.root}/app/lib/foreman_webhooks/renderer/**/*.rb"
+        ]
 
         # Add permissions
         security_block :foreman_webhooks do
-          permission :view_webhook_targets,     { webhook_targets: %i[index show],
-                                                  'api/v2/webhook_targets': %i[index show] }, resource_type: 'WebhookTarget'
-          permission :create_webhook_targets,   { webhook_targets: %i[new create],
-                                                  'api/v2/webhook_targets': [:create] }, resource_type: 'WebhookTarget'
-          permission :edit_webhook_targets,     { webhook_targets: %i[edit update],
-                                                  'api/v2/webhook_targets': [:update] }, resource_type: 'WebhookTarget'
-          permission :destroy_webhook_targets,  { webhook_targets: [:destroy],
-                                                  'api/v2/webhook_targets': [:destroy] }, resource_type: 'WebhookTarget'
+          permission :view_webhooks,    { webhooks: %i[index show],
+                                          'api/v2/webhooks': %i[index show] }, resource_type: 'Webhook'
+          permission :create_webhooks,  { webhooks: %i[new create],
+                                          'api/v2/webhooks': [:create] }, resource_type: 'Webhook'
+          permission :edit_webhooks,    { webhooks: %i[edit update],
+                                          'api/v2/webhooks': [:update] }, resource_type: 'Webhook'
+          permission :destroy_webhooks, { webhooks: [:destroy],
+                                          'api/v2/webhooks': [:destroy] }, resource_type: 'Webhook'
+          permission :view_webhook_templates,     { webhook_templates: %i[index show auto_complete_search preview export],
+                                                    'api/v2/webhook_templates': %i[index show export] },
+                     resource_type: 'WebhookTemplate'
+          permission :create_webhook_templates,   { webhook_templates: %i[new create clone_template],
+                                                    'api/v2/webhook_templates': %i[create clone import] },
+                     resource_type: 'WebhookTemplate'
+          permission :edit_webhook_templates,     { webhook_templates: %i[edit update],
+                                                    'api/v2/webhook_templates': %i[update import] },
+                     resource_type: 'WebhookTemplate'
+          permission :destroy_webhook_templates,  { webhook_templates: [:destroy],
+                                                    'api/v2/webhook_templates': [:destroy] },
+                     resource_type: 'WebhookTemplate'
+          permission :lock_webhook_templates,     { webhook_templates: %i[lock unlock],
+                                                    'api/v2/webhook_templates': %i[lock unlock] },
+                     resource_type: 'WebhookTemplate'
         end
 
         # add menu entry
-        menu :admin_menu, :webhook_targets, url_hash: { controller: :webhook_targets, action: :index },
-                                            caption: N_('Webhook Targets'),
-                                            parent: :administer_menu
-
+        divider :admin_menu, caption: N_('Webhook'), parent: :administer_menu
+        menu :admin_menu, :webhooks, url_hash: { controller: :webhooks, action: :index },
+                                     caption: N_('Webhooks'),
+                                     parent: :administer_menu
+        menu :admin_menu, :webhook_templates, url_hash: { controller: :webhook_templates, action: :index },
+                                              caption: N_('Webhook Templates'),
+                                              parent: :administer_menu
         subscribe(/.event.foreman$/, ::ForemanWebhooks::EventSubscriber)
       end
     end
 
     # Include concerns in this config.to_prepare block
     config.to_prepare do
-      begin
-        # Host::Managed.send(:include, ForemanWebhooks::HostExtensions)
-      rescue StandardError => e
-        Rails.logger.warn "ForemanWebhooks: skipping engine hook (#{e})"
-      end
+    # Host::Managed.send(:include, ForemanWebhooks::HostExtensions)
+    rescue StandardError => e
+      Rails.logger.warn "ForemanWebhooks: skipping engine hook (#{e})"
     end
   end
 end
