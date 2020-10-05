@@ -20,7 +20,7 @@ module ForemanWebhooks
         apipie_documented_controllers ["#{ForemanWebhooks::Engine.root}/app/controllers/api/v2/*.rb"]
         ApipieDSL.configuration.sections += ['webhooks']
         ApipieDSL.configuration.dsl_classes_matchers += [
-          "#{ForemanWebhooks::Engine.root}/app/lib/foreman_webhooks/scope/*.rb"
+          "#{ForemanWebhooks::Engine.root}/app/lib/foreman_webhooks/renderer/**/*.rb"
         ]
 
         # Add permissions
