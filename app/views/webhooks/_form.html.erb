@@ -25,9 +25,9 @@
 
   <%= checkbox_f f, :enabled, help_inline: _('If unchecked, the webhook will be inactive') %>
   <%= checkbox_f f, :verify_ssl, help_inline: _("Uncheck this option to disable validation of the receiver's SSL certificate") %>
-  <%= textarea_f f, :ssl_ca_file, label: _('X509 Certification Authorities'),
-                                  size: 'col-md-8',
-                                  placeholder: _("Optionally provide a CA, or a correctly ordered CA chain to verify the receiver's SSL certificate.") %>
+  <%= textarea_f f, :ssl_ca_certs, label: _('X509 Certification Authorities'),
+    size: 'col-md-8', rows: 10,
+    placeholder: _("Optional CAs in PEM format concatenated to verify the receiver's SSL certificate.") %>
 
   <%= submit_or_cancel f %>
 <% end %>

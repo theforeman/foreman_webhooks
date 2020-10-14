@@ -29,7 +29,7 @@ module Api
           param :webhook_template_id, :identifier
           param :enabled, :boolean
           param :verify_ssl, :boolean
-          param :ssl_ca_file, String, N_('X509 Certification Authorities')
+          param :ssl_ca_certs, String, N_('X509 Certification Authorities concatenated in PEM format')
           param :user, String
           param :password, String
         end

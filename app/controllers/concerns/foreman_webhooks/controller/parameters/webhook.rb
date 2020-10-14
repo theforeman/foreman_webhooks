@@ -11,7 +11,7 @@ module ForemanWebhooks
             Foreman::ParameterFilter.new(::Webhook).tap do |filter|
               filter.permit :name, :target_url, :webhook_template_id, :event,
                             :http_method, :http_content_type, :enabled,
-                            :verify_ssl, :ssl_ca_file, :user, :password
+                            :verify_ssl, :ssl_ca_certs, :user, :password
             end
           end
         end

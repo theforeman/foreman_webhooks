@@ -67,6 +67,18 @@ class Webhook < ApplicationRecord
     ::ForemanWebhooks::DeliverWebhookJob.perform_later(event_name: event_name, payload: payload, webhook_id: id)
   end
 
+  def ca_certs_store
+    store = OpenSSL::X509::Store.new
+    return store if ssl_ca_certs.blank?
+
+    ssl_ca_certs.split(/(?=-----BEGIN)/).each do |cert|
+      store.add_cert(OpenSSL::X509::Certificate.new(cert))
+    end
+    store
+  rescue StandardError => e
+    raise _(format('Failed to build X509 certificate store for HTTPS client, error: %s', e.message))
+  end
+
   private
 
   def set_default_template
@@ -77,8 +89,8 @@ class Webhook < ApplicationRecord
     webhook_template.render(
       variables: {
         event_name: event_name,
-        object: payload.delete(:object),
-        context: payload.delete(:context),
+        object: payload[:object],
+        context: payload[:context],
         payload: payload,
         webhook_id: id
       }
