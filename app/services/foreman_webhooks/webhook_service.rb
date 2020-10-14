@@ -13,12 +13,15 @@ module ForemanWebhooks
     end
 
     def execute
+      Foreman::Logging.blob("Webhook payload for event #{event_name}", payload)
       response = request(webhook, payload)
 
       status = case response.code.to_i
                when 400..599
+                 logger.error("#{webhook.http_method.to_s.upcase} response was #{response.code}")
                  :error
                else
+                 logger.info("#{webhook.http_method.to_s.upcase} response was #{response.code}")
                  :success
                end
 
@@ -47,22 +50,18 @@ module ForemanWebhooks
       request['Content-Type'] = webhook.http_content_type
       request.body = payload
 
-      logger.debug("#{webhook.http_method.to_s.upcase} request for webhook #{webhook.name}:")
+      logger.info("#{webhook.http_method.to_s.upcase} request for webhook #{webhook.name}:")
       logger.debug("Target: #{uri}")
       logger.debug("Headers: #{request.to_hash.inspect}")
       logger.debug("Body: #{request.body.inspect}")
 
       http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = (uri.scheme == 'https')
-      http.verify_mode = webhook.verify_ssl? ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE
-
-      return http.request(request) if webhook.ssl_ca_file.blank?
-
-      Tempfile.create('foreman-webhooks-ca-') do |ca_file|
-        ca_file.write(OpenSSL::X509::Certificate.new(webhook.ssl_ca_file))
-        http.ca_file = ca_file.path
-        http.request(request)
+      if uri.scheme == 'https'
+        http.use_ssl = true
+        http.verify_mode = webhook.verify_ssl? ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE
+        http.cert_store = webhook.ca_certs_store
       end
+      http.request(request)
     end
   end
 end
