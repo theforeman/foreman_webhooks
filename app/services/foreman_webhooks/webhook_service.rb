@@ -48,6 +48,8 @@ module ForemanWebhooks
       request = http_method.new(uri.request_uri)
       request.basic_auth(webhook.user, webhook.password) if webhook.user && webhook.password
       request['Content-Type'] = webhook.http_content_type
+      request['X-Request-Id'] = ::Logging.mdc['request'] || SecureRandom.uuid
+      request['X-Session-Id'] = ::Logging.mdc['session'] || SecureRandom.uuid
       request.body = payload
 
       logger.info("#{webhook.http_method.to_s.upcase} request for webhook #{webhook.name}:")
@@ -56,6 +58,9 @@ module ForemanWebhooks
       logger.debug("Body: #{request.body.inspect}")
 
       http = Net::HTTP.new(uri.host, uri.port)
+      http.open_timeout = Setting[:proxy_request_timeout]
+      http.read_timeout = Setting[:proxy_request_timeout]
+      http.ssl_timeout = Setting[:proxy_request_timeout]
       if uri.scheme == 'https'
         http.use_ssl = true
         http.verify_mode = webhook.verify_ssl? ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE
