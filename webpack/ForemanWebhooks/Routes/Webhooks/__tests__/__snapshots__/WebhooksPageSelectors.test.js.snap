@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebhooksPage selectors should return hasData 1`] = `false`;
+
+exports[`WebhooksPage selectors should return hasError 1`] = `false`;
+
+exports[`WebhooksPage selectors should return isLoading 1`] = `true`;
+
+exports[`WebhooksPage selectors should return message 1`] = `
+Object {
+  "text": "This is error",
+  "type": "error",
+}
+`;
+
+exports[`WebhooksPage selectors should return page 1`] = `1`;
+
+exports[`WebhooksPage selectors should return perPage 1`] = `1`;
+
+exports[`WebhooksPage selectors should return search 1`] = `"name ~ foo"`;
+
+exports[`WebhooksPage selectors should return sort 1`] = `
+Object {
+  "by": "name",
+  "order": "DESC",
+}
+`;
+
+exports[`WebhooksPage selectors should return subtotal 1`] = `42`;
+
+exports[`WebhooksPage selectors should return webhooks 1`] = `
+Array [
+  Object {
+    "canDelete": true,
+    "canEdit": true,
+    "enabled": true,
+    "id": 1,
+    "name": "my-webhook",
+    "targetUrl": "https://my-machine.example.com",
+  },
+  Object {
+    "canDelete": false,
+    "canEdit": false,
+    "enabled": false,
+    "id": 2,
+    "name": "your-webhook",
+    "targetUrl": "https://your-machine.example.com",
+  },
+]
+`;

@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebhooksTable rendering should render when loading 1`] = `
+<Component
+  canCreate={true}
+  fetchAndPush={[Function]}
+  hasData={false}
+  hasError={false}
+  isLoading={true}
+  itemCount={0}
+  onDeleteClick={[Function]}
+  page={5}
+  perPage={42}
+  search="name=foo"
+  sort={
+    Object {
+      "by": "defaultName",
+      "order": "ASC",
+    }
+  }
+  toasts={Array []}
+/>
+`;
+
+exports[`WebhooksTable rendering should render with error 1`] = `
+<Component
+  canCreate={true}
+  fetchAndPush={[Function]}
+  hasData={false}
+  hasError={true}
+  isLoading={false}
+  itemCount={0}
+  message={
+    Object {
+      "text": "this is error",
+      "type": "error",
+    }
+  }
+  onDeleteClick={[Function]}
+  page={5}
+  perPage={42}
+  search="name=foo"
+  sort={
+    Object {
+      "by": "defaultName",
+      "order": "ASC",
+    }
+  }
+  toasts={Array []}
+/>
+`;
+
+exports[`WebhooksTable rendering should render with no data 1`] = `
+<Component
+  canCreate={true}
+  fetchAndPush={[Function]}
+  hasData={false}
+  hasError={false}
+  isLoading={false}
+  itemCount={0}
+  onDeleteClick={[Function]}
+  page={5}
+  perPage={42}
+  search="name=foo"
+  sort={
+    Object {
+      "by": "defaultName",
+      "order": "ASC",
+    }
+  }
+  toasts={Array []}
+/>
+`;
+
+exports[`WebhooksTable rendering should render with webhooks 1`] = `
+<Component
+  canCreate={true}
+  fetchAndPush={[Function]}
+  hasData={true}
+  hasError={false}
+  isLoading={false}
+  itemCount={2}
+  onDeleteClick={[Function]}
+  page={5}
+  perPage={42}
+  search="name=foo"
+  sort={
+    Object {
+      "by": "defaultName",
+      "order": "ASC",
+    }
+  }
+  toasts={Array []}
+  webhooks={
+    Array [
+      Object {
+        "canDelete": true,
+        "canEdit": true,
+        "enabled": true,
+        "id": 1,
+        "name": "my-webhook",
+        "targetUrl": "https://my-machine.example.com",
+      },
+      Object {
+        "canDelete": false,
+        "canEdit": false,
+        "enabled": false,
+        "id": 2,
+        "name": "your-webhook",
+        "targetUrl": "https://your-machine.example.com",
+      },
+    ]
+  }
+/>
+`;

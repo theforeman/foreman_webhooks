@@ -55,13 +55,6 @@ module Api
       def destroy
         process_response @webhook.destroy
       end
-
-      private
-
-      # Overload this method to avoid using search_for method
-      def resource_scope_for_index(options = {})
-        resource_scope(options).paginate(paginate_options)
-      end
     end
   end
 end

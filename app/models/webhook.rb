@@ -4,6 +4,10 @@ class Webhook < ApplicationRecord
   include Authorizable
   include Encryptable
 
+  extend FriendlyId
+  friendly_id :name
+  include Parameterizable::ByIdName
+
   EVENT_POSTFIX = ".#{Foreman::Observable::DEFAULT_NAMESPACE}"
 
   EVENT_ALLOWLIST = %w[
@@ -34,6 +38,12 @@ class Webhook < ApplicationRecord
   before_save :set_default_template, unless: :webhook_template
 
   scope :for_event, ->(events) { where('events @> ARRAY[?]::varchar[]', Array(events)) }
+
+  default_scope -> { order('webhooks.name') }
+
+  scoped_search on: :name, complete_value: true, default_order: true
+  scoped_search on: :target_url, complete_value: :true
+  scoped_search on: :enabled, complete_value: { true: true, false: false }
 
   def self.available_events
     ::Foreman::EventSubscribers.all_observable_events & EVENT_ALLOWLIST
