@@ -4,8 +4,7 @@ object @webhook
 
 extends 'api/v2/webhooks/main'
 
-attributes :target_url, :event, :http_method, :http_content_type, :enabled,
-           :verify_ssl
+attributes :event, :http_method, :http_content_type, :verify_ssl
 
 child :webhook_template do
   extends 'api/v2/webhook_templates/base'

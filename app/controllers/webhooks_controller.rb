@@ -2,12 +2,9 @@
 
 class WebhooksController < ::ApplicationController
   include ForemanWebhooks::Controller::Parameters::Webhook
+  include Foreman::Controller::AutoCompleteSearch
 
   before_action :find_resource, only: %i[edit update destroy]
-
-  def index
-    @webhooks = resource_base.all
-  end
 
   def new
     @webhook = Webhook.new
@@ -16,7 +13,7 @@ class WebhooksController < ::ApplicationController
   def create
     @webhook = Webhook.new(webhook_params)
     if @webhook.save
-      process_success
+      process_success success_redirect: '/webhooks'
     else
       process_error
     end
@@ -26,7 +23,7 @@ class WebhooksController < ::ApplicationController
 
   def update
     if @webhook.update(webhook_params)
-      process_success
+      process_success success_redirect: '/webhooks'
     else
       process_error
     end

@@ -29,5 +29,5 @@
     size: 'col-md-8', rows: 10,
     placeholder: _("Optional CAs in PEM format concatenated to verify the receiver's SSL certificate.") %>
 
-  <%= submit_or_cancel f %>
+  <%= submit_or_cancel(f, false, { react_cancel_button: true, cancel_path: '/webhooks' }) %>
 <% end %>

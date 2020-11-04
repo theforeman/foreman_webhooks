@@ -1,9 +1,9 @@
 import React from 'react';
-import WebhooksIndexPage from '../components/WebhooksIndexPage';
+import WebhooksIndexPage from './Webhooks/WebhooksIndexPage';
 
 const ForemanWebhooksRoutes = [
   {
-    path: '/ex_webhooks',
+    path: '/webhooks',
     exact: true,
     render: props => <WebhooksIndexPage {...props} />,
   },

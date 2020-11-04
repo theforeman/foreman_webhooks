@@ -27,7 +27,7 @@ module ForemanWebhooks
 
         # Add permissions
         security_block :foreman_webhooks do
-          permission :view_webhooks,    { webhooks: %i[index show],
+          permission :view_webhooks,    { webhooks: %i[index show auto_complete_search],
                                           'api/v2/webhooks': %i[index show] }, resource_type: 'Webhook'
           permission :create_webhooks,  { webhooks: %i[new create],
                                           'api/v2/webhooks': [:create] }, resource_type: 'Webhook'
@@ -54,7 +54,8 @@ module ForemanWebhooks
 
         # add menu entry
         divider :admin_menu, caption: N_('Webhook'), parent: :administer_menu
-        menu :admin_menu, :webhooks, url_hash: { controller: :webhooks, action: :index },
+        menu :admin_menu, :webhooks, url: '/webhooks',
+                                     url_hash: { controller: :react, action: :index },
                                      caption: N_('Webhooks'),
                                      parent: :administer_menu
         menu :admin_menu, :webhook_templates, url_hash: { controller: :webhook_templates, action: :index },
