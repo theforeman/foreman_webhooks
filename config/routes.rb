@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :webhooks, except: :show
+  match '/ex_webhooks' => 'react#index', via: :get
 
   namespace :api, defaults: { format: 'json' } do
     scope '(:apiv)',

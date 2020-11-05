@@ -15,13 +15,15 @@ module ForemanWebhooks
 
     initializer 'foreman_webhooks.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_webhooks do
-        requires_foreman '>= 2.0'
+        requires_foreman '>= 2.3'
 
         apipie_documented_controllers ["#{ForemanWebhooks::Engine.root}/app/controllers/api/v2/*.rb"]
         ApipieDSL.configuration.sections += ['webhooks']
         ApipieDSL.configuration.dsl_classes_matchers += [
           "#{ForemanWebhooks::Engine.root}/app/lib/foreman_webhooks/renderer/**/*.rb"
         ]
+
+        register_global_js_file 'routes'
 
         # Add permissions
         security_block :foreman_webhooks do
