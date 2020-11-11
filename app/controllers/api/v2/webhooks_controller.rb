@@ -32,6 +32,7 @@ module Api
           param :ssl_ca_certs, String, N_('X509 Certification Authorities concatenated in PEM format')
           param :user, String
           param :password, String
+          param :http_headers, String
         end
       end
 

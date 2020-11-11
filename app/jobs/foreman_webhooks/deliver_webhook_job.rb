@@ -6,7 +6,13 @@ module ForemanWebhooks
 
     def perform(options)
       webhook = Webhook.unscoped.find_by(id: options[:webhook_id])
-      WebhookService.new(webhook: webhook, event_name: options[:event_name], payload: options[:payload]).execute
+      WebhookService.new(
+        webhook: webhook,
+        headers: options[:headers],
+        url: options[:url],
+        event_name: options[:event_name],
+        payload: options[:payload]
+      ).execute
     end
 
     def webhook_id
