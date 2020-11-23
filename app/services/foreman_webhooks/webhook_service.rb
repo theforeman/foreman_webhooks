@@ -32,8 +32,8 @@ module ForemanWebhooks
                                     password: webhook.password,
                                     content_type: webhook.http_content_type,
                                     headers: headers,
-                                    ca_string: webhook.verify_ssl?,
-                                    ca_verify: webhook.ca_certs_store,
+                                    ca_verify: webhook.verify_ssl?,
+                                    ca_string: webhook.ca_certs_store,
                                     follow_redirects: true)
 
       status = case response.code.to_i

@@ -33,7 +33,6 @@ class Webhook < ApplicationRecord
   validates :target_url, format: { with: URI::DEFAULT_PARSER.make_regexp(%w[http https]),
                                    message: _('URL must be valid and schema must be one of: %s') % 'http, https' }
   validates :http_method, inclusion: { in: ALLOWED_HTTP_METHODS }
-  validate :http_headers_json
 
   belongs_to :webhook_template, foreign_key: :webhook_template_id
 
@@ -101,14 +100,6 @@ class Webhook < ApplicationRecord
 
   private
 
-  def http_headers_json
-    return if http_headers.blank?
-
-    JSON.parse(http_headers)
-  rescue JSON::ParserError => e
-    errors[:http_headers] << "is not valid JSON: #{e}"
-  end
-
   def set_default_template
     self.webhook_template = WebhookTemplate.find_by!(name: DEFAULT_PAYLOAD_TEMPLATE)
   end
@@ -144,7 +135,7 @@ class Webhook < ApplicationRecord
   end
 
   def rendered_targed_url(event_name, payload)
-    source = Foreman::Renderer::Source::String.new(name: 'HTTP header template', content: target_url)
+    source = Foreman::Renderer::Source::String.new(name: 'HTTP target URL template', content: target_url)
     render_source(source, event_name, payload)
   end
 end

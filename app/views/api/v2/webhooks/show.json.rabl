@@ -10,7 +10,6 @@ attributes :target_url,
            :http_content_type,
            :enabled,
            :verify_ssl,
-           # TODO: how do I break these into individual fields?
            :http_headers
 
 child :webhook_template do
