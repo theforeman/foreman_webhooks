@@ -77,6 +77,12 @@ module ForemanWebhooks
 
         # subscribe to all events
         subscribe(/.event.foreman$/, ::ForemanWebhooks::EventSubscriber)
+
+        register_graphql_query_field :webhook, 'ForemanWebhooks::Types::Webhook', :record_field
+        register_graphql_query_field :webhooks, 'ForemanWebhooks::Types::Webhook', :collection_field
+
+        register_graphql_query_field :webhook_template, 'ForemanWebhooks::Types::WebhookTemplate', :record_field
+        register_graphql_query_field :webhook_templates, 'ForemanWebhooks::Types::WebhookTemplate', :collection_field
       end
     end
 
