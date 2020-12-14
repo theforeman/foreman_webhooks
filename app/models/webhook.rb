@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Webhook < ApplicationRecord
+  audited
   include Authorizable
   include Encryptable
 
