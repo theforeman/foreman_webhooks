@@ -30,10 +30,6 @@ module ForemanWebhooks
           hash.merge!(@defaults) if with_defaults
           hash.to_json
         end
-
-        def allowed_helpers
-          @allowed_helpers ||= super + %i[payload]
-        end
       end
     end
   end

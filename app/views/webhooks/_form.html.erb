@@ -29,5 +29,9 @@
     size: 'col-md-8', rows: 10,
     placeholder: _("Optional CAs in PEM format concatenated to verify the receiver's SSL certificate.") %>
 
+  <%= textarea_f f, :http_headers, label: _('Optional HTTP headers as JSON (ERB allowed)'),
+    size: 'col-md-8', rows: 6,
+    placeholder: "{\n\"X-Shellhook-Arg-1\": \"value\"\n}" %>
+
   <%= submit_or_cancel(f, false, { react_cancel_button: true, cancel_path: '/webhooks' }) %>
 <% end %>

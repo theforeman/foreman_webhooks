@@ -51,7 +51,7 @@ class Webhook < ApplicationRecord
   end
 
   def self.deliver(event_name:, payload:)
-    for_event(event_name).each do |target|
+    for_event(event_name).includes([:webhook_template]).each do |target|
       target.deliver(event_name: event_name, payload: payload) if target.enabled?
     end
   end
@@ -74,8 +74,16 @@ class Webhook < ApplicationRecord
   end
 
   def deliver(event_name:, payload:)
-    payload = rendered_payload(event_name, payload)
-    ::ForemanWebhooks::DeliverWebhookJob.perform_later(event_name: event_name, payload: payload, webhook_id: id)
+    payload_to_deliver = rendered_payload(event_name, payload)
+    headers_to_deliver = rendered_headers(event_name, payload)
+    url_to_deliver = rendered_targed_url(event_name, payload)
+    ::ForemanWebhooks::DeliverWebhookJob.perform_later(
+      event_name: event_name,
+      payload: payload_to_deliver,
+      headers: headers_to_deliver,
+      url: url_to_deliver,
+      webhook_id: id
+    )
   end
 
   def ca_certs_store
@@ -96,15 +104,38 @@ class Webhook < ApplicationRecord
     self.webhook_template = WebhookTemplate.find_by!(name: DEFAULT_PAYLOAD_TEMPLATE)
   end
 
-  def rendered_payload(event_name, payload)
-    webhook_template.render(
-      variables: {
-        event_name: event_name,
-        object: payload[:object],
-        context: payload[:context],
-        payload: payload,
-        webhook_id: id
-      }
+  def variables(event_name, payload)
+    {
+      event_name: event_name,
+      object: payload[:object],
+      context: payload[:context],
+      payload: payload,
+      webhook_id: id
+    }
+  end
+
+  def render_source(source, event_name, payload)
+    scope = Foreman::Renderer.get_scope(
+      klass: ForemanWebhooks::Renderer::Scope::WebhookTemplate,
+      variables: variables(event_name, payload),
+      source: source
     )
+    Foreman::Renderer.render(source, scope)
+  end
+
+  def rendered_payload(event_name, payload)
+    webhook_template.render(variables: variables(event_name, payload))
+  end
+
+  def rendered_headers(event_name, payload)
+    return nil if http_headers.empty?
+
+    source = Foreman::Renderer::Source::String.new(name: 'HTTP header template', content: http_headers)
+    render_source(source, event_name, payload)
+  end
+
+  def rendered_targed_url(event_name, payload)
+    source = Foreman::Renderer::Source::String.new(name: 'HTTP target URL template', content: target_url)
+    render_source(source, event_name, payload)
   end
 end

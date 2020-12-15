@@ -14,7 +14,9 @@ module ForemanWebhooks
       WebhookService.new(
         webhook: webhook,
         event_name: event_name,
-        payload: payload_json
+        payload: payload_json,
+        headers: {},
+        url: webhook.target_url
       )
     end
 

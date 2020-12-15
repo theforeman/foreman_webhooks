@@ -1,0 +1,20 @@
+<%#
+name: Ansible Tower - Host in Inventory
+description: Create/update a host with associated inventory in Ansible Tower.
+snippet: false
+model: WebhookTemplate
+-%>
+<%#
+  Create URL: https://tower/api/v2/hosts
+  Update/Delete URL: https://tower/api/v2/hosts/$HOST_ID
+-%>
+<%=
+  payload({
+    "name": @object.name,
+    "description": "Created via Foreman Webhook",
+    "inventory": @object.host_param('ansible_tower_inventory_id') || 1,
+    "enabled": true,
+    "instance_id": "",
+    "variables": ""
+  }, with_defaults: false)
+-%>

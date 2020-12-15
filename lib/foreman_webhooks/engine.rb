@@ -61,6 +61,11 @@ module ForemanWebhooks
         menu :admin_menu, :webhook_templates, url_hash: { controller: :webhook_templates, action: :index },
                                               caption: N_('Webhook Templates'),
                                               parent: :administer_menu
+
+        # add helpers to safe-mode
+        allowed_template_helpers :payload
+
+        # subscribe to all events
         subscribe(/.event.foreman$/, ::ForemanWebhooks::EventSubscriber)
       end
     end
