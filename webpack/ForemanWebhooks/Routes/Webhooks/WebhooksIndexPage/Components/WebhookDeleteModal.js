@@ -18,7 +18,7 @@ const WebhookDeleteModal = ({ toDelete, onSuccess }) => {
       submitProps={{
         url: foremanUrl(`/api/v2/webhooks/${id}`),
         message: sprintf(__('Webhook %s was successfully deleted'), name),
-        onSuccess: { onSuccess },
+        onSuccess,
         submitBtnProps: {
           bsStyle: 'danger',
           btnText: __('Delete'),
