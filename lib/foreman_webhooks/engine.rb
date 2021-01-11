@@ -55,7 +55,7 @@ module ForemanWebhooks
         # add menu entry
         divider :admin_menu, caption: N_('Webhook'), parent: :administer_menu
         menu :admin_menu, :webhooks, url: '/webhooks',
-                                     url_hash: { controller: :react, action: :index },
+                                     url_hash: { controller: :webhooks, action: :index },
                                      caption: N_('Webhooks'),
                                      parent: :administer_menu
         menu :admin_menu, :webhook_templates, url_hash: { controller: :webhook_templates, action: :index },
