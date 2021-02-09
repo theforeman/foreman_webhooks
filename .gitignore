@@ -13,3 +13,4 @@ locale/*/*.pox
 node_modules
 package-lock.json
 coverage/
+*.gem

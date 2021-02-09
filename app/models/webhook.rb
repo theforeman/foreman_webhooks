@@ -11,15 +11,6 @@ class Webhook < ApplicationRecord
 
   EVENT_POSTFIX = ".#{Foreman::Observable::DEFAULT_NAMESPACE}"
 
-  EVENT_ALLOWLIST = %w[
-    host_created host_updated host_destroyed
-    hostgroup_created hostgroup_updated hostgroup_destroyed
-    user_created user_updated user_destroyed
-    domain_created domain_updated domain_destroyed
-    subnet_created subnet_updated subnet_destroyed
-    build_entered build_exited status_changed
-  ].map { |e| e + EVENT_POSTFIX }.freeze
-
   DEFAULT_PAYLOAD_TEMPLATE = 'Webhook Template - Payload Default'
 
   ALLOWED_HTTP_METHODS = %w[POST GET PUT DELETE PATCH].freeze
@@ -47,7 +38,7 @@ class Webhook < ApplicationRecord
   scoped_search on: :enabled, complete_value: { true: true, false: false }
 
   def self.available_events
-    ::Foreman::EventSubscribers.all_observable_events & EVENT_ALLOWLIST
+    ::Foreman::EventSubscribers.all_observable_events
   end
 
   def self.deliver(event_name:, payload:)
