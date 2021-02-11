@@ -50,7 +50,8 @@ module ForemanWebhooks
         message: response.message,
         http_status: response.code.to_i
       }
-    rescue SocketError, OpenSSL::SSL::SSLError, Errno::ECONNREFUSED, Errno::ECONNRESET, Errno::EHOSTUNREACH, Net::OpenTimeout, Net::ReadTimeout => e
+    rescue SocketError, OpenSSL::SSL::SSLError, Errno::ECONNREFUSED, Errno::ECONNRESET,
+           Errno::EHOSTUNREACH, Net::OpenTimeout, Net::ReadTimeout => e
       Foreman::Logging.exception("Failed to execute the webhook #{webhook.name} -> #{event_name}", e)
       {
         status: :error,
@@ -58,7 +59,9 @@ module ForemanWebhooks
       }
     end
 
-    def self.request(url:, payload: '', http_method: :GET, user: nil, password: nil, content_type: 'application/json', headers: {}, ca_string: nil, ca_verify: false, follow_redirects: true, redirect_limit: 3)
+    def self.request(url:, payload: '', http_method: :GET, user: nil, password: nil,
+                     content_type: 'application/json', headers: {}, ca_string: nil,
+                     ca_verify: false, follow_redirects: true, redirect_limit: 3)
       uri = URI.parse(url)
 
       request = Object.const_get("Net::HTTP::#{http_method.to_s.capitalize}").new(uri.request_uri)
@@ -86,11 +89,13 @@ module ForemanWebhooks
       end
       http.request(request) do |response|
         case response
-        when Net::HTTPRedirection then
+        when Net::HTTPRedirection
           new_location = response['location']
           Rails.logger.debug "Redirected to #{new_location} (redirects left: #{redirect_limit})"
-          raise(::Foreman::Exception, N_(format('Too many HTTP redirects when calling %{uri}', uri: uri, code: response.code))) if redirect_limit <= 0
-
+          if redirect_limit <= 0
+            raise(::Foreman::Exception,
+                  N_(format('Too many HTTP redirects when calling %{uri}', uri: uri, code: response.code)))
+          end
           self.request(url: new_location,
                        payload: payload,
                        http_method: http_method,

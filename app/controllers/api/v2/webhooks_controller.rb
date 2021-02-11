@@ -5,12 +5,12 @@ module Api
     class WebhooksController < V2::BaseController
       include Api::Version2
       include ForemanWebhooks::Controller::Parameters::Webhook
-      include Foreman::Controller::TemplateImport
 
       before_action :find_resource, only: %i[show update destroy]
 
       api :GET, '/webhooks/', N_('List Webhooks')
       param_group :search_and_pagination, ::Api::V2::BaseController
+      add_scoped_search_description_for(Webhook)
       def index
         @webhooks = resource_scope_for_index
       end
@@ -25,7 +25,8 @@ module Api
           param :target_url, String, required: true
           param :http_method, Webhook::ALLOWED_HTTP_METHODS
           param :http_content_type, String
-          param :event, String, required: true
+          events = Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) }
+          param :event, events, required: true
           param :webhook_template_id, :identifier
           param :enabled, :boolean
           param :verify_ssl, :boolean
