@@ -44,4 +44,6 @@ end
 Rake::Task[:test].enhance ['test:foreman_webhooks']
 
 load 'tasks/jenkins.rake'
-Rake::Task['jenkins:unit'].enhance ['test:foreman_webhooks', 'foreman_webhooks:rubocop'] if Rake::Task.task_defined?(:'jenkins:unit')
+if Rake::Task.task_defined?(:'jenkins:unit')
+  Rake::Task['jenkins:unit'].enhance ['test:foreman_webhooks', 'foreman_webhooks:rubocop']
+end

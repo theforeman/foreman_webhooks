@@ -12,9 +12,11 @@ Gem::Specification.new do |s|
   s.summary     = 'Configure webhooks for Foreman.'
   s.description = 'Plugin for Foreman that allows to configure Webhooks.'
 
+  s.required_ruby_version = '>= 2.5.0'
+
   s.files = Dir['{app,config,db,lib,webpack}/**/*'] + ['LICENSE', 'Rakefile', 'README.md', 'package.json']
   s.test_files = Dir['test/**/*'] + Dir['webpack/**/__tests__/*.js']
 
   s.add_development_dependency 'rdoc'
-  s.add_development_dependency 'rubocop', '~> 0.71.0'
+  s.add_development_dependency 'rubocop', '>= 0.71.0'
 end

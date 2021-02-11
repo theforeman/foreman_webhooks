@@ -35,8 +35,8 @@ module ForemanWebhooks
                                           'api/v2/webhooks': [:update] }, resource_type: 'Webhook'
           permission :destroy_webhooks, { webhooks: [:destroy],
                                           'api/v2/webhooks': [:destroy] }, resource_type: 'Webhook'
-          permission :view_webhook_templates,     { webhook_templates: %i[index show auto_complete_search preview export],
-                                                    'api/v2/webhook_templates': %i[index show export] },
+          permission :view_webhook_templates, { webhook_templates: %i[index show auto_complete_search preview export],
+                                                'api/v2/webhook_templates': %i[index show export] },
                      resource_type: 'WebhookTemplate'
           permission :create_webhook_templates,   { webhook_templates: %i[new create clone_template],
                                                     'api/v2/webhook_templates': %i[create clone import] },
@@ -51,6 +51,15 @@ module ForemanWebhooks
                                                     'api/v2/webhook_templates': %i[lock unlock] },
                      resource_type: 'WebhookTemplate'
         end
+
+        role 'Webhooks Reader',
+             %i[view_webhooks view_webhook_templates]
+
+        role 'Webhooks Manager',
+             %i[view_webhooks create_webhooks edit_webhooks destroy_webhooks
+                view_webhook_templates create_webhook_templates
+                edit_webhook_templates destroy_webhook_templates
+                lock_webhook_templates]
 
         # add menu entry
         divider :admin_menu, caption: N_('Webhook'), parent: :administer_menu

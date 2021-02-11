@@ -24,7 +24,9 @@ module ForemanWebhooks
           required :hash, Hash, 'Key=value object with with data that should be present in payload'
           keyword :with_defaults, [true, false], 'If set to true, adds default entries to the payload', default: true
           returns String, 'JSON string with the final payload'
-          example 'payload({ id: @object.id, name: @object.name }) #=> "{ "id": 1, "name": "host.example.com", "context": { ... }, "event_name": "host_created.event.foreman" }"'
+          example 'payload({ id: @object.id, name: @object.name }) #=> ' \
+                  '"{ "id": 1, "name": "host.example.com", "context": { ... }, ' \
+                  '"event_name": "host_created.event.foreman" }"'
         end
         def payload(hash, with_defaults: true)
           hash.merge!(@defaults) if with_defaults

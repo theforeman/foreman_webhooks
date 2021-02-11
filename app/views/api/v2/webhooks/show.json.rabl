@@ -10,7 +10,9 @@ attributes :target_url,
            :http_content_type,
            :enabled,
            :verify_ssl,
-           :http_headers
+           :http_headers,
+           :ssl_ca_certs,
+           :user
 
 child :webhook_template do
   extends 'api/v2/webhook_templates/base'
