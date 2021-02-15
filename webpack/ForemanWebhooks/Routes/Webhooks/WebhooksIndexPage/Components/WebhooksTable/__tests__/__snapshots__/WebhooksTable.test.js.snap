@@ -1,16 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WebhooksTable rendering should render when loading 1`] = `
-<Component
+<WebhooksTable
   canCreate={true}
-  fetchAndPush={[Function]}
+  fetchAndPush={[MockFunction]}
   hasData={false}
   hasError={false}
   isLoading={true}
   itemCount={0}
-  onDeleteClick={[Function]}
+  onDeleteClick={[MockFunction]}
+  onEditClick={[Function]}
   page={5}
+  pagination={
+    Object {
+      "page": 1,
+      "perPage": 20,
+    }
+  }
   perPage={42}
+  reloadWithSearch={[MockFunction]}
+  results={Array []}
   search="name=foo"
   sort={
     Object {
@@ -18,14 +27,16 @@ exports[`WebhooksTable rendering should render when loading 1`] = `
       "order": "ASC",
     }
   }
+  toDelete={Object {}}
+  toEdit={0}
   toasts={Array []}
 />
 `;
 
 exports[`WebhooksTable rendering should render with error 1`] = `
-<Component
+<WebhooksTable
   canCreate={true}
-  fetchAndPush={[Function]}
+  fetchAndPush={[MockFunction]}
   hasData={false}
   hasError={true}
   isLoading={false}
@@ -36,9 +47,18 @@ exports[`WebhooksTable rendering should render with error 1`] = `
       "type": "error",
     }
   }
-  onDeleteClick={[Function]}
+  onDeleteClick={[MockFunction]}
+  onEditClick={[Function]}
   page={5}
+  pagination={
+    Object {
+      "page": 1,
+      "perPage": 20,
+    }
+  }
   perPage={42}
+  reloadWithSearch={[MockFunction]}
+  results={Array []}
   search="name=foo"
   sort={
     Object {
@@ -46,21 +66,32 @@ exports[`WebhooksTable rendering should render with error 1`] = `
       "order": "ASC",
     }
   }
+  toDelete={Object {}}
+  toEdit={0}
   toasts={Array []}
 />
 `;
 
 exports[`WebhooksTable rendering should render with no data 1`] = `
-<Component
+<WebhooksTable
   canCreate={true}
-  fetchAndPush={[Function]}
+  fetchAndPush={[MockFunction]}
   hasData={false}
   hasError={false}
   isLoading={false}
   itemCount={0}
-  onDeleteClick={[Function]}
+  onDeleteClick={[MockFunction]}
+  onEditClick={[Function]}
   page={5}
+  pagination={
+    Object {
+      "page": 1,
+      "perPage": 20,
+    }
+  }
   perPage={42}
+  reloadWithSearch={[MockFunction]}
+  results={Array []}
   search="name=foo"
   sort={
     Object {
@@ -68,30 +99,32 @@ exports[`WebhooksTable rendering should render with no data 1`] = `
       "order": "ASC",
     }
   }
+  toDelete={Object {}}
+  toEdit={0}
   toasts={Array []}
 />
 `;
 
 exports[`WebhooksTable rendering should render with webhooks 1`] = `
-<Component
+<WebhooksTable
   canCreate={true}
-  fetchAndPush={[Function]}
+  fetchAndPush={[MockFunction]}
   hasData={true}
   hasError={false}
   isLoading={false}
   itemCount={2}
-  onDeleteClick={[Function]}
+  onDeleteClick={[MockFunction]}
+  onEditClick={[Function]}
   page={5}
-  perPage={42}
-  search="name=foo"
-  sort={
+  pagination={
     Object {
-      "by": "defaultName",
-      "order": "ASC",
+      "page": 1,
+      "perPage": 20,
     }
   }
-  toasts={Array []}
-  webhooks={
+  perPage={42}
+  reloadWithSearch={[MockFunction]}
+  results={
     Array [
       Object {
         "canDelete": true,
@@ -111,5 +144,15 @@ exports[`WebhooksTable rendering should render with webhooks 1`] = `
       },
     ]
   }
+  search="name=foo"
+  sort={
+    Object {
+      "by": "defaultName",
+      "order": "ASC",
+    }
+  }
+  toDelete={Object {}}
+  toEdit={0}
+  toasts={Array []}
 />
 `;

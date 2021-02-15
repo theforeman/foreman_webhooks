@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :webhooks, except: %i[index show] do
+  resources :webhooks, except: %i[index show new edit update] do
     collection do
       get 'auto_complete_search'
     end
@@ -14,7 +14,11 @@ Rails.application.routes.draw do
           defaults: { apiv: 'v2' },
           apiv: /v1|v2/,
           constraints: ApiConstraints.new(version: 2, default: true) do
-      resources :webhooks, only: %i[index show create update destroy]
+      resources :webhooks, only: %i[index show create update destroy] do
+        collection do
+          get :events
+        end
+      end
       resources :webhook_templates, except: %i[new edit] do
         member do
           post :clone

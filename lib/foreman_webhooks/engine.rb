@@ -15,7 +15,7 @@ module ForemanWebhooks
 
     initializer 'foreman_webhooks.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_webhooks do
-        requires_foreman '>= 2.3'
+        requires_foreman '>= 2.5'
 
         apipie_documented_controllers ["#{ForemanWebhooks::Engine.root}/app/controllers/api/v2/*.rb"]
         ApipieDSL.configuration.sections += ['webhooks']
@@ -28,7 +28,7 @@ module ForemanWebhooks
         # Add permissions
         security_block :foreman_webhooks do
           permission :view_webhooks,    { webhooks: %i[index show auto_complete_search],
-                                          'api/v2/webhooks': %i[index show] }, resource_type: 'Webhook'
+                                          'api/v2/webhooks': %i[index show events] }, resource_type: 'Webhook'
           permission :create_webhooks,  { webhooks: %i[new create],
                                           'api/v2/webhooks': [:create] }, resource_type: 'Webhook'
           permission :edit_webhooks,    { webhooks: %i[edit update],

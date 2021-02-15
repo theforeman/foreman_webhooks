@@ -1,11 +1,11 @@
 import React from 'react';
-import WebhooksIndexPage from './Webhooks/WebhooksIndexPage';
+import ConnectedWebhooksIndexPage from './Webhooks/WebhooksIndexPage';
 
 const ForemanWebhooksRoutes = [
   {
     path: '/webhooks',
     exact: true,
-    render: props => <WebhooksIndexPage {...props} />,
+    render: props => <ConnectedWebhooksIndexPage {...props} />,
   },
 ];
 

@@ -14,6 +14,7 @@ const WebhookDeleteModal = ({ toDelete, onSuccess }) => {
     <ForemanModal
       id={WEBHOOK_DELETE_MODAL_ID}
       title={__('Confirm Webhook Deletion')}
+      backdrop="static"
       enforceFocus
       submitProps={{
         url: foremanUrl(`/api/v2/webhooks/${id}`),

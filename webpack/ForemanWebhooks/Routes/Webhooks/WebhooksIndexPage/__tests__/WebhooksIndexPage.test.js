@@ -3,7 +3,9 @@ import WebhooksIndexPage from '../WebhooksIndexPage';
 
 const fixtures = {
   'render with minimal props': {
-    fetchAndPush: () => {},
+    fetchAndPush: jest.fn(),
+    reloadWithSearch: jest.fn(),
+    handleCreateSubmit: jest.fn(),
     isLoading: false,
     hasError: false,
     hasData: false,

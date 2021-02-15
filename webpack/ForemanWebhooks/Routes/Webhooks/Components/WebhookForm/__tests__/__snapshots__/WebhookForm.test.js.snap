@@ -1,0 +1,510 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebhookForm rendering should render for edit page 1`] = `
+<ForemanForm
+  enableReinitialize={true}
+  initialValues={
+    Object {
+      "enabled": true,
+      "event": "host_created.event.foreman",
+      "http_content_type": "application/json",
+      "http_method": "PUT",
+      "id": 54,
+      "name": "first webhook",
+      "password": undefined,
+      "ssl_ca_certs": undefined,
+      "target_url": "https://foreman.example.com",
+      "user": undefined,
+      "verify_ssl": true,
+      "webhook_template_id": 204,
+    }
+  }
+  item="Webhook"
+  onCancel={[MockFunction]}
+  onSubmit={[MockFunction]}
+  validationSchema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Array [],
+        "refs": Array [],
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": undefined,
+      "_nodes": Array [
+        "webhook_template_id",
+        "event",
+        "http_method",
+        "target_url",
+        "name",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Array [],
+        "refs": Array [],
+      },
+      "fields": Object {
+        "event": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "http_method": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "name": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "target_url": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "webhook_template_id": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+      "type": "object",
+    }
+  }
+>
+  <WebhookFormTabs
+    activeTab={0}
+    availableEvents={
+      Array [
+        "host_created",
+      ]
+    }
+    disabled={false}
+    formProps={Object {}}
+    handleTabClick={[Function]}
+    httpMethods={
+      Array [
+        Object {
+          "label": "POST",
+          "value": "POST",
+        },
+        Object {
+          "label": "GET",
+          "value": "GET",
+        },
+        Object {
+          "label": "PUT",
+          "value": "PUT",
+        },
+        Object {
+          "label": "DELETE",
+          "value": "DELETE",
+        },
+        Object {
+          "label": "PATCH",
+          "value": "PATCH",
+        },
+      ]
+    }
+    isEventsLoading={false}
+    isTemplatesLoading={false}
+    webhookTemplates={
+      Array [
+        Object {
+          "label": "default template",
+          "value": 204,
+        },
+        Object {
+          "label": "default template clone",
+          "value": 205,
+        },
+      ]
+    }
+  />
+</ForemanForm>
+`;
+
+exports[`WebhookForm rendering should render for new page 1`] = `
+<ForemanForm
+  enableReinitialize={true}
+  initialValues={
+    Object {
+      "enabled": true,
+      "event": "host_created.event.foreman",
+      "http_content_type": "application/json",
+      "http_method": "POST",
+      "verify_ssl": true,
+    }
+  }
+  item="Webhook"
+  onCancel={[MockFunction]}
+  onSubmit={[MockFunction]}
+  validationSchema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Array [],
+        "refs": Array [],
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": undefined,
+      "_nodes": Array [
+        "webhook_template_id",
+        "event",
+        "http_method",
+        "target_url",
+        "name",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Array [],
+        "refs": Array [],
+      },
+      "fields": Object {
+        "event": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "http_method": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "name": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "target_url": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+        "webhook_template_id": StringSchema {
+          "_blacklist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {
+            "required": true,
+          },
+          "_mutate": undefined,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "string",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Array [],
+            "refs": Array [],
+          },
+          "tests": Array [
+            [Function],
+          ],
+          "transforms": Array [
+            [Function],
+          ],
+          "type": "string",
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+      "type": "object",
+    }
+  }
+>
+  <WebhookFormTabs
+    activeTab={0}
+    availableEvents={
+      Array [
+        "host_created",
+      ]
+    }
+    disabled={false}
+    formProps={Object {}}
+    handleTabClick={[Function]}
+    httpMethods={
+      Array [
+        Object {
+          "label": "POST",
+          "value": "POST",
+        },
+        Object {
+          "label": "GET",
+          "value": "GET",
+        },
+        Object {
+          "label": "PUT",
+          "value": "PUT",
+        },
+        Object {
+          "label": "DELETE",
+          "value": "DELETE",
+        },
+        Object {
+          "label": "PATCH",
+          "value": "PATCH",
+        },
+      ]
+    }
+    isEventsLoading={false}
+    isTemplatesLoading={false}
+    webhookTemplates={
+      Array [
+        Object {
+          "label": "default template",
+          "value": 204,
+        },
+        Object {
+          "label": "default template clone",
+          "value": 205,
+        },
+      ]
+    }
+  />
+</ForemanForm>
+`;
