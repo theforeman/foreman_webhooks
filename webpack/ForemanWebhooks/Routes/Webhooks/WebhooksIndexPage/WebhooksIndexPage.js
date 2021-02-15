@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { Button } from 'patternfly-react';
 
 import { translate as __ } from 'foremanReact/common/I18n';
 import PageLayout from 'foremanReact/routes/common/PageLayout/PageLayout';
-import { foremanUrl } from 'foremanReact/common/helpers';
+import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanModalHooks';
+import { withRenderHandler } from 'foremanReact/common/HOC';
 
-import { WEBHOOKS_SEARCH_PROPS, WEBHOOKS_PATH } from '../constants';
+import { WEBHOOKS_SEARCH_PROPS, WEBHOOK_CREATE_MODAL_ID } from '../constants';
+
 import WebhooksTable from './Components/WebhooksTable';
+import WebhookCreateModal from './Components/WebhookCreateModal';
+import EmptyWebhooksIndexPage from './Components/EmptyWebhooksIndexPage';
 
 const WebhooksIndexPage = ({
   fetchAndPush,
@@ -24,40 +27,61 @@ const WebhooksIndexPage = ({
   message,
   canCreate,
   toasts,
+  reloadWithSearch,
 }) => {
-  const handleSearch = query => fetchAndPush({ searchQuery: query, page: 1 });
   const [toDelete, setToDelete] = useState({});
+  const [toEdit, setToEdit] = useState(0);
+
+  const {
+    setModalOpen: setCreateModalOpen,
+    setModalClosed: setCreateModalClosed,
+  } = useForemanModal({
+    id: WEBHOOK_CREATE_MODAL_ID,
+  });
+
   const createBtn = (
-    <Link to={foremanUrl(`${WEBHOOKS_PATH}/new`)}>
-      <Button bsStyle="primary">{__('Create Webhook')}</Button>
-    </Link>
+    <Button onClick={setCreateModalOpen} bsStyle="primary">
+      {__('Create Webhook')}
+    </Button>
   );
+
   return (
-    <PageLayout
-      header={__('Webhooks')}
-      searchable={!isLoading}
-      searchProps={WEBHOOKS_SEARCH_PROPS}
-      searchQuery={search}
-      isLoading={isLoading && hasData}
-      onSearch={handleSearch}
-      onBookmarkClick={handleSearch}
-      toastNotifications={toasts}
-      toolbarButtons={canCreate && createBtn}
-    >
-      <WebhooksTable
-        results={webhooks}
-        fetchAndPush={fetchAndPush}
-        pagination={{ page, perPage }}
-        itemCount={itemCount}
-        sort={sort}
-        toDelete={toDelete}
-        setToDelete={setToDelete}
-        message={message}
-        hasData={hasData}
-        hasError={hasError}
-        isLoading={isLoading}
+    <>
+      <WebhookCreateModal
+        onSuccess={() => {
+          setCreateModalClosed();
+          reloadWithSearch(search);
+        }}
+        onCancel={setCreateModalClosed}
       />
-    </PageLayout>
+      <PageLayout
+        header={__('Webhooks')}
+        searchable={!isLoading}
+        searchProps={WEBHOOKS_SEARCH_PROPS}
+        searchQuery={search}
+        isLoading={isLoading && hasData}
+        onSearch={reloadWithSearch}
+        onBookmarkClick={reloadWithSearch}
+        toastNotifications={toasts}
+        toolbarButtons={canCreate && createBtn}
+      >
+        <WebhooksTable
+          results={webhooks}
+          fetchAndPush={fetchAndPush}
+          pagination={{ page, perPage }}
+          itemCount={itemCount}
+          sort={sort}
+          toDelete={toDelete}
+          setToDelete={setToDelete}
+          hasData={hasData}
+          hasError={hasError}
+          isLoading={isLoading}
+          toEdit={toEdit}
+          setToEdit={setToEdit}
+          reloadWithSearch={reloadWithSearch}
+        />
+      </PageLayout>
+    </>
   );
 };
 
@@ -75,6 +99,7 @@ WebhooksIndexPage.propTypes = {
   message: PropTypes.object,
   canCreate: PropTypes.bool.isRequired,
   toasts: PropTypes.array.isRequired,
+  reloadWithSearch: PropTypes.func.isRequired,
 };
 
 WebhooksIndexPage.defaultProps = {
@@ -84,4 +109,8 @@ WebhooksIndexPage.defaultProps = {
   message: { type: 'empty', text: __('Try to create a new Webhook') },
 };
 
-export default WebhooksIndexPage;
+export default withRenderHandler({
+  Component: WebhooksIndexPage,
+  EmptyComponent: EmptyWebhooksIndexPage,
+  ErrorComponent: EmptyWebhooksIndexPage,
+});

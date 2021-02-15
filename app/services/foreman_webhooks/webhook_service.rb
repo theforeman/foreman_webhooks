@@ -95,7 +95,7 @@ module ForemanWebhooks
       uri = URI.parse(url)
 
       request = Object.const_get("Net::HTTP::#{http_method.to_s.capitalize}").new(uri.request_uri)
-      request.basic_auth(user, password) if user && password
+      request.basic_auth(user, password) if !user.blank? && !password.blank?
       request['Content-Type'] = content_type
       request['X-Request-Id'] = ::Logging.mdc['request'] || SecureRandom.uuid
       request['X-Session-Id'] = ::Logging.mdc['session'] || SecureRandom.uuid

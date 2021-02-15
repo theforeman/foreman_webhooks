@@ -7,11 +7,20 @@ import {
 import WrappedWebhooksTable from '../index';
 
 const props = {
-  fetchAndPush: () => {},
-  onDeleteClick: () => {},
-  setToDelete: () => {},
+  fetchAndPush: jest.fn(),
+  onDeleteClick: jest.fn(),
+  setToDelete: jest.fn(),
+  setToEdit: jest.fn(),
+  reloadWithSearch: jest.fn(),
   itemCount: 0,
   canCreate: true,
+  results: [],
+  pagination: {
+    page: 1,
+    perPage: 20,
+  },
+  toDelete: {},
+  toEdit: 0,
 };
 
 const fixtures = {
@@ -46,7 +55,7 @@ const fixtures = {
     hasError: false,
     hasData: true,
     toasts: [],
-    webhooks,
+    results: webhooks,
     itemCount: webhooks.length,
   }),
 };

@@ -49,3 +49,6 @@ export const fetchAndPush = (params = {}) => (dispatch, getState) => {
     search: stringifyParams(query),
   });
 };
+
+export const reloadWithSearch = query =>
+  fetchAndPush({ searchQuery: query, page: 1 });

@@ -27,6 +27,7 @@ module ForemanWebhooks
         end
 
         def webhook_params
+          params['webhook']['event'] = params['event'] unless params['event'].blank?
           self.class.webhook_params_filter.filter_params(params, parameter_filter_context)
         end
       end

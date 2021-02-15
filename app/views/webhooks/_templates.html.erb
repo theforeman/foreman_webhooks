@@ -1,5 +1,0 @@
-<%= selectable_f f, :webhook_template_id, WebhookTemplate.where(snippet: false).collect { |t| [t.name, t.id] },
-                                          { include_blank: false },
-                                          { label: _('Webhook Template'),
-                                            label_help: _(f.object.try(:description)),
-                                            required: true } %>

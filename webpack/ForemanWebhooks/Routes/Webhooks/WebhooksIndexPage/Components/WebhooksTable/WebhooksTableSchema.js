@@ -3,12 +3,14 @@ import {
   column,
   sortableColumn,
   headerFormatterWithProps,
-  nameCellFormatter,
   deleteActionCellFormatter,
   cellFormatter,
 } from 'foremanReact/components/common/table';
 
-import { enabledCellFormatter } from './Components/Formatters';
+import {
+  enabledCellFormatter,
+  nameToEditFormatter,
+} from './Components/Formatters';
 
 const sortControllerFactory = (apiCall, sortBy, sortOrder) => ({
   apply: (by, order) => {
@@ -18,12 +20,18 @@ const sortControllerFactory = (apiCall, sortBy, sortOrder) => ({
   order: sortOrder,
 });
 
-const createWebhooksTableSchema = (apiCall, by, order, onDeleteClick) => {
+const createWebhooksTableSchema = (
+  apiCall,
+  by,
+  order,
+  onDeleteClick,
+  onEditClick
+) => {
   const sortController = sortControllerFactory(apiCall, by, order);
 
   return [
     sortableColumn('name', __('Name'), 4, sortController, [
-      nameCellFormatter('webhooks'),
+      nameToEditFormatter('webhooks', onEditClick),
     ]),
     sortableColumn('targetUrl', __('Target URL'), 4, sortController),
     sortableColumn('enabled', __('Enabled'), 2, sortController, [
