@@ -12,5 +12,15 @@ FactoryBot.define do
     trait :locked do
       locked { true }
     end
+
+    trait :with_webhooks do
+      transient do
+        webhooks_count { 2 }
+      end
+
+      after(:create) do |webhook_template, evaluator|
+        create_list(:webhook, evaluator.webhooks_count, webhook_template: webhook_template)
+      end
+    end
   end
 end

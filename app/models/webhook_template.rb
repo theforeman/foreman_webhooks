@@ -8,6 +8,8 @@ class WebhookTemplate < Template
   friendly_id :name
   include Parameterizable::ByIdName
 
+  graphql_type 'ForemanWebhooks::Types::WebhookTemplate'
+
   class << self
     # we have to override the base_class because polymorphic associations does not detect it correctly, more details at
     # http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_many#1010-Polymorphic-has-many-within-inherited-class-gotcha

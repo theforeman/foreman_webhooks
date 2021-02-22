@@ -9,6 +9,8 @@ class Webhook < ApplicationRecord
   friendly_id :name
   include Parameterizable::ByIdName
 
+  graphql_type 'ForemanWebhooks::Types::Webhook'
+
   EVENT_POSTFIX = ".#{Foreman::Observable::DEFAULT_NAMESPACE}"
 
   DEFAULT_PAYLOAD_TEMPLATE = 'Webhook Template - Payload Default'
