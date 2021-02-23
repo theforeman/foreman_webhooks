@@ -25,7 +25,7 @@ module ForemanWebhooks
         logger.debug("Headers: #{rendered_headers}")
       end
 
-      response = self.class.request(url: webhook.target_url,
+      response = self.class.request(url: rendered_url,
                                     payload: payload,
                                     http_method: webhook.http_method,
                                     user: webhook.user,
