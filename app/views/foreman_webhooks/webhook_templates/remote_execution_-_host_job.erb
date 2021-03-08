@@ -1,0 +1,21 @@
+<%#
+name: Remote Execution Host Job
+description: Example payload for actions.remote_execution.run_host_job_succeeded
+snippet: false
+model: WebhookTemplate
+-%>
+#
+# Example webhook template, @object carries Action instance.
+# For more information about available helpers visit /templates_doc
+#
+# Run job host name <%= @object.host_name %>
+# Run job host id <%= @object.host_id %>
+# Run job full host object <%= @object.host %>
+# Run job job_invocation_id <%= @object.job_invocation_id %>
+# Run job job_invocation <%= @object.job_invocation %>
+# Task label <%= @object.task.label %>
+# Task started at <%= @object.task.started_at %>
+# Task ended at <%= @object.task.ended_at %>
+# Task resulted with <%= @object.task.result %>
+# Task state <%= @object.task.state %>
+# Task action output <%= @object.task.action_output %>
