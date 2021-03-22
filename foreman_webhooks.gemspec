@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.license     = 'GPL-3.0'
   s.authors     = ['Timo Goebel']
   s.email       = ['mail@timogoebel.name']
-  s.homepage    = 'https://github.com/timogoebel/foreman_webhooks'
+  s.homepage    = 'https://github.com/theforeman/foreman_webhooks'
   s.summary     = 'Configure webhooks for Foreman.'
   s.description = 'Plugin for Foreman that allows to configure Webhooks.'
 
