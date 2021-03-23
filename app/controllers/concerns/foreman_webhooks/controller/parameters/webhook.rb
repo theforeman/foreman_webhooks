@@ -20,7 +20,8 @@ module ForemanWebhooks
                             :ssl_ca_certs,
                             :user,
                             :password,
-                            :http_headers
+                            :http_headers,
+                            :proxy_authorization
             end
           end
         end

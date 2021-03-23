@@ -11,6 +11,9 @@ Metrics:
 Style/FormatStringToken:
   Enabled: false
 
+Layout/LineLength:
+  Enabled: false
+
 Lint/BooleanSymbol:
   Enabled: false
 

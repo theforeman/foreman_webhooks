@@ -34,6 +34,7 @@ module Api
           param :user, String
           param :password, String
           param :http_headers, String
+          param :proxy_authorization, :boolean, N_('Authorize with Foreman client certificate and validate smart-proxy CA from Settings')
         end
       end
 

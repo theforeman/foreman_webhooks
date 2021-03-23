@@ -28,6 +28,7 @@
   <%= textarea_f f, :ssl_ca_certs, label: _('X509 Certification Authorities'),
     size: 'col-md-8', rows: 10,
     placeholder: _("Optional CAs in PEM format concatenated to verify the receiver's SSL certificate.") %>
+  <%= checkbox_f f, :proxy_authorization, help_inline: _("Authorize with Foreman client certificate and validate smart-proxy CA from Settings.") %>
 
   <%= textarea_f f, :http_headers, label: _('Optional HTTP headers as JSON (ERB allowed)'),
     size: 'col-md-8', rows: 6,

@@ -14,6 +14,22 @@ module ForemanWebhooks
       @rendered_url = url
     end
 
+    def foreman_ssl_auth_params
+      cert         = Setting[:ssl_certificate]
+      ca_cert      = Setting[:ssl_ca_file]
+      hostprivkey  = Setting[:ssl_priv_key]
+
+      {
+        cert: OpenSSL::X509::Certificate.new(File.read(cert)),
+        key: OpenSSL::PKey::RSA.new(File.read(hostprivkey)),
+        ca_file: ca_cert
+      }
+    rescue StandardError => e
+      msg = 'Unable to read SSL proxy CA, cert or key'
+      Foreman::Logging.exception(msg, e)
+      raise Foreman::WrappedException.new(e, msg)
+    end
+
     def execute
       logger.info("Performing '#{webhook.name}' webhook request for event '#{event_name}'")
       Foreman::Logging.blob("Payload for '#{event_name}'", payload)
@@ -25,6 +41,16 @@ module ForemanWebhooks
         logger.debug("Headers: #{rendered_headers}")
       end
 
+      verify = webhook.verify_ssl?
+      ca_string = webhook.ca_certs_store
+      if webhook.proxy_authorization
+        foreman_ssl = foreman_ssl_auth_params
+        verify = true
+        ca_file = foreman_ssl[:ca_file]
+        cert = foreman_ssl[:cert]
+        key = foreman_ssl[:key]
+      end
+
       response = self.class.request(url: rendered_url,
                                     payload: payload,
                                     http_method: webhook.http_method,
@@ -32,8 +58,11 @@ module ForemanWebhooks
                                     password: webhook.password,
                                     content_type: webhook.http_content_type,
                                     headers: headers,
-                                    ca_verify: webhook.verify_ssl?,
-                                    ca_string: webhook.ca_certs_store,
+                                    ca_verify: verify,
+                                    ca_string: ca_string,
+                                    ca_file: ca_file,
+                                    cert: cert,
+                                    key: key,
                                     follow_redirects: true)
 
       status = case response.code.to_i
@@ -61,6 +90,7 @@ module ForemanWebhooks
 
     def self.request(url:, payload: '', http_method: :GET, user: nil, password: nil,
                      content_type: 'application/json', headers: {}, ca_string: nil,
+                     ca_file: nil, cert: nil, key: nil,
                      ca_verify: false, follow_redirects: true, redirect_limit: 3)
       uri = URI.parse(url)
 
@@ -69,8 +99,8 @@ module ForemanWebhooks
       request['Content-Type'] = content_type
       request['X-Request-Id'] = ::Logging.mdc['request'] || SecureRandom.uuid
       request['X-Session-Id'] = ::Logging.mdc['session'] || SecureRandom.uuid
-      headers.each_pair do |key, value|
-        request[key.to_s] = value.to_s
+      headers.each_pair do |hkey, value|
+        request[hkey.to_s] = value.to_s
       end
       request.body = payload
 
@@ -86,6 +116,9 @@ module ForemanWebhooks
         http.use_ssl = true
         http.verify_mode = ca_verify ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE
         http.cert_store = ca_string if ca_string
+        http.ca_file = ca_file if ca_file
+        http.cert = cert if cert
+        http.key = key if key
       end
       http.request(request) do |response|
         case response
