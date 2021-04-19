@@ -81,7 +81,7 @@ module ForemanWebhooks
 
     # Include concerns in this config.to_prepare block
     config.to_prepare do
-    # Host::Managed.send(:include, ForemanWebhooks::HostExtensions)
+      (Taxonomy.descendants + [Taxonomy]).each { |klass| klass.send(:include, ForemanWebhooks::TaxonomyExtensions) }
     rescue StandardError => e
       Rails.logger.warn "ForemanWebhooks: skipping engine hook (#{e})"
     end
