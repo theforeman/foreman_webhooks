@@ -72,3 +72,39 @@ export const webhooks = [
     enabled: false,
   },
 ];
+
+export const spySelector = selectors => {
+  jest.spyOn(selectors, 'selectIsLoading');
+  jest.spyOn(selectors, 'selectHasError');
+  jest.spyOn(selectors, 'selectWebhooks');
+  jest.spyOn(selectors, 'selectHasData');
+  jest.spyOn(selectors, 'selectPage');
+  jest.spyOn(selectors, 'selectPerPage');
+  jest.spyOn(selectors, 'selectSearch');
+  jest.spyOn(selectors, 'selectSort');
+  jest.spyOn(selectors, 'selectCanCreate');
+  jest.spyOn(selectors, 'selectSubtotal');
+  jest.spyOn(selectors, 'selectMessage');
+
+  selectors.selectIsLoading.mockImplementation(() => false);
+  selectors.selectHasError.mockImplementation(() => false);
+  selectors.selectWebhooks.mockImplementation(() => []);
+  selectors.selectHasData.mockImplementation(() => true);
+  selectors.selectPage.mockImplementation(() => 1);
+  selectors.selectPerPage.mockImplementation(() => 20);
+  selectors.selectSearch.mockImplementation(() => '');
+  selectors.selectSort.mockImplementation(() => ({ by: '', order: '' }));
+  selectors.selectCanCreate.mockImplementation(() => true);
+  selectors.selectSubtotal.mockImplementation(() => 0);
+  selectors.selectMessage.mockImplementation(() => ({}));
+};
+
+export const spyEditSelector = selectors => {
+  jest.spyOn(selectors, 'selectIsLoading');
+  jest.spyOn(selectors, 'selectWebhookValues');
+  jest.spyOn(selectors, 'selectWebhookTemplateId');
+
+  selectors.selectIsLoading.mockImplementation(() => false);
+  selectors.selectWebhookValues.mockImplementation(() => ({}));
+  selectors.selectWebhookTemplateId.mockImplementation(() => 1);
+};

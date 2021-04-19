@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebhooksIndexPage - Integration Test should flow: initial state 1`] = `
+Object {
+  "action": Array [
+    Array [
+      Object {
+        "key": "WEBHOOKS",
+        "params": Object {
+          "order": "",
+          "page": 1,
+          "per_page": 20,
+          "search": "",
+        },
+        "type": "get-some-type",
+        "url": "/api/v2/webhooks?include_permissions=true",
+      },
+    ],
+  ],
+  "state": Object {},
+}
+`;
+
+exports[`WebhooksIndexPage - Integration Test should flow: rendered 1`] = `
+Object {
+  "action": Array [
+    Array [
+      Object {
+        "key": "WEBHOOKS",
+        "params": Object {
+          "order": "",
+          "page": 1,
+          "per_page": 20,
+          "search": "",
+        },
+        "type": "get-some-type",
+        "url": "/api/v2/webhooks?include_permissions=true",
+      },
+    ],
+  ],
+  "state": Object {},
+}
+`;

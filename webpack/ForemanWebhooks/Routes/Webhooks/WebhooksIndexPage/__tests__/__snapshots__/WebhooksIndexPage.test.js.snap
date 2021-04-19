@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WebhooksIndexPage redering render with minimal props 1`] = `""`;
+exports[`WebhooksIndexPage redering render with minimal props 1`] = `
+<WebhooksIndexPage
+  canCreate={true}
+  fetchAndPush={[MockFunction]}
+  handleCreateSubmit={[MockFunction]}
+  hasData={false}
+  hasError={false}
+  isLoading={false}
+  itemCount={0}
+  message={
+    Object {
+      "text": "Try to create a new Webhook",
+      "type": "empty",
+    }
+  }
+  page={null}
+  perPage={null}
+  reloadWithSearch={[MockFunction]}
+  search=""
+  sort={Object {}}
+  toasts={Array []}
+  webhooks={Array []}
+/>
+`;
