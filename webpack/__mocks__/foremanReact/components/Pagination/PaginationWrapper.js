@@ -1,2 +1,4 @@
-const PaginationWrapper = () => jest.fn();
+import React from 'react';
+
+const PaginationWrapper = () => <></>;
 export default PaginationWrapper;

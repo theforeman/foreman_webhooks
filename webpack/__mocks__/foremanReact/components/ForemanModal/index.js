@@ -10,8 +10,13 @@ ForemanModal.Footer = ({ children }) => (
 );
 
 ForemanModal.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
+
+ForemanModal.defaultProps = {
+  children: [],
+};
+
 ForemanModal.Header.propTypes = ForemanModal.propTypes;
 ForemanModal.Footer.propTypes = ForemanModal.propTypes;
 

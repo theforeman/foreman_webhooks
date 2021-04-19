@@ -13,8 +13,10 @@ export const callOnMount = callback => WrappedComponent => componentProps => {
 export const callOnPopState = callback => WrappedComponent => componentProps => {
   const didMount = useRef(false);
   const {
-    history: { action },
-    location: { search },
+    history: {
+      action,
+      location: { search },
+    },
   } = componentProps;
   useEffect(() => {
     if (action === 'POP' && didMount.current) {
