@@ -1,0 +1,24 @@
+<%#
+name: Katello Publish
+description: Example payload for actions.katello.content_view.publish_suceeded
+snippet: false
+model: WebhookTemplate
+-%>
+#
+# Example webhook template, @object carries Action instance.
+# For more information about available helpers visit /templates_doc
+#
+# Content view version id <%= @object.content_view_version_id %>
+# Content view version name <%= @object.content_view_version_name %>
+# Content view id <%= @object.content_view_id %>
+# Content view name <%= @object.content_view_name %>
+# Content view label <%= @object.content_view_label %>
+# Organization id <%= @object.organization_id %>
+# Organization name <%= @object.organization_name %>
+# Organization label <%= @object.organization_label %>
+# Task label <%= @object.task.label %>
+# Task started at <%= @object.task.started_at %>
+# Task ended at <%= @object.task.ended_at %>
+# Task resulted with <%= @object.task.result %>
+# Task state <%= @object.task.state %>
+# Task action output <%= @object.task.action_output %>
