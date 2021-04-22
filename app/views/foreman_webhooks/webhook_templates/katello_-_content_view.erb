@@ -1,0 +1,16 @@
+<%#
+name: Katello Content View
+description: Example payload for content_view_*.event.foreman
+snippet: false
+model: WebhookTemplate
+-%>
+#
+# Example webhook template, @object carries Action instance.
+# For more information about available helpers visit /templates_doc
+#
+# Content view id <%= @object.id %>
+# Content view name <%= @object.name %>
+# Content view label <%= @object.label %>
+# Organization id <%= @object.organization.id %>
+# Organization name <%= @object.organization.name %>
+# Organization label <%= @object.organization.label %>

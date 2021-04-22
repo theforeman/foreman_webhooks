@@ -1,0 +1,27 @@
+<%#
+name: Katello Sync
+description: Example payload for actions.katello.repository.sync_succeeded
+snippet: false
+model: WebhookTemplate
+-%>
+#
+# Example webhook template, @object carries Action instance.
+# For more information about available helpers visit /templates_doc
+#
+# Repository id <%= @object.repository_id %>
+# Repository name <%= @object.repository_name %>
+# Repository label <%= @object.repository_label %>
+# Repository contents_changed <%= @object.contents_changed %>
+# Repository sync_result <%= @object.sync_result %>
+# Product id <%= @object.product_id %>
+# Product name <%= @object.product_name %>
+# Product label <%= @object.product_label %>
+# Organization id <%= @object.organization_id %>
+# Organization name <%= @object.organization_name %>
+# Organization label <%= @object.organization_label %>
+# Task label <%= @object.task.label %>
+# Task started at <%= @object.task.started_at %>
+# Task ended at <%= @object.task.ended_at %>
+# Task resulted with <%= @object.task.result %>
+# Task state <%= @object.task.state %>
+# Task action output <%= @object.task.action_output %>
