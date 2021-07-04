@@ -13,7 +13,6 @@ const fixtures = {
     canCreate: true,
     sort: {},
     webhooks: [],
-    toasts: [],
   },
 };
 

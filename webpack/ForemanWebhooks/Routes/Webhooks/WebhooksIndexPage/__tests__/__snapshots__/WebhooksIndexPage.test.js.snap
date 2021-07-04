@@ -20,7 +20,6 @@ exports[`WebhooksIndexPage redering render with minimal props 1`] = `
   reloadWithSearch={[MockFunction]}
   search=""
   sort={Object {}}
-  toasts={Array []}
   webhooks={Array []}
 />
 `;

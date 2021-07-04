@@ -1,6 +1,3 @@
-jest.mock('foremanReact/Root/Context/ForemanContext', () => ({
-  useForemanContext: () => ({ toasts: [] }),
-}));
 jest.mock('foremanReact/history', () => ({
   history: {
     action: 'PUSH',
