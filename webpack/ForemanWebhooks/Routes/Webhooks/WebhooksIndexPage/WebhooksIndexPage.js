@@ -26,7 +26,6 @@ const WebhooksIndexPage = ({
   itemCount,
   message,
   canCreate,
-  toasts,
   reloadWithSearch,
 }) => {
   const [toDelete, setToDelete] = useState({});
@@ -62,7 +61,6 @@ const WebhooksIndexPage = ({
         isLoading={isLoading && hasData}
         onSearch={reloadWithSearch}
         onBookmarkClick={reloadWithSearch}
-        toastNotifications={toasts}
         toolbarButtons={canCreate && createBtn}
       >
         <WebhooksTable
@@ -98,7 +96,6 @@ WebhooksIndexPage.propTypes = {
   itemCount: PropTypes.number.isRequired,
   message: PropTypes.object,
   canCreate: PropTypes.bool.isRequired,
-  toasts: PropTypes.array.isRequired,
   reloadWithSearch: PropTypes.func.isRequired,
 };
 
