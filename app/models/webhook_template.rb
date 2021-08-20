@@ -56,4 +56,8 @@ class WebhookTemplate < Template
   def support_single_host_render?
     false
   end
+
+  def support_preview?
+    false
+  end
 end
