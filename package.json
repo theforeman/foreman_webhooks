@@ -21,25 +21,22 @@
     "url": "https://projects.theforeman.org/projects/webhooks/issues"
   },
   "peerDependencies": {
-    "@theforeman/vendor": ">= 8.4.1"
+    "@theforeman/vendor": "^8.15.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
-    "@theforeman/builder": "^8.4.1",
-    "@theforeman/stories": "^8.4.1",
-    "@theforeman/test": "^8.4.1",
-    "@theforeman/vendor-dev": "^8.4.1",
-    "@theforeman/eslint-plugin-foreman": "^8.4.1",
+    "@theforeman/builder": "^8.15.0",
+    "@theforeman/stories": "^8.15.0",
+    "@theforeman/test": "^8.15.0",
+    "@theforeman/vendor-dev": "^8.15.0",
+    "@theforeman/eslint-plugin-foreman": "^8.15.0",
     "babel-eslint": "^10.0.0",
     "eslint": "^6.8.0",
     "eslint-plugin-spellcheck": "^0.0.17",
+    "jed": "^1.1.1",
     "prettier": "^1.13.5",
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.0.0",
     "surge": "^0.20.3"
-  },
-  "dependencies": {
-    "jed": "^1.1.1",
-    "react-intl": "^2.8.0"
   }
 }
