@@ -10,7 +10,13 @@ module ForemanWebhooks
       @webhook = webhook
       @event_name = event_name
       @payload = payload
-      @rendered_headers = headers
+      # rubocop:disable Lint/RedundantSafeNavigation
+      @rendered_headers = if headers&.is_a? Hash
+                            headers
+                          else
+                            {}
+                          end
+      # rubocop:enable Lint/RedundantSafeNavigation
       @rendered_url = url
     end
 
@@ -35,7 +41,7 @@ module ForemanWebhooks
       Foreman::Logging.blob("Payload for '#{event_name}'", payload)
       headers = {}
       begin
-        headers = JSON.parse(rendered_headers)
+        headers = JSON.parse(rendered_headers) unless rendered_headers.blank?
       rescue StandardError => e
         logger.warn("Could not parse HTTP headers JSON, ignoring: #{e}")
         logger.debug("Headers: #{rendered_headers}")
