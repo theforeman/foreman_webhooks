@@ -5,6 +5,7 @@ require File.expand_path('lib/foreman_webhooks/version', __dir__)
 Gem::Specification.new do |s|
   s.name        = 'foreman_webhooks'
   s.version     = ForemanWebhooks::VERSION
+  s.metadata    = { 'is_foreman_plugin' => 'true' }
   s.license     = 'GPL-3.0'
   s.authors     = ['Timo Goebel']
   s.email       = ['mail@timogoebel.name']
