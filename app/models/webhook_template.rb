@@ -18,6 +18,7 @@ class WebhookTemplate < Template
   self.table_name = 'templates'
 
   before_destroy EnsureNotUsedBy.new(:webhooks)
+  after_commit :invalidate_cache, on: %i[update]
   has_many :webhooks, foreign_key: :webhook_template_id
 
   validates :name, uniqueness: true
@@ -59,5 +60,11 @@ class WebhookTemplate < Template
 
   def support_preview?
     false
+  end
+
+  private
+
+  def invalidate_cache
+    webhooks.each(&:invalidate_cache)
   end
 end

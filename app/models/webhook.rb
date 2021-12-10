@@ -28,6 +28,8 @@ class Webhook < ApplicationRecord
   belongs_to :webhook_template, foreign_key: :webhook_template_id
 
   before_save :set_default_template, unless: :webhook_template
+  after_commit :invalidate_cache, on: %i[create destroy]
+  after_commit :invalidate_cache_on_update, on: %i[update]
 
   scope :for_event, ->(events) { where('events @> ARRAY[?]::varchar[]', Array(events)) }
 
@@ -42,7 +44,10 @@ class Webhook < ApplicationRecord
   end
 
   def self.deliver(event_name:, payload:)
-    for_event(event_name).includes([:webhook_template]).each do |target|
+    targets = Rails.cache.fetch("webhooks/#{event_name}/targets") do
+      for_event(event_name).includes([:webhook_template]).to_a
+    end
+    targets.each do |target|
       target.deliver(event_name: event_name, payload: payload) if target.enabled?
     end
   end
@@ -89,10 +94,22 @@ class Webhook < ApplicationRecord
     raise _(format('Failed to build X509 certificate store for HTTPS client, error: %s', e.message))
   end
 
+  def invalidate_cache
+    Rails.cache.delete("webhooks/#{event}/targets")
+  end
+
   private
 
   def set_default_template
     self.webhook_template = WebhookTemplate.find_by!(name: DEFAULT_PAYLOAD_TEMPLATE)
+  end
+
+  def invalidate_cache_on_update
+    invalidate_cache
+    return true unless saved_changes.key?('events')
+
+    # Invalidate for previous event of this webhook as well
+    Rails.cache.delete("webhooks/#{saved_changes['events'][0][0]}/targets")
   end
 
   def variables(event_name, payload)
