@@ -57,7 +57,6 @@ const WebhooksTable = ({
         )}
         rows={results}
         id="webhooks-table"
-        style={{ marginBottom: -6 }}
       />
       <Pagination
         viewType="list"
