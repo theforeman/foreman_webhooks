@@ -17,7 +17,7 @@ export const querySort = {
 
 const pageParams = {
   page: 5,
-  perPage: 42,
+  per_page: 42,
 };
 
 const stateParams = {
