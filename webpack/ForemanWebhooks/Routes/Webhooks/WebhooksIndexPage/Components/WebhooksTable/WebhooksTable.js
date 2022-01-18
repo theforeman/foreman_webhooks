@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Table } from 'foremanReact/components/common/table';
-import Pagination from 'foremanReact/components/Pagination/PaginationWrapper';
+import Pagination from 'foremanReact/components/Pagination';
 import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanModalHooks';
 
 import WebhookDeleteModal from '../WebhookDeleteModal';
@@ -58,13 +58,7 @@ const WebhooksTable = ({
         rows={results}
         id="webhooks-table"
       />
-      <Pagination
-        viewType="list"
-        itemCount={itemCount}
-        pagination={pagination}
-        onChange={fetchAndPush}
-        dropdownButtonId="webhooks-page-pagination-dropdown"
-      />
+      <Pagination itemCount={itemCount} onChange={fetchAndPush} />
     </React.Fragment>
   );
 };

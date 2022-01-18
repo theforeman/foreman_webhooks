@@ -17,7 +17,7 @@ exports[`WebhooksTable rendering should render when loading 1`] = `
       "perPage": 20,
     }
   }
-  perPage={42}
+  per_page={42}
   reloadWithSearch={[MockFunction]}
   results={Array []}
   search="name=foo"
@@ -55,7 +55,7 @@ exports[`WebhooksTable rendering should render with error 1`] = `
       "perPage": 20,
     }
   }
-  perPage={42}
+  per_page={42}
   reloadWithSearch={[MockFunction]}
   results={Array []}
   search="name=foo"
@@ -87,7 +87,7 @@ exports[`WebhooksTable rendering should render with no data 1`] = `
       "perPage": 20,
     }
   }
-  perPage={42}
+  per_page={42}
   reloadWithSearch={[MockFunction]}
   results={Array []}
   search="name=foo"
@@ -119,7 +119,7 @@ exports[`WebhooksTable rendering should render with webhooks 1`] = `
       "perPage": 20,
     }
   }
-  perPage={42}
+  per_page={42}
   reloadWithSearch={[MockFunction]}
   results={
     Array [
