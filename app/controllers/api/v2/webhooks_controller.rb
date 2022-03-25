@@ -25,8 +25,14 @@ module Api
           param :target_url, String, required: true
           param :http_method, Webhook::ALLOWED_HTTP_METHODS
           param :http_content_type, String
-          events = Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) }
-          param :event, events, required: true
+          # If you need to have the list of the events documented, you can run:
+          # $ apipie:cache RAILS_ENV=production
+          if Rails.env.development?
+            param :event, String, required: true
+          else
+            events = Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) }
+            param :event, events, required: true
+          end
           param :webhook_template_id, :identifier
           param :enabled, :boolean
           param :verify_ssl, :boolean
