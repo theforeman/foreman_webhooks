@@ -1,33 +1,28 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button } from 'patternfly-react';
+import { useSelector, useDispatch } from 'react-redux';
 
+import TableIndexPage from 'foremanReact/components/PF4/TableIndexPage/TableIndexPage';
 import { translate as __ } from 'foremanReact/common/I18n';
-import PageLayout from 'foremanReact/routes/common/PageLayout/PageLayout';
 import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanModalHooks';
-import { withRenderHandler } from 'foremanReact/common/HOC';
 
-import { WEBHOOKS_SEARCH_PROPS, WEBHOOK_CREATE_MODAL_ID } from '../constants';
+import {
+  WEBHOOKS_API_PATH,
+  WEBHOOKS_API_REQUEST_KEY,
+  WEBHOOK_CREATE_MODAL_ID,
+} from '../constants';
+
+import { selectSearch } from '../WebhooksPageSelectors';
 
 import WebhooksTable from './Components/WebhooksTable';
 import WebhookCreateModal from './Components/WebhookCreateModal';
-import EmptyWebhooksIndexPage from './Components/EmptyWebhooksIndexPage';
 
-const WebhooksIndexPage = ({
-  fetchAndPush,
-  search,
-  isLoading,
-  hasData,
-  webhooks,
-  page,
-  perPage,
-  sort,
-  hasError,
-  itemCount,
-  message,
-  canCreate,
-  reloadWithSearch,
-}) => {
+import { reloadWithSearch, fetchAndPush } from '../WebhooksPageActions';
+
+const WebhooksIndexPage = () => {
+  const dispatch = useDispatch();
+
+  const search = useSelector(selectSearch);
+
   const [toDelete, setToDelete] = useState({});
   const [toEdit, setToEdit] = useState(0);
 
@@ -38,76 +33,33 @@ const WebhooksIndexPage = ({
     id: WEBHOOK_CREATE_MODAL_ID,
   });
 
-  const createBtn = (
-    <Button onClick={setCreateModalOpen} bsStyle="primary">
-      {__('Create Webhook')}
-    </Button>
-  );
-
   return (
     <>
       <WebhookCreateModal
         onSuccess={() => {
           setCreateModalClosed();
-          reloadWithSearch(search);
+          dispatch(reloadWithSearch(search));
         }}
         onCancel={setCreateModalClosed}
       />
-      <PageLayout
+      <TableIndexPage
         header={__('Webhooks')}
-        searchable={!isLoading}
-        searchProps={WEBHOOKS_SEARCH_PROPS}
-        searchQuery={search}
-        isLoading={isLoading && hasData}
-        onSearch={reloadWithSearch}
-        onBookmarkClick={reloadWithSearch}
-        toolbarButtons={canCreate && createBtn}
+        controller="webhooks"
+        apiUrl={WEBHOOKS_API_PATH}
+        apiOptions={{ key: WEBHOOKS_API_REQUEST_KEY }}
+        customCreateAction={() => setCreateModalOpen}
       >
         <WebhooksTable
-          results={webhooks}
-          fetchAndPush={fetchAndPush}
-          pagination={{ page, perPage }}
-          itemCount={itemCount}
-          sort={sort}
+          fetchAndPush={params => dispatch(fetchAndPush(params))}
           toDelete={toDelete}
           setToDelete={setToDelete}
-          hasData={hasData}
-          hasError={hasError}
-          isLoading={isLoading}
           toEdit={toEdit}
           setToEdit={setToEdit}
-          reloadWithSearch={reloadWithSearch}
+          reloadWithSearch={query => dispatch(reloadWithSearch(query))}
         />
-      </PageLayout>
+      </TableIndexPage>
     </>
   );
 };
 
-WebhooksIndexPage.propTypes = {
-  fetchAndPush: PropTypes.func.isRequired,
-  search: PropTypes.string,
-  isLoading: PropTypes.bool.isRequired,
-  hasData: PropTypes.bool.isRequired,
-  webhooks: PropTypes.array.isRequired,
-  page: PropTypes.number,
-  perPage: PropTypes.number,
-  sort: PropTypes.object.isRequired,
-  hasError: PropTypes.bool.isRequired,
-  itemCount: PropTypes.number.isRequired,
-  message: PropTypes.object,
-  canCreate: PropTypes.bool.isRequired,
-  reloadWithSearch: PropTypes.func.isRequired,
-};
-
-WebhooksIndexPage.defaultProps = {
-  page: null,
-  perPage: null,
-  search: '',
-  message: { type: 'empty', text: __('Try to create a new Webhook') },
-};
-
-export default withRenderHandler({
-  Component: WebhooksIndexPage,
-  EmptyComponent: EmptyWebhooksIndexPage,
-  ErrorComponent: EmptyWebhooksIndexPage,
-});
+export default WebhooksIndexPage;

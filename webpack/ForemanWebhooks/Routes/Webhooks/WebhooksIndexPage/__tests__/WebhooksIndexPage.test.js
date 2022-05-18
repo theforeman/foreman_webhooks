@@ -1,4 +1,8 @@
+import React from 'react';
 import { testComponentSnapshotsWithFixtures } from '@theforeman/test';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
 import WebhooksIndexPage from '../WebhooksIndexPage';
 
 const fixtures = {
@@ -17,6 +21,12 @@ const fixtures = {
 };
 
 describe('WebhooksIndexPage', () => {
-  describe('redering', () =>
-    testComponentSnapshotsWithFixtures(WebhooksIndexPage, fixtures));
+  describe('redering', () => {
+    const webhooksPage = () => (
+      <Provider store={createStore((state = [], action) => state)}>
+        <WebhooksIndexPage />
+      </Provider>
+    );
+    testComponentSnapshotsWithFixtures(webhooksPage, fixtures);
+  });
 });
