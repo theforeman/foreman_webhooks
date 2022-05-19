@@ -10,6 +10,7 @@ attributes :target_url,
            :http_content_type,
            :enabled,
            :verify_ssl,
+           :proxy_authorization,
            :http_headers,
            :ssl_ca_certs,
            :user
