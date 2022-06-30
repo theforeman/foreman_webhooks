@@ -5,15 +5,9 @@ Object {
   "action": Array [
     Array [
       Object {
-        "key": "WEBHOOKS",
-        "params": Object {
-          "order": "",
-          "page": 1,
-          "per_page": 20,
-          "search": "",
-        },
+        "key": "WEBHOOK_EVENTS",
         "type": "get-some-type",
-        "url": "/api/v2/webhooks?include_permissions=true",
+        "url": "",
       },
     ],
   ],
@@ -26,15 +20,9 @@ Object {
   "action": Array [
     Array [
       Object {
-        "key": "WEBHOOKS",
-        "params": Object {
-          "order": "",
-          "page": 1,
-          "per_page": 20,
-          "search": "",
-        },
+        "key": "WEBHOOK_EVENTS",
         "type": "get-some-type",
-        "url": "/api/v2/webhooks?include_permissions=true",
+        "url": "",
       },
     ],
   ],

@@ -1,6 +1,6 @@
 import history from 'foremanReact/history';
 import { get } from 'foremanReact/redux/API';
-import { stringifyParams, getParams } from 'foremanReact/common/urlHelpers';
+import { stringifyParams } from 'foremanReact/common/urlHelpers';
 
 import { buildQuery } from './WebhooksPageHelpers';
 import {
@@ -8,17 +8,6 @@ import {
   WEBHOOKS_PATH,
   WEBHOOKS_API_REQUEST_KEY,
 } from './constants';
-
-export const initializeWebhooks = () => dispatch => {
-  const params = getParams();
-  dispatch(fetchWebhooks({ per_page: params.perPage, ...params }));
-  if (!history.action === 'POP') {
-    history.replace({
-      pathname: WEBHOOKS_PATH,
-      search: stringifyParams(params),
-    });
-  }
-};
 
 export const fetchWebhooks = (
   /* eslint-disable-next-line camelcase */
