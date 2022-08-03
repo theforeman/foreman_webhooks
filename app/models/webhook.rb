@@ -79,7 +79,10 @@ class Webhook < ApplicationRecord
 
   def ca_certs_store
     store = OpenSSL::X509::Store.new
-    return store if ssl_ca_certs.blank?
+    if ssl_ca_certs.blank?
+      store.set_default_paths
+      return store
+    end
 
     ssl_ca_certs.split(/(?=-----BEGIN)/).each do |cert|
       store.add_cert(OpenSSL::X509::Certificate.new(cert))
