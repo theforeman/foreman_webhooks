@@ -21,6 +21,8 @@ const ForemanFormikField = ({
   placeholder,
   options,
   isLoading,
+  disabled,
+  setDisabled,
 }) => (
   <FormikField name={name}>
     {({
@@ -32,6 +34,15 @@ const ForemanFormikField = ({
 
         return filter(initialOptions, o => o.value === fieldValue);
       };
+      const passwordInput = (
+        <input
+          {...field}
+          placeholder={disabled ? '********' : ''}
+          type={type}
+          disabled={disabled}
+          className="form-control"
+        />
+      );
       let content = null;
       switch (type) {
         case 'textarea':
@@ -56,8 +67,28 @@ const ForemanFormikField = ({
               onChange={selected =>
                 setFieldValue(field.name, selected[0]?.value)
               }
-              // onBlur={e => setFieldTouched(field.name, true)}
             />
+          );
+          break;
+        case 'password':
+          content = setDisabled ? (
+            <div className="input-group">
+              {passwordInput}
+              <span className="input-group-btn">
+                <button
+                  className="btn btn-default"
+                  onClick={e => {
+                    e.preventDefault();
+                    setDisabled(!disabled);
+                  }}
+                  title={__('Change the password')}
+                >
+                  <span className="pficon pficon-edit" />
+                </button>
+              </span>
+            </div>
+          ) : (
+            passwordInput
           );
           break;
         default:
@@ -101,6 +132,8 @@ ForemanFormikField.propTypes = {
   placeholder: PropTypes.string,
   options: PropTypes.array,
   isLoading: PropTypes.bool,
+  disabled: PropTypes.bool,
+  setDisabled: PropTypes.func,
 };
 
 ForemanFormikField.defaultProps = {
@@ -112,6 +145,8 @@ ForemanFormikField.defaultProps = {
   placeholder: '',
   options: null,
   isLoading: false,
+  disabled: false,
+  setDisabled: undefined,
 };
 
 export default ForemanFormikField;

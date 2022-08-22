@@ -18,6 +18,8 @@ const WebhookFormTabs = ({
   availableEvents,
   isTemplatesLoading,
   isEventsLoading,
+  isPasswordDisabled,
+  setIsPasswordDisabled,
 }) => (
   <Tabs activeKey={activeTab} onSelect={handleTabClick} isFilled>
     <Tab
@@ -90,6 +92,8 @@ const WebhookFormTabs = ({
           type="password"
           label={__('Password')}
           labelHelp={__('Authentication credentials')}
+          disabled={isPasswordDisabled}
+          setDisabled={setIsPasswordDisabled}
         />
         <ForemanFormikField
           name="verify_ssl"
@@ -153,11 +157,15 @@ WebhookFormTabs.propTypes = {
   availableEvents: PropTypes.array.isRequired,
   isTemplatesLoading: PropTypes.bool.isRequired,
   isEventsLoading: PropTypes.bool.isRequired,
+  isPasswordDisabled: PropTypes.bool,
+  setIsPasswordDisabled: PropTypes.func,
 };
 
 WebhookFormTabs.defaultProps = {
   disabled: false,
   formProps: {},
+  isPasswordDisabled: false,
+  setIsPasswordDisabled: undefined,
 };
 
 export default WebhookFormTabs;

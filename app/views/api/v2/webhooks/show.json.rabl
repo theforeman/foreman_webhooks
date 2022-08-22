@@ -15,6 +15,10 @@ attributes :target_url,
            :ssl_ca_certs,
            :user
 
+node :password_set do |webhook|
+  webhook.password.present?
+end
+
 child :webhook_template do
   extends 'api/v2/webhook_templates/base'
 end

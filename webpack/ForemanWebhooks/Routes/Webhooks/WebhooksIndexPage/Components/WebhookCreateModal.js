@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Modal } from 'patternfly-react';
 import { useDispatch } from 'react-redux';
 
 import { translate as __ } from 'foremanReact/common/I18n';
@@ -47,11 +48,12 @@ const WebhookCreateModal = ({ onSuccess, onCancel }) => {
   return (
     <ForemanModal
       id={WEBHOOK_CREATE_MODAL_ID}
-      title={__('Create Webhook')}
       backdrop="static"
       className="webhooks-modal"
     >
-      <ForemanModal.Header />
+      <Modal.Header>
+        <Modal.Title>{__('Create Webhook')}</Modal.Title>
+      </Modal.Header>
       <ConnectedWebhookForm
         handleSubmit={handleSubmit}
         initialValues={initialWebhookValues}

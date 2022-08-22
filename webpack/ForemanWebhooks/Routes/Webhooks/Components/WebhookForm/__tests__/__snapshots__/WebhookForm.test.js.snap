@@ -241,6 +241,7 @@ exports[`WebhookForm rendering should render for edit page 1`] = `
       ]
     }
     isEventsLoading={false}
+    isPasswordDisabled={false}
     isTemplatesLoading={false}
     webhookTemplates={
       Array [
@@ -492,6 +493,7 @@ exports[`WebhookForm rendering should render for new page 1`] = `
       ]
     }
     isEventsLoading={false}
+    isPasswordDisabled={false}
     isTemplatesLoading={false}
     webhookTemplates={
       Array [

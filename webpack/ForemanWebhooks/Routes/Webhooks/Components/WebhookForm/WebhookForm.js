@@ -25,6 +25,8 @@ const WebhookForm = ({
   availableEvents,
   isTemplatesLoading,
   isEventsLoading,
+  isPasswordDisabled,
+  setIsPasswordDisabled,
 }) => {
   const webhookTemplates = templates.map(t => ({ value: t.id, label: t.name }));
 
@@ -51,6 +53,8 @@ const WebhookForm = ({
         availableEvents={availableEvents}
         isEventsLoading={isEventsLoading}
         isTemplatesLoading={isTemplatesLoading}
+        isPasswordDisabled={isPasswordDisabled}
+        setIsPasswordDisabled={setIsPasswordDisabled}
       />
     </ForemanForm>
   );
@@ -64,6 +68,13 @@ WebhookForm.propTypes = {
   availableEvents: PropTypes.array.isRequired,
   isEventsLoading: PropTypes.bool.isRequired,
   isTemplatesLoading: PropTypes.bool.isRequired,
+  isPasswordDisabled: PropTypes.bool,
+  setIsPasswordDisabled: PropTypes.func,
+};
+
+WebhookForm.defaultProps = {
+  isPasswordDisabled: false,
+  setIsPasswordDisabled: undefined,
 };
 
 export default WebhookForm;
