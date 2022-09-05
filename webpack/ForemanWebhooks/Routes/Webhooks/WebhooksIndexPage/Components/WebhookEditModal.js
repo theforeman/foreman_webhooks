@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Modal } from 'patternfly-react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -29,22 +30,11 @@ import './WebhookModal.scss';
 const WebhookEditModal = ({ toEdit, onSuccess, onCancel }) => {
   const dispatch = useDispatch();
 
+  const [isPasswordDisabled, setIsPasswordDisabled] = useState(false);
   const id = toEdit;
 
-  const handleSubmit = (values, actions) =>
-    dispatch(
-      submitForm({
-        url: foremanUrl(`/api${WEBHOOKS_PATH}/${id}`),
-        values: { ...values, controller: 'webhooks' },
-        item: 'Webhook',
-        message: __('Webhook was successfully updated.'),
-        method: 'put',
-        successCallback: onSuccess,
-        actions,
-      })
-    );
-
   const isLoading = useSelector(selectIsLoading);
+  const isPasswordSet = useSelector(selectWebhookValues).passwordSet;
   const initialWebhookValues = {
     id: useSelector(selectWebhookValues).id,
     name: useSelector(selectWebhookValues).name,
@@ -63,6 +53,27 @@ const WebhookEditModal = ({ toEdit, onSuccess, onCancel }) => {
   };
 
   useEffect(() => {
+    setIsPasswordDisabled(isPasswordSet);
+  }, [isPasswordSet]);
+
+  const handleSubmit = (values, actions) => {
+    if (isPasswordDisabled) {
+      delete values.password;
+    }
+    dispatch(
+      submitForm({
+        url: foremanUrl(`/api${WEBHOOKS_PATH}/${id}`),
+        values: { ...values, controller: 'webhooks' },
+        item: 'Webhook',
+        message: __('Webhook was successfully updated.'),
+        method: 'put',
+        successCallback: onSuccess,
+        actions,
+      })
+    );
+  };
+
+  useEffect(() => {
     if (id) {
       dispatch(
         get({
@@ -73,21 +84,31 @@ const WebhookEditModal = ({ toEdit, onSuccess, onCancel }) => {
     }
   }, [id, dispatch]);
 
+  const onEditCancel = () => {
+    if (isPasswordSet) setIsPasswordDisabled(true);
+    onCancel();
+  };
+
   return (
     <ForemanModal
       id={WEBHOOK_EDIT_MODAL_ID}
-      title={`${__('Edit')} ${initialWebhookValues.name}`}
       backdrop="static"
       className="webhooks-modal"
     >
-      <ForemanModal.Header />
+      <Modal.Header>
+        <Modal.Title>
+          {`${__('Edit')} ${initialWebhookValues.name}`}
+        </Modal.Title>
+      </Modal.Header>
       {isLoading ? (
         <Loading />
       ) : (
         <ConnectedWebhookForm
           handleSubmit={handleSubmit}
           initialValues={initialWebhookValues}
-          onCancel={onCancel}
+          onCancel={onEditCancel}
+          isPasswordDisabled={isPasswordDisabled}
+          setIsPasswordDisabled={setIsPasswordDisabled}
         />
       )}
     </ForemanModal>
