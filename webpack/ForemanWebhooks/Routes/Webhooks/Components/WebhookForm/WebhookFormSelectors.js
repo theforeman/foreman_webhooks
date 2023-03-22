@@ -1,3 +1,4 @@
+import Immutable from 'seamless-immutable';
 import { STATUS } from 'foremanReact/constants';
 import { deepPropsToCamelCase } from 'foremanReact/common/helpers';
 import {
@@ -31,14 +32,12 @@ export const selectWebhookTemplates = state => {
   if (selectTemplatesHasError(state) || selectTemplatesIsLoading(state))
     return [];
 
-  return selectWebhookFormTemplatesResponse(state).results;
+  return Immutable.asMutable(selectWebhookFormTemplatesResponse(state).results);
 };
 
 // Webhook events selectors
 const selectWebhookFormEventsResponse = state =>
-  deepPropsToCamelCase(
-    selectAPIResponse(state, WEBHOOK_EVENTS_API_REQUEST_KEY)
-  );
+  selectAPIResponse(state, WEBHOOK_EVENTS_API_REQUEST_KEY);
 
 const selectWebhookFormEventsStatus = state =>
   selectAPIStatus(state, WEBHOOK_EVENTS_API_REQUEST_KEY);
@@ -54,5 +53,5 @@ export const selectEventsIsLoading = state => {
 export const selectWebhookEvents = state => {
   if (selectEventsHasError(state) || selectEventsIsLoading(state)) return [];
 
-  return selectWebhookFormEventsResponse(state);
+  return Immutable.asMutable(selectWebhookFormEventsResponse(state));
 };
