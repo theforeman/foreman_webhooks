@@ -10,6 +10,7 @@ import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanMod
 
 import WebhookDeleteModal from '../WebhookDeleteModal';
 import WebhookEditModal from '../WebhookEditModal';
+import WebhookTestModal from '../WebhookTestModal';
 import EmptyWebhooksTable from './Components/EmptyWebhooksTable';
 
 import createWebhooksTableSchema from './WebhooksTableSchema';
@@ -32,10 +33,11 @@ import {
 const WebhooksTable = ({
   fetchAndPush,
   toDelete,
-  onDeleteClick,
+  toTest,
   toEdit,
   onEditClick,
   reloadWithSearch,
+  webhookActions,
 }) => {
   const webhooks = useSelector(selectWebhooks);
   const page = useSelector(selectPage);
@@ -75,13 +77,14 @@ const WebhooksTable = ({
         }}
         onCancel={setEditModalClosed}
       />
+      <WebhookTestModal toTest={toTest} />
       <Table
         key="webhooks-table"
         columns={createWebhooksTableSchema(
           fetchAndPush,
           sort.by,
           sort.order,
-          onDeleteClick,
+          webhookActions,
           onEditClick
         )}
         rows={webhooks}
@@ -94,11 +97,12 @@ const WebhooksTable = ({
 
 WebhooksTable.propTypes = {
   fetchAndPush: PropTypes.func.isRequired,
-  onDeleteClick: PropTypes.func.isRequired,
   onEditClick: PropTypes.func.isRequired,
   toDelete: PropTypes.object.isRequired,
+  toTest: PropTypes.object.isRequired,
   toEdit: PropTypes.number.isRequired,
   reloadWithSearch: PropTypes.func.isRequired,
+  webhookActions: PropTypes.object.isRequired,
 };
 
 export default WebhooksTable;

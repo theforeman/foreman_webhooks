@@ -18,6 +18,9 @@ Rails.application.routes.draw do
         collection do
           get :events
         end
+        member do
+          post :test
+        end
       end
       resources :webhook_templates, except: %i[new edit] do
         member do

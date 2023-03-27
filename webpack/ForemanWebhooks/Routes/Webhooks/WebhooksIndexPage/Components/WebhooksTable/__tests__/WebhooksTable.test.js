@@ -11,6 +11,7 @@ const props = {
   onDeleteClick: jest.fn(),
   setToDelete: jest.fn(),
   setToEdit: jest.fn(),
+  setToTest: jest.fn(),
   reloadWithSearch: jest.fn(),
   itemCount: 0,
   canCreate: true,
@@ -20,6 +21,7 @@ const props = {
     perPage: 20,
   },
   toDelete: {},
+  toTest: {},
   toEdit: 0,
 };
 

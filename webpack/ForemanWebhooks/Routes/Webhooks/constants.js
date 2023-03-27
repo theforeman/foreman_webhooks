@@ -18,3 +18,4 @@ export const WEBHOOK_EVENTS_API_REQUEST_KEY = 'WEBHOOK_EVENTS';
 export const WEBHOOK_CREATE_MODAL_ID = 'webhookCreateModal';
 export const WEBHOOK_EDIT_MODAL_ID = 'webhookEditModal';
 export const WEBHOOK_DELETE_MODAL_ID = 'webhookDeleteModal';
+export const WEBHOOK_TEST_MODAL_ID = 'webhookTestModal';

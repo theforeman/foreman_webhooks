@@ -24,6 +24,7 @@ const WebhooksIndexPage = () => {
   const search = useSelector(selectSearch);
 
   const [toDelete, setToDelete] = useState({});
+  const [toTest, setToTest] = useState({});
   const [toEdit, setToEdit] = useState(0);
 
   const {
@@ -55,6 +56,8 @@ const WebhooksIndexPage = () => {
           setToDelete={setToDelete}
           toEdit={toEdit}
           setToEdit={setToEdit}
+          toTest={toTest}
+          setToTest={setToTest}
           reloadWithSearch={query => dispatch(reloadWithSearch(query))}
         />
       </TableIndexPage>

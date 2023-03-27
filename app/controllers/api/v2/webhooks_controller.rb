@@ -6,7 +6,7 @@ module Api
       include Api::Version2
       include ForemanWebhooks::Controller::Parameters::Webhook
 
-      before_action :find_resource, only: %i[show destroy]
+      before_action :find_resource, only: %i[show destroy test]
 
       api :GET, '/webhooks/', N_('List Webhooks')
       param_group :search_and_pagination, ::Api::V2::BaseController
@@ -69,6 +69,29 @@ module Api
       api :GET, '/webhooks/events', N_('List available events for subscription')
       def events
         render json: Webhook.available_events.sort.map { |e| e.delete_suffix(Webhook::EVENT_POSTFIX) }.to_json
+      end
+
+      api :POST, '/webhooks/:id/test', N_('Test a Webhook')
+      param :id, :identifier, required: true
+      param :payload, String, N_('Test payload will be sent as is. Cant be a JSON object')
+      def test
+        result = @webhook.test(payload: params[:payload])
+        if result[:status] == :success
+          respond_with @webhook, responder: ApiResponder, status: :ok
+        else
+          render_error('custom_error', status: :unprocessable_entity, locals: { message: result[:message] })
+        end
+      end
+
+      private
+
+      def action_permission
+        case params[:action]
+        when 'test'
+          'edit'
+        else
+          super
+        end
       end
     end
   end

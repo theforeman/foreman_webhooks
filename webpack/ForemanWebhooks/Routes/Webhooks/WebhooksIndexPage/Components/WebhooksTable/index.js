@@ -7,6 +7,7 @@ import WebhooksTable from './WebhooksTable';
 import {
   WEBHOOK_DELETE_MODAL_ID,
   WEBHOOK_EDIT_MODAL_ID,
+  WEBHOOK_TEST_MODAL_ID,
 } from '../../../constants';
 
 const WrappedWebhooksTable = props => {
@@ -18,7 +19,11 @@ const WrappedWebhooksTable = props => {
     id: WEBHOOK_EDIT_MODAL_ID,
   });
 
-  const { setToDelete, setToEdit, ...rest } = props;
+  const { setModalOpen: setTestModalOpen } = useForemanModal({
+    id: WEBHOOK_TEST_MODAL_ID,
+  });
+
+  const { setToDelete, setToEdit, setToTest, ...rest } = props;
 
   const onDeleteClick = rowData => {
     setToDelete(rowData);
@@ -30,10 +35,25 @@ const WrappedWebhooksTable = props => {
     setEditModalOpen();
   };
 
+  const onTestClick = rowData => {
+    setToTest(rowData);
+    setTestModalOpen();
+  };
+
+  const webhookActions = {
+    deleteWebhook: (id, name) => {
+      onDeleteClick({ id, name });
+    },
+    testWebhook: (id, name) => {
+      onTestClick({ id, name });
+    },
+  };
+
   return (
     <WebhooksTable
-      onDeleteClick={onDeleteClick}
       onEditClick={onEditClick}
+      onTestClick={onTestClick}
+      webhookActions={webhookActions}
       {...rest}
     />
   );
@@ -42,6 +62,7 @@ const WrappedWebhooksTable = props => {
 WrappedWebhooksTable.propTypes = {
   setToDelete: PropTypes.func.isRequired,
   setToEdit: PropTypes.func.isRequired,
+  setToTest: PropTypes.func.isRequired,
 };
 
 export default WrappedWebhooksTable;
