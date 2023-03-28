@@ -137,8 +137,9 @@ const WebhookFormTabs = ({
         <ForemanFormikField
           name="http_headers"
           type="textarea"
-          label={__('Optional HTTP headers as JSON (ERB allowed)')}
-          placeholder='{\n"X-Shellhook-Arg-1": "value"\n}'
+          label={__('HTTP Headers')}
+          labelHelp={__('Optional. Must be a JSON object (ERB allowed)')}
+          placeholder='{&#13;&#10;"X-Shellhook-Arg-1": "value",&#13;&#10;"X-Shellhook-Arg-2": "<%= @object.id %>"&#13;&#10;}'
           inputSizeClass="col-md-8"
           rows={8}
         />
