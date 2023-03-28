@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
-import { translate as __ } from 'foremanReact/common/I18n';
+import { sprintf, translate as __ } from 'foremanReact/common/I18n';
 
 import ForemanFormikField from './ForemanFormikField';
 
@@ -48,7 +48,21 @@ const WebhookFormTabs = ({
           type="text"
           required
           label={__('Target URL')}
-          labelHelp={__('Target URL that should be called by Foreman')}
+          labelHelp={
+            <>
+              <div>
+                {__(
+                  'Target URL that should be called by Foreman (ERB allowed).'
+                )}
+              </div>
+              <div>
+                {sprintf(
+                  __('Example: %s'),
+                  'https://host.example.com/inventory/<%= @object.id %>'
+                )}
+              </div>
+            </>
+          }
         />
         <ForemanFormikField
           name="webhook_template_id"
