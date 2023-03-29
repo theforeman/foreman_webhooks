@@ -21,7 +21,7 @@ module ForemanWebhooks
 
       {
         cert: OpenSSL::X509::Certificate.new(File.read(cert)),
-        key: OpenSSL::PKey::RSA.new(File.read(hostprivkey)),
+        key: OpenSSL::PKey.read(File.read(hostprivkey)),
         ca_file: ca_cert
       }
     rescue StandardError => e
