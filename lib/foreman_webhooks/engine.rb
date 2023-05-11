@@ -15,7 +15,8 @@ module ForemanWebhooks
 
     initializer 'foreman_webhooks.register_plugin', before: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_webhooks do
-        requires_foreman '>= 3.3'
+        requires_foreman '>= 3.7'
+        register_gettext
 
         apipie_documented_controllers ["#{ForemanWebhooks::Engine.root}/app/controllers/api/v2/*.rb"]
         ApipieDSL.configuration.sections += ['webhooks']
