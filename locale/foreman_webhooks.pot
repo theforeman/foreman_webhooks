@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_webhooks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: foreman_webhooks 3.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-30 14:58+0000\n"
+"PO-Revision-Date: 2023-05-30 14:58+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:12
+msgid "List webhook templates"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:19
+msgid "Show webhook template details"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:30
+msgid "Whether or not the template is locked for editing"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:32
+msgid ""
+"Whether or not the template is added automatically to new organizations and lo"
+"cations"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:39
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:52
+msgid "Template name"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:43
+msgid "Create a webhook template"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:50
+msgid "Import a webhook template"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:53
+msgid "Template contents including metadata"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:62
+msgid "Update a webhook template"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:69
+msgid "Delete a webhook template"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:75
+msgid "Clone a template"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhook_templates_controller.rb:84
+msgid "Export a webhook template to ERB"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:11
+msgid "List Webhooks"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:18
+msgid "Show Webhook details"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:39
+msgid "X509 Certification Authorities concatenated in PEM format"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:43
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:124
+msgid ""
+"Authorize with Foreman client certificate and validate smart-proxy CA from Set"
+"tings"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:47
+msgid "Create a Webhook"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:55
+msgid "Update a Webhook"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:63
+msgid "Delete a Webhook"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:69
+msgid "List available events for subscription"
+msgstr ""
+
+#: ../app/jobs/foreman_webhooks/deliver_webhook_job.rb:24
+msgid "Deliver webhook %s"
+msgstr ""
+
+#: ../app/jobs/foreman_webhooks/deliver_webhook_job.rb:24
+msgid "Deliver webhook"
+msgstr ""
+
+#: ../app/models/webhook.rb:25
+msgid "URL must be valid and schema must be one of: %s"
+msgstr ""
+
+#: ../app/views/webhook_templates/_custom_tab_headers.html.erb:1
+msgid "Type"
+msgstr ""
+
+#: ../app/views/webhook_templates/_custom_tabs.html.erb:3
+msgid "Snippet"
+msgstr ""
+
+#: ../app/views/webhook_templates/edit.html.erb:1
+msgid "Edit %s"
+msgstr ""
+
+#: ../app/views/webhook_templates/index.html.erb:1
+#: ../lib/foreman_webhooks/engine.rb:72
+msgid "Webhook Templates"
+msgstr ""
+
+#: ../app/views/webhook_templates/index.html.erb:3
+#: ../app/views/webhook_templates/new.html.erb:1
+msgid "Create Template"
+msgstr ""
+
+#: ../app/views/webhook_templates/index.html.erb:8
+msgid "WebhookTemplate|Name"
+msgstr ""
+
+#: ../app/views/webhook_templates/index.html.erb:9
+msgid "WebhookTemplate|Snippet"
+msgstr ""
+
+#: ../app/views/webhook_templates/index.html.erb:10
+msgid "WebhookTemplate|Locked"
+msgstr ""
+
+#: ../app/views/webhook_templates/index.html.erb:11
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:42
+msgid "Actions"
+msgstr ""
+
+#: ../app/views/webhook_templates/index.html.erb:22
+msgid "This template is locked for editing."
+msgstr ""
+
+#: ../lib/foreman_webhooks/engine.rb:66
+msgid "Webhook"
+msgstr ""
+
+#: ../lib/foreman_webhooks/engine.rb:69
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/WebhooksIndexPage.js:46
+msgid "Webhooks"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/ForemanFormikField.js:65
+msgid "Start typing to search"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/ForemanFormikField.js:84
+msgid "Change the password"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:28
+msgid "General"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:34
+msgid "Subscribe to"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:44
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:33
+msgid "Name"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:50
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:36
+msgid "Target URL"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:54
+msgid "Target URL that should be called by Foreman (ERB allowed)."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:60
+msgid "Example: %s"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:70
+msgid "Template"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:79
+msgid "HTTP Method"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:87
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:37
+msgid "Enabled"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:88
+msgid "If unchecked, the webhook will be inactive"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:95
+msgid "Credentials"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:101
+msgid "User"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:102
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:108
+msgid "Authentication credentials"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:107
+msgid "Password"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:115
+msgid "Verify SSL"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:116
+msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:123
+msgid "Proxy Authorization"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:131
+msgid "X509 Certification Authorities"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:132
+msgid ""
+"Optional CAs in PEM format concatenated to verify the receiver's SSL certifica"
+"te"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:143
+msgid "Additional"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:149
+msgid "HTTP Content Type"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:154
+msgid "HTTP Headers"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:155
+msgid "Optional. Must be a JSON object (ERB allowed)"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:13
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:14
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:15
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:16
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:17
+msgid "is required"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookCreateModal.js:42
+msgid "Webhook was successfully created."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookCreateModal.js:55
+msgid "Create Webhook"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:16
+msgid "Confirm Webhook Deletion"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:21
+msgid "Webhook %s was successfully deleted"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:25
+msgid "Delete"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:29
+msgid "You are about to delete %s. Are you sure?"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookEditModal.js:68
+msgid "Webhook was successfully updated."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookEditModal.js:100
+msgid "Edit"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/Components/EmptyWebhooksTable/index.js:9
+msgid "Error"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/Components/EmptyWebhooksTable/index.js:9
+msgid "No Results"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/Components/EmptyWebhooksTable/index.js:25
+msgid "Try to create a new webhook"
+msgstr ""

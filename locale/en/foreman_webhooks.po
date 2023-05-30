@@ -1,0 +1,234 @@
+# English translations for foreman_webhooks package.
+# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_webhooks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: foreman_webhooks 3.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-05-30 14:58+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=; plural=;\n"
+"\n"
+
+msgid "Actions"
+msgstr ""
+
+msgid "Additional"
+msgstr ""
+
+msgid "Authentication credentials"
+msgstr ""
+
+msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
+msgstr ""
+
+msgid "Change the password"
+msgstr ""
+
+msgid "Clone a template"
+msgstr ""
+
+msgid "Confirm Webhook Deletion"
+msgstr ""
+
+msgid "Create Template"
+msgstr ""
+
+msgid "Create Webhook"
+msgstr ""
+
+msgid "Create a Webhook"
+msgstr ""
+
+msgid "Create a webhook template"
+msgstr ""
+
+msgid "Credentials"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete a Webhook"
+msgstr ""
+
+msgid "Delete a webhook template"
+msgstr ""
+
+msgid "Deliver webhook"
+msgstr ""
+
+msgid "Deliver webhook %s"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit %s"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Example: %s"
+msgstr ""
+
+msgid "Export a webhook template to ERB"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "HTTP Content Type"
+msgstr ""
+
+msgid "HTTP Headers"
+msgstr ""
+
+msgid "HTTP Method"
+msgstr ""
+
+msgid "If unchecked, the webhook will be inactive"
+msgstr ""
+
+msgid "Import a webhook template"
+msgstr ""
+
+msgid "List Webhooks"
+msgstr ""
+
+msgid "List available events for subscription"
+msgstr ""
+
+msgid "List webhook templates"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "No Results"
+msgstr ""
+
+msgid "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
+msgstr ""
+
+msgid "Optional. Must be a JSON object (ERB allowed)"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Proxy Authorization"
+msgstr ""
+
+msgid "Show Webhook details"
+msgstr ""
+
+msgid "Show webhook template details"
+msgstr ""
+
+msgid "Snippet"
+msgstr ""
+
+msgid "Start typing to search"
+msgstr ""
+
+msgid "Subscribe to"
+msgstr ""
+
+msgid "Target URL"
+msgstr ""
+
+msgid "Target URL that should be called by Foreman (ERB allowed)."
+msgstr ""
+
+msgid "Template"
+msgstr ""
+
+msgid "Template contents including metadata"
+msgstr ""
+
+msgid "Template name"
+msgstr ""
+
+msgid "This template is locked for editing."
+msgstr ""
+
+msgid "Try to create a new webhook"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "URL must be valid and schema must be one of: %s"
+msgstr ""
+
+msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
+msgstr ""
+
+msgid "Update a Webhook"
+msgstr ""
+
+msgid "Update a webhook template"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Verify SSL"
+msgstr ""
+
+msgid "Webhook"
+msgstr ""
+
+msgid "Webhook %s was successfully deleted"
+msgstr ""
+
+msgid "Webhook Templates"
+msgstr ""
+
+msgid "Webhook was successfully created."
+msgstr ""
+
+msgid "Webhook was successfully updated."
+msgstr ""
+
+msgid "WebhookTemplate|Locked"
+msgstr ""
+
+msgid "WebhookTemplate|Name"
+msgstr ""
+
+msgid "WebhookTemplate|Snippet"
+msgstr ""
+
+msgid "Webhooks"
+msgstr ""
+
+msgid "Whether or not the template is added automatically to new organizations and locations"
+msgstr ""
+
+msgid "Whether or not the template is locked for editing"
+msgstr ""
+
+msgid "X509 Certification Authorities"
+msgstr ""
+
+msgid "X509 Certification Authorities concatenated in PEM format"
+msgstr ""
+
+msgid "You are about to delete %s. Are you sure?"
+msgstr ""
+
+msgid "is required"
+msgstr ""

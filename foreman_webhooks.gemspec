@@ -15,7 +15,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.5.0'
 
-  s.files = Dir['{app,config,db,lib,webpack}/**/*'] + ['LICENSE', 'Rakefile', 'README.md', 'package.json']
+  s.files = Dir['{app,config,db,lib,webpack}/**/*'] + ['LICENSE', 'Rakefile', 'README.md', 'package.json'] + \
+            # .mo files are compiled; .po are sources; .edit.po are temporary files
+            Dir['locale/*/LC_MESSAGES/*.mo'] + Dir["locale/*/#{s.name}.po"]
   s.test_files = Dir['test/**/*'] + Dir['webpack/**/__tests__/*.js']
 
   s.add_development_dependency 'rake'
