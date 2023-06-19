@@ -77,6 +77,16 @@ class Webhook < ApplicationRecord
     )
   end
 
+  def test(payload: nil)
+    ForemanWebhooks::WebhookService.new(
+      webhook: self,
+      headers: rendered_headers(event, {}),
+      url: rendered_targed_url(event, {}),
+      event_name: event,
+      payload: test_payload(payload || '')
+    ).execute
+  end
+
   def ca_certs_store
     store = OpenSSL::X509::Store.new
     if ssl_ca_certs.blank?
@@ -131,5 +141,11 @@ class Webhook < ApplicationRecord
   def rendered_targed_url(event_name, payload)
     source = Foreman::Renderer::Source::String.new(name: 'HTTP target URL template', content: target_url)
     render_source(source, event_name, payload)
+  end
+
+  def test_payload(payload)
+    return payload if payload.is_a?(String)
+
+    payload.to_json
   end
 end

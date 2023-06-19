@@ -10,6 +10,7 @@ exports[`WebhooksTable rendering should render when loading 1`] = `
   itemCount={0}
   onDeleteClick={[MockFunction]}
   onEditClick={[Function]}
+  onTestClick={[Function]}
   page={5}
   pagination={
     Object {
@@ -29,6 +30,13 @@ exports[`WebhooksTable rendering should render when loading 1`] = `
   }
   toDelete={Object {}}
   toEdit={0}
+  toTest={Object {}}
+  webhookActions={
+    Object {
+      "deleteWebhook": [Function],
+      "testWebhook": [Function],
+    }
+  }
 />
 `;
 
@@ -48,6 +56,7 @@ exports[`WebhooksTable rendering should render with error 1`] = `
   }
   onDeleteClick={[MockFunction]}
   onEditClick={[Function]}
+  onTestClick={[Function]}
   page={5}
   pagination={
     Object {
@@ -67,6 +76,13 @@ exports[`WebhooksTable rendering should render with error 1`] = `
   }
   toDelete={Object {}}
   toEdit={0}
+  toTest={Object {}}
+  webhookActions={
+    Object {
+      "deleteWebhook": [Function],
+      "testWebhook": [Function],
+    }
+  }
 />
 `;
 
@@ -80,6 +96,7 @@ exports[`WebhooksTable rendering should render with no data 1`] = `
   itemCount={0}
   onDeleteClick={[MockFunction]}
   onEditClick={[Function]}
+  onTestClick={[Function]}
   page={5}
   pagination={
     Object {
@@ -99,6 +116,13 @@ exports[`WebhooksTable rendering should render with no data 1`] = `
   }
   toDelete={Object {}}
   toEdit={0}
+  toTest={Object {}}
+  webhookActions={
+    Object {
+      "deleteWebhook": [Function],
+      "testWebhook": [Function],
+    }
+  }
 />
 `;
 
@@ -112,6 +136,7 @@ exports[`WebhooksTable rendering should render with webhooks 1`] = `
   itemCount={2}
   onDeleteClick={[MockFunction]}
   onEditClick={[Function]}
+  onTestClick={[Function]}
   page={5}
   pagination={
     Object {
@@ -150,5 +175,12 @@ exports[`WebhooksTable rendering should render with webhooks 1`] = `
   }
   toDelete={Object {}}
   toEdit={0}
+  toTest={Object {}}
+  webhookActions={
+    Object {
+      "deleteWebhook": [Function],
+      "testWebhook": [Function],
+    }
+  }
 />
 `;

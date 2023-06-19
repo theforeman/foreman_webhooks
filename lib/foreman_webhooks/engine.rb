@@ -33,7 +33,7 @@ module ForemanWebhooks
           permission :create_webhooks,  { webhooks: %i[new create],
                                           'api/v2/webhooks': [:create] }, resource_type: 'Webhook'
           permission :edit_webhooks,    { webhooks: %i[edit update],
-                                          'api/v2/webhooks': [:update] }, resource_type: 'Webhook'
+                                          'api/v2/webhooks': %i[update test] }, resource_type: 'Webhook'
           permission :destroy_webhooks, { webhooks: [:destroy],
                                           'api/v2/webhooks': [:destroy] }, resource_type: 'Webhook'
           permission :view_webhook_templates, { webhook_templates: %i[index show auto_complete_search preview export],
