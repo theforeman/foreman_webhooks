@@ -1,24 +1,24 @@
- locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['en'] = {
+ locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['cs_CZ'] = {
   "domain": "foreman_webhooks",
   "locale_data": {
     "foreman_webhooks": {
       "": {
         "Project-Id-Version": "foreman_webhooks 3.2.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2023-06-27 14:49+0000",
-        "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
-        "Language-Team": "English",
-        "Language": "en",
+        "PO-Revision-Date": "2023-06-05 12:44+0000",
+        "Last-Translator": "Pavel Borecki <pavel.borecki@gmail.com>, 2023",
+        "Language-Team": "Czech (Czech Republic) (https://app.transifex.com/foreman/teams/114/cs_CZ/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=; plural=;",
-        "lang": "en",
+        "Language": "cs_CZ",
+        "Plural-Forms": "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;",
+        "lang": "cs_CZ",
         "domain": "foreman_webhooks",
-        "plural_forms": "nplurals=; plural=;"
+        "plural_forms": "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;"
       },
       "Actions": [
-        ""
+        "Akce"
       ],
       "Additional": [
         ""
@@ -51,10 +51,10 @@
         ""
       ],
       "Credentials": [
-        ""
+        "Přihlašovací údaje"
       ],
       "Delete": [
-        ""
+        "Smazat"
       ],
       "Delete a Webhook": [
         ""
@@ -69,16 +69,16 @@
         ""
       ],
       "Edit": [
-        ""
+        "Upravit"
       ],
       "Edit %s": [
         ""
       ],
       "Enabled": [
-        ""
+        "Zapnuto"
       ],
       "Error": [
-        ""
+        "Chyba"
       ],
       "Example: %s": [
         ""
@@ -87,7 +87,7 @@
         ""
       ],
       "General": [
-        ""
+        "Obecné"
       ],
       "HTTP Content Type": [
         ""
@@ -114,7 +114,7 @@
         ""
       ],
       "Name": [
-        ""
+        "Název"
       ],
       "No Results": [
         ""
@@ -126,9 +126,6 @@
         ""
       ],
       "Password": [
-        ""
-      ],
-      "Payload": [
         ""
       ],
       "Proxy Authorization": [
@@ -164,18 +161,6 @@
       "Template name": [
         ""
       ],
-      "Test": [
-        ""
-      ],
-      "Test a Webhook": [
-        ""
-      ],
-      "Test payload will be sent as is. Cant be a JSON object": [
-        ""
-      ],
-      "Test webhook": [
-        ""
-      ],
       "This template is locked for editing.": [
         ""
       ],
@@ -183,7 +168,7 @@
         ""
       ],
       "Type": [
-        ""
+        "Typ"
       ],
       "URL must be valid and schema must be one of: %s": [
         ""
@@ -198,24 +183,18 @@
         ""
       ],
       "User": [
-        ""
+        "Uživatel"
       ],
       "Verify SSL": [
-        ""
+        "Ověřit SSL"
       ],
       "Webhook": [
-        ""
-      ],
-      "Webhook %s test was successful": [
         ""
       ],
       "Webhook %s was successfully deleted": [
         ""
       ],
       "Webhook Templates": [
-        ""
-      ],
-      "Webhook test failed: %s": [
         ""
       ],
       "Webhook was successfully created.": [
@@ -242,11 +221,8 @@
       "Whether or not the template is locked for editing": [
         ""
       ],
-      "Will be sent as is": [
-        ""
-      ],
       "X509 Certification Authorities": [
-        ""
+        "X509 certifikační autority"
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         ""

@@ -1,27 +1,27 @@
- locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['en'] = {
+ locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['en_GB'] = {
   "domain": "foreman_webhooks",
   "locale_data": {
     "foreman_webhooks": {
       "": {
         "Project-Id-Version": "foreman_webhooks 3.2.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2023-06-27 14:49+0000",
-        "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
-        "Language-Team": "English",
-        "Language": "en",
+        "PO-Revision-Date": "2023-06-05 12:44+0000",
+        "Last-Translator": "Andi Chandler <andi@gowling.com>, 2023",
+        "Language-Team": "English (United Kingdom) (https://app.transifex.com/foreman/teams/114/en_GB/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=; plural=;",
-        "lang": "en",
+        "Language": "en_GB",
+        "Plural-Forms": "nplurals=2; plural=(n != 1);",
+        "lang": "en_GB",
         "domain": "foreman_webhooks",
-        "plural_forms": "nplurals=; plural=;"
+        "plural_forms": "nplurals=2; plural=(n != 1);"
       },
       "Actions": [
-        ""
+        "Actions"
       ],
       "Additional": [
-        ""
+        "Additional"
       ],
       "Authentication credentials": [
         ""
@@ -54,7 +54,7 @@
         ""
       ],
       "Delete": [
-        ""
+        "Delete"
       ],
       "Delete a Webhook": [
         ""
@@ -114,7 +114,7 @@
         ""
       ],
       "Name": [
-        ""
+        "Name"
       ],
       "No Results": [
         ""
@@ -126,9 +126,6 @@
         ""
       ],
       "Password": [
-        ""
-      ],
-      "Payload": [
         ""
       ],
       "Proxy Authorization": [
@@ -164,18 +161,6 @@
       "Template name": [
         ""
       ],
-      "Test": [
-        ""
-      ],
-      "Test a Webhook": [
-        ""
-      ],
-      "Test payload will be sent as is. Cant be a JSON object": [
-        ""
-      ],
-      "Test webhook": [
-        ""
-      ],
       "This template is locked for editing.": [
         ""
       ],
@@ -183,7 +168,7 @@
         ""
       ],
       "Type": [
-        ""
+        "Type"
       ],
       "URL must be valid and schema must be one of: %s": [
         ""
@@ -206,16 +191,10 @@
       "Webhook": [
         ""
       ],
-      "Webhook %s test was successful": [
-        ""
-      ],
       "Webhook %s was successfully deleted": [
         ""
       ],
       "Webhook Templates": [
-        ""
-      ],
-      "Webhook test failed: %s": [
         ""
       ],
       "Webhook was successfully created.": [
@@ -242,11 +221,8 @@
       "Whether or not the template is locked for editing": [
         ""
       ],
-      "Will be sent as is": [
-        ""
-      ],
       "X509 Certification Authorities": [
-        ""
+        "X509 Certification Authorities"
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         ""

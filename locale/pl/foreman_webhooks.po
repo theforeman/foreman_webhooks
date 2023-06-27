@@ -1,24 +1,30 @@
-# English translations for foreman_webhooks package.
-# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the foreman_webhooks package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# sziolkow <sziolkow@gmail.com>, 2023
+# Michał Foryt <michal.foryt@gmail.com>, 2023
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-06-27 14:49+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: English\n"
-"Language: en\n"
+"PO-Revision-Date: 2023-06-05 12:44+0000\n"
+"Last-Translator: Michał Foryt <michal.foryt@gmail.com>, 2023\n"
+"Language-Team: Polish (https://app.transifex.com/foreman/teams/114/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=; plural=;\n"
-"\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12"
+" || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n"
+"%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 msgid "Actions"
-msgstr ""
+msgstr "Akcja"
 
 msgid "Additional"
 msgstr ""
@@ -54,7 +60,7 @@ msgid "Credentials"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 msgid "Delete a Webhook"
 msgstr ""
@@ -69,7 +75,7 @@ msgid "Deliver webhook %s"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "Edytuj"
 
 msgid "Edit %s"
 msgstr ""
@@ -87,7 +93,7 @@ msgid "Export a webhook template to ERB"
 msgstr ""
 
 msgid "General"
-msgstr ""
+msgstr "Generalnie"
 
 msgid "HTTP Content Type"
 msgstr ""
@@ -114,7 +120,7 @@ msgid "List webhook templates"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Nazwa"
 
 msgid "No Results"
 msgstr ""
@@ -126,9 +132,6 @@ msgid "Optional. Must be a JSON object (ERB allowed)"
 msgstr ""
 
 msgid "Password"
-msgstr ""
-
-msgid "Payload"
 msgstr ""
 
 msgid "Proxy Authorization"
@@ -164,18 +167,6 @@ msgstr ""
 msgid "Template name"
 msgstr ""
 
-msgid "Test"
-msgstr ""
-
-msgid "Test a Webhook"
-msgstr ""
-
-msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
-
-msgid "Test webhook"
-msgstr ""
-
 msgid "This template is locked for editing."
 msgstr ""
 
@@ -183,7 +174,7 @@ msgid "Try to create a new webhook"
 msgstr ""
 
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 msgid "URL must be valid and schema must be one of: %s"
 msgstr ""
@@ -198,7 +189,7 @@ msgid "Update a webhook template"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "Użytkownik"
 
 msgid "Verify SSL"
 msgstr ""
@@ -206,16 +197,10 @@ msgstr ""
 msgid "Webhook"
 msgstr ""
 
-msgid "Webhook %s test was successful"
-msgstr ""
-
 msgid "Webhook %s was successfully deleted"
 msgstr ""
 
 msgid "Webhook Templates"
-msgstr ""
-
-msgid "Webhook test failed: %s"
 msgstr ""
 
 msgid "Webhook was successfully created."
@@ -240,9 +225,6 @@ msgid "Whether or not the template is added automatically to new organizations a
 msgstr ""
 
 msgid "Whether or not the template is locked for editing"
-msgstr ""
-
-msgid "Will be sent as is"
 msgstr ""
 
 msgid "X509 Certification Authorities"

@@ -1,27 +1,33 @@
-# English translations for foreman_webhooks package.
-# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the foreman_webhooks package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Amit Upadhye <aupadhye@redhat.com>, 2023
+# Bryan Kearney <bryan.kearney@gmail.com>, 2023
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2023
+# Transifex Bot <>, 2023
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-06-27 14:49+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: English\n"
-"Language: en\n"
+"PO-Revision-Date: 2023-06-05 12:44+0000\n"
+"Last-Translator: Transifex Bot <>, 2023\n"
+"Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=; plural=;\n"
-"\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Actions"
-msgstr ""
+msgstr "アクション"
 
 msgid "Additional"
-msgstr ""
+msgstr "追加"
 
 msgid "Authentication credentials"
 msgstr ""
@@ -51,10 +57,10 @@ msgid "Create a webhook template"
 msgstr ""
 
 msgid "Credentials"
-msgstr ""
+msgstr "認証情報"
 
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 msgid "Delete a Webhook"
 msgstr ""
@@ -69,13 +75,13 @@ msgid "Deliver webhook %s"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "編集"
 
 msgid "Edit %s"
 msgstr ""
 
 msgid "Enabled"
-msgstr ""
+msgstr "有効化済み"
 
 msgid "Error"
 msgstr ""
@@ -87,7 +93,7 @@ msgid "Export a webhook template to ERB"
 msgstr ""
 
 msgid "General"
-msgstr ""
+msgstr "全般"
 
 msgid "HTTP Content Type"
 msgstr ""
@@ -114,7 +120,7 @@ msgid "List webhook templates"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "名前"
 
 msgid "No Results"
 msgstr ""
@@ -126,9 +132,6 @@ msgid "Optional. Must be a JSON object (ERB allowed)"
 msgstr ""
 
 msgid "Password"
-msgstr ""
-
-msgid "Payload"
 msgstr ""
 
 msgid "Proxy Authorization"
@@ -164,18 +167,6 @@ msgstr ""
 msgid "Template name"
 msgstr ""
 
-msgid "Test"
-msgstr ""
-
-msgid "Test a Webhook"
-msgstr ""
-
-msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
-
-msgid "Test webhook"
-msgstr ""
-
 msgid "This template is locked for editing."
 msgstr ""
 
@@ -183,7 +174,7 @@ msgid "Try to create a new webhook"
 msgstr ""
 
 msgid "Type"
-msgstr ""
+msgstr "タイプ"
 
 msgid "URL must be valid and schema must be one of: %s"
 msgstr ""
@@ -198,24 +189,18 @@ msgid "Update a webhook template"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "ユーザー"
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "SSL の確認"
 
 msgid "Webhook"
-msgstr ""
-
-msgid "Webhook %s test was successful"
 msgstr ""
 
 msgid "Webhook %s was successfully deleted"
 msgstr ""
 
 msgid "Webhook Templates"
-msgstr ""
-
-msgid "Webhook test failed: %s"
 msgstr ""
 
 msgid "Webhook was successfully created."
@@ -242,9 +227,6 @@ msgstr ""
 msgid "Whether or not the template is locked for editing"
 msgstr ""
 
-msgid "Will be sent as is"
-msgstr ""
-
 msgid "X509 Certification Authorities"
 msgstr ""
 
@@ -255,4 +237,4 @@ msgid "You are about to delete %s. Are you sure?"
 msgstr ""
 
 msgid "is required"
-msgstr ""
+msgstr "は必須です"

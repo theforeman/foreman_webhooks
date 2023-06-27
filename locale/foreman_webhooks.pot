@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 3.1.0\n"
+"Project-Id-Version: foreman_webhooks 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 14:58+0000\n"
-"PO-Revision-Date: 2023-05-30 14:58+0000\n"
+"POT-Creation-Date: 2023-06-27 14:38+0000\n"
+"PO-Revision-Date: 2023-06-27 14:38+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -104,6 +104,14 @@ msgstr ""
 msgid "List available events for subscription"
 msgstr ""
 
+#: ../app/controllers/api/v2/webhooks_controller.rb:74
+msgid "Test a Webhook"
+msgstr ""
+
+#: ../app/controllers/api/v2/webhooks_controller.rb:76
+msgid "Test payload will be sent as is. Cant be a JSON object"
+msgstr ""
+
 #: ../app/jobs/foreman_webhooks/deliver_webhook_job.rb:24
 msgid "Deliver webhook %s"
 msgstr ""
@@ -112,7 +120,7 @@ msgstr ""
 msgid "Deliver webhook"
 msgstr ""
 
-#: ../app/models/webhook.rb:25
+#: ../app/models/webhook.rb:27
 msgid "URL must be valid and schema must be one of: %s"
 msgstr ""
 
@@ -151,7 +159,7 @@ msgid "WebhookTemplate|Locked"
 msgstr ""
 
 #: ../app/views/webhook_templates/index.html.erb:11
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:42
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:41
 msgid "Actions"
 msgstr ""
 
@@ -164,7 +172,7 @@ msgid "Webhook"
 msgstr ""
 
 #: ../lib/foreman_webhooks/engine.rb:69
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/WebhooksIndexPage.js:46
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/WebhooksIndexPage.js:47
 msgid "Webhooks"
 msgstr ""
 
@@ -190,13 +198,13 @@ msgstr ""
 
 #:
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:44
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:33
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:32
 msgid "Name"
 msgstr ""
 
 #:
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:50
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:36
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:35
 msgid "Target URL"
 msgstr ""
 
@@ -222,7 +230,7 @@ msgstr ""
 
 #:
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:87
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:37
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:36
 msgid "Enabled"
 msgstr ""
 
@@ -330,6 +338,7 @@ msgstr ""
 
 #:
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:25
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/Components/ActionButtons/ActionButton.js:10
 msgid "Delete"
 msgstr ""
 
@@ -346,6 +355,36 @@ msgstr ""
 #:
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookEditModal.js:100
 msgid "Edit"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:33
+msgid "Webhook test failed: %s"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:43
+msgid "Webhook %s test was successful"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:56
+msgid "Test"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:63
+msgid "Payload"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:82
+msgid "Will be sent as is"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/Components/ActionButtons/ActionButton.js:18
+msgid "Test webhook"
 msgstr ""
 
 #:

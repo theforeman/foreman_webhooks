@@ -1,27 +1,33 @@
-# English translations for foreman_webhooks package.
-# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the foreman_webhooks package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Translators:
+# Bryan Kearney <bryan.kearney@gmail.com>, 2023
+# Amit Upadhye <aupadhye@redhat.com>, 2023
+# tim123, 2023
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-06-27 14:49+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: English\n"
-"Language: en\n"
+"PO-Revision-Date: 2023-06-05 12:44+0000\n"
+"Last-Translator: tim123, 2023\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/foreman/teams/114/zh"
+"_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=; plural=;\n"
-"\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Actions"
-msgstr ""
+msgstr "操作"
 
 msgid "Additional"
-msgstr ""
+msgstr "额外"
 
 msgid "Authentication credentials"
 msgstr ""
@@ -51,10 +57,10 @@ msgid "Create a webhook template"
 msgstr ""
 
 msgid "Credentials"
-msgstr ""
+msgstr "凭证"
 
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 msgid "Delete a Webhook"
 msgstr ""
@@ -69,13 +75,13 @@ msgid "Deliver webhook %s"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 msgid "Edit %s"
 msgstr ""
 
 msgid "Enabled"
-msgstr ""
+msgstr "启用"
 
 msgid "Error"
 msgstr ""
@@ -128,9 +134,6 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-msgid "Payload"
-msgstr ""
-
 msgid "Proxy Authorization"
 msgstr ""
 
@@ -164,18 +167,6 @@ msgstr ""
 msgid "Template name"
 msgstr ""
 
-msgid "Test"
-msgstr ""
-
-msgid "Test a Webhook"
-msgstr ""
-
-msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
-
-msgid "Test webhook"
-msgstr ""
-
 msgid "This template is locked for editing."
 msgstr ""
 
@@ -198,24 +189,18 @@ msgid "Update a webhook template"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "用户"
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "验证 SSL"
 
 msgid "Webhook"
-msgstr ""
-
-msgid "Webhook %s test was successful"
 msgstr ""
 
 msgid "Webhook %s was successfully deleted"
 msgstr ""
 
 msgid "Webhook Templates"
-msgstr ""
-
-msgid "Webhook test failed: %s"
 msgstr ""
 
 msgid "Webhook was successfully created."
@@ -242,9 +227,6 @@ msgstr ""
 msgid "Whether or not the template is locked for editing"
 msgstr ""
 
-msgid "Will be sent as is"
-msgstr ""
-
 msgid "X509 Certification Authorities"
 msgstr ""
 
@@ -255,4 +237,4 @@ msgid "You are about to delete %s. Are you sure?"
 msgstr ""
 
 msgid "is required"
-msgstr ""
+msgstr "是必需的"

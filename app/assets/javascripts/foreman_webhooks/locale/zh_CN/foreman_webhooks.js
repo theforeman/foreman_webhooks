@@ -1,27 +1,27 @@
- locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['en'] = {
+ locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['zh_CN'] = {
   "domain": "foreman_webhooks",
   "locale_data": {
     "foreman_webhooks": {
       "": {
         "Project-Id-Version": "foreman_webhooks 3.2.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2023-06-27 14:49+0000",
-        "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
-        "Language-Team": "English",
-        "Language": "en",
+        "PO-Revision-Date": "2023-06-05 12:44+0000",
+        "Last-Translator": "tim123, 2023",
+        "Language-Team": "Chinese (China) (https://app.transifex.com/foreman/teams/114/zh_CN/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=; plural=;",
-        "lang": "en",
+        "Language": "zh_CN",
+        "Plural-Forms": "nplurals=1; plural=0;",
+        "lang": "zh_CN",
         "domain": "foreman_webhooks",
-        "plural_forms": "nplurals=; plural=;"
+        "plural_forms": "nplurals=1; plural=0;"
       },
       "Actions": [
-        ""
+        "操作"
       ],
       "Additional": [
-        ""
+        "额外"
       ],
       "Authentication credentials": [
         ""
@@ -51,10 +51,10 @@
         ""
       ],
       "Credentials": [
-        ""
+        "凭证"
       ],
       "Delete": [
-        ""
+        "刪除"
       ],
       "Delete a Webhook": [
         ""
@@ -69,13 +69,13 @@
         ""
       ],
       "Edit": [
-        ""
+        "编辑"
       ],
       "Edit %s": [
         ""
       ],
       "Enabled": [
-        ""
+        "启用"
       ],
       "Error": [
         ""
@@ -128,9 +128,6 @@
       "Password": [
         ""
       ],
-      "Payload": [
-        ""
-      ],
       "Proxy Authorization": [
         ""
       ],
@@ -164,18 +161,6 @@
       "Template name": [
         ""
       ],
-      "Test": [
-        ""
-      ],
-      "Test a Webhook": [
-        ""
-      ],
-      "Test payload will be sent as is. Cant be a JSON object": [
-        ""
-      ],
-      "Test webhook": [
-        ""
-      ],
       "This template is locked for editing.": [
         ""
       ],
@@ -198,24 +183,18 @@
         ""
       ],
       "User": [
-        ""
+        "用户"
       ],
       "Verify SSL": [
-        ""
+        "验证 SSL"
       ],
       "Webhook": [
-        ""
-      ],
-      "Webhook %s test was successful": [
         ""
       ],
       "Webhook %s was successfully deleted": [
         ""
       ],
       "Webhook Templates": [
-        ""
-      ],
-      "Webhook test failed: %s": [
         ""
       ],
       "Webhook was successfully created.": [
@@ -242,9 +221,6 @@
       "Whether or not the template is locked for editing": [
         ""
       ],
-      "Will be sent as is": [
-        ""
-      ],
       "X509 Certification Authorities": [
         ""
       ],
@@ -255,7 +231,7 @@
         ""
       ],
       "is required": [
-        ""
+        "是必需的"
       ]
     }
   }

@@ -1,27 +1,27 @@
- locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['en'] = {
+ locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['fr'] = {
   "domain": "foreman_webhooks",
   "locale_data": {
     "foreman_webhooks": {
       "": {
         "Project-Id-Version": "foreman_webhooks 3.2.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2023-06-27 14:49+0000",
-        "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
-        "Language-Team": "English",
-        "Language": "en",
+        "PO-Revision-Date": "2023-06-05 12:44+0000",
+        "Last-Translator": "21966816214bc546c1fc8a185e75ca1c, 2023",
+        "Language-Team": "French (https://app.transifex.com/foreman/teams/114/fr/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=; plural=;",
-        "lang": "en",
+        "Language": "fr",
+        "Plural-Forms": "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;",
+        "lang": "fr",
         "domain": "foreman_webhooks",
-        "plural_forms": "nplurals=; plural=;"
+        "plural_forms": "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
       },
       "Actions": [
-        ""
+        "Actions"
       ],
       "Additional": [
-        ""
+        "Informations complémentaires"
       ],
       "Authentication credentials": [
         ""
@@ -51,10 +51,10 @@
         ""
       ],
       "Credentials": [
-        ""
+        "Identifiants"
       ],
       "Delete": [
-        ""
+        "Supprimer"
       ],
       "Delete a Webhook": [
         ""
@@ -69,13 +69,13 @@
         ""
       ],
       "Edit": [
-        ""
+        "Modifier"
       ],
       "Edit %s": [
-        ""
+        "Modifier %s"
       ],
       "Enabled": [
-        ""
+        "Activé"
       ],
       "Error": [
         ""
@@ -87,7 +87,7 @@
         ""
       ],
       "General": [
-        ""
+        "Général"
       ],
       "HTTP Content Type": [
         ""
@@ -114,7 +114,7 @@
         ""
       ],
       "Name": [
-        ""
+        "Nom"
       ],
       "No Results": [
         ""
@@ -126,9 +126,6 @@
         ""
       ],
       "Password": [
-        ""
-      ],
-      "Payload": [
         ""
       ],
       "Proxy Authorization": [
@@ -164,18 +161,6 @@
       "Template name": [
         ""
       ],
-      "Test": [
-        ""
-      ],
-      "Test a Webhook": [
-        ""
-      ],
-      "Test payload will be sent as is. Cant be a JSON object": [
-        ""
-      ],
-      "Test webhook": [
-        ""
-      ],
       "This template is locked for editing.": [
         ""
       ],
@@ -183,7 +168,7 @@
         ""
       ],
       "Type": [
-        ""
+        "Type"
       ],
       "URL must be valid and schema must be one of: %s": [
         ""
@@ -198,24 +183,18 @@
         ""
       ],
       "User": [
-        ""
+        "Utilisateur"
       ],
       "Verify SSL": [
-        ""
+        "Vérifier SSL"
       ],
       "Webhook": [
-        ""
-      ],
-      "Webhook %s test was successful": [
         ""
       ],
       "Webhook %s was successfully deleted": [
         ""
       ],
       "Webhook Templates": [
-        ""
-      ],
-      "Webhook test failed: %s": [
         ""
       ],
       "Webhook was successfully created.": [
@@ -242,9 +221,6 @@
       "Whether or not the template is locked for editing": [
         ""
       ],
-      "Will be sent as is": [
-        ""
-      ],
       "X509 Certification Authorities": [
         ""
       ],
@@ -255,7 +231,7 @@
         ""
       ],
       "is required": [
-        ""
+        "est requis"
       ]
     }
   }

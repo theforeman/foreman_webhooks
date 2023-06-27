@@ -1,24 +1,24 @@
- locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['en'] = {
+ locales['foreman_webhooks'] = locales['foreman_webhooks'] || {}; locales['foreman_webhooks']['pl'] = {
   "domain": "foreman_webhooks",
   "locale_data": {
     "foreman_webhooks": {
       "": {
         "Project-Id-Version": "foreman_webhooks 3.2.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2023-06-27 14:49+0000",
-        "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
-        "Language-Team": "English",
-        "Language": "en",
+        "PO-Revision-Date": "2023-06-05 12:44+0000",
+        "Last-Translator": "Michał Foryt <michal.foryt@gmail.com>, 2023",
+        "Language-Team": "Polish (https://app.transifex.com/foreman/teams/114/pl/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=; plural=;",
-        "lang": "en",
+        "Language": "pl",
+        "Plural-Forms": "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);",
+        "lang": "pl",
         "domain": "foreman_webhooks",
-        "plural_forms": "nplurals=; plural=;"
+        "plural_forms": "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);"
       },
       "Actions": [
-        ""
+        "Akcja"
       ],
       "Additional": [
         ""
@@ -54,7 +54,7 @@
         ""
       ],
       "Delete": [
-        ""
+        "Usuń"
       ],
       "Delete a Webhook": [
         ""
@@ -69,7 +69,7 @@
         ""
       ],
       "Edit": [
-        ""
+        "Edytuj"
       ],
       "Edit %s": [
         ""
@@ -87,7 +87,7 @@
         ""
       ],
       "General": [
-        ""
+        "Generalnie"
       ],
       "HTTP Content Type": [
         ""
@@ -114,7 +114,7 @@
         ""
       ],
       "Name": [
-        ""
+        "Nazwa"
       ],
       "No Results": [
         ""
@@ -126,9 +126,6 @@
         ""
       ],
       "Password": [
-        ""
-      ],
-      "Payload": [
         ""
       ],
       "Proxy Authorization": [
@@ -164,18 +161,6 @@
       "Template name": [
         ""
       ],
-      "Test": [
-        ""
-      ],
-      "Test a Webhook": [
-        ""
-      ],
-      "Test payload will be sent as is. Cant be a JSON object": [
-        ""
-      ],
-      "Test webhook": [
-        ""
-      ],
       "This template is locked for editing.": [
         ""
       ],
@@ -183,7 +168,7 @@
         ""
       ],
       "Type": [
-        ""
+        "Typ"
       ],
       "URL must be valid and schema must be one of: %s": [
         ""
@@ -198,7 +183,7 @@
         ""
       ],
       "User": [
-        ""
+        "Użytkownik"
       ],
       "Verify SSL": [
         ""
@@ -206,16 +191,10 @@
       "Webhook": [
         ""
       ],
-      "Webhook %s test was successful": [
-        ""
-      ],
       "Webhook %s was successfully deleted": [
         ""
       ],
       "Webhook Templates": [
-        ""
-      ],
-      "Webhook test failed: %s": [
         ""
       ],
       "Webhook was successfully created.": [
@@ -240,9 +219,6 @@
         ""
       ],
       "Whether or not the template is locked for editing": [
-        ""
-      ],
-      "Will be sent as is": [
         ""
       ],
       "X509 Certification Authorities": [

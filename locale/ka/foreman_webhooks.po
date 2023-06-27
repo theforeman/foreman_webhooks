@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_webhooks package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: foreman_webhooks 3.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-06-05 12:44+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023\n"
+"Language-Team: Georgian (https://app.transifex.com/foreman/teams/114/ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Actions"
+msgstr "ქმედებები"
+
+msgid "Additional"
+msgstr "დამატებით"
+
+msgid "Authentication credentials"
+msgstr "ავთენტიკაციის დეტალები"
+
+msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
+msgstr "Foreman-ის კლიენტის სერტიფიკატით ავტორიზაცია და ჭკვიანი პროქსის CA-ის გადამოწმება პარამეტრებიდან"
+
+msgid "Change the password"
+msgstr "პაროლის შეცვლა"
+
+msgid "Clone a template"
+msgstr "შაბლონის კლონირება"
+
+msgid "Confirm Webhook Deletion"
+msgstr "დაადასტურეთ ვებჰუკის წაშლა"
+
+msgid "Create Template"
+msgstr "შაბლონის შექმნა"
+
+msgid "Create Webhook"
+msgstr "ვებჰუკის შექმნა"
+
+msgid "Create a Webhook"
+msgstr "ვებჰუკის შექმნა"
+
+msgid "Create a webhook template"
+msgstr "ვებჰუკის ნიმუშის შექმნა"
+
+msgid "Credentials"
+msgstr "მომხმ/პაროლი"
+
+msgid "Delete"
+msgstr "წაშლა"
+
+msgid "Delete a Webhook"
+msgstr "ვებჰუკის წაშლა"
+
+msgid "Delete a webhook template"
+msgstr "Delete a webhook წაშლა"
+
+msgid "Deliver webhook"
+msgstr "ვებჰუკის მიწოდება"
+
+msgid "Deliver webhook %s"
+msgstr "ვებჰუკის %s მიწოდება"
+
+msgid "Edit"
+msgstr "ჩასწორება"
+
+msgid "Edit %s"
+msgstr "%s-ის ჩასწორება"
+
+msgid "Enabled"
+msgstr "ჩაირთო"
+
+msgid "Error"
+msgstr "შეცდომა"
+
+msgid "Example: %s"
+msgstr "მაგალითი: %s"
+
+msgid "Export a webhook template to ERB"
+msgstr "ვებჰუკის ნიმუშის ERB_ზე გატანა"
+
+msgid "General"
+msgstr "მთავარი"
+
+msgid "HTTP Content Type"
+msgstr "HTTP შემცველობის ტიპი"
+
+msgid "HTTP Headers"
+msgstr "HTTP თავსართები"
+
+msgid "HTTP Method"
+msgstr "HTTP მეთოდი"
+
+msgid "If unchecked, the webhook will be inactive"
+msgstr "თუ გამორთულია, ვებჰუკი აქტიური არ იქნება"
+
+msgid "Import a webhook template"
+msgstr "ვებჰუკის ნიმუშის შემოტანა"
+
+msgid "List Webhooks"
+msgstr "ვებჰუკები სია"
+
+msgid "List available events for subscription"
+msgstr "გამოწერადი ხელმისაწვდომი მოვლენების სია"
+
+msgid "List webhook templates"
+msgstr "ვებჰუკის ნიმუშების სია"
+
+msgid "Name"
+msgstr "სახელი"
+
+msgid "No Results"
+msgstr "შედეგების გარეშე"
+
+msgid "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
+msgstr "არასავალდებული CA-ები PEM ფორმატში, ერთ ფალში, მიმღების SSL სერტიფიკატის შესამოწმებლად"
+
+msgid "Optional. Must be a JSON object (ERB allowed)"
+msgstr "არასავალდებულოა. უნდა წარმოადგენდეს JSON ობიექტს (ERB დაშვებულია)"
+
+msgid "Password"
+msgstr "პაროლი"
+
+msgid "Proxy Authorization"
+msgstr "პროქსის ავტორიზაცია"
+
+msgid "Show Webhook details"
+msgstr "ვებჰუკის დეტალების ჩვენება"
+
+msgid "Show webhook template details"
+msgstr "ვებჰუკის ნიმუშის დეტალების ჩვენება"
+
+msgid "Snippet"
+msgstr "ნაწყვეტი"
+
+msgid "Start typing to search"
+msgstr "მოსაძებნად კრეფა დაიწყეთ"
+
+msgid "Subscribe to"
+msgstr "გამოწერა"
+
+msgid "Target URL"
+msgstr "სამიზნე URL"
+
+msgid "Target URL that should be called by Foreman (ERB allowed)."
+msgstr "სამიზნე URL, რომელიც Foreman-მა უნდა გამოიძახოს (ERB დაშვებულია)."
+
+msgid "Template"
+msgstr "ნიმუში"
+
+msgid "Template contents including metadata"
+msgstr "შაბლოკის შემცველობა, მეტამონაცემების ჩათვლით"
+
+msgid "Template name"
+msgstr "შაბლონის სახელი"
+
+msgid "This template is locked for editing."
+msgstr "შაბლონი დაბლოკილია."
+
+msgid "Try to create a new webhook"
+msgstr "ახალი ვებჰუკის შექმნის მცდელობა"
+
+msgid "Type"
+msgstr "ტიპი"
+
+msgid "URL must be valid and schema must be one of: %s"
+msgstr "URL სწორი უნდა იყოს და სქემა უნდა იყოს ერთერთი სიიდან: %s"
+
+msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
+msgstr "გამორთეთ ეს პარამეტრი მიმღების SSL სერტიფიკატის გადამოწმების გამოსართავად"
+
+msgid "Update a Webhook"
+msgstr "ვებჰუკის განახლება"
+
+msgid "Update a webhook template"
+msgstr "ვებჰუკის ნიმუშის განახლება"
+
+msgid "User"
+msgstr "მომხმარებელი"
+
+msgid "Verify SSL"
+msgstr "SSL-ის შემოწმება"
+
+msgid "Webhook"
+msgstr "ვებჰუკი"
+
+msgid "Webhook %s was successfully deleted"
+msgstr "ვებჰუკი %s წარმატებით წაიშალა"
+
+msgid "Webhook Templates"
+msgstr "ვებჰუკის ნიმუშები"
+
+msgid "Webhook was successfully created."
+msgstr "ვებჰუკი წარმატებით შეიქმნა."
+
+msgid "Webhook was successfully updated."
+msgstr "ვებჰუკი წარმატებით განახლდა."
+
+msgid "WebhookTemplate|Locked"
+msgstr "დაბლოკილია"
+
+msgid "WebhookTemplate|Name"
+msgstr "სახელი"
+
+msgid "WebhookTemplate|Snippet"
+msgstr "ნაწყვეტი"
+
+msgid "Webhooks"
+msgstr "ვებჰუკები"
+
+msgid "Whether or not the template is added automatically to new organizations and locations"
+msgstr "ნაგულისხმები შაბლონები ახალ ორგანიზაციებსა და მდებარეობებს ავტომატურად ემატება, თუ არა"
+
+msgid "Whether or not the template is locked for editing"
+msgstr "დაიბლოკება თუ არა შაბლონი მისი ჩასწორებისას"
+
+msgid "X509 Certification Authorities"
+msgstr "X509 CA"
+
+msgid "X509 Certification Authorities concatenated in PEM format"
+msgstr "X509 სერტიფიკაციის ორგანოები, PEM ფორმატში გაერთიანებული"
+
+msgid "You are about to delete %s. Are you sure?"
+msgstr "აპირებთ წაშალოთ %s. დარწმუნებული ბრძანდებით?"
+
+msgid "is required"
+msgstr "აუცილებელია"
