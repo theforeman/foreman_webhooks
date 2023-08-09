@@ -1,5 +1,8 @@
 Release notes
 =============
+### 3.2.1 (2023-08-09)
+* Fix example templates ([PR #65](https://github.com/theforeman/foreman_webhooks/pull/65)), [#36653](http://projects.theforeman.org/issues/36653)
+
 ### 3.2.0 (2023-06-27)
 * Update transifex config
 * Graphql api, [#31413](http://projects.theforeman.org/issues/31413)
