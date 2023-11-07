@@ -10,7 +10,8 @@ module ForemanWebhooks
     end
 
     it 'executes the webhook service' do
-      ::ForemanWebhooks::WebhookService.any_instance.expects(:execute).once
+      result = { status: :success }
+      ::ForemanWebhooks::WebhookService.any_instance.expects(:execute).once.returns(result)
       job.perform_now
     end
   end
