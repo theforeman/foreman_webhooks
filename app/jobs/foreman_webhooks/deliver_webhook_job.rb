@@ -6,13 +6,25 @@ module ForemanWebhooks
 
     def perform(options)
       webhook = Webhook.unscoped.find_by(id: options[:webhook_id])
-      WebhookService.new(
+      result = WebhookService.new(
         webhook: webhook,
         headers: options[:headers],
         url: options[:url],
         event_name: options[:event_name],
         payload: options[:payload]
       ).execute
+
+      return unless result[:status] == :error
+
+      raise [result[:http_status], result[:message]].compact.join(': ')
+    end
+
+    rescue_from(StandardError) do |error|
+      Foreman::Logging.logger('background').error(
+        'DeliverWebhook: '\
+        "Error while delivering - #{error.message}"
+      )
+      raise error # propagate the error to the tasking system to properly report it there
     end
 
     def webhook_id
