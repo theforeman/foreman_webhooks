@@ -82,8 +82,8 @@ class Webhook < ApplicationRecord
   def test(payload: nil)
     ForemanWebhooks::WebhookService.new(
       webhook: self,
-      headers: rendered_headers(event, {}),
-      url: rendered_targed_url(event, {}),
+      headers: http_headers,
+      url: target_url,
       event_name: event,
       payload: test_payload(payload || '')
     ).execute
