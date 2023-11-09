@@ -58,18 +58,16 @@ const WebhookTestModal = ({ toTest }) => {
       enforceFocus
       className="webhooks-modal"
     >
-      <p>
-        {sprintf(
-          __(
-            'You are about to test %s webhook.' +
-              '\n' +
-              'Please, note that this will not contain actual information or render the attached template.' +
-              '\n' +
-              'You can specify below a custom payload to test the webhook with.'
-          ),
-          name
-        )}
-      </p>
+      {`${sprintf(__('You are about to test %s webhook.'), name)} `}
+      {`${__(
+        'Please, note that this will not contain actual information or render the attached template.'
+      )} `}
+      {`${__(
+        'In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object.'
+      )} `}
+      {__('You can specify below a custom payload to test the webhook with.')}
+      <br />
+      <br />
       <ForemanForm
         onSubmit={handleSubmit}
         initialValues={initialTestValues}
