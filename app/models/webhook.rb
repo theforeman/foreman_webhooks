@@ -130,7 +130,12 @@ class Webhook < ApplicationRecord
   end
 
   def rendered_payload(event_name, payload)
-    webhook_template.render(variables: variables(event_name, payload))
+    rendered_content = webhook_template.render(variables: variables(event_name, payload))
+    if http_content_type == 'application/x-www-form-urlencoded'
+      URI.encode_www_form(JSON.parse(rendered_content))
+    else
+      rendered_content
+    end
   end
 
   def rendered_headers(event_name, payload)
