@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Configure webhooks for Foreman.'
   s.description = 'Plugin for Foreman that allows to configure Webhooks.'
 
-  s.required_ruby_version = '>= 2.5.0'
+  s.required_ruby_version = '>= 2.7.0'
 
   s.files = Dir['{app,config,db,lib,webpack}/**/*'] + ['LICENSE', 'Rakefile', 'README.md', 'package.json'] + \
             # .mo files are compiled; .po are sources; .edit.po are temporary files
@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rdoc'
+  s.add_development_dependency 'theforeman-rubocop', '~> 0.1.0'
 end
