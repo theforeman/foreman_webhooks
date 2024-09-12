@@ -6,7 +6,6 @@
 # Translators:
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 3.2.0\n"
@@ -107,6 +106,9 @@ msgstr "თუ გამორთულია, ვებჰუკი აქტ�
 msgid "Import a webhook template"
 msgstr "ვებჰუკის ნიმუშის შემოტანა"
 
+msgid "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object."
+msgstr ""
+
 msgid "List Webhooks"
 msgstr "ვებჰუკები სია"
 
@@ -130,6 +132,12 @@ msgstr "არასავალდებულოა. უნდა წარმ
 
 msgid "Password"
 msgstr "პაროლი"
+
+msgid "Payload"
+msgstr ""
+
+msgid "Please, note that this will not contain actual information or render the attached template."
+msgstr ""
 
 msgid "Proxy Authorization"
 msgstr "პროქსის ავტორიზაცია"
@@ -164,6 +172,18 @@ msgstr "შაბლოკის შემცველობა, მეტამ
 msgid "Template name"
 msgstr "შაბლონის სახელი"
 
+msgid "Test"
+msgstr ""
+
+msgid "Test a Webhook"
+msgstr ""
+
+msgid "Test payload will be sent as is. Cant be a JSON object"
+msgstr ""
+
+msgid "Test webhook"
+msgstr ""
+
 msgid "This template is locked for editing."
 msgstr "შაბლონი დაბლოკილია."
 
@@ -194,11 +214,20 @@ msgstr "SSL-ის შემოწმება"
 msgid "Webhook"
 msgstr "ვებჰუკი"
 
+msgid "Webhook %s test was successful"
+msgstr ""
+
 msgid "Webhook %s was successfully deleted"
 msgstr "ვებჰუკი %s წარმატებით წაიშალა"
 
 msgid "Webhook Templates"
 msgstr "ვებჰუკის ნიმუშები"
+
+msgid "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"
+msgstr ""
+
+msgid "Webhook test failed: %s"
+msgstr ""
 
 msgid "Webhook was successfully created."
 msgstr "ვებჰუკი წარმატებით შეიქმნა."
@@ -224,6 +253,9 @@ msgstr "ნაგულისხმები შაბლონები ახ�
 msgid "Whether or not the template is locked for editing"
 msgstr "დაიბლოკება თუ არა შაბლონი მისი ჩასწორებისას"
 
+msgid "Will be sent as is"
+msgstr ""
+
 msgid "X509 Certification Authorities"
 msgstr "X509 CA"
 
@@ -232,6 +264,12 @@ msgstr "X509 სერტიფიკაციის ორგანოები
 
 msgid "You are about to delete %s. Are you sure?"
 msgstr "აპირებთ წაშალოთ %s. დარწმუნებული ბრძანდებით?"
+
+msgid "You are about to test %s webhook."
+msgstr ""
+
+msgid "You can specify below a custom payload to test the webhook with."
+msgstr ""
 
 msgid "is required"
 msgstr "აუცილებელია"

@@ -104,6 +104,9 @@
       "Import a webhook template": [
         ""
       ],
+      "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object.": [
+        ""
+      ],
       "List Webhooks": [
         ""
       ],
@@ -129,6 +132,9 @@
         ""
       ],
       "Payload": [
+        ""
+      ],
+      "Please, note that this will not contain actual information or render the attached template.": [
         ""
       ],
       "Proxy Authorization": [
@@ -215,6 +221,9 @@
       "Webhook Templates": [
         ""
       ],
+      "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?": [
+        ""
+      ],
       "Webhook test failed: %s": [
         ""
       ],
@@ -252,6 +261,12 @@
         ""
       ],
       "You are about to delete %s. Are you sure?": [
+        ""
+      ],
+      "You are about to test %s webhook.": [
+        ""
+      ],
+      "You can specify below a custom payload to test the webhook with.": [
         ""
       ],
       "is required": [

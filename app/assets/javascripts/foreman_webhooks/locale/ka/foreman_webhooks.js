@@ -104,6 +104,9 @@
       "Import a webhook template": [
         "ვებჰუკის ნიმუშის შემოტანა"
       ],
+      "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object.": [
+        ""
+      ],
       "List Webhooks": [
         "ვებჰუკები სია"
       ],
@@ -127,6 +130,12 @@
       ],
       "Password": [
         "პაროლი"
+      ],
+      "Payload": [
+        ""
+      ],
+      "Please, note that this will not contain actual information or render the attached template.": [
+        ""
       ],
       "Proxy Authorization": [
         "პროქსის ავტორიზაცია"
@@ -161,6 +170,18 @@
       "Template name": [
         "შაბლონის სახელი"
       ],
+      "Test": [
+        ""
+      ],
+      "Test a Webhook": [
+        ""
+      ],
+      "Test payload will be sent as is. Cant be a JSON object": [
+        ""
+      ],
+      "Test webhook": [
+        ""
+      ],
       "This template is locked for editing.": [
         "შაბლონი დაბლოკილია."
       ],
@@ -191,11 +212,20 @@
       "Webhook": [
         "ვებჰუკი"
       ],
+      "Webhook %s test was successful": [
+        ""
+      ],
       "Webhook %s was successfully deleted": [
         "ვებჰუკი %s წარმატებით წაიშალა"
       ],
       "Webhook Templates": [
         "ვებჰუკის ნიმუშები"
+      ],
+      "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?": [
+        ""
+      ],
+      "Webhook test failed: %s": [
+        ""
       ],
       "Webhook was successfully created.": [
         "ვებჰუკი წარმატებით შეიქმნა."
@@ -221,6 +251,9 @@
       "Whether or not the template is locked for editing": [
         "დაიბლოკება თუ არა შაბლონი მისი ჩასწორებისას"
       ],
+      "Will be sent as is": [
+        ""
+      ],
       "X509 Certification Authorities": [
         "X509 CA"
       ],
@@ -229,6 +262,12 @@
       ],
       "You are about to delete %s. Are you sure?": [
         "აპირებთ წაშალოთ %s. დარწმუნებული ბრძანდებით?"
+      ],
+      "You are about to test %s webhook.": [
+        ""
+      ],
+      "You can specify below a custom payload to test the webhook with.": [
+        ""
       ],
       "is required": [
         "აუცილებელია"

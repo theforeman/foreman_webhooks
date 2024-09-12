@@ -7,7 +7,6 @@
 # Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 3.2.0\n"
@@ -108,6 +107,9 @@ msgstr ""
 msgid "Import a webhook template"
 msgstr ""
 
+msgid "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object."
+msgstr ""
+
 msgid "List Webhooks"
 msgstr ""
 
@@ -130,6 +132,12 @@ msgid "Optional. Must be a JSON object (ERB allowed)"
 msgstr ""
 
 msgid "Password"
+msgstr ""
+
+msgid "Payload"
+msgstr ""
+
+msgid "Please, note that this will not contain actual information or render the attached template."
 msgstr ""
 
 msgid "Proxy Authorization"
@@ -165,6 +173,18 @@ msgstr ""
 msgid "Template name"
 msgstr ""
 
+msgid "Test"
+msgstr ""
+
+msgid "Test a Webhook"
+msgstr ""
+
+msgid "Test payload will be sent as is. Cant be a JSON object"
+msgstr ""
+
+msgid "Test webhook"
+msgstr ""
+
 msgid "This template is locked for editing."
 msgstr ""
 
@@ -195,10 +215,19 @@ msgstr "SSL 확인 "
 msgid "Webhook"
 msgstr ""
 
+msgid "Webhook %s test was successful"
+msgstr ""
+
 msgid "Webhook %s was successfully deleted"
 msgstr ""
 
 msgid "Webhook Templates"
+msgstr ""
+
+msgid "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"
+msgstr ""
+
+msgid "Webhook test failed: %s"
 msgstr ""
 
 msgid "Webhook was successfully created."
@@ -225,6 +254,9 @@ msgstr ""
 msgid "Whether or not the template is locked for editing"
 msgstr ""
 
+msgid "Will be sent as is"
+msgstr ""
+
 msgid "X509 Certification Authorities"
 msgstr ""
 
@@ -232,6 +264,12 @@ msgid "X509 Certification Authorities concatenated in PEM format"
 msgstr ""
 
 msgid "You are about to delete %s. Are you sure?"
+msgstr ""
+
+msgid "You are about to test %s webhook."
+msgstr ""
+
+msgid "You can specify below a custom payload to test the webhook with."
 msgstr ""
 
 msgid "is required"

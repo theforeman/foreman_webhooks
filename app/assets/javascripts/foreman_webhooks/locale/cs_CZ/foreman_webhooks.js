@@ -104,6 +104,9 @@
       "Import a webhook template": [
         ""
       ],
+      "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object.": [
+        ""
+      ],
       "List Webhooks": [
         ""
       ],
@@ -126,6 +129,12 @@
         ""
       ],
       "Password": [
+        ""
+      ],
+      "Payload": [
+        ""
+      ],
+      "Please, note that this will not contain actual information or render the attached template.": [
         ""
       ],
       "Proxy Authorization": [
@@ -161,6 +170,18 @@
       "Template name": [
         ""
       ],
+      "Test": [
+        ""
+      ],
+      "Test a Webhook": [
+        ""
+      ],
+      "Test payload will be sent as is. Cant be a JSON object": [
+        ""
+      ],
+      "Test webhook": [
+        ""
+      ],
       "This template is locked for editing.": [
         ""
       ],
@@ -191,10 +212,19 @@
       "Webhook": [
         ""
       ],
+      "Webhook %s test was successful": [
+        ""
+      ],
       "Webhook %s was successfully deleted": [
         ""
       ],
       "Webhook Templates": [
+        ""
+      ],
+      "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?": [
+        ""
+      ],
+      "Webhook test failed: %s": [
         ""
       ],
       "Webhook was successfully created.": [
@@ -221,6 +251,9 @@
       "Whether or not the template is locked for editing": [
         ""
       ],
+      "Will be sent as is": [
+        ""
+      ],
       "X509 Certification Authorities": [
         "X509 certifikační autority"
       ],
@@ -228,6 +261,12 @@
         ""
       ],
       "You are about to delete %s. Are you sure?": [
+        ""
+      ],
+      "You are about to test %s webhook.": [
+        ""
+      ],
+      "You can specify below a custom payload to test the webhook with.": [
         ""
       ],
       "is required": [

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 14:38+0000\n"
-"PO-Revision-Date: 2023-06-27 14:38+0000\n"
+"POT-Creation-Date: 2024-09-12 14:32+0000\n"
+"PO-Revision-Date: 2024-09-12 14:32+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -112,16 +112,22 @@ msgstr ""
 msgid "Test payload will be sent as is. Cant be a JSON object"
 msgstr ""
 
-#: ../app/jobs/foreman_webhooks/deliver_webhook_job.rb:24
+#: ../app/jobs/foreman_webhooks/deliver_webhook_job.rb:36
 msgid "Deliver webhook %s"
 msgstr ""
 
-#: ../app/jobs/foreman_webhooks/deliver_webhook_job.rb:24
+#: ../app/jobs/foreman_webhooks/deliver_webhook_job.rb:36
 msgid "Deliver webhook"
 msgstr ""
 
 #: ../app/models/webhook.rb:27
 msgid "URL must be valid and schema must be one of: %s"
+msgstr ""
+
+#: ../app/models/webhook.rb:133
+msgid ""
+"Webhook template not found while firing webhook '%s'. Possible organization/lo"
+"cation mismatch in the webhook template?"
 msgstr ""
 
 #: ../app/views/webhook_templates/_custom_tab_headers.html.erb:1
@@ -137,7 +143,7 @@ msgid "Edit %s"
 msgstr ""
 
 #: ../app/views/webhook_templates/index.html.erb:1
-#: ../lib/foreman_webhooks/engine.rb:72
+#: ../lib/foreman_webhooks/engine.rb:71
 msgid "Webhook Templates"
 msgstr ""
 
@@ -167,11 +173,11 @@ msgstr ""
 msgid "This template is locked for editing."
 msgstr ""
 
-#: ../lib/foreman_webhooks/engine.rb:66
+#: ../lib/foreman_webhooks/engine.rb:65
 msgid "Webhook"
 msgstr ""
 
-#: ../lib/foreman_webhooks/engine.rb:69
+#: ../lib/foreman_webhooks/engine.rb:68
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/WebhooksIndexPage.js:47
 msgid "Webhooks"
 msgstr ""
@@ -373,12 +379,36 @@ msgid "Test"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:63
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:61
+msgid "You are about to test %s webhook."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:62
+msgid ""
+"Please, note that this will not contain actual information or render the attac"
+"hed template."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:65
+msgid ""
+"In case you are using dynamic URL (ERB template), this will not be rendered co"
+"rrectly due to the absence of a real object."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:68
+msgid "You can specify below a custom payload to test the webhook with."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:79
 msgid "Payload"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:82
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:80
 msgid "Will be sent as is"
 msgstr ""
 

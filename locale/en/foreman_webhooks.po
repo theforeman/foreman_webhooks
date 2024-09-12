@@ -104,6 +104,9 @@ msgstr ""
 msgid "Import a webhook template"
 msgstr ""
 
+msgid "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object."
+msgstr ""
+
 msgid "List Webhooks"
 msgstr ""
 
@@ -129,6 +132,9 @@ msgid "Password"
 msgstr ""
 
 msgid "Payload"
+msgstr ""
+
+msgid "Please, note that this will not contain actual information or render the attached template."
 msgstr ""
 
 msgid "Proxy Authorization"
@@ -215,6 +221,9 @@ msgstr ""
 msgid "Webhook Templates"
 msgstr ""
 
+msgid "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"
+msgstr ""
+
 msgid "Webhook test failed: %s"
 msgstr ""
 
@@ -252,6 +261,12 @@ msgid "X509 Certification Authorities concatenated in PEM format"
 msgstr ""
 
 msgid "You are about to delete %s. Are you sure?"
+msgstr ""
+
+msgid "You are about to test %s webhook."
+msgstr ""
+
+msgid "You can specify below a custom payload to test the webhook with."
 msgstr ""
 
 msgid "is required"
