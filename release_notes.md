@@ -1,5 +1,20 @@
 Release notes
 =============
+### 4.0.0 (2024-09-12)
+* Support zeitwerk loader, [#37469](http://projects.theforeman.org/issues/37469)
+* Provide meaningful error message on org/loc mismatch, [#37667](http://projects.theforeman.org/issues/37667)
+* Update packit to build on rhel 8 & 9
+* Use theforeman-rubocop gem ([PR #74](https://github.com/theforeman/foreman_webhooks/pull/74))
+* Rewrite to a shared github actions workflow ([PR #71](https://github.com/theforeman/foreman_webhooks/pull/71))
+* Update packit
+* Bump version to 3.2.2
+* Expect erb in url for test webhook, [#36910](http://projects.theforeman.org/issues/36910)
+* Use foreman-devel:el8 module
+* Bump version to 3.2.1
+* Fail delivery task if delivery fails ([PR #67](https://github.com/theforeman/foreman_webhooks/pull/67)), [#32368](http://projects.theforeman.org/issues/32368)
+* Correct event names in webhook template documentation
+* Fix example templates ([PR #65](https://github.com/theforeman/foreman_webhooks/pull/65)), [#36653](http://projects.theforeman.org/issues/36653)
+
 ### 3.2.0 (2023-06-27)
 * Update transifex config
 * Graphql api, [#31413](http://projects.theforeman.org/issues/31413)
