@@ -1,5 +1,10 @@
 Release notes
 =============
+### 4.0.1 (2025-02-18)
+* Make payload signature less strict, [#38176](http://projects.theforeman.org/issues/38176)
+* Drop el8 from packit config ([PR #82](https://github.com/theforeman/foreman_webhooks/pull/82))
+* Make theforeman-rubocop dev dep, use 2.7 for cop target
+
 ### 4.0.0 (2024-09-12)
 * Support zeitwerk loader, [#37469](http://projects.theforeman.org/issues/37469)
 * Provide meaningful error message on org/loc mismatch, [#37667](http://projects.theforeman.org/issues/37667)
