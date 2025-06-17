@@ -21,8 +21,14 @@ const WebhookFormTabs = ({
   isPasswordDisabled,
   setIsPasswordDisabled,
 }) => (
-  <Tabs activeKey={activeTab} onSelect={handleTabClick} isFilled>
+  <Tabs
+    ouiaId="webhook-form-tabs"
+    activeKey={activeTab}
+    onSelect={handleTabClick}
+    isFilled
+  >
     <Tab
+      ouiaId="webhook-form-tab-general"
       className="webhook-form-tab"
       eventKey={0}
       title={<TabTitleText>{__('General')}</TabTitleText>}
@@ -90,6 +96,7 @@ const WebhookFormTabs = ({
       </div>
     </Tab>
     <Tab
+      ouiaId="webhook-form-tab-creds"
       className="webhook-form-tab"
       eventKey={1}
       title={<TabTitleText>{__('Credentials')}</TabTitleText>}
@@ -138,6 +145,7 @@ const WebhookFormTabs = ({
       </div>
     </Tab>
     <Tab
+      ouiaId="webhook-form-tab-add"
       className="webhook-form-tab"
       eventKey={2}
       title={<TabTitleText>{__('Additional')}</TabTitleText>}

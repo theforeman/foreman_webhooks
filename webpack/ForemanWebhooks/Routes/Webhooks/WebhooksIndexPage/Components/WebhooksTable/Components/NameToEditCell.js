@@ -5,6 +5,7 @@ import { Button } from '@patternfly/react-core';
 const NameToEditCell = ({ active, id, name, controller, onClick, children }) =>
   active ? (
     <Button
+      ouiaId="name-edit-active-button"
       variant="link"
       isInline
       component="span"
@@ -13,7 +14,13 @@ const NameToEditCell = ({ active, id, name, controller, onClick, children }) =>
       {children}
     </Button>
   ) : (
-    <Button variant="link" isInline isDisabled component="span">
+    <Button
+      ouiaId="name-edit-disabled-button"
+      variant="link"
+      isInline
+      isDisabled
+      component="span"
+    >
       {children}
     </Button>
   );
