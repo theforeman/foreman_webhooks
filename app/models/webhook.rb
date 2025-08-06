@@ -131,6 +131,7 @@ class Webhook < ApplicationRecord
 
   def rendered_payload(event_name, payload)
     raise ::Foreman::Exception.new(N_("Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"), name) if webhook_template.nil?
+
     webhook_template.render(variables: variables(event_name, payload))
   end
 
