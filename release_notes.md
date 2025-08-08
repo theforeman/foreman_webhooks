@@ -1,5 +1,12 @@
 Release notes
 =============
+### 3.2.4 (2025-08-08)
+* Make payload signature less strict, [#38176](http://projects.theforeman.org/issues/38176)
+* Use foreman 3.12-stable for testing
+* Make theforeman-rubocop dev dep, use 2.7 for cop target
+* Use theforeman-rubocop gem ([PR #74](https://github.com/theforeman/foreman_webhooks/pull/74))
+* Rewrite to a shared github actions workflow ([PR #71](https://github.com/theforeman/foreman_webhooks/pull/71))
+
 ### 3.2.1 (2023-08-09)
 * Fix example templates ([PR #65](https://github.com/theforeman/foreman_webhooks/pull/65)), [#36653](http://projects.theforeman.org/issues/36653)
 
