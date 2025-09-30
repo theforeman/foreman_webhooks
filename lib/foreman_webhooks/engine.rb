@@ -14,7 +14,7 @@ module ForemanWebhooks
     initializer 'foreman_webhooks.register_plugin', before: :finisher_hook do |app|
       app.reloader.to_prepare do
         Foreman::Plugin.register :foreman_webhooks do
-          requires_foreman '>= 3.13'
+          requires_foreman '>= 3.18'
           register_gettext
 
           apipie_documented_controllers ["#{ForemanWebhooks::Engine.root}/app/controllers/api/v2/*.rb"]
