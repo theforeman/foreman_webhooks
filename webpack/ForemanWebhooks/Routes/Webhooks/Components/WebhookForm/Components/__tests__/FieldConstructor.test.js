@@ -114,6 +114,22 @@ describe('FieldConstructor RTL Tests', () => {
     });
   });
 
+  describe('Autocomplete render  test', () => {
+    test('renders autocomplete', () => {
+      const props = {
+        ...defaultProps,
+        onChange: defaultProps.setValue,
+        options: [
+          { value: 'host_created.event.foreman', label: 'Host Created' },
+          { value: 'host_updated.event.foreman', label: 'Host Updated' },
+        ],
+      };
+      render(<FieldConstructor {...props} type="select" />);
+
+      expect(screen.getByRole('combobox')).toBeInTheDocument();
+    });
+  });
+
   describe('Label Help', () => {
     test('renders help icon when labelHelp is provided', () => {
       render(

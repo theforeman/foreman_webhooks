@@ -1,6 +1,7 @@
 /* eslint-disable max-lines */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import AutocompleteInput from 'foremanReact/components/common/AutocompleteInput/AutocompleteInput';
 import { translate as __ } from 'foremanReact/common/I18n';
 import {
   ExclamationCircleIcon,
@@ -21,8 +22,6 @@ import {
   Grid,
   GridItem,
 } from '@patternfly/react-core';
-
-import AutocompleteInput from './AutocompleteInput';
 
 const FormField = ({
   name,
