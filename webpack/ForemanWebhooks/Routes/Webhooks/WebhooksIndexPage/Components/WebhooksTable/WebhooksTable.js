@@ -6,7 +6,6 @@ import { isEmpty } from 'lodash';
 import { Table } from 'foremanReact/components/common/table';
 import Pagination from 'foremanReact/components/Pagination';
 import Loading from 'foremanReact/components/Loading';
-import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanModalHooks';
 
 import WebhookDeleteModal from '../WebhookDeleteModal';
 import WebhookEditModal from '../WebhookEditModal';
@@ -14,8 +13,6 @@ import WebhookTestModal from '../WebhookTestModal';
 import EmptyWebhooksTable from './Components/EmptyWebhooksTable';
 
 import createWebhooksTableSchema from './WebhooksTableSchema';
-
-import { WEBHOOK_EDIT_MODAL_ID } from '../../../constants';
 
 import {
   selectWebhooks,
@@ -38,6 +35,7 @@ const WebhooksTable = ({
   onEditClick,
   reloadWithSearch,
   webhookActions,
+  modalsStates,
 }) => {
   const webhooks = useSelector(selectWebhooks);
   const page = useSelector(selectPage);
@@ -51,14 +49,11 @@ const WebhooksTable = ({
   const message = useSelector(selectMessage);
 
   const onDeleteSuccess = () => {
+    modalsStates.deleteModal.closeModal();
     const currentPage = page;
     const maxPage = Math.ceil((itemCount - 1) / perPage);
     fetchAndPush({ page: maxPage < currentPage ? maxPage : currentPage });
   };
-
-  const { setModalClosed: setEditModalClosed } = useForemanModal({
-    id: WEBHOOK_EDIT_MODAL_ID,
-  });
 
   if (isLoading && !hasError) return <Loading />;
 
@@ -68,16 +63,20 @@ const WebhooksTable = ({
 
   return (
     <React.Fragment>
-      <WebhookDeleteModal toDelete={toDelete} onSuccess={onDeleteSuccess} />
+      <WebhookDeleteModal
+        toDelete={toDelete}
+        onSuccess={onDeleteSuccess}
+        modalState={modalsStates.deleteModal}
+      />
       <WebhookEditModal
         toEdit={toEdit}
         onSuccess={() => {
-          setEditModalClosed();
+          modalsStates.editModal.closeModal();
           reloadWithSearch(search);
         }}
-        onCancel={setEditModalClosed}
+        modalState={modalsStates.editModal}
       />
-      <WebhookTestModal toTest={toTest} />
+      <WebhookTestModal toTest={toTest} modalState={modalsStates.testModal} />
       <Table
         key="webhooks-table"
         columns={createWebhooksTableSchema(
@@ -103,6 +102,20 @@ WebhooksTable.propTypes = {
   toEdit: PropTypes.number.isRequired,
   reloadWithSearch: PropTypes.func.isRequired,
   webhookActions: PropTypes.object.isRequired,
+  modalsStates: PropTypes.shape({
+    deleteModal: PropTypes.shape({
+      isOpen: PropTypes.bool.isRequired,
+      closeModal: PropTypes.func.isRequired,
+    }).isRequired,
+    editModal: PropTypes.shape({
+      isOpen: PropTypes.bool.isRequired,
+      closeModal: PropTypes.func.isRequired,
+    }).isRequired,
+    testModal: PropTypes.shape({
+      isOpen: PropTypes.bool.isRequired,
+      closeModal: PropTypes.func.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default WebhooksTable;

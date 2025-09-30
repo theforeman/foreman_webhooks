@@ -1,61 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { sprintf, translate as __ } from 'foremanReact/common/I18n';
-import ForemanModal from 'foremanReact/components/ForemanModal';
-import ForemanForm from 'foremanReact/components/common/forms/ForemanForm';
 import { foremanUrl } from 'foremanReact/common/helpers';
-import { submitForm } from 'foremanReact/redux/actions/common/forms';
-import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanModalHooks';
+import {
+  Form,
+  Button,
+  ActionGroup,
+  Modal,
+  ModalVariant,
+} from '@patternfly/react-core';
 
-import ForemanFormikField from '../../../Webhooks/Components/WebhookForm/Components/ForemanFormikField';
-
+import { APIActions } from 'foremanReact/redux/API';
 import {
   WEBHOOK_TEST_MODAL_ID,
   WEBHOOKS_API_PLAIN_PATH,
 } from '../../constants';
 
 import './WebhookModal.scss';
+import FieldConstructor from '../../Components/WebhookForm/Components/FieldConstructor';
 
-const WebhookTestModal = ({ toTest }) => {
+const WebhookTestModal = ({ toTest, modalState }) => {
   const dispatch = useDispatch();
 
   const { id, name } = toTest;
-  const { setModalClosed: setTestModalClosed } = useForemanModal({
-    id: WEBHOOK_TEST_MODAL_ID,
-  });
   const initialTestValues = {
     payload: '',
   };
+
+  const [value, setValue] = useState(initialTestValues);
+
   const errorToast = error =>
     sprintf(
       __('Webhook test failed: %s'),
       error?.response?.data?.error?.message
     );
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = values => {
     dispatch(
-      submitForm({
+      APIActions.post({
+        key: WEBHOOK_TEST_MODAL_ID,
         url: foremanUrl(`${WEBHOOKS_API_PLAIN_PATH}/${id}/test`),
-        values: { ...values, controller: 'webhooks' },
-        item: 'WebhookTest',
-        message: sprintf(__('Webhook %s test was successful'), name),
-        method: 'post',
-        successCallback: () => actions.setSubmitting(false),
-        actions,
-        errorToast,
-        handleError: () => actions.setSubmitting(false),
+        params: {
+          ...values,
+          controller: 'webhooks',
+        },
+        successToast: () => sprintf(__('Webhook %s test was successful'), name),
+        errorToast: error => errorToast(error),
+        handleSuccess: () => modalState.closeModal(),
       })
     );
   };
 
   return (
-    <ForemanModal
+    <Modal
+      variant={ModalVariant.medium}
+      isOpen={modalState.isOpen}
+      onClose={modalState.closeModal}
       id={WEBHOOK_TEST_MODAL_ID}
+      ouiaId={WEBHOOK_TEST_MODAL_ID}
       title={`${__('Test')} ${name}`}
-      backdrop="static"
-      enforceFocus
       className="webhooks-modal"
     >
       {`${sprintf(__('You are about to test %s webhook.'), name)} `}
@@ -68,12 +73,8 @@ const WebhookTestModal = ({ toTest }) => {
       {__('You can specify below a custom payload to test the webhook with.')}
       <br />
       <br />
-      <ForemanForm
-        onSubmit={handleSubmit}
-        initialValues={initialTestValues}
-        onCancel={setTestModalClosed}
-      >
-        <ForemanFormikField
+      <Form>
+        <FieldConstructor
           name="payload"
           type="textarea"
           label={__('Payload')}
@@ -81,14 +82,38 @@ const WebhookTestModal = ({ toTest }) => {
           placeholder="{&#13;&#10;id: 1,&#13;&#10;name: test&#13;&#10;}"
           inputSizeClass="col-md-8"
           rows={8}
+          value={value.payload}
+          setValue={(key, val) => {
+            setValue(prev => ({ ...prev, [key]: val }));
+          }}
         />
-      </ForemanForm>
-    </ForemanModal>
+        <ActionGroup>
+          <Button
+            ouiaId="submit-webhook-form"
+            variant="primary"
+            onClick={() => handleSubmit(value)}
+          >
+            {__('Submit')}
+          </Button>
+          <Button
+            ouiaId="cancel-webhook-form"
+            variant="link"
+            onClick={modalState.closeModal}
+          >
+            {__('Cancel')}
+          </Button>
+        </ActionGroup>
+      </Form>
+    </Modal>
   );
 };
 
 WebhookTestModal.propTypes = {
   toTest: PropTypes.object,
+  modalState: PropTypes.shape({
+    isOpen: PropTypes.bool.isRequired,
+    closeModal: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 WebhookTestModal.defaultProps = {

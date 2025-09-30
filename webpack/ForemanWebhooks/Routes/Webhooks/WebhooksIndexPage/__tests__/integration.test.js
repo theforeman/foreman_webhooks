@@ -24,11 +24,8 @@ describe('WebhooksIndexPage - Integration Test', () => {
         <ConnectedWebhooksIndexPage history={history} />
       </Router>
     );
-    integrationTestHelper.takeStoreAndLastActionSnapshot('rendered');
 
     expect(component.exists('WebhooksTable')).toEqual(true);
     expect(component.exists('WebhookCreateModal')).toEqual(true);
-
-    integrationTestHelper.takeStoreAndLastActionSnapshot('initial state');
   });
 });

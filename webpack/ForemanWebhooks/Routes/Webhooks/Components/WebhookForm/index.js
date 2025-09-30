@@ -29,7 +29,6 @@ const ConnectedWebhookForm = ({
   handleSubmit,
   initialValues,
   isPasswordDisabled,
-  setIsPasswordDisabled,
 }) => {
   const dispatch = useDispatch();
 
@@ -67,7 +66,6 @@ const ConnectedWebhookForm = ({
       isTemplatesLoading={isTemplatesLoading}
       isEventsLoading={isEventsLoading}
       isPasswordDisabled={isPasswordDisabled}
-      setIsPasswordDisabled={setIsPasswordDisabled}
     />
   );
 };
@@ -77,12 +75,10 @@ ConnectedWebhookForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object.isRequired,
   isPasswordDisabled: PropTypes.bool,
-  setIsPasswordDisabled: PropTypes.func,
 };
 
 ConnectedWebhookForm.defaultProps = {
   isPasswordDisabled: false,
-  setIsPasswordDisabled: undefined,
 };
 
 export default ConnectedWebhookForm;
