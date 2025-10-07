@@ -5,14 +5,14 @@
 #
 # Translators:
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2023
-# Andi Chandler <andi@gowling.com>, 2023
+# Andi Chandler <andi@gowling.com>, 2025
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 3.2.0\n"
+"Project-Id-Version: foreman_webhooks 4.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>, 2023\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2025\n"
 "Language-Team: English (United Kingdom) (https://app.transifex.com/foreman/tea"
 "ms/114/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -73,13 +73,13 @@ msgid "Deliver webhook %s"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 msgid "Edit %s"
 msgstr ""
 
 msgid "Enabled"
-msgstr ""
+msgstr "Enabled"
 
 msgid "Error"
 msgstr ""
@@ -94,13 +94,13 @@ msgid "General"
 msgstr ""
 
 msgid "HTTP Content Type"
-msgstr ""
+msgstr "HTTP Content Type"
 
 msgid "HTTP Headers"
-msgstr ""
+msgstr "HTTP Headers"
 
 msgid "HTTP Method"
-msgstr ""
+msgstr "HTTP Method"
 
 msgid "If unchecked, the webhook will be inactive"
 msgstr ""
@@ -142,7 +142,7 @@ msgid "Please, note that this will not contain actual information or render the 
 msgstr ""
 
 msgid "Proxy Authorization"
-msgstr ""
+msgstr "Proxy Authorization"
 
 msgid "Show Webhook details"
 msgstr ""
@@ -160,7 +160,7 @@ msgid "Subscribe to"
 msgstr ""
 
 msgid "Target URL"
-msgstr ""
+msgstr "Target URL"
 
 msgid "Target URL that should be called by Foreman (ERB allowed)."
 msgstr ""
@@ -208,10 +208,10 @@ msgid "Update a webhook template"
 msgstr ""
 
 msgid "User"
-msgstr ""
+msgstr "User"
 
 msgid "Verify SSL"
-msgstr ""
+msgstr "Verify SSL"
 
 msgid "Webhook"
 msgstr ""

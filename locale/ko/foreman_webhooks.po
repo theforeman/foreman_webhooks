@@ -4,15 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
-# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
+# Ondřej Gajdušek, 2025
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 3.2.0\n"
+"Project-Id-Version: foreman_webhooks 4.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: Bryan Kearney <bryan.kearney@gmail.com>, 2023\n"
+"Last-Translator: Ondřej Gajdušek, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/foreman/teams/114/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,187 +25,187 @@ msgid "Actions"
 msgstr "동작 "
 
 msgid "Additional"
-msgstr ""
+msgstr "추가"
 
 msgid "Authentication credentials"
-msgstr ""
+msgstr "인증 자격 증명"
 
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
-msgstr ""
+msgstr "Foreman 클라이언트 인증서로 권한 부여 및 설정에서 스마트 프록시 CA를 검증"
 
 msgid "Change the password"
-msgstr ""
+msgstr "암호 변경"
 
 msgid "Clone a template"
-msgstr ""
+msgstr "템플릿 복제"
 
 msgid "Confirm Webhook Deletion"
-msgstr ""
+msgstr "Webhook 삭제 확인"
 
 msgid "Create Template"
-msgstr ""
+msgstr "템플릿 만들기"
 
 msgid "Create Webhook"
-msgstr ""
+msgstr "Webhook 만들기"
 
 msgid "Create a Webhook"
-msgstr ""
+msgstr "Webhook 생성"
 
 msgid "Create a webhook template"
-msgstr ""
+msgstr "Webhook 템플릿 생성"
 
 msgid "Credentials"
-msgstr ""
+msgstr "자격 증명"
 
 msgid "Delete"
 msgstr "삭제 "
 
 msgid "Delete a Webhook"
-msgstr ""
+msgstr "Webhook 삭제"
 
 msgid "Delete a webhook template"
-msgstr ""
+msgstr "Webhook 템플릿 삭제"
 
 msgid "Deliver webhook"
-msgstr ""
+msgstr "webhook 전달"
 
 msgid "Deliver webhook %s"
-msgstr ""
+msgstr "webhook %s 전달"
 
 msgid "Edit"
-msgstr "수정"
+msgstr "편집"
 
 msgid "Edit %s"
-msgstr ""
+msgstr "%s 편집"
 
 msgid "Enabled"
-msgstr ""
+msgstr "활성화됨"
 
 msgid "Error"
 msgstr "오류"
 
 msgid "Example: %s"
-msgstr ""
+msgstr "예: %s"
 
 msgid "Export a webhook template to ERB"
-msgstr ""
+msgstr "Webhook 템플릿을 ERB로 내보내기"
 
 msgid "General"
 msgstr "일반"
 
 msgid "HTTP Content Type"
-msgstr ""
+msgstr "HTTP 콘텐츠 유형"
 
 msgid "HTTP Headers"
-msgstr ""
+msgstr "HTTP 헤더"
 
 msgid "HTTP Method"
-msgstr ""
+msgstr "HTTP 방식"
 
 msgid "If unchecked, the webhook will be inactive"
-msgstr ""
+msgstr "체크하지 않으면 웹훅이 비활성화됩니다."
 
 msgid "Import a webhook template"
-msgstr ""
+msgstr "Webhook 템플릿 가져오기"
 
 msgid "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object."
-msgstr ""
+msgstr "동적 URL(ERB 템플릿)을 사용하는 경우 실제 개체가 없기 때문에 올바르게 렌더링되지 않습니다."
 
 msgid "List Webhooks"
-msgstr ""
+msgstr "Webhook 목록"
 
 msgid "List available events for subscription"
-msgstr ""
+msgstr "구독 가능한 이벤트 목록"
 
 msgid "List webhook templates"
-msgstr ""
+msgstr "webhook 템플릿 목록"
 
 msgid "Name"
 msgstr "이름"
 
 msgid "No Results"
-msgstr ""
+msgstr "결과 없음"
 
 msgid "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
-msgstr ""
+msgstr "수신자의 SSL 인증서를 확인하기 위해 PEM 형식으로 연결된 선택적 CA"
 
 msgid "Optional. Must be a JSON object (ERB allowed)"
-msgstr ""
+msgstr "선택 사항입니다. JSON 객체여야 합니다(ERB 허용)."
 
 msgid "Password"
-msgstr ""
+msgstr "암호 "
 
 msgid "Payload"
-msgstr ""
+msgstr "페이로드"
 
 msgid "Please, note that this will not contain actual information or render the attached template."
-msgstr ""
+msgstr "참고: 실제 정보가 포함되지 않으며 첨부된 템플릿이 렌더링되지 않습니다."
 
 msgid "Proxy Authorization"
-msgstr ""
+msgstr "프록시 권한 부여"
 
 msgid "Show Webhook details"
-msgstr ""
+msgstr "Webhook 세부 정보 표시"
 
 msgid "Show webhook template details"
-msgstr ""
+msgstr "Webhook 템플릿 세부 정보 표시"
 
 msgid "Snippet"
-msgstr ""
+msgstr "스니펫"
 
 msgid "Start typing to search"
-msgstr ""
+msgstr "검색하려면 입력 시작"
 
 msgid "Subscribe to"
-msgstr ""
+msgstr "구독하기"
 
 msgid "Target URL"
-msgstr ""
+msgstr "대상 URL"
 
 msgid "Target URL that should be called by Foreman (ERB allowed)."
-msgstr ""
+msgstr "Foreman이 호출해야 하는 대상 URL(ERB 허용)."
 
 msgid "Template"
-msgstr ""
+msgstr "템플릿"
 
 msgid "Template contents including metadata"
-msgstr ""
+msgstr "메타데이터를 포함한 템플릿 내용"
 
 msgid "Template name"
-msgstr ""
+msgstr "템플릿 이름"
 
 msgid "Test"
-msgstr ""
+msgstr "테스트"
 
 msgid "Test a Webhook"
-msgstr ""
+msgstr "Webhook 테스트"
 
 msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
+msgstr "테스트 페이로드는 그대로 전송됩니다. JSON 객체일 수 없습니다."
 
 msgid "Test webhook"
-msgstr ""
+msgstr "Webhook 테스트"
 
 msgid "This template is locked for editing."
-msgstr ""
+msgstr "이 템플릿은 편집이 잠금되어 있습니다. "
 
 msgid "Try to create a new webhook"
-msgstr ""
+msgstr "새 Webhook을 만들어 보세요"
 
 msgid "Type"
-msgstr ""
+msgstr "유형 "
 
 msgid "URL must be valid and schema must be one of: %s"
-msgstr ""
+msgstr "URL이 유효하고 스키마는 다음 중 하나여야 합니다: %s"
 
 msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
-msgstr ""
+msgstr "이 옵션의 선택을 해제하면 수신자의 SSL 인증서 유효성 검사가 비활성화됩니다."
 
 msgid "Update a Webhook"
-msgstr ""
+msgstr "Webhook 업데이트"
 
 msgid "Update a webhook template"
-msgstr ""
+msgstr "Webhook 템플릿 업데이트"
 
 msgid "User"
 msgstr "사용자 "
@@ -213,64 +214,64 @@ msgid "Verify SSL"
 msgstr "SSL 확인 "
 
 msgid "Webhook"
-msgstr ""
+msgstr "Webhook"
 
 msgid "Webhook %s test was successful"
-msgstr ""
+msgstr "Webhook %s 테스트 성공"
 
 msgid "Webhook %s was successfully deleted"
-msgstr ""
+msgstr "Webhook%s가 성공적으로 삭제되었습니다"
 
 msgid "Webhook Templates"
-msgstr ""
+msgstr "Webhook 템플릿"
 
 msgid "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"
-msgstr ""
+msgstr "webhook '%s을 실행하는 동안 Webhook 템플릿을 찾을 수 없습니다. Webhook 템플릿에서 조직/위치 불일치 가능성이 있나요?"
 
 msgid "Webhook test failed: %s"
-msgstr ""
+msgstr "Webhook 테스트 실패: %s"
 
 msgid "Webhook was successfully created."
-msgstr ""
+msgstr "Webhook이 성공적으로 생성되었습니다. "
 
 msgid "Webhook was successfully updated."
-msgstr ""
+msgstr "Webhook이 성공적으로 업데이트되었습니다."
 
 msgid "WebhookTemplate|Locked"
-msgstr ""
+msgstr "WebhookTemplate|잠금"
 
 msgid "WebhookTemplate|Name"
-msgstr ""
+msgstr "WebhookTemplate|이름"
 
 msgid "WebhookTemplate|Snippet"
-msgstr ""
+msgstr "WebhookTemplate|스니펫"
 
 msgid "Webhooks"
-msgstr ""
+msgstr "Webhook"
 
 msgid "Whether or not the template is added automatically to new organizations and locations"
-msgstr ""
+msgstr "템플릿이 새 조직 및 위치에 자동으로 추가되는지 여부"
 
 msgid "Whether or not the template is locked for editing"
-msgstr ""
+msgstr "템플릿 편집 잠금 여부"
 
 msgid "Will be sent as is"
-msgstr ""
+msgstr "그대로 전송"
 
 msgid "X509 Certification Authorities"
-msgstr ""
+msgstr "X509 인증 기관"
 
 msgid "X509 Certification Authorities concatenated in PEM format"
-msgstr ""
+msgstr "PEM 형식으로 연결된 X509 인증 기관"
 
 msgid "You are about to delete %s. Are you sure?"
-msgstr ""
+msgstr "%s을/를 삭제하려고 합니다. 삭제하시겠습니까?"
 
 msgid "You are about to test %s webhook."
-msgstr ""
+msgstr "%s Webhook을 테스트하려고합니다."
 
 msgid "You can specify below a custom payload to test the webhook with."
-msgstr ""
+msgstr "아래에서 사용자 정의 페이로드를 지정하여 Webhook을 테스트할 수 있습니다."
 
 msgid "is required"
-msgstr ""
+msgstr "필요함"

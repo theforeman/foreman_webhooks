@@ -8,13 +8,16 @@
 # Claer <transiblu@claer.hammock.fr>, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # 21966816214bc546c1fc8a185e75ca1c, 2023
+# Baptiste Agasse <baptiste.agasse@gmail.com>, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Ondřej Gajdušek, 2025
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 3.2.0\n"
+"Project-Id-Version: foreman_webhooks 4.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: 21966816214bc546c1fc8a185e75ca1c, 2023\n"
+"Last-Translator: Ondřej Gajdušek, 2025\n"
 "Language-Team: French (https://app.transifex.com/foreman/teams/114/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,31 +33,31 @@ msgid "Additional"
 msgstr "Informations complémentaires"
 
 msgid "Authentication credentials"
-msgstr ""
+msgstr "Informations d'authentification"
 
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
-msgstr ""
+msgstr "Autoriser avec le certificat client Foreman et valider l'autorité de certification Smart Proxy à partir des paramètres"
 
 msgid "Change the password"
-msgstr ""
+msgstr "Changer le mot de passe"
 
 msgid "Clone a template"
-msgstr ""
+msgstr "Cloner un modèle"
 
 msgid "Confirm Webhook Deletion"
-msgstr ""
+msgstr "Confirmer la suppression du webhook"
 
 msgid "Create Template"
-msgstr ""
+msgstr "Créer un modèle"
 
 msgid "Create Webhook"
-msgstr ""
+msgstr "Créer un webhook"
 
 msgid "Create a Webhook"
-msgstr ""
+msgstr "Créer un webhook"
 
 msgid "Create a webhook template"
-msgstr ""
+msgstr "Créer un modèle de webhook"
 
 msgid "Credentials"
 msgstr "Identifiants"
@@ -63,16 +66,16 @@ msgid "Delete"
 msgstr "Supprimer"
 
 msgid "Delete a Webhook"
-msgstr ""
+msgstr "Supprimer un webhook"
 
 msgid "Delete a webhook template"
-msgstr ""
+msgstr "Supprimer un modèle de webhook"
 
 msgid "Deliver webhook"
-msgstr ""
+msgstr "Livrer un webhook"
 
 msgid "Deliver webhook %s"
-msgstr ""
+msgstr "Livrer un webhook %s"
 
 msgid "Edit"
 msgstr "Modifier"
@@ -84,130 +87,130 @@ msgid "Enabled"
 msgstr "Activé"
 
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 msgid "Example: %s"
-msgstr ""
+msgstr "Exemple: %s"
 
 msgid "Export a webhook template to ERB"
-msgstr ""
+msgstr "Exporter un modèle de webhook vers ERB"
 
 msgid "General"
 msgstr "Général"
 
 msgid "HTTP Content Type"
-msgstr ""
+msgstr "Type de contenu HTTP"
 
 msgid "HTTP Headers"
-msgstr ""
+msgstr "En-têtes HTTP"
 
 msgid "HTTP Method"
-msgstr ""
+msgstr "Méthode HTTP"
 
 msgid "If unchecked, the webhook will be inactive"
-msgstr ""
+msgstr "Si décoché, le webhook sera inactif"
 
 msgid "Import a webhook template"
-msgstr ""
+msgstr "Importer un modèle de webhook"
 
 msgid "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object."
-msgstr ""
+msgstr "Si vous utilisez une URL dynamique (modèle ERB), celle-ci ne sera pas rendue correctement en raison de l'absence d'un objet réel."
 
 msgid "List Webhooks"
-msgstr ""
+msgstr "Liste des Webhooks"
 
 msgid "List available events for subscription"
-msgstr ""
+msgstr "Liste des événements disponibles pour l'abonnement"
 
 msgid "List webhook templates"
-msgstr ""
+msgstr "Modèle de webhook"
 
 msgid "Name"
 msgstr "Nom"
 
 msgid "No Results"
-msgstr ""
+msgstr "Aucun résultat"
 
 msgid "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
-msgstr ""
+msgstr "CA facultatives au format PEM concaténées pour vérifier le certificat SSL du récepteur"
 
 msgid "Optional. Must be a JSON object (ERB allowed)"
-msgstr ""
+msgstr "Facultatif. Doit être un objet JSON (ERB autorisé)."
 
 msgid "Password"
-msgstr ""
+msgstr "Mot de passe"
 
 msgid "Payload"
-msgstr ""
+msgstr "Payload"
 
 msgid "Please, note that this will not contain actual information or render the attached template."
-msgstr ""
+msgstr "Veuillez noter que ceci ne contiendra pas d'informations réelles ni ne rendra le modèle ci-joint."
 
 msgid "Proxy Authorization"
-msgstr ""
+msgstr "Autorisation Proxy"
 
 msgid "Show Webhook details"
-msgstr ""
+msgstr "Afficher les détails du webhook"
 
 msgid "Show webhook template details"
-msgstr ""
+msgstr "Afficher les détails du modèle de webhook"
 
 msgid "Snippet"
-msgstr ""
+msgstr "Snippet"
 
 msgid "Start typing to search"
-msgstr ""
+msgstr "Commencez à taper pour rechercher"
 
 msgid "Subscribe to"
-msgstr ""
+msgstr "S'abonner"
 
 msgid "Target URL"
-msgstr ""
+msgstr "URL cible"
 
 msgid "Target URL that should be called by Foreman (ERB allowed)."
-msgstr ""
+msgstr "URL cible qui doit être appelée par Foreman (ERB autorisé)"
 
 msgid "Template"
-msgstr ""
+msgstr "Modèle"
 
 msgid "Template contents including metadata"
-msgstr ""
+msgstr "Contenu du modèle, métadonnées incluses"
 
 msgid "Template name"
-msgstr ""
+msgstr "Nom de modèle"
 
 msgid "Test"
-msgstr ""
+msgstr "Tester"
 
 msgid "Test a Webhook"
-msgstr ""
+msgstr "Tester un webhook"
 
 msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
+msgstr "La charge utile de test sera envoyée telle quelle. Il ne peut s'agir d'un objet JSON."
 
 msgid "Test webhook"
-msgstr ""
+msgstr "Tester le webhook"
 
 msgid "This template is locked for editing."
-msgstr ""
+msgstr "Ce modèle est verrouillé contre les modifications."
 
 msgid "Try to create a new webhook"
-msgstr ""
+msgstr "Essayez de créer un nouveau webhook"
 
 msgid "Type"
 msgstr "Type"
 
 msgid "URL must be valid and schema must be one of: %s"
-msgstr ""
+msgstr "L'URL doit être valide et le schéma doit être parmi ceux-ci %s"
 
 msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
-msgstr ""
+msgstr "Décochez cette option pour désactiver la validation du certificat SSL du récepteur"
 
 msgid "Update a Webhook"
-msgstr ""
+msgstr "Mettre à jour un webhook"
 
 msgid "Update a webhook template"
-msgstr ""
+msgstr "Mettre à jour un modèle de webhook"
 
 msgid "User"
 msgstr "Utilisateur"
@@ -216,64 +219,64 @@ msgid "Verify SSL"
 msgstr "Vérifier SSL"
 
 msgid "Webhook"
-msgstr ""
+msgstr "Webhook"
 
 msgid "Webhook %s test was successful"
-msgstr ""
+msgstr "Webhook%s le test a réussi"
 
 msgid "Webhook %s was successfully deleted"
-msgstr ""
+msgstr "Webhook%s a été supprimé avec succès"
 
 msgid "Webhook Templates"
-msgstr ""
+msgstr "Modèles de webhook"
 
 msgid "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"
-msgstr ""
+msgstr "Modèle de webhook introuvable lors du déclenchement du webhook '%s '. Possible incompatibilité entre l'organisation et l'emplacement dans le modèle de webhook ?"
 
 msgid "Webhook test failed: %s"
-msgstr ""
+msgstr "Échec du test du webhook : %s"
 
 msgid "Webhook was successfully created."
-msgstr ""
+msgstr "Mise à jour du signet réussie."
 
 msgid "Webhook was successfully updated."
-msgstr ""
+msgstr "Le Webhook a été mis à jour avec succès."
 
 msgid "WebhookTemplate|Locked"
-msgstr ""
+msgstr "WebhookTemplate|Locked"
 
 msgid "WebhookTemplate|Name"
-msgstr ""
+msgstr "WebhookTemplate|Name"
 
 msgid "WebhookTemplate|Snippet"
-msgstr ""
+msgstr "WebhookTemplate|Snippet"
 
 msgid "Webhooks"
-msgstr ""
+msgstr "Webhooks"
 
 msgid "Whether or not the template is added automatically to new organizations and locations"
-msgstr ""
+msgstr "Indique si le modèle est ajouté automatiquement aux nouvelles organisations et aux nouveaux emplacements"
 
 msgid "Whether or not the template is locked for editing"
-msgstr ""
+msgstr "Indique si le modèle peut être modifié"
 
 msgid "Will be sent as is"
-msgstr ""
+msgstr "Sera envoyé tel quel"
 
 msgid "X509 Certification Authorities"
-msgstr ""
+msgstr "Autorités de certification X509"
 
 msgid "X509 Certification Authorities concatenated in PEM format"
-msgstr ""
+msgstr "Autorités de certificats X509 concaténées au format PEM"
 
 msgid "You are about to delete %s. Are you sure?"
-msgstr ""
+msgstr "Vous êtes sur le point de supprimer %s. Êtes-vous sûr ?"
 
 msgid "You are about to test %s webhook."
-msgstr ""
+msgstr "Vous êtes sur le point de tester%s webhook."
 
 msgid "You can specify below a custom payload to test the webhook with."
-msgstr ""
+msgstr "Vous pouvez spécifier ci-dessous une charge utile personnalisée pour tester le webhook."
 
 msgid "is required"
 msgstr "est requis"

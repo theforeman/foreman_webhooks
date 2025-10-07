@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 3.2.0",
+        "Project-Id-Version": "foreman_webhooks 4.0.1",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023",
@@ -132,7 +132,7 @@
         "პაროლი"
       ],
       "Payload": [
-        ""
+        "შემცველობა"
       ],
       "Please, note that this will not contain actual information or render the attached template.": [
         ""
@@ -171,16 +171,16 @@
         "შაბლონის სახელი"
       ],
       "Test": [
-        ""
+        "შემოწმება"
       ],
       "Test a Webhook": [
-        ""
+        "ვებჰუკის გამოცდა"
       ],
       "Test payload will be sent as is. Cant be a JSON object": [
-        ""
+        "ტესტური დატვირთვა როგორცაა, ისე გაიგზავნება. შეიძლება იყოს JSON ობიექტი"
       ],
       "Test webhook": [
-        ""
+        "ვებჰუკის გამოცდა"
       ],
       "This template is locked for editing.": [
         "შაბლონი დაბლოკილია."
@@ -213,7 +213,7 @@
         "ვებჰუკი"
       ],
       "Webhook %s test was successful": [
-        ""
+        "ვებჰუკის %s გამოცდა წარმატებით დასრულდა"
       ],
       "Webhook %s was successfully deleted": [
         "ვებჰუკი %s წარმატებით წაიშალა"
@@ -225,7 +225,7 @@
         ""
       ],
       "Webhook test failed: %s": [
-        ""
+        "ვებჰუკის გამოცდა ჩავარდა: %ს"
       ],
       "Webhook was successfully created.": [
         "ვებჰუკი წარმატებით შეიქმნა."
@@ -252,7 +252,7 @@
         "დაიბლოკება თუ არა შაბლონი მისი ჩასწორებისას"
       ],
       "Will be sent as is": [
-        ""
+        "გაიგზავნება, როგორც არის"
       ],
       "X509 Certification Authorities": [
         "X509 CA"
