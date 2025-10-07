@@ -3,19 +3,19 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 3.2.0",
+        "Project-Id-Version": "foreman_webhooks 1.0.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2023-06-27 14:49+0000",
+        "PO-Revision-Date": "2025-10-07 14:52+0200",
         "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
-        "Language-Team": "English",
-        "Language": "en",
+        "Language-Team": "LANGUAGE <LL@li.org>",
+        "Language": "",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=; plural=;",
+        "Plural-Forms": "nplurals=INTEGER; plural=EXPRESSION;",
         "lang": "en",
         "domain": "foreman_webhooks",
-        "plural_forms": "nplurals=; plural=;"
+        "plural_forms": "nplurals=INTEGER; plural=EXPRESSION;"
       },
       "Actions": [
         ""

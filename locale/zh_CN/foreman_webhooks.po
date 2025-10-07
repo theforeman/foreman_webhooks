@@ -7,13 +7,15 @@
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Amit Upadhye <aupadhye@redhat.com>, 2023
 # tim123, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Ondřej Gajdušek, 2025
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 3.2.0\n"
+"Project-Id-Version: foreman_webhooks 4.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: tim123, 2023\n"
+"Last-Translator: Ondřej Gajdušek, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/foreman/teams/114/zh"
 "_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -29,31 +31,31 @@ msgid "Additional"
 msgstr "额外"
 
 msgid "Authentication credentials"
-msgstr ""
+msgstr "身份验证凭证"
 
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
-msgstr ""
+msgstr "使用 Foreman 客户端证书授权并从设置验证智能代理 CA"
 
 msgid "Change the password"
-msgstr ""
+msgstr "修改密码"
 
 msgid "Clone a template"
-msgstr ""
+msgstr "克隆模板"
 
 msgid "Confirm Webhook Deletion"
-msgstr ""
+msgstr "确认 Webhook 删除"
 
 msgid "Create Template"
-msgstr ""
+msgstr "创建模板"
 
 msgid "Create Webhook"
-msgstr ""
+msgstr "创建 Webhook"
 
 msgid "Create a Webhook"
-msgstr ""
+msgstr "创建 Webhook"
 
 msgid "Create a webhook template"
-msgstr ""
+msgstr "创建 webhook 模板"
 
 msgid "Credentials"
 msgstr "凭证"
@@ -62,151 +64,151 @@ msgid "Delete"
 msgstr "刪除"
 
 msgid "Delete a Webhook"
-msgstr ""
+msgstr "删除 Webhook"
 
 msgid "Delete a webhook template"
-msgstr ""
+msgstr "删除 webhook 模板"
 
 msgid "Deliver webhook"
-msgstr ""
+msgstr "提供 webhook"
 
 msgid "Deliver webhook %s"
-msgstr ""
+msgstr "提供 webhook %s"
 
 msgid "Edit"
 msgstr "编辑"
 
 msgid "Edit %s"
-msgstr ""
+msgstr "编辑 %s"
 
 msgid "Enabled"
 msgstr "启用"
 
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 msgid "Example: %s"
-msgstr ""
+msgstr "示例: %s"
 
 msgid "Export a webhook template to ERB"
-msgstr ""
+msgstr "向 ERB 导出 webhook 模板"
 
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 msgid "HTTP Content Type"
-msgstr ""
+msgstr "HTTP 內容类型"
 
 msgid "HTTP Headers"
-msgstr ""
+msgstr "HTTP 标头"
 
 msgid "HTTP Method"
-msgstr ""
+msgstr "HTTP 方法"
 
 msgid "If unchecked, the webhook will be inactive"
-msgstr ""
+msgstr "如果没有选择，webhook 将为不活跃状态"
 
 msgid "Import a webhook template"
-msgstr ""
+msgstr "导入 webhook 模板"
 
 msgid "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object."
-msgstr ""
+msgstr "如果您使用动态 URL (ERB 模板)，因为缺少真实的对象，这不会被正确显示。"
 
 msgid "List Webhooks"
-msgstr ""
+msgstr "列出 Webhook"
 
 msgid "List available events for subscription"
-msgstr ""
+msgstr "列出订阅的可用事件"
 
 msgid "List webhook templates"
-msgstr ""
+msgstr "列出 webhook 模板"
 
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 msgid "No Results"
-msgstr ""
+msgstr "没有结果"
 
 msgid "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
-msgstr ""
+msgstr "PEM 格式的可选 CA 连接起来验证接收器的 SSL 证书"
 
 msgid "Optional. Must be a JSON object (ERB allowed)"
-msgstr ""
+msgstr "可选。必须是 JSON 对象（ERB 允许）"
 
 msgid "Password"
-msgstr ""
+msgstr "密码"
 
 msgid "Payload"
-msgstr ""
+msgstr "有效负载"
 
 msgid "Please, note that this will not contain actual information or render the attached template."
-msgstr ""
+msgstr "请注意，这不包含实际信息或呈现附加的模板。"
 
 msgid "Proxy Authorization"
-msgstr ""
+msgstr "代理授权"
 
 msgid "Show Webhook details"
-msgstr ""
+msgstr "显示 Webhook 详情"
 
 msgid "Show webhook template details"
-msgstr ""
+msgstr "显示 webhook 模板详情"
 
 msgid "Snippet"
-msgstr ""
+msgstr "程序代码片段"
 
 msgid "Start typing to search"
-msgstr ""
+msgstr "开始输入来进行搜素"
 
 msgid "Subscribe to"
-msgstr ""
+msgstr "订阅到"
 
 msgid "Target URL"
-msgstr ""
+msgstr "目标 URL"
 
 msgid "Target URL that should be called by Foreman (ERB allowed)."
-msgstr ""
+msgstr "Foreman 应该调用的目标 URL (ERB 允许)。"
 
 msgid "Template"
-msgstr ""
+msgstr "模板"
 
 msgid "Template contents including metadata"
-msgstr ""
+msgstr "模板内容包括元数据"
 
 msgid "Template name"
-msgstr ""
+msgstr "模板名称"
 
 msgid "Test"
-msgstr ""
+msgstr "测试"
 
 msgid "Test a Webhook"
-msgstr ""
+msgstr "测试 Webhook"
 
 msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
+msgstr "测试有效负载将按原样发送。不能是一个 JSON 对象"
 
 msgid "Test webhook"
-msgstr ""
+msgstr "测试 webhook"
 
 msgid "This template is locked for editing."
-msgstr ""
+msgstr "该模板被锁定进行编辑。"
 
 msgid "Try to create a new webhook"
-msgstr ""
+msgstr "尝试创建新的 webhook"
 
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 msgid "URL must be valid and schema must be one of: %s"
-msgstr ""
+msgstr "URL 必须有效且需要是 %s 之一"
 
 msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
-msgstr ""
+msgstr "取消这个选项来禁用接收方的 SSL 正式的验证"
 
 msgid "Update a Webhook"
-msgstr ""
+msgstr "更新 Webhook"
 
 msgid "Update a webhook template"
-msgstr ""
+msgstr "更新 webhook 模板"
 
 msgid "User"
 msgstr "用户"
@@ -215,64 +217,64 @@ msgid "Verify SSL"
 msgstr "验证 SSL"
 
 msgid "Webhook"
-msgstr ""
+msgstr "Webhook"
 
 msgid "Webhook %s test was successful"
-msgstr ""
+msgstr "Webhook %s 测试成功"
 
 msgid "Webhook %s was successfully deleted"
-msgstr ""
+msgstr "Webhook %s 被成功删除"
 
 msgid "Webhook Templates"
-msgstr ""
+msgstr "Webhook 模板"
 
 msgid "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"
-msgstr ""
+msgstr "在触发 Webhook '%s' 时未找到 Webhook 模板。可能 webhook 模板中的机构/位置不匹配？"
 
 msgid "Webhook test failed: %s"
-msgstr ""
+msgstr "Webhook 测试失败: %s"
 
 msgid "Webhook was successfully created."
-msgstr ""
+msgstr "Webhook 被成功创建。"
 
 msgid "Webhook was successfully updated."
-msgstr ""
+msgstr "Webhook 被成功更新。"
 
 msgid "WebhookTemplate|Locked"
-msgstr ""
+msgstr "Webhook 模板|锁定"
 
 msgid "WebhookTemplate|Name"
-msgstr ""
+msgstr "Webhook 模板|名称"
 
 msgid "WebhookTemplate|Snippet"
-msgstr ""
+msgstr "Webhook 模板|代码片段"
 
 msgid "Webhooks"
-msgstr ""
+msgstr "Webhook"
 
 msgid "Whether or not the template is added automatically to new organizations and locations"
-msgstr ""
+msgstr "模板是否会自动添加到新的机构和位置"
 
 msgid "Whether or not the template is locked for editing"
-msgstr ""
+msgstr "此模板是否被锁定用于编辑"
 
 msgid "Will be sent as is"
-msgstr ""
+msgstr "将按原样发送"
 
 msgid "X509 Certification Authorities"
-msgstr ""
+msgstr "X509 认证颁发机构"
 
 msgid "X509 Certification Authorities concatenated in PEM format"
-msgstr ""
+msgstr "以 PEM 格式串联的 X509 认证颁发机构"
 
 msgid "You are about to delete %s. Are you sure?"
-msgstr ""
+msgstr "您将要删除 %s。您确定吗？"
 
 msgid "You are about to test %s webhook."
-msgstr ""
+msgstr "您要测试 %s webhook。"
 
 msgid "You can specify below a custom payload to test the webhook with."
-msgstr ""
+msgstr "您可以指定以下一个自定义有效负载来测试 Webhook。"
 
 msgid "is required"
 msgstr "是必需的"

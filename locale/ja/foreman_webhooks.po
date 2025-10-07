@@ -8,13 +8,15 @@
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2023
 # Transifex Bot <>, 2023
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Ondřej Gajdušek, 2025
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 3.2.0\n"
+"Project-Id-Version: foreman_webhooks 4.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: Transifex Bot <>, 2023\n"
+"Last-Translator: Ondřej Gajdušek, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,31 +31,31 @@ msgid "Additional"
 msgstr "追加"
 
 msgid "Authentication credentials"
-msgstr ""
+msgstr "認証情報"
 
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
-msgstr ""
+msgstr "Foreman クライアント証明書で認証し、設定からの smart-proxy CA を検証する"
 
 msgid "Change the password"
-msgstr ""
+msgstr "パスワードの変更"
 
 msgid "Clone a template"
-msgstr ""
+msgstr "テンプレートのクローン"
 
 msgid "Confirm Webhook Deletion"
-msgstr ""
+msgstr "Webhook の削除の確認"
 
 msgid "Create Template"
-msgstr ""
+msgstr "テンプレートの作成"
 
 msgid "Create Webhook"
-msgstr ""
+msgstr "Webhook の作成"
 
 msgid "Create a Webhook"
-msgstr ""
+msgstr "Webhook の作成"
 
 msgid "Create a webhook template"
-msgstr ""
+msgstr "Webhook テンプレートの作成"
 
 msgid "Credentials"
 msgstr "認証情報"
@@ -62,151 +64,151 @@ msgid "Delete"
 msgstr "削除"
 
 msgid "Delete a Webhook"
-msgstr ""
+msgstr "Webhook の削除"
 
 msgid "Delete a webhook template"
-msgstr ""
+msgstr "Webhook テンプレートの削除"
 
 msgid "Deliver webhook"
-msgstr ""
+msgstr "Webhook の提供"
 
 msgid "Deliver webhook %s"
-msgstr ""
+msgstr "Webhook %s の提供"
 
 msgid "Edit"
 msgstr "編集"
 
 msgid "Edit %s"
-msgstr ""
+msgstr "%s の編集"
 
 msgid "Enabled"
 msgstr "有効化済み"
 
 msgid "Error"
-msgstr ""
+msgstr "ã‚¨ãƒ©ãƒ¼"
 
 msgid "Example: %s"
-msgstr ""
+msgstr "例: %s"
 
 msgid "Export a webhook template to ERB"
-msgstr ""
+msgstr "Webhook テンプレートを ERB にエクスポート"
 
 msgid "General"
 msgstr "全般"
 
 msgid "HTTP Content Type"
-msgstr ""
+msgstr "HTTP コンテンツタイプ"
 
 msgid "HTTP Headers"
-msgstr ""
+msgstr "HTTP ヘッダー"
 
 msgid "HTTP Method"
-msgstr ""
+msgstr "HTTP メソッド"
 
 msgid "If unchecked, the webhook will be inactive"
-msgstr ""
+msgstr "チェックを外すと、Webhook が非アクティブになります"
 
 msgid "Import a webhook template"
-msgstr ""
+msgstr "Webhook テンプレートのインポート"
 
 msgid "In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object."
-msgstr ""
+msgstr "動的 URL (ERB テンプレート) を使用している場合は、実際のオブジェクトが存在しないために正しくレンダリングされません。"
 
 msgid "List Webhooks"
-msgstr ""
+msgstr "Webhook の一覧表示"
 
 msgid "List available events for subscription"
-msgstr ""
+msgstr "サブスクライブ可能なイベントの一覧表示"
 
 msgid "List webhook templates"
-msgstr ""
+msgstr "Webhook テンプレートの一覧表示"
 
 msgid "Name"
 msgstr "名前"
 
 msgid "No Results"
-msgstr ""
+msgstr "結果なし"
 
 msgid "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
-msgstr ""
+msgstr "レシーバーの SSL 証明書を検証するための連結された PEM 形式の CA (任意)"
 
 msgid "Optional. Must be a JSON object (ERB allowed)"
-msgstr ""
+msgstr "任意。JSON オブジェクトである必要があります (ERB 使用可)"
 
 msgid "Password"
-msgstr ""
+msgstr "パスワード"
 
 msgid "Payload"
-msgstr ""
+msgstr "ペイロード"
 
 msgid "Please, note that this will not contain actual information or render the attached template."
-msgstr ""
+msgstr "実際の情報は含まれず、関連付けられたテンプレートのレンダリングも行われないことに注意してください。"
 
 msgid "Proxy Authorization"
-msgstr ""
+msgstr "プロキシー認可"
 
 msgid "Show Webhook details"
-msgstr ""
+msgstr "Webhook の詳細の表示"
 
 msgid "Show webhook template details"
-msgstr ""
+msgstr "Webhook テンプレートの詳細の表示"
 
 msgid "Snippet"
-msgstr ""
+msgstr "スニペット"
 
 msgid "Start typing to search"
-msgstr ""
+msgstr "入力して検索を開始"
 
 msgid "Subscribe to"
-msgstr ""
+msgstr "サブスクライブ先"
 
 msgid "Target URL"
-msgstr ""
+msgstr "ターゲット URL"
 
 msgid "Target URL that should be called by Foreman (ERB allowed)."
-msgstr ""
+msgstr "Foreman が呼び出すターゲット URL (ERB 使用可)。"
 
 msgid "Template"
-msgstr ""
+msgstr "テンプレート"
 
 msgid "Template contents including metadata"
-msgstr ""
+msgstr "メタデータを含むテンプレートコンテンツ"
 
 msgid "Template name"
-msgstr ""
+msgstr "テンプレート名"
 
 msgid "Test"
-msgstr ""
+msgstr "テスト"
 
 msgid "Test a Webhook"
-msgstr ""
+msgstr "Webhook のテスト"
 
 msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
+msgstr "テストペイロードはそのまま送信されます。JSON オブジェクトにすることはできません"
 
 msgid "Test webhook"
-msgstr ""
+msgstr "Webhook のテスト"
 
 msgid "This template is locked for editing."
-msgstr ""
+msgstr "このテンプレートは編集機能がロックされています。"
 
 msgid "Try to create a new webhook"
-msgstr ""
+msgstr "新規 Webhook の作成をお試しください"
 
 msgid "Type"
 msgstr "タイプ"
 
 msgid "URL must be valid and schema must be one of: %s"
-msgstr ""
+msgstr "URL が有効であり、スキーマが次のいずれかである必要があります: %s"
 
 msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
-msgstr ""
+msgstr "レシーバーの SSL 証明書の検証を無効にするには、このオプションのチェックを外します"
 
 msgid "Update a Webhook"
-msgstr ""
+msgstr "Webhook の更新"
 
 msgid "Update a webhook template"
-msgstr ""
+msgstr "Webhook テンプレートの更新"
 
 msgid "User"
 msgstr "ユーザー"
@@ -215,64 +217,64 @@ msgid "Verify SSL"
 msgstr "SSL の確認"
 
 msgid "Webhook"
-msgstr ""
+msgstr "Webhook"
 
 msgid "Webhook %s test was successful"
-msgstr ""
+msgstr "Webhook %s のテストが成功しました"
 
 msgid "Webhook %s was successfully deleted"
-msgstr ""
+msgstr "Webhook %s が正常に削除されました"
 
 msgid "Webhook Templates"
-msgstr ""
+msgstr "Webhook テンプレート"
 
 msgid "Webhook template not found while firing webhook '%s'. Possible organization/location mismatch in the webhook template?"
-msgstr ""
+msgstr "Webhook '%s' の実行中に Webhook テンプレートが見つかりませんでした。Webhook テンプレートの組織/ロケーションが一致していない可能性はありませんか?"
 
 msgid "Webhook test failed: %s"
-msgstr ""
+msgstr "Webhook のテストに失敗しました: %s"
 
 msgid "Webhook was successfully created."
-msgstr ""
+msgstr "Webhook が正常に作成されました。"
 
 msgid "Webhook was successfully updated."
-msgstr ""
+msgstr "Webhook が正常に更新されました。"
 
 msgid "WebhookTemplate|Locked"
-msgstr ""
+msgstr "WebhookTemplate|ロック済み"
 
 msgid "WebhookTemplate|Name"
-msgstr ""
+msgstr "WebhookTemplate|名前"
 
 msgid "WebhookTemplate|Snippet"
-msgstr ""
+msgstr "WebhookTemplate|スニペット"
 
 msgid "Webhooks"
-msgstr ""
+msgstr "Webhook"
 
 msgid "Whether or not the template is added automatically to new organizations and locations"
-msgstr ""
+msgstr "テンプレートが自動的に新規組織およびロケーションに追加されるかどうか"
 
 msgid "Whether or not the template is locked for editing"
-msgstr ""
+msgstr "テンプレートの編集機能をロックするかどうか"
 
 msgid "Will be sent as is"
-msgstr ""
+msgstr "そのまま送信されます"
 
 msgid "X509 Certification Authorities"
-msgstr ""
+msgstr "X509 認証局"
 
 msgid "X509 Certification Authorities concatenated in PEM format"
-msgstr ""
+msgstr "PEM 形式で連結された X509 認証局"
 
 msgid "You are about to delete %s. Are you sure?"
-msgstr ""
+msgstr "%s を削除しようとしています。削除してもよろしいですか?"
 
 msgid "You are about to test %s webhook."
-msgstr ""
+msgstr "%s Webhook のテストを開始します。"
 
 msgid "You can specify below a custom payload to test the webhook with."
-msgstr ""
+msgstr "Webhook をテストするためのカスタムペイロードを以下に指定できます。"
 
 msgid "is required"
 msgstr "は必須です"

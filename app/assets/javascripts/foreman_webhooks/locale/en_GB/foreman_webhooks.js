@@ -3,10 +3,10 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 3.2.0",
+        "Project-Id-Version": "foreman_webhooks 4.0.1",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Andi Chandler <andi@gowling.com>, 2023",
+        "Last-Translator": "Andi Chandler <andi@gowling.com>, 2025",
         "Language-Team": "English (United Kingdom) (https://app.transifex.com/foreman/teams/114/en_GB/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -69,13 +69,13 @@
         ""
       ],
       "Edit": [
-        ""
+        "Edit"
       ],
       "Edit %s": [
         ""
       ],
       "Enabled": [
-        ""
+        "Enabled"
       ],
       "Error": [
         ""
@@ -90,13 +90,13 @@
         ""
       ],
       "HTTP Content Type": [
-        ""
+        "HTTP Content Type"
       ],
       "HTTP Headers": [
-        ""
+        "HTTP Headers"
       ],
       "HTTP Method": [
-        ""
+        "HTTP Method"
       ],
       "If unchecked, the webhook will be inactive": [
         ""
@@ -138,7 +138,7 @@
         ""
       ],
       "Proxy Authorization": [
-        ""
+        "Proxy Authorization"
       ],
       "Show Webhook details": [
         ""
@@ -156,7 +156,7 @@
         ""
       ],
       "Target URL": [
-        ""
+        "Target URL"
       ],
       "Target URL that should be called by Foreman (ERB allowed).": [
         ""
@@ -204,10 +204,10 @@
         ""
       ],
       "User": [
-        ""
+        "User"
       ],
       "Verify SSL": [
-        ""
+        "Verify SSL"
       ],
       "Webhook": [
         ""

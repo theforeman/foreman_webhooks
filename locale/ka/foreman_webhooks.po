@@ -8,7 +8,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 3.2.0\n"
+"Project-Id-Version: foreman_webhooks 4.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023\n"
@@ -134,7 +134,7 @@ msgid "Password"
 msgstr "პაროლი"
 
 msgid "Payload"
-msgstr ""
+msgstr "შემცველობა"
 
 msgid "Please, note that this will not contain actual information or render the attached template."
 msgstr ""
@@ -173,16 +173,16 @@ msgid "Template name"
 msgstr "შაბლონის სახელი"
 
 msgid "Test"
-msgstr ""
+msgstr "შემოწმება"
 
 msgid "Test a Webhook"
-msgstr ""
+msgstr "ვებჰუკის გამოცდა"
 
 msgid "Test payload will be sent as is. Cant be a JSON object"
-msgstr ""
+msgstr "ტესტური დატვირთვა როგორცაა, ისე გაიგზავნება. შეიძლება იყოს JSON ობიექტი"
 
 msgid "Test webhook"
-msgstr ""
+msgstr "ვებჰუკის გამოცდა"
 
 msgid "This template is locked for editing."
 msgstr "შაბლონი დაბლოკილია."
@@ -215,7 +215,7 @@ msgid "Webhook"
 msgstr "ვებჰუკი"
 
 msgid "Webhook %s test was successful"
-msgstr ""
+msgstr "ვებჰუკის %s გამოცდა წარმატებით დასრულდა"
 
 msgid "Webhook %s was successfully deleted"
 msgstr "ვებჰუკი %s წარმატებით წაიშალა"
@@ -227,7 +227,7 @@ msgid "Webhook template not found while firing webhook '%s'. Possible organizati
 msgstr ""
 
 msgid "Webhook test failed: %s"
-msgstr ""
+msgstr "ვებჰუკის გამოცდა ჩავარდა: %ს"
 
 msgid "Webhook was successfully created."
 msgstr "ვებჰუკი წარმატებით შეიქმნა."
@@ -254,7 +254,7 @@ msgid "Whether or not the template is locked for editing"
 msgstr "დაიბლოკება თუ არა შაბლონი მისი ჩასწორებისას"
 
 msgid "Will be sent as is"
-msgstr ""
+msgstr "გაიგზავნება, როგორც არის"
 
 msgid "X509 Certification Authorities"
 msgstr "X509 CA"

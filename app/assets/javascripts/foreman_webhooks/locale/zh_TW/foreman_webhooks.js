@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 3.2.0",
+        "Project-Id-Version": "foreman_webhooks 4.0.1",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "0868a4d1af5275b3f70b0a6dac4c99a4, 2023",
