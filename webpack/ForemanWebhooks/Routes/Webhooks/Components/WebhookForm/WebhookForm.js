@@ -44,6 +44,7 @@ const WebhookForm = ({
       onCancel={onCancel}
       enableReinitialize
       item={WEBHOOK_ITEM}
+      isPF5
     >
       <WebhookFormTabs
         activeTab={activeTab}

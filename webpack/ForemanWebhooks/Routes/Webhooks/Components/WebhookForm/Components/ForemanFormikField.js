@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field as FormikField } from 'formik';
-import { Spinner } from '@patternfly/react-core';
-import { TypeAheadSelect } from 'patternfly-react';
+import {
+  Spinner,
+  InputGroup,
+  InputGroupItem,
+  TextArea,
+  TextInput,
+  Button,
+  Icon,
+  Checkbox,
+} from '@patternfly/react-core';
+import { PencilAltIcon } from '@patternfly/react-icons';
+
 import { filter } from 'lodash';
 
 import { translate as __ } from 'foremanReact/common/I18n';
 
 import FormField from 'foremanReact/components/common/forms/FormField';
+import { default as PF5TypeAheadSelect } from 'foremanReact/components/common/forms/TypeAheadSelect';
 
 const ForemanFormikField = ({
   name,
@@ -35,23 +46,43 @@ const ForemanFormikField = ({
         return filter(initialOptions, o => o.value === fieldValue);
       };
       const passwordInput = (
-        <input
+        <TextInput
           {...field}
+          ouiaId={`input-password-${name}`}
+          id={`input-password-${name}`}
+          isRequired={required}
+          isDisabled={disabled}
           placeholder={disabled ? '********' : ''}
-          type={type}
-          disabled={disabled}
-          className="form-control"
+          type="password"
         />
       );
       let content = null;
+
       switch (type) {
+        case 'text':
+          content = (
+            <TextInput
+              {...field}
+              ouiaId={`input-text-${name}`}
+              id={`input-text-${name}`}
+              isRequired={required}
+              isDisabled={disabled}
+              placeholder={placeholder}
+              type="text"
+            />
+          );
+          break;
         case 'textarea':
           content = (
-            <textarea
+            <TextArea
               {...field}
-              className="form-control"
+              ouiaId={`input-textarea-${name}`}
+              id={`input-textarea-${name}`}
               rows={rows}
+              isRequired={required}
+              isDisabled={disabled}
               placeholder={placeholder}
+              autoResize
             />
           );
           break;
@@ -59,11 +90,11 @@ const ForemanFormikField = ({
           content = isLoading ? (
             <Spinner size="md" aria-label="loading icon" />
           ) : (
-            <TypeAheadSelect
+            <PF5TypeAheadSelect
               id={name}
               options={options}
               placeholder={__('Start typing to search')}
-              selected={defaultSelection(field.value, options)}
+              selectedItem={defaultSelection(field.value, options)}
               onChange={selected =>
                 setFieldValue(field.name, selected[0]?.value)
               }
@@ -72,34 +103,38 @@ const ForemanFormikField = ({
           break;
         case 'password':
           content = setDisabled ? (
-            <div className="input-group">
-              {passwordInput}
-              <span className="input-group-btn">
-                <button
-                  className="btn btn-default"
+            <InputGroup>
+              <InputGroupItem isFill>{passwordInput}</InputGroupItem>
+              <InputGroupItem isFill>
+                <Button
+                  variant="control"
                   onClick={e => {
                     e.preventDefault();
                     setDisabled(!disabled);
                   }}
                   title={__('Change the password')}
                 >
-                  <span className="pficon pficon-edit" />
-                </button>
-              </span>
-            </div>
+                  <Icon>
+                    <PencilAltIcon />
+                  </Icon>
+                </Button>
+              </InputGroupItem>
+            </InputGroup>
           ) : (
             passwordInput
           );
           break;
-        default:
+        case 'checkbox':
           content = (
-            <input
+            <Checkbox
               {...field}
-              type={type}
-              checked={type === 'checkbox' ? field.value || '' : undefined}
-              className={type === 'checkbox' ? '' : 'form-control'}
+              id={`input-checkbox-${name}`}
+              isChecked={field.value || ''}
             />
           );
+          break;
+        default:
+          throw new Error('Unsupported input type.');
       }
       return (
         <FormField
@@ -112,6 +147,8 @@ const ForemanFormikField = ({
           label={label}
           labelHelp={labelHelp}
           options={options}
+          id={`input-${type}-${name}`}
+          isPF5
         >
           {content}
         </FormField>
@@ -125,7 +162,7 @@ ForemanFormikField.propTypes = {
   type: PropTypes.string.isRequired,
   required: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  labelHelp: PropTypes.string,
+  labelHelp: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   inputSizeClass: PropTypes.string,
   labelSizeClass: PropTypes.string,
   rows: PropTypes.number,
