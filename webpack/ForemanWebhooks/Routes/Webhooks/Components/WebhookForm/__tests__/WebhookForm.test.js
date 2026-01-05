@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import WebhookForm from '../WebhookForm';
@@ -209,6 +209,58 @@ describe('WebhookForm RTL Tests', () => {
 
       fireEvent.click(screen.getByText('Credentials'));
       expect(document.querySelector('input#id-verify_ssl')).not.toBeChecked();
+    });
+  });
+
+  describe('Test submitted data', () => {
+    test('submits correct data structure', async () => {
+      const handleSubmit = jest.fn();
+      render(<WebhookForm {...defaultProps} handleSubmit={handleSubmit} />);
+
+      const nameInput = document.querySelector('input#id-name');
+      await userEvent.type(nameInput, 'Webhook Test');
+      await fireEvent.change(document.querySelector('input#id-target_url'), {
+        target: { value: 'https://example.com/webhook' },
+      });
+
+      const webhookTemplateInput = document.querySelector(
+        'input#id-webhook_template_id'
+      );
+      fireEvent.click(webhookTemplateInput);
+
+      await waitFor(() => {
+        const option = screen.getByRole('option', { name: 'default template' });
+        fireEvent.click(option);
+      });
+
+      await fireEvent.click(screen.getByText('Credentials'));
+
+      const userInput = document.querySelector('input#id-user');
+      await fireEvent.change(userInput, { target: { value: 'testuser' } });
+
+      const passwordInput = document.querySelector('input#id-password');
+      await fireEvent.change(passwordInput, { target: { value: 'testpass' } });
+
+      const submitBtn = screen.getByRole('button', { name: 'Submit' });
+
+      expect(submitBtn).not.toBeDisabled();
+      fireEvent.click(submitBtn);
+
+      expect(handleSubmit).toHaveBeenCalledWith({
+        name: 'Webhook Test',
+        target_url: 'https://example.com/webhook',
+        webhook_template_id: 204,
+        http_method: 'POST',
+        enabled: true,
+        verify_ssl: true,
+        http_content_type: 'application/json',
+        event: 'host_created.event.foreman',
+        user: 'testuser',
+        password: 'testpass',
+        proxy_authorization: false,
+        ssl_ca_certs: '',
+        http_headers: '',
+      });
     });
   });
 });

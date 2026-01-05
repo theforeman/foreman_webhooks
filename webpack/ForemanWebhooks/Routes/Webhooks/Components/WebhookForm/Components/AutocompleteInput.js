@@ -103,7 +103,6 @@ export const AutocompleteInputComponent = ({
       closeMenu();
     }
     setInputValue(displayValue);
-    setFilterValue(displayValue);
   };
 
   const onInputClick = () => {
