@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { translate as __ } from 'foremanReact/common/I18n';
@@ -159,7 +160,7 @@ const FormField = ({
           validated={fieldValidated}
           placeholder={placeholder}
           onBlur={requiredValidate}
-          autoComplete={type === 'password' ? 'new-password' : ''}
+          autoComplete={type === 'password' ? 'new-password' : null}
         />
       )}
 

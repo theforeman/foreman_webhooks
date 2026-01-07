@@ -18,7 +18,6 @@ import {
 } from '../../constants';
 
 import {
-  selectIsLoading,
   selectWebhookValues,
   selectWebhookTemplateId,
 } from './WebhookEditModalSelectors';
@@ -29,9 +28,9 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   const dispatch = useDispatch();
 
   const [isPasswordDisabled, setIsPasswordDisabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const id = toEdit;
 
-  const isLoading = useSelector(selectIsLoading);
   const isPasswordSet = useSelector(selectWebhookValues).passwordSet;
   const initialWebhookValues = {
     id: useSelector(selectWebhookValues).id,
@@ -73,6 +72,11 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   };
 
   useEffect(() => {
+    if (initialWebhookValues.id) setIsLoading(false);
+  }, [initialWebhookValues.id]);
+
+  useEffect(() => {
+    setIsLoading(true);
     if (id) {
       dispatch(
         get({
@@ -88,6 +92,8 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
     modalState.closeModal();
   };
 
+  const modalTitle = initialWebhookValues.name ?? '';
+
   return (
     <Modal
       position="top"
@@ -96,7 +102,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
       ouiaId={WEBHOOK_EDIT_MODAL_ID}
       isOpen={modalState.isOpen}
       onClose={modalState.closeModal}
-      title={`${__('Edit')} ${initialWebhookValues.name}`}
+      title={`${__('Edit')} ${modalTitle}`}
     >
       {isLoading ? (
         <Loading />
