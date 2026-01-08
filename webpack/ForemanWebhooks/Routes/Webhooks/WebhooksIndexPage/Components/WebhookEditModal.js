@@ -28,7 +28,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   const dispatch = useDispatch();
 
   const [isPasswordDisabled, setIsPasswordDisabled] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const id = toEdit;
 
   const isPasswordSet = useSelector(selectWebhookValues).passwordSet;
@@ -76,7 +76,6 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   }, [initialWebhookValues.id]);
 
   useEffect(() => {
-    setIsLoading(true);
     if (id) {
       dispatch(
         get({
