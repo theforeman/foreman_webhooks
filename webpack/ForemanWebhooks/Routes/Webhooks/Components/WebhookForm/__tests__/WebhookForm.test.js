@@ -33,6 +33,7 @@ const defaultProps = {
   isEventsLoading: false,
   isTemplatesLoading: false,
   isPasswordDisabled: false,
+  isLoading: false,
   setIsPasswordDisabled: jest.fn(),
 };
 

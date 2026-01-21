@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalVariant } from '@patternfly/react-core';
 import { useDispatch } from 'react-redux';
@@ -16,6 +16,7 @@ import './WebhookModal.scss';
 const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
   const dispatch = useDispatch();
 
+  const [isLoading, setIsLoading] = useState(false);
   const initialWebhookValues = {
     name: '',
     target_url: '',
@@ -32,19 +33,25 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
     proxy_authorization: false,
   };
 
-  const handleSubmit = values =>
+  const handleSubmit = values => {
+    setIsLoading(true);
     dispatch(
       APIActions.post({
         url: foremanUrl(`/api${WEBHOOKS_PATH}`),
         key: WEBHOOK_CREATE_MODAL_ID,
         params: { ...values, controller: 'webhooks' },
         successToast: () => __('Webhook was successfully created.'),
-        handleSuccess: onSuccess,
+        handleSuccess: () => {
+          onSuccess();
+          setIsLoading(false);
+        },
+        handleError: () => setIsLoading(false),
         errorToast: ({ response }) =>
           // eslint-disable-next-line camelcase
           response?.data?.error?.full_messages?.[0] || response,
       })
     );
+  };
 
   return (
     <Modal
@@ -57,6 +64,7 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
       title={__('Create Webhook')}
     >
       <ConnectedWebhookForm
+        isLoading={isLoading}
         handleSubmit={handleSubmit}
         initialValues={initialWebhookValues}
         onCancel={onCancel}

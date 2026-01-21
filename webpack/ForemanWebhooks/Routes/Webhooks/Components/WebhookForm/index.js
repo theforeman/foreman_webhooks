@@ -25,6 +25,7 @@ import {
 const params = { page: 1, search: 'snippet = false', per_page: 'all' };
 
 const ConnectedWebhookForm = ({
+  isLoading,
   onCancel,
   handleSubmit,
   initialValues,
@@ -58,6 +59,7 @@ const ConnectedWebhookForm = ({
 
   return (
     <WebhookForm
+      isLoading={isLoading}
       templates={templates}
       availableEvents={availableEvents}
       onCancel={onCancel}
@@ -71,6 +73,7 @@ const ConnectedWebhookForm = ({
 };
 
 ConnectedWebhookForm.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object.isRequired,

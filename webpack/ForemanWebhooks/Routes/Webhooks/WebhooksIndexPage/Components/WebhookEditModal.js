@@ -54,6 +54,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   }, [isPasswordSet]);
 
   const handleSubmit = values => {
+    setIsLoading(true);
     if (isPasswordDisabled) {
       delete values.password;
     }
@@ -63,7 +64,10 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
         key: WEBHOOK_API_REQUEST_KEY,
         params: { ...values, controller: 'webhooks' },
         successToast: () => __('Webhook was successfully updated.'),
-        handleSuccess: onSuccess,
+        handleSuccess: () => {
+          onSuccess();
+          setIsLoading(false);
+        },
         errorToast: ({ response }) =>
           // eslint-disable-next-line camelcase
           response?.data?.error?.full_messages?.[0] || response,
@@ -107,6 +111,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
         <Loading />
       ) : (
         <ConnectedWebhookForm
+          isLoading={isLoading}
           handleSubmit={handleSubmit}
           initialValues={initialWebhookValues}
           onCancel={onEditCancel}

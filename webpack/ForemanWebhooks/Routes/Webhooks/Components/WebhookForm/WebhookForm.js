@@ -8,6 +8,7 @@ import { HTTP_METHODS } from './constants';
 
 const WebhookForm = ({
   onCancel,
+  isLoading,
   handleSubmit,
   initialValues,
   templates,
@@ -75,7 +76,7 @@ const WebhookForm = ({
       <ActionGroup>
         <Button
           ouiaId="submit-webhook-form"
-          isDisabled={verifyFields()}
+          isDisabled={verifyFields() || isLoading}
           variant="primary"
           onClick={() => handleSubmit(inputValues)}
         >
@@ -90,6 +91,7 @@ const WebhookForm = ({
 };
 
 WebhookForm.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object.isRequired,
