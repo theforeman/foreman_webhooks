@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import * as Yup from 'yup';
-
 import { translate as __ } from 'foremanReact/common/I18n';
-import ForemanForm from 'foremanReact/components/common/forms/ForemanForm';
-
+import { Form, ActionGroup, Button } from '@patternfly/react-core';
 import WebhookFormTabs from './Components/WebhookFormTabs';
 
-import { HTTP_METHODS, WEBHOOK_ITEM } from './constants';
-
-const webhookFormSchema = Yup.object().shape({
-  name: Yup.string().required(__('is required')),
-  target_url: Yup.string().required(__('is required')),
-  http_method: Yup.string().required(__('is required')),
-  event: Yup.string().required(__('is required')),
-  webhook_template_id: Yup.string().required(__('is required')),
-});
+import { HTTP_METHODS } from './constants';
 
 const WebhookForm = ({
   onCancel,
+  isLoading,
   handleSubmit,
   initialValues,
   templates,
@@ -26,7 +16,6 @@ const WebhookForm = ({
   isTemplatesLoading,
   isEventsLoading,
   isPasswordDisabled,
-  setIsPasswordDisabled,
 }) => {
   const webhookTemplates = templates.map(t => ({ value: t.id, label: t.name }));
 
@@ -36,16 +25,44 @@ const WebhookForm = ({
     setActiveTab(tabIndex);
   };
 
+  const [inputValues, setInputValues] = useState(initialValues);
+
+  const requiredFields = [
+    'event',
+    'name',
+    'target_url',
+    'webhook_template_id',
+    'http_method',
+  ];
+
+  const verifyFields = () =>
+    !requiredFields.every(field => {
+      if (field === 'target_url') return urlValidated() === 'success';
+      return (
+        inputValues[field] !== undefined &&
+        inputValues[field] !== null &&
+        String(inputValues[field]).trim() !== ''
+      );
+    });
+
+  const urlValidated = () => {
+    const value = inputValues.target_url;
+    if (!value || !value.trim()) return 'error';
+    try {
+      const u = new URL(value.trim());
+      return u.protocol === 'http:' || u.protocol === 'https:'
+        ? 'success'
+        : 'error';
+    } catch {
+      return 'error';
+    }
+  };
+
   return (
-    <ForemanForm
-      onSubmit={handleSubmit}
-      initialValues={initialValues}
-      validationSchema={webhookFormSchema}
-      onCancel={onCancel}
-      enableReinitialize
-      item={WEBHOOK_ITEM}
-    >
+    <Form isHorizontal>
       <WebhookFormTabs
+        inputValues={inputValues}
+        setInputValues={setInputValues}
         activeTab={activeTab}
         handleTabClick={handleTabClick}
         webhookTemplates={webhookTemplates}
@@ -54,13 +71,27 @@ const WebhookForm = ({
         isEventsLoading={isEventsLoading}
         isTemplatesLoading={isTemplatesLoading}
         isPasswordDisabled={isPasswordDisabled}
-        setIsPasswordDisabled={setIsPasswordDisabled}
+        urlValidated={urlValidated}
       />
-    </ForemanForm>
+      <ActionGroup>
+        <Button
+          ouiaId="submit-webhook-form"
+          isDisabled={verifyFields() || isLoading}
+          variant="primary"
+          onClick={() => handleSubmit(inputValues)}
+        >
+          {__('Submit')}
+        </Button>
+        <Button ouiaId="cancel-webhook-form" variant="link" onClick={onCancel}>
+          {__('Cancel')}
+        </Button>
+      </ActionGroup>
+    </Form>
   );
 };
 
 WebhookForm.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object.isRequired,
@@ -69,12 +100,10 @@ WebhookForm.propTypes = {
   isEventsLoading: PropTypes.bool.isRequired,
   isTemplatesLoading: PropTypes.bool.isRequired,
   isPasswordDisabled: PropTypes.bool,
-  setIsPasswordDisabled: PropTypes.func,
 };
 
 WebhookForm.defaultProps = {
   isPasswordDisabled: false,
-  setIsPasswordDisabled: undefined,
 };
 
 export default WebhookForm;

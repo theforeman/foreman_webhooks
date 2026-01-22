@@ -3,13 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import TableIndexPage from 'foremanReact/components/PF4/TableIndexPage/TableIndexPage';
 import { translate as __ } from 'foremanReact/common/I18n';
-import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanModalHooks';
 
-import {
-  WEBHOOKS_API_PATH,
-  WEBHOOKS_API_REQUEST_KEY,
-  WEBHOOK_CREATE_MODAL_ID,
-} from '../constants';
+import { WEBHOOKS_API_PATH, WEBHOOKS_API_REQUEST_KEY } from '../constants';
 
 import { selectSearch } from '../WebhooksPageSelectors';
 
@@ -26,29 +21,28 @@ const WebhooksIndexPage = () => {
   const [toDelete, setToDelete] = useState({});
   const [toTest, setToTest] = useState({});
   const [toEdit, setToEdit] = useState(0);
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
-  const {
-    setModalOpen: setCreateModalOpen,
-    setModalClosed: setCreateModalClosed,
-  } = useForemanModal({
-    id: WEBHOOK_CREATE_MODAL_ID,
-  });
+  const openModal = () => {
+    setIsCreateModalOpen(true);
+  };
 
   return (
     <>
       <WebhookCreateModal
+        isOpen={isCreateModalOpen}
         onSuccess={() => {
-          setCreateModalClosed();
+          setIsCreateModalOpen(false);
           dispatch(reloadWithSearch(search));
         }}
-        onCancel={setCreateModalClosed}
+        onCancel={() => setIsCreateModalOpen(false)}
       />
       <TableIndexPage
         header={__('Webhooks')}
         controller="webhooks"
         apiUrl={WEBHOOKS_API_PATH}
         apiOptions={{ key: WEBHOOKS_API_REQUEST_KEY }}
-        customCreateAction={() => setCreateModalOpen}
+        customCreateAction={() => openModal}
       >
         <WebhooksTable
           fetchAndPush={params => dispatch(fetchAndPush(params))}

@@ -1,43 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { useForemanModal } from 'foremanReact/components/ForemanModal/ForemanModalHooks';
-
 import WebhooksTable from './WebhooksTable';
-import {
-  WEBHOOK_DELETE_MODAL_ID,
-  WEBHOOK_EDIT_MODAL_ID,
-  WEBHOOK_TEST_MODAL_ID,
-} from '../../../constants';
 
 const WrappedWebhooksTable = props => {
-  const { setModalOpen: setDeleteModalOpen } = useForemanModal({
-    id: WEBHOOK_DELETE_MODAL_ID,
-  });
-
-  const { setModalOpen: setEditModalOpen } = useForemanModal({
-    id: WEBHOOK_EDIT_MODAL_ID,
-  });
-
-  const { setModalOpen: setTestModalOpen } = useForemanModal({
-    id: WEBHOOK_TEST_MODAL_ID,
-  });
+  const [isTestModalOpen, setIsTestModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const { setToDelete, setToEdit, setToTest, ...rest } = props;
 
   const onDeleteClick = rowData => {
     setToDelete(rowData);
-    setDeleteModalOpen();
+    setIsDeleteModalOpen(true);
   };
 
   const onEditClick = rowData => {
     setToEdit(rowData);
-    setEditModalOpen();
+    setIsEditModalOpen(true);
   };
 
   const onTestClick = rowData => {
     setToTest(rowData);
-    setTestModalOpen();
+    setIsTestModalOpen(true);
   };
 
   const webhookActions = {
@@ -53,6 +38,20 @@ const WrappedWebhooksTable = props => {
     <WebhooksTable
       onEditClick={onEditClick}
       onTestClick={onTestClick}
+      modalsStates={{
+        testModal: {
+          isOpen: isTestModalOpen,
+          closeModal: () => setIsTestModalOpen(false),
+        },
+        deleteModal: {
+          isOpen: isDeleteModalOpen,
+          closeModal: () => setIsDeleteModalOpen(false),
+        },
+        editModal: {
+          isOpen: isEditModalOpen,
+          closeModal: () => setIsEditModalOpen(false),
+        },
+      }}
       webhookActions={webhookActions}
       {...rest}
     />

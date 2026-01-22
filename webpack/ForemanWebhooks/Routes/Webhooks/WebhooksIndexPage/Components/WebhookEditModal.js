@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Modal } from 'patternfly-react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { translate as __ } from 'foremanReact/common/I18n';
-import ForemanModal from 'foremanReact/components/ForemanModal';
 import Loading from 'foremanReact/components/Loading';
 import { foremanUrl } from 'foremanReact/common/helpers';
-import { submitForm } from 'foremanReact/redux/actions/common/forms';
-import { get } from 'foremanReact/redux/API';
+import { get, put } from 'foremanReact/redux/API';
+import { Modal, ModalVariant } from '@patternfly/react-core';
 
 import ConnectedWebhookForm from '../../Components/WebhookForm';
 
@@ -20,20 +18,19 @@ import {
 } from '../../constants';
 
 import {
-  selectIsLoading,
   selectWebhookValues,
   selectWebhookTemplateId,
 } from './WebhookEditModalSelectors';
 
 import './WebhookModal.scss';
 
-const WebhookEditModal = ({ toEdit, onSuccess, onCancel }) => {
+const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   const dispatch = useDispatch();
 
   const [isPasswordDisabled, setIsPasswordDisabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const id = toEdit;
 
-  const isLoading = useSelector(selectIsLoading);
   const isPasswordSet = useSelector(selectWebhookValues).passwordSet;
   const initialWebhookValues = {
     id: useSelector(selectWebhookValues).id,
@@ -56,22 +53,31 @@ const WebhookEditModal = ({ toEdit, onSuccess, onCancel }) => {
     setIsPasswordDisabled(isPasswordSet);
   }, [isPasswordSet]);
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = values => {
+    setIsLoading(true);
     if (isPasswordDisabled) {
       delete values.password;
     }
     dispatch(
-      submitForm({
+      put({
         url: foremanUrl(`/api${WEBHOOKS_PATH}/${id}`),
-        values: { ...values, controller: 'webhooks' },
-        item: 'Webhook',
-        message: __('Webhook was successfully updated.'),
-        method: 'put',
-        successCallback: onSuccess,
-        actions,
+        key: WEBHOOK_API_REQUEST_KEY,
+        params: { ...values, controller: 'webhooks' },
+        successToast: () => __('Webhook was successfully updated.'),
+        handleSuccess: () => {
+          onSuccess();
+          setIsLoading(false);
+        },
+        errorToast: ({ response }) =>
+          // eslint-disable-next-line camelcase
+          response?.data?.error?.full_messages?.[0] || response,
       })
     );
   };
+
+  useEffect(() => {
+    if (initialWebhookValues.id) setIsLoading(false);
+  }, [initialWebhookValues.id]);
 
   useEffect(() => {
     if (id) {
@@ -86,24 +92,26 @@ const WebhookEditModal = ({ toEdit, onSuccess, onCancel }) => {
 
   const onEditCancel = () => {
     if (isPasswordSet) setIsPasswordDisabled(true);
-    onCancel();
+    modalState.closeModal();
   };
 
+  const modalTitle = initialWebhookValues.name ?? '';
+
   return (
-    <ForemanModal
+    <Modal
+      position="top"
+      variant={ModalVariant.medium}
       id={WEBHOOK_EDIT_MODAL_ID}
-      backdrop="static"
-      className="webhooks-modal"
+      ouiaId={WEBHOOK_EDIT_MODAL_ID}
+      isOpen={modalState.isOpen}
+      onClose={modalState.closeModal}
+      title={`${__('Edit')} ${modalTitle}`}
     >
-      <Modal.Header>
-        <Modal.Title>
-          {`${__('Edit')} ${initialWebhookValues.name}`}
-        </Modal.Title>
-      </Modal.Header>
       {isLoading ? (
         <Loading />
       ) : (
         <ConnectedWebhookForm
+          isLoading={isLoading}
           handleSubmit={handleSubmit}
           initialValues={initialWebhookValues}
           onCancel={onEditCancel}
@@ -111,14 +119,17 @@ const WebhookEditModal = ({ toEdit, onSuccess, onCancel }) => {
           setIsPasswordDisabled={setIsPasswordDisabled}
         />
       )}
-    </ForemanModal>
+    </Modal>
   );
 };
 
 WebhookEditModal.propTypes = {
   onSuccess: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
   toEdit: PropTypes.number,
+  modalState: PropTypes.shape({
+    isOpen: PropTypes.bool.isRequired,
+    closeModal: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 WebhookEditModal.defaultProps = {

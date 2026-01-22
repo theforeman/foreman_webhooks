@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from 'patternfly-react';
+import { Modal, ModalVariant } from '@patternfly/react-core';
 import { useDispatch } from 'react-redux';
 
 import { translate as __ } from 'foremanReact/common/I18n';
-import { submitForm } from 'foremanReact/redux/actions/common/forms';
 import { foremanUrl } from 'foremanReact/common/helpers';
-import ForemanModal from 'foremanReact/components/ForemanModal';
+import { APIActions } from 'foremanReact/redux/API';
 
 import ConnectedWebhookForm from '../../Components/WebhookForm';
 
@@ -14,9 +13,10 @@ import { WEBHOOK_CREATE_MODAL_ID, WEBHOOKS_PATH } from '../../constants';
 
 import './WebhookModal.scss';
 
-const WebhookCreateModal = ({ onSuccess, onCancel }) => {
+const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
   const dispatch = useDispatch();
 
+  const [isLoading, setIsLoading] = useState(false);
   const initialWebhookValues = {
     name: '',
     target_url: '',
@@ -33,39 +33,50 @@ const WebhookCreateModal = ({ onSuccess, onCancel }) => {
     proxy_authorization: false,
   };
 
-  const handleSubmit = (values, actions) =>
+  const handleSubmit = values => {
+    setIsLoading(true);
     dispatch(
-      submitForm({
+      APIActions.post({
         url: foremanUrl(`/api${WEBHOOKS_PATH}`),
-        values: { ...values, controller: 'webhooks' },
-        item: 'Webhook',
-        message: __('Webhook was successfully created.'),
-        successCallback: onSuccess,
-        actions,
+        key: WEBHOOK_CREATE_MODAL_ID,
+        params: { ...values, controller: 'webhooks' },
+        successToast: () => __('Webhook was successfully created.'),
+        handleSuccess: () => {
+          onSuccess();
+          setIsLoading(false);
+        },
+        handleError: () => setIsLoading(false),
+        errorToast: ({ response }) =>
+          // eslint-disable-next-line camelcase
+          response?.data?.error?.full_messages?.[0] || response,
       })
     );
+  };
 
   return (
-    <ForemanModal
+    <Modal
+      position="top"
+      variant={ModalVariant.medium}
+      isOpen={isOpen}
+      onClose={onCancel}
       id={WEBHOOK_CREATE_MODAL_ID}
-      backdrop="static"
-      className="webhooks-modal"
+      ouiaId={WEBHOOK_CREATE_MODAL_ID}
+      title={__('Create Webhook')}
     >
-      <Modal.Header>
-        <Modal.Title>{__('Create Webhook')}</Modal.Title>
-      </Modal.Header>
       <ConnectedWebhookForm
+        isLoading={isLoading}
         handleSubmit={handleSubmit}
         initialValues={initialWebhookValues}
         onCancel={onCancel}
       />
-    </ForemanModal>
+    </Modal>
   );
 };
 
 WebhookCreateModal.propTypes = {
   onSuccess: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 };
 
 export default WebhookCreateModal;
