@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 4.0.1",
+        "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023",
@@ -29,8 +29,8 @@
       "Authorize with Foreman client certificate and validate smart-proxy CA from Settings": [
         "Foreman-ის კლიენტის სერტიფიკატით ავტორიზაცია და ჭკვიანი პროქსის CA-ის გადამოწმება პარამეტრებიდან"
       ],
-      "Change the password": [
-        "პაროლის შეცვლა"
+      "Cancel": [
+        ""
       ],
       "Clone a template": [
         "შაბლონის კლონირება"
@@ -77,6 +77,9 @@
       "Enabled": [
         "ჩაირთო"
       ],
+      "Enter valid URL": [
+        ""
+      ],
       "Error": [
         "შეცდომა"
       ],
@@ -85,6 +88,9 @@
       ],
       "Export a webhook template to ERB": [
         "ვებჰუკის ნიმუშის ERB_ზე გატანა"
+      ],
+      "Field is required": [
+        ""
       ],
       "General": [
         "მთავარი"
@@ -149,8 +155,11 @@
       "Snippet": [
         "ნაწყვეტი"
       ],
-      "Start typing to search": [
-        "მოსაძებნად კრეფა დაიწყეთ"
+      "Start typing to search...": [
+        ""
+      ],
+      "Submit": [
+        ""
       ],
       "Subscribe to": [
         "გამოწერა"
@@ -254,8 +263,8 @@
       "Will be sent as is": [
         "გაიგზავნება, როგორც არის"
       ],
-      "X509 Certification Authorities": [
-        "X509 CA"
+      "X509 Certificate Authorities": [
+        ""
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "X509 სერტიფიკაციის ორგანოები, PEM ფორმატში გაერთიანებული"
@@ -268,9 +277,6 @@
       ],
       "You can specify below a custom payload to test the webhook with.": [
         ""
-      ],
-      "is required": [
-        "აუცილებელია"
       ]
     }
   }

@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 4.0.1",
+        "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "Ondřej Gajdušek, 2025",
@@ -29,8 +29,8 @@
       "Authorize with Foreman client certificate and validate smart-proxy CA from Settings": [
         "Autoriser avec le certificat client Foreman et valider l'autorité de certification Smart Proxy à partir des paramètres"
       ],
-      "Change the password": [
-        "Changer le mot de passe"
+      "Cancel": [
+        ""
       ],
       "Clone a template": [
         "Cloner un modèle"
@@ -77,6 +77,9 @@
       "Enabled": [
         "Activé"
       ],
+      "Enter valid URL": [
+        ""
+      ],
       "Error": [
         "Erreur"
       ],
@@ -85,6 +88,9 @@
       ],
       "Export a webhook template to ERB": [
         "Exporter un modèle de webhook vers ERB"
+      ],
+      "Field is required": [
+        ""
       ],
       "General": [
         "Général"
@@ -149,8 +155,11 @@
       "Snippet": [
         "Snippet"
       ],
-      "Start typing to search": [
-        "Commencez à taper pour rechercher"
+      "Start typing to search...": [
+        ""
+      ],
+      "Submit": [
+        ""
       ],
       "Subscribe to": [
         "S'abonner"
@@ -254,8 +263,8 @@
       "Will be sent as is": [
         "Sera envoyé tel quel"
       ],
-      "X509 Certification Authorities": [
-        "Autorités de certification X509"
+      "X509 Certificate Authorities": [
+        ""
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "Autorités de certificats X509 concaténées au format PEM"
@@ -268,9 +277,6 @@
       ],
       "You can specify below a custom payload to test the webhook with.": [
         "Vous pouvez spécifier ci-dessous une charge utile personnalisée pour tester le webhook."
-      ],
-      "is required": [
-        "est requis"
       ]
     }
   }

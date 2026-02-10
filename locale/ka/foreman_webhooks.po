@@ -8,7 +8,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 4.0.1\n"
+"Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023\n"
@@ -31,8 +31,8 @@ msgstr "ავთენტიკაციის დეტალები"
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
 msgstr "Foreman-ის კლიენტის სერტიფიკატით ავტორიზაცია და ჭკვიანი პროქსის CA-ის გადამოწმება პარამეტრებიდან"
 
-msgid "Change the password"
-msgstr "პაროლის შეცვლა"
+msgid "Cancel"
+msgstr ""
 
 msgid "Clone a template"
 msgstr "შაბლონის კლონირება"
@@ -79,6 +79,9 @@ msgstr "%s-ის ჩასწორება"
 msgid "Enabled"
 msgstr "ჩაირთო"
 
+msgid "Enter valid URL"
+msgstr ""
+
 msgid "Error"
 msgstr "შეცდომა"
 
@@ -87,6 +90,9 @@ msgstr "მაგალითი: %s"
 
 msgid "Export a webhook template to ERB"
 msgstr "ვებჰუკის ნიმუშის ERB_ზე გატანა"
+
+msgid "Field is required"
+msgstr ""
 
 msgid "General"
 msgstr "მთავარი"
@@ -151,8 +157,11 @@ msgstr "ვებჰუკის ნიმუშის დეტალები�
 msgid "Snippet"
 msgstr "ნაწყვეტი"
 
-msgid "Start typing to search"
-msgstr "მოსაძებნად კრეფა დაიწყეთ"
+msgid "Start typing to search..."
+msgstr ""
+
+msgid "Submit"
+msgstr ""
 
 msgid "Subscribe to"
 msgstr "გამოწერა"
@@ -256,8 +265,8 @@ msgstr "დაიბლოკება თუ არა შაბლონი �
 msgid "Will be sent as is"
 msgstr "გაიგზავნება, როგორც არის"
 
-msgid "X509 Certification Authorities"
-msgstr "X509 CA"
+msgid "X509 Certificate Authorities"
+msgstr ""
 
 msgid "X509 Certification Authorities concatenated in PEM format"
 msgstr "X509 სერტიფიკაციის ორგანოები, PEM ფორმატში გაერთიანებული"
@@ -270,6 +279,3 @@ msgstr ""
 
 msgid "You can specify below a custom payload to test the webhook with."
 msgstr ""
-
-msgid "is required"
-msgstr "აუცილებელია"

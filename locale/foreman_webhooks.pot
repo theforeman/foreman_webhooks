@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-07 14:52+0200\n"
-"PO-Revision-Date: 2025-10-07 14:52+0200\n"
+"POT-Creation-Date: 2026-02-10 13:28+0100\n"
+"PO-Revision-Date: 2026-02-10 13:28+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -82,7 +82,7 @@ msgid "X509 Certification Authorities concatenated in PEM format"
 msgstr ""
 
 #: ../app/controllers/api/v2/webhooks_controller.rb:43
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:131
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:160
 msgid ""
 "Authorize with Foreman client certificate and validate smart-proxy CA from Set"
 "tings"
@@ -178,237 +178,248 @@ msgid "Webhook"
 msgstr ""
 
 #: ../lib/foreman_webhooks/engine.rb:68
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/WebhooksIndexPage.js:47
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/WebhooksIndexPage.js:41
 msgid "Webhooks"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/ForemanFormikField.js:65
-msgid "Start typing to search"
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/FieldConstructor.js:184
+msgid "Field is required"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/ForemanFormikField.js:84
-msgid "Change the password"
-msgstr ""
-
-#:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:34
-msgid "General"
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:27
+msgid "Enter valid URL"
 msgstr ""
 
 #:
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:40
+msgid "General"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:48
 msgid "Subscribe to"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:50
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:53
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:98
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:109
+msgid "Start typing to search..."
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:61
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:32
 msgid "Name"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:56
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:71
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:35
 msgid "Target URL"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:60
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:75
 msgid "Target URL that should be called by Foreman (ERB allowed)."
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:66
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:81
 msgid "Example: %s"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:76
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:93
 msgid "Template"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:85
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:105
 msgid "HTTP Method"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:93
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:116
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/WebhooksTableSchema.js:36
 msgid "Enabled"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:94
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:117
 msgid "If unchecked, the webhook will be inactive"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:102
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:125
 msgid "Credentials"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:108
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:132
 msgid "User"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:109
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:115
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:133
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:141
 msgid "Authentication credentials"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:114
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:140
 msgid "Password"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:122
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:149
 msgid "Verify SSL"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:123
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:150
 msgid "Uncheck this option to disable validation of the receiver's SSL certificate"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:130
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:159
 msgid "Proxy Authorization"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:138
-msgid "X509 Certification Authorities"
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:169
+msgid "X509 Certificate Authorities"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:139
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:170
 msgid ""
 "Optional CAs in PEM format concatenated to verify the receiver's SSL certifica"
 "te"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:151
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:183
 msgid "Additional"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:157
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:190
 msgid "HTTP Content Type"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:162
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:197
 msgid "HTTP Headers"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:163
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/Components/WebhookFormTabs.js:198
 msgid "Optional. Must be a JSON object (ERB allowed)"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:13
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:14
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:15
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:16
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:17
-msgid "is required"
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:83
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:96
+msgid "Submit"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookCreateModal.js:42
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/Components/WebhookForm/WebhookForm.js:86
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:58
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:103
+msgid "Cancel"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookCreateModal.js:43
 msgid "Webhook was successfully created."
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookCreateModal.js:55
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookCreateModal.js:64
 msgid "Create Webhook"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:16
-msgid "Confirm Webhook Deletion"
-msgstr ""
-
-#:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:21
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:22
 msgid "Webhook %s was successfully deleted"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:25
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:36
+msgid "Confirm Webhook Deletion"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:40
+msgid "You are about to delete %s. Are you sure?"
+msgstr ""
+
+#:
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:50
 #: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhooksTable/Components/ActionButtons/ActionButton.js:10
 msgid "Delete"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookDeleteModal.js:29
-msgid "You are about to delete %s. Are you sure?"
-msgstr ""
-
-#:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookEditModal.js:68
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookEditModal.js:66
 msgid "Webhook was successfully updated."
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookEditModal.js:100
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookEditModal.js:108
 msgid "Edit"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:33
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:36
 msgid "Webhook test failed: %s"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:43
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:49
 msgid "Webhook %s test was successful"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:56
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:63
 msgid "Test"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:61
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:66
 msgid "You are about to test %s webhook."
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:62
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:67
 msgid ""
 "Please, note that this will not contain actual information or render the attac"
 "hed template."
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:65
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:70
 msgid ""
 "In case you are using dynamic URL (ERB template), this will not be rendered co"
 "rrectly due to the absence of a real object."
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:68
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:73
 msgid "You can specify below a custom payload to test the webhook with."
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:79
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:80
 msgid "Payload"
 msgstr ""
 
 #:
-#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:80
+#: ../webpack/ForemanWebhooks/Routes/Webhooks/WebhooksIndexPage/Components/WebhookTestModal.js:81
 msgid "Will be sent as is"
 msgstr ""
 

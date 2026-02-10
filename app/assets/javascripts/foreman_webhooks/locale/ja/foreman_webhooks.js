@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 4.0.1",
+        "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "Ondřej Gajdušek, 2025",
@@ -29,8 +29,8 @@
       "Authorize with Foreman client certificate and validate smart-proxy CA from Settings": [
         "Foreman クライアント証明書で認証し、設定からの smart-proxy CA を検証する"
       ],
-      "Change the password": [
-        "パスワードの変更"
+      "Cancel": [
+        ""
       ],
       "Clone a template": [
         "テンプレートのクローン"
@@ -77,6 +77,9 @@
       "Enabled": [
         "有効化済み"
       ],
+      "Enter valid URL": [
+        ""
+      ],
       "Error": [
         "ã‚¨ãƒ©ãƒ¼"
       ],
@@ -85,6 +88,9 @@
       ],
       "Export a webhook template to ERB": [
         "Webhook テンプレートを ERB にエクスポート"
+      ],
+      "Field is required": [
+        ""
       ],
       "General": [
         "全般"
@@ -149,8 +155,11 @@
       "Snippet": [
         "スニペット"
       ],
-      "Start typing to search": [
-        "入力して検索を開始"
+      "Start typing to search...": [
+        ""
+      ],
+      "Submit": [
+        ""
       ],
       "Subscribe to": [
         "サブスクライブ先"
@@ -254,8 +263,8 @@
       "Will be sent as is": [
         "そのまま送信されます"
       ],
-      "X509 Certification Authorities": [
-        "X509 認証局"
+      "X509 Certificate Authorities": [
+        ""
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "PEM 形式で連結された X509 認証局"
@@ -268,9 +277,6 @@
       ],
       "You can specify below a custom payload to test the webhook with.": [
         "Webhook をテストするためのカスタムペイロードを以下に指定できます。"
-      ],
-      "is required": [
-        "は必須です"
       ]
     }
   }

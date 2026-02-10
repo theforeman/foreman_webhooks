@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 4.0.1",
+        "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "Ondřej Gajdušek, 2025",
@@ -29,8 +29,8 @@
       "Authorize with Foreman client certificate and validate smart-proxy CA from Settings": [
         "使用 Foreman 客户端证书授权并从设置验证智能代理 CA"
       ],
-      "Change the password": [
-        "修改密码"
+      "Cancel": [
+        ""
       ],
       "Clone a template": [
         "克隆模板"
@@ -77,6 +77,9 @@
       "Enabled": [
         "启用"
       ],
+      "Enter valid URL": [
+        ""
+      ],
       "Error": [
         "错误"
       ],
@@ -85,6 +88,9 @@
       ],
       "Export a webhook template to ERB": [
         "向 ERB 导出 webhook 模板"
+      ],
+      "Field is required": [
+        ""
       ],
       "General": [
         "常规"
@@ -149,8 +155,11 @@
       "Snippet": [
         "程序代码片段"
       ],
-      "Start typing to search": [
-        "开始输入来进行搜素"
+      "Start typing to search...": [
+        ""
+      ],
+      "Submit": [
+        ""
       ],
       "Subscribe to": [
         "订阅到"
@@ -254,8 +263,8 @@
       "Will be sent as is": [
         "将按原样发送"
       ],
-      "X509 Certification Authorities": [
-        "X509 认证颁发机构"
+      "X509 Certificate Authorities": [
+        ""
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "以 PEM 格式串联的 X509 认证颁发机构"
@@ -268,9 +277,6 @@
       ],
       "You can specify below a custom payload to test the webhook with.": [
         "您可以指定以下一个自定义有效负载来测试 Webhook。"
-      ],
-      "is required": [
-        "是必需的"
       ]
     }
   }

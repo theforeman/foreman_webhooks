@@ -14,7 +14,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 4.0.1\n"
+"Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
 "Last-Translator: Ondřej Gajdušek, 2025\n"
@@ -38,8 +38,8 @@ msgstr "Informations d'authentification"
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
 msgstr "Autoriser avec le certificat client Foreman et valider l'autorité de certification Smart Proxy à partir des paramètres"
 
-msgid "Change the password"
-msgstr "Changer le mot de passe"
+msgid "Cancel"
+msgstr ""
 
 msgid "Clone a template"
 msgstr "Cloner un modèle"
@@ -86,6 +86,9 @@ msgstr "Modifier %s"
 msgid "Enabled"
 msgstr "Activé"
 
+msgid "Enter valid URL"
+msgstr ""
+
 msgid "Error"
 msgstr "Erreur"
 
@@ -94,6 +97,9 @@ msgstr "Exemple: %s"
 
 msgid "Export a webhook template to ERB"
 msgstr "Exporter un modèle de webhook vers ERB"
+
+msgid "Field is required"
+msgstr ""
 
 msgid "General"
 msgstr "Général"
@@ -158,8 +164,11 @@ msgstr "Afficher les détails du modèle de webhook"
 msgid "Snippet"
 msgstr "Snippet"
 
-msgid "Start typing to search"
-msgstr "Commencez à taper pour rechercher"
+msgid "Start typing to search..."
+msgstr ""
+
+msgid "Submit"
+msgstr ""
 
 msgid "Subscribe to"
 msgstr "S'abonner"
@@ -263,8 +272,8 @@ msgstr "Indique si le modèle peut être modifié"
 msgid "Will be sent as is"
 msgstr "Sera envoyé tel quel"
 
-msgid "X509 Certification Authorities"
-msgstr "Autorités de certification X509"
+msgid "X509 Certificate Authorities"
+msgstr ""
 
 msgid "X509 Certification Authorities concatenated in PEM format"
 msgstr "Autorités de certificats X509 concaténées au format PEM"
@@ -277,6 +286,3 @@ msgstr "Vous êtes sur le point de tester%s webhook."
 
 msgid "You can specify below a custom payload to test the webhook with."
 msgstr "Vous pouvez spécifier ci-dessous une charge utile personnalisée pour tester le webhook."
-
-msgid "is required"
-msgstr "est requis"
