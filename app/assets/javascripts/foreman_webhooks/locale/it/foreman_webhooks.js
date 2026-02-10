@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 4.0.1",
+        "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "0868a4d1af5275b3f70b0a6dac4c99a4, 2023",
@@ -29,7 +29,7 @@
       "Authorize with Foreman client certificate and validate smart-proxy CA from Settings": [
         ""
       ],
-      "Change the password": [
+      "Cancel": [
         ""
       ],
       "Clone a template": [
@@ -77,6 +77,9 @@
       "Enabled": [
         ""
       ],
+      "Enter valid URL": [
+        ""
+      ],
       "Error": [
         ""
       ],
@@ -84,6 +87,9 @@
         ""
       ],
       "Export a webhook template to ERB": [
+        ""
+      ],
+      "Field is required": [
         ""
       ],
       "General": [
@@ -149,7 +155,10 @@
       "Snippet": [
         ""
       ],
-      "Start typing to search": [
+      "Start typing to search...": [
+        ""
+      ],
+      "Submit": [
         ""
       ],
       "Subscribe to": [
@@ -254,7 +263,7 @@
       "Will be sent as is": [
         ""
       ],
-      "X509 Certification Authorities": [
+      "X509 Certificate Authorities": [
         ""
       ],
       "X509 Certification Authorities concatenated in PEM format": [
@@ -267,9 +276,6 @@
         ""
       ],
       "You can specify below a custom payload to test the webhook with.": [
-        ""
-      ],
-      "is required": [
         ""
       ]
     }

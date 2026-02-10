@@ -3,10 +3,10 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 4.0.1",
+        "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Markus Bucher <bucher@atix.de>, 2023",
+        "Last-Translator": "Donien, 2026",
         "Language-Team": "German (https://app.transifex.com/foreman/teams/114/de/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -29,7 +29,7 @@
       "Authorize with Foreman client certificate and validate smart-proxy CA from Settings": [
         ""
       ],
-      "Change the password": [
+      "Cancel": [
         ""
       ],
       "Clone a template": [
@@ -77,6 +77,9 @@
       "Enabled": [
         "Aktiviert"
       ],
+      "Enter valid URL": [
+        ""
+      ],
       "Error": [
         ""
       ],
@@ -84,6 +87,9 @@
         ""
       ],
       "Export a webhook template to ERB": [
+        ""
+      ],
+      "Field is required": [
         ""
       ],
       "General": [
@@ -149,7 +155,10 @@
       "Snippet": [
         ""
       ],
-      "Start typing to search": [
+      "Start typing to search...": [
+        ""
+      ],
+      "Submit": [
         ""
       ],
       "Subscribe to": [
@@ -254,8 +263,8 @@
       "Will be sent as is": [
         ""
       ],
-      "X509 Certification Authorities": [
-        "X509-Zertifizierungsstellen (CA)"
+      "X509 Certificate Authorities": [
+        ""
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         ""
@@ -267,9 +276,6 @@
         ""
       ],
       "You can specify below a custom payload to test the webhook with.": [
-        ""
-      ],
-      "is required": [
         ""
       ]
     }

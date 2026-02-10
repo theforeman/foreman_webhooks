@@ -10,7 +10,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 4.0.1\n"
+"Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
 "Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2023\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
 msgstr ""
 
-msgid "Change the password"
+msgid "Cancel"
 msgstr ""
 
 msgid "Clone a template"
@@ -83,6 +83,9 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
+msgid "Enter valid URL"
+msgstr ""
+
 msgid "Error"
 msgstr ""
 
@@ -90,6 +93,9 @@ msgid "Example: %s"
 msgstr ""
 
 msgid "Export a webhook template to ERB"
+msgstr ""
+
+msgid "Field is required"
 msgstr ""
 
 msgid "General"
@@ -155,7 +161,10 @@ msgstr ""
 msgid "Snippet"
 msgstr ""
 
-msgid "Start typing to search"
+msgid "Start typing to search..."
+msgstr ""
+
+msgid "Submit"
 msgstr ""
 
 msgid "Subscribe to"
@@ -260,7 +269,7 @@ msgstr ""
 msgid "Will be sent as is"
 msgstr ""
 
-msgid "X509 Certification Authorities"
+msgid "X509 Certificate Authorities"
 msgstr ""
 
 msgid "X509 Certification Authorities concatenated in PEM format"
@@ -273,7 +282,4 @@ msgid "You are about to test %s webhook."
 msgstr ""
 
 msgid "You can specify below a custom payload to test the webhook with."
-msgstr ""
-
-msgid "is required"
 msgstr ""

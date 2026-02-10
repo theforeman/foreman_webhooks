@@ -3,7 +3,7 @@
   "locale_data": {
     "foreman_webhooks": {
       "": {
-        "Project-Id-Version": "foreman_webhooks 4.0.1",
+        "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
         "Last-Translator": "Ondřej Gajdušek, 2025",
@@ -29,8 +29,8 @@
       "Authorize with Foreman client certificate and validate smart-proxy CA from Settings": [
         "Foreman 클라이언트 인증서로 권한 부여 및 설정에서 스마트 프록시 CA를 검증"
       ],
-      "Change the password": [
-        "암호 변경"
+      "Cancel": [
+        ""
       ],
       "Clone a template": [
         "템플릿 복제"
@@ -77,6 +77,9 @@
       "Enabled": [
         "활성화됨"
       ],
+      "Enter valid URL": [
+        ""
+      ],
       "Error": [
         "오류"
       ],
@@ -85,6 +88,9 @@
       ],
       "Export a webhook template to ERB": [
         "Webhook 템플릿을 ERB로 내보내기"
+      ],
+      "Field is required": [
+        ""
       ],
       "General": [
         "일반"
@@ -149,8 +155,11 @@
       "Snippet": [
         "스니펫"
       ],
-      "Start typing to search": [
-        "검색하려면 입력 시작"
+      "Start typing to search...": [
+        ""
+      ],
+      "Submit": [
+        ""
       ],
       "Subscribe to": [
         "구독하기"
@@ -254,8 +263,8 @@
       "Will be sent as is": [
         "그대로 전송"
       ],
-      "X509 Certification Authorities": [
-        "X509 인증 기관"
+      "X509 Certificate Authorities": [
+        ""
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "PEM 형식으로 연결된 X509 인증 기관"
@@ -268,9 +277,6 @@
       ],
       "You can specify below a custom payload to test the webhook with.": [
         "아래에서 사용자 정의 페이로드를 지정하여 Webhook을 테스트할 수 있습니다."
-      ],
-      "is required": [
-        "필요함"
       ]
     }
   }

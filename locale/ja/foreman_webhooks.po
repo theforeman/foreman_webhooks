@@ -13,7 +13,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foreman_webhooks 4.0.1\n"
+"Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
 "Last-Translator: Ondřej Gajdušek, 2025\n"
@@ -36,8 +36,8 @@ msgstr "認証情報"
 msgid "Authorize with Foreman client certificate and validate smart-proxy CA from Settings"
 msgstr "Foreman クライアント証明書で認証し、設定からの smart-proxy CA を検証する"
 
-msgid "Change the password"
-msgstr "パスワードの変更"
+msgid "Cancel"
+msgstr ""
 
 msgid "Clone a template"
 msgstr "テンプレートのクローン"
@@ -84,6 +84,9 @@ msgstr "%s の編集"
 msgid "Enabled"
 msgstr "有効化済み"
 
+msgid "Enter valid URL"
+msgstr ""
+
 msgid "Error"
 msgstr "ã‚¨ãƒ©ãƒ¼"
 
@@ -92,6 +95,9 @@ msgstr "例: %s"
 
 msgid "Export a webhook template to ERB"
 msgstr "Webhook テンプレートを ERB にエクスポート"
+
+msgid "Field is required"
+msgstr ""
 
 msgid "General"
 msgstr "全般"
@@ -156,8 +162,11 @@ msgstr "Webhook テンプレートの詳細の表示"
 msgid "Snippet"
 msgstr "スニペット"
 
-msgid "Start typing to search"
-msgstr "入力して検索を開始"
+msgid "Start typing to search..."
+msgstr ""
+
+msgid "Submit"
+msgstr ""
 
 msgid "Subscribe to"
 msgstr "サブスクライブ先"
@@ -261,8 +270,8 @@ msgstr "テンプレートの編集機能をロックするかどうか"
 msgid "Will be sent as is"
 msgstr "そのまま送信されます"
 
-msgid "X509 Certification Authorities"
-msgstr "X509 認証局"
+msgid "X509 Certificate Authorities"
+msgstr ""
 
 msgid "X509 Certification Authorities concatenated in PEM format"
 msgstr "PEM 形式で連結された X509 認証局"
@@ -275,6 +284,3 @@ msgstr "%s Webhook のテストを開始します。"
 
 msgid "You can specify below a custom payload to test the webhook with."
 msgstr "Webhook をテストするためのカスタムペイロードを以下に指定できます。"
-
-msgid "is required"
-msgstr "は必須です"
