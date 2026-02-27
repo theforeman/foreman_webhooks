@@ -118,6 +118,101 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     assert webhook.password.present?, 'Password was cleared after update'
   end
 
+  test 'edit webhook modal shows selected webhook instead of previous one' do
+    first_webhook = FactoryBot.create(:webhook,
+      name: 'FirstWebhook',
+      target_url: 'http://example.com/webhook1',
+      http_method: 'POST',
+      webhook_template: webhook_template)
+    second_webhook = FactoryBot.create(:webhook,
+      name: 'SecondWebhook',
+      target_url: 'http://example.com/webhook2',
+      http_method: 'POST',
+      webhook_template: webhook_template)
+
+    visit '/webhooks'
+    wait_for_ajax
+    click_webhook_name(first_webhook.name)
+    assert_selector '.pf-v5-c-modal-box'
+    click_cancel_button
+    wait_for_ajax
+    click_webhook_name(second_webhook.name)
+    assert_selector '.pf-v5-c-modal-box'
+    assert_field_value('id-name', second_webhook.name)
+    click_cancel_button
+    assert_no_selector '.pf-v5-c-modal-box'
+  end
+
+  test 'should update password' do
+    webhook = FactoryBot.create(:webhook,
+      name: 'PasswordUpdateWebhook',
+      target_url: 'http://example.com/webhook',
+      http_method: 'POST',
+      webhook_template: webhook_template,
+      password: 'oldpassword123')
+    new_password = 'newpassword456'
+    visit '/webhooks'
+    wait_for_ajax
+    click_webhook_name(webhook.name)
+    assert_selector '.pf-v5-c-modal-box'
+    click_tab('Credentials')
+    click_change_password_button
+    fill_in 'id-password', with: new_password
+    click_submit_button
+    wait_for_success_toast
+    webhook.reload
+    assert_equal new_password, webhook.password, 'Password was not updated in database'
+  end
+
+  test 'edit submission triggers PUT /api/webhooks/id and GET /api/webhooks only' do
+    first_webhook = FactoryBot.create(:webhook,
+      name: 'FirstWebhook',
+      target_url: 'http://example.com/webhook1',
+      http_method: 'POST',
+      webhook_template: webhook_template)
+    second_webhook = FactoryBot.create(:webhook,
+      name: 'SecondWebhook',
+      target_url: 'http://example.com/webhook2',
+      http_method: 'POST',
+      webhook_template: webhook_template)
+
+    visit '/webhooks'
+    wait_for_ajax
+    click_webhook_name(first_webhook.name)
+    assert_selector '.pf-v5-c-modal-box'
+
+    click_cancel_button
+    wait_for_ajax
+    click_webhook_name(second_webhook.name)
+    assert_selector '.pf-v5-c-modal-box'
+
+    fill_in 'id-name', with: '', fill_options: { clear: :backspace }
+    fill_in 'id-name', with: 'UpdatedAPITestWebhook'
+
+    api_requests = []
+    callback = lambda { |_name, _started, _finished, _unique_id, payload|
+      api_requests << { method: payload[:method], controller: payload[:controller], action: payload[:action], path: payload[:path] } if payload[:controller]&.start_with?('Api::')
+    }
+
+    ActiveSupport::Notifications.subscribed(callback, 'process_action.action_controller') do
+      click_submit_button
+      wait_for_success_toast
+      wait_for_ajax
+    end
+
+    assert api_requests.any? { |r| r[:method] == 'PUT' && r[:controller] == 'Api::V2::WebhooksController' && r[:action] == 'update' },
+      "Expected PUT webhooks#update, got: #{api_requests.inspect}"
+    assert api_requests.any? { |r| r[:method] == 'GET' && r[:controller] == 'Api::V2::WebhooksController' && r[:action] == 'index' },
+      "Expected GET webhooks#index, got: #{api_requests.inspect}"
+
+    assert api_requests.none? { |r| r[:controller] == 'Api::V2::WebhooksController' && r[:action] == 'events' },
+      "Unexpected call to webhooks#events: #{api_requests.inspect}"
+    assert api_requests.none? { |r| r[:controller] == 'Api::V2::WebhookTemplatesController' },
+      "Unexpected call to webhook_templates: #{api_requests.inspect}"
+    assert api_requests.none? { |r| r[:controller] == 'Api::V2::WebhooksController' && r[:action] == 'show' },
+      "Unexpected call to webhooks#show: #{api_requests.inspect}"
+  end
+
   test 'delete webhook via UI' do
     webhook = FactoryBot.create(:webhook,
       name: 'WebhookToDelete',
@@ -186,6 +281,13 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
   def click_cancel_button
     modal = find('.pf-v5-c-modal-box', wait: 10)
     button = modal.find('button', text: 'Cancel', match: :first, wait: 10, visible: :all)
+    page.execute_script('arguments[0].scrollIntoView({block: "center"})', button.native)
+    page.execute_script('arguments[0].click()', button.native)
+  end
+
+  def click_change_password_button
+    modal = find('.pf-v5-c-modal-box', wait: 10)
+    button = modal.find(:ouia_component_id, 'reset-password', wait: 10, visible: :all)
     page.execute_script('arguments[0].scrollIntoView({block: "center"})', button.native)
     page.execute_script('arguments[0].click()', button.native)
   end

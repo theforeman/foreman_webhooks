@@ -60,10 +60,10 @@ describe('FieldConstructor RTL Tests', () => {
       );
     });
 
-    test('renders as disabled when loading', () => {
+    test('renders as enabled when loading', () => {
       render(<FieldConstructor {...defaultProps} type="text" isLoading />);
 
-      expect(document.getElementById('id-test-field')).toBeDisabled();
+      expect(document.getElementById('id-test-field')).toBeEnabled();
     });
   });
 
