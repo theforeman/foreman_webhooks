@@ -18,6 +18,7 @@ const WebhookFormTabs = ({
   isTemplatesLoading,
   isEventsLoading,
   isPasswordDisabled,
+  setIsPasswordDisabled,
   urlValidated,
 }) => {
   const updateFieldValue = (key, value) => {
@@ -141,6 +142,8 @@ const WebhookFormTabs = ({
             labelHelp={__('Authentication credentials')}
             disabled={isPasswordDisabled}
             setValue={updateFieldValue}
+            setIsPasswordDisabled={setIsPasswordDisabled}
+            placeholder="********"
           />
           <FieldConstructor
             name="verify_ssl"
@@ -218,11 +221,13 @@ WebhookFormTabs.propTypes = {
   isTemplatesLoading: PropTypes.bool.isRequired,
   isEventsLoading: PropTypes.bool.isRequired,
   isPasswordDisabled: PropTypes.bool,
+  setIsPasswordDisabled: PropTypes.func,
   urlValidated: PropTypes.func.isRequired,
 };
 
 WebhookFormTabs.defaultProps = {
   isPasswordDisabled: false,
+  setIsPasswordDisabled: null,
 };
 
 export default WebhookFormTabs;
