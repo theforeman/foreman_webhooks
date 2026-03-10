@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
-# 0868a4d1af5275b3f70b0a6dac4c99a4, 2023
 # Andi Chandler <andi@gowling.com>, 2025
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>, 2025\n"
+"Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2026\n"
 "Language-Team: English (United Kingdom) (https://app.transifex.com/foreman/tea"
 "ms/114/en_GB/)\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgid "Authorize with Foreman client certificate and validate smart-proxy CA fro
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 msgid "Clone a template"
 msgstr ""
@@ -163,7 +163,7 @@ msgid "Start typing to search..."
 msgstr ""
 
 msgid "Submit"
-msgstr ""
+msgstr "Submit"
 
 msgid "Subscribe to"
 msgstr ""

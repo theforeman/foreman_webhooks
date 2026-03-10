@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "0868a4d1af5275b3f70b0a6dac4c99a4, 2023",
+        "Last-Translator": "Alexander Savchenko, 2026",
         "Language-Team": "Russian (https://app.transifex.com/foreman/teams/114/ru/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         ""
       ],
       "Cancel": [
-        ""
+        "Отмена"
       ],
       "Clone a template": [
         ""
@@ -159,7 +159,7 @@
         ""
       ],
       "Submit": [
-        ""
+        "Применить"
       ],
       "Subscribe to": [
         ""

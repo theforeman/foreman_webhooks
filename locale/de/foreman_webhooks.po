@@ -9,17 +9,15 @@
 # pdolinic, 2023
 # Ettore Atalan <atalanttore@googlemail.com>, 2023
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
-# Wiederoder <stefanwiederoder@googlemail.com>, 2023
 # Lukáš Zapletal, 2023
-# Markus Bucher <bucher@atix.de>, 2023
-# Donien, 2026
+# Wiederoder <stefanwiederoder@googlemail.com>, 2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: Donien, 2026\n"
+"Last-Translator: Wiederoder <stefanwiederoder@googlemail.com>, 2026\n"
 "Language-Team: German (https://app.transifex.com/foreman/teams/114/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +38,7 @@ msgid "Authorize with Foreman client certificate and validate smart-proxy CA fro
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 msgid "Clone a template"
 msgstr ""
@@ -169,7 +167,7 @@ msgid "Start typing to search..."
 msgstr ""
 
 msgid "Submit"
-msgstr ""
+msgstr "Absenden"
 
 msgid "Subscribe to"
 msgstr ""

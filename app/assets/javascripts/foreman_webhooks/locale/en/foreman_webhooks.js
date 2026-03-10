@@ -5,7 +5,7 @@
       "": {
         "Project-Id-Version": "foreman_webhooks 1.0.0",
         "Report-Msgid-Bugs-To": "",
-        "PO-Revision-Date": "2026-02-10 13:28+0100",
+        "PO-Revision-Date": "2026-03-10 15:05+0100",
         "Last-Translator": "FULL NAME <EMAIL@ADDRESS>",
         "Language-Team": "LANGUAGE <LL@li.org>",
         "Language": "",

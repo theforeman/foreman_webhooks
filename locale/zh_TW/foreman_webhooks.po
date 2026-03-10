@@ -5,14 +5,14 @@
 #
 # Translators:
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
-# 0868a4d1af5275b3f70b0a6dac4c99a4, 2023
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2023\n"
+"Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2026\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/foreman/teams/114/z"
 "h_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgid "Authorize with Foreman client certificate and validate smart-proxy CA fro
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 msgid "Clone a template"
 msgstr ""
@@ -163,7 +163,7 @@ msgid "Start typing to search..."
 msgstr ""
 
 msgid "Submit"
-msgstr ""
+msgstr "提交"
 
 msgid "Subscribe to"
 msgstr ""

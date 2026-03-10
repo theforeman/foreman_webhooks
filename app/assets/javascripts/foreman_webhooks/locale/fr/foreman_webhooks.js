@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Ondřej Gajdušek, 2025",
+        "Last-Translator": "Ondřej Gajdušek, 2026",
         "Language-Team": "French (https://app.transifex.com/foreman/teams/114/fr/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         "Autoriser avec le certificat client Foreman et valider l'autorité de certification Smart Proxy à partir des paramètres"
       ],
       "Cancel": [
-        ""
+        "Annuler"
       ],
       "Clone a template": [
         "Cloner un modèle"
@@ -78,7 +78,7 @@
         "Activé"
       ],
       "Enter valid URL": [
-        ""
+        "Saisir URL valide"
       ],
       "Error": [
         "Erreur"
@@ -90,7 +90,7 @@
         "Exporter un modèle de webhook vers ERB"
       ],
       "Field is required": [
-        ""
+        "Champ requis"
       ],
       "General": [
         "Général"
@@ -156,10 +156,10 @@
         "Snippet"
       ],
       "Start typing to search...": [
-        ""
+        "Commencez à taper pour rechercher..."
       ],
       "Submit": [
-        ""
+        "Envoyer"
       ],
       "Subscribe to": [
         "S'abonner"
@@ -264,7 +264,7 @@
         "Sera envoyé tel quel"
       ],
       "X509 Certificate Authorities": [
-        ""
+        "Autorités de certification X509"
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "Autorités de certificats X509 concaténées au format PEM"

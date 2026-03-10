@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Ondřej Gajdušek, 2025",
+        "Last-Translator": "Ondřej Gajdušek, 2026",
         "Language-Team": "Japanese (https://app.transifex.com/foreman/teams/114/ja/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         "Foreman クライアント証明書で認証し、設定からの smart-proxy CA を検証する"
       ],
       "Cancel": [
-        ""
+        "取り消し"
       ],
       "Clone a template": [
         "テンプレートのクローン"
@@ -63,10 +63,10 @@
         "Webhook テンプレートの削除"
       ],
       "Deliver webhook": [
-        "Webhook の提供"
+        "Webhook の配信"
       ],
       "Deliver webhook %s": [
-        "Webhook %s の提供"
+        "Webhook %s の配信"
       ],
       "Edit": [
         "編集"
@@ -78,10 +78,10 @@
         "有効化済み"
       ],
       "Enter valid URL": [
-        ""
+        "有効な URL を入力してください"
       ],
       "Error": [
-        "ã‚¨ãƒ©ãƒ¼"
+        "エラー"
       ],
       "Example: %s": [
         "例: %s"
@@ -90,7 +90,7 @@
         "Webhook テンプレートを ERB にエクスポート"
       ],
       "Field is required": [
-        ""
+        "フィールドは必須です"
       ],
       "General": [
         "全般"
@@ -156,10 +156,10 @@
         "スニペット"
       ],
       "Start typing to search...": [
-        ""
+        "入力して検索を開始する..."
       ],
       "Submit": [
-        ""
+        "送信"
       ],
       "Subscribe to": [
         "サブスクライブ先"
@@ -264,7 +264,7 @@
         "そのまま送信されます"
       ],
       "X509 Certificate Authorities": [
-        ""
+        "X509 認証局"
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "PEM 形式で連結された X509 認証局"
