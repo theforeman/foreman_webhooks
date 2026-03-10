@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Ondřej Gajdušek, 2025",
+        "Last-Translator": "Ondřej Gajdušek, 2026",
         "Language-Team": "Korean (https://app.transifex.com/foreman/teams/114/ko/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         "Foreman 클라이언트 인증서로 권한 부여 및 설정에서 스마트 프록시 CA를 검증"
       ],
       "Cancel": [
-        ""
+        "취소 "
       ],
       "Clone a template": [
         "템플릿 복제"
@@ -78,7 +78,7 @@
         "활성화됨"
       ],
       "Enter valid URL": [
-        ""
+        "유효한 URL을 입력하세요"
       ],
       "Error": [
         "오류"
@@ -90,7 +90,7 @@
         "Webhook 템플릿을 ERB로 내보내기"
       ],
       "Field is required": [
-        ""
+        "필수 입력 항목입니다"
       ],
       "General": [
         "일반"
@@ -156,10 +156,10 @@
         "스니펫"
       ],
       "Start typing to search...": [
-        ""
+        "검색하려면 입력을 시작하세요..."
       ],
       "Submit": [
-        ""
+        "보내기"
       ],
       "Subscribe to": [
         "구독하기"
@@ -264,7 +264,7 @@
         "그대로 전송"
       ],
       "X509 Certificate Authorities": [
-        ""
+        "X509 인증 기관"
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "PEM 형식으로 연결된 X509 인증 기관"

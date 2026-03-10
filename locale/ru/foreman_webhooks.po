@@ -4,16 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
-# Bryan Kearney <bryan.kearney@gmail.com>, 2023
 # Andrei Burd <burdandrei@gmail.com>, 2023
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2023
+# Bryan Kearney <bryan.kearney@gmail.com>, 2026
+# Alexander Savchenko, 2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: 0868a4d1af5275b3f70b0a6dac4c99a4, 2023\n"
+"Last-Translator: Alexander Savchenko, 2026\n"
 "Language-Team: Russian (https://app.transifex.com/foreman/teams/114/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +37,7 @@ msgid "Authorize with Foreman client certificate and validate smart-proxy CA fro
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 msgid "Clone a template"
 msgstr ""
@@ -165,7 +166,7 @@ msgid "Start typing to search..."
 msgstr ""
 
 msgid "Submit"
-msgstr ""
+msgstr "Применить"
 
 msgid "Subscribe to"
 msgstr ""

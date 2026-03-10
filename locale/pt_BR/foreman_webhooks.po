@@ -5,15 +5,15 @@
 #
 # Translators:
 # Bryan Kearney <bryan.kearney@gmail.com>, 2023
-# Amit Upadhye <aupadhye@redhat.com>, 2023
-# Flamarion Jorge <jorge.flamarion@gmail.com>, 2023
+# Amit Upadhye <aupadhye@redhat.com>, 2026
+# Flamarion Jorge <jorge.flamarion@gmail.com>, 2026
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foreman_webhooks 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2023-06-05 12:44+0000\n"
-"Last-Translator: Flamarion Jorge <jorge.flamarion@gmail.com>, 2023\n"
+"Last-Translator: Flamarion Jorge <jorge.flamarion@gmail.com>, 2026\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/foreman/teams/11"
 "4/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgid "Authorize with Foreman client certificate and validate smart-proxy CA fro
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 msgid "Clone a template"
 msgstr ""
@@ -165,7 +165,7 @@ msgid "Start typing to search..."
 msgstr ""
 
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 msgid "Subscribe to"
 msgstr ""

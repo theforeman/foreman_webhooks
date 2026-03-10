@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Donien, 2026",
+        "Last-Translator": "Wiederoder <stefanwiederoder@googlemail.com>, 2026",
         "Language-Team": "German (https://app.transifex.com/foreman/teams/114/de/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         ""
       ],
       "Cancel": [
-        ""
+        "Abbrechen"
       ],
       "Clone a template": [
         ""
@@ -159,7 +159,7 @@
         ""
       ],
       "Submit": [
-        ""
+        "Absenden"
       ],
       "Subscribe to": [
         ""

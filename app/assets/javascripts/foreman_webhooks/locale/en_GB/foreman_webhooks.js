@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Andi Chandler <andi@gowling.com>, 2025",
+        "Last-Translator": "0868a4d1af5275b3f70b0a6dac4c99a4, 2026",
         "Language-Team": "English (United Kingdom) (https://app.transifex.com/foreman/teams/114/en_GB/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         ""
       ],
       "Cancel": [
-        ""
+        "Cancel"
       ],
       "Clone a template": [
         ""
@@ -159,7 +159,7 @@
         ""
       ],
       "Submit": [
-        ""
+        "Submit"
       ],
       "Subscribe to": [
         ""

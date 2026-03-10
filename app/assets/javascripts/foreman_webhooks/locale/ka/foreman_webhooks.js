@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2023",
+        "Last-Translator": "Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2026",
         "Language-Team": "Georgian (https://app.transifex.com/foreman/teams/114/ka/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         "Foreman-ის კლიენტის სერტიფიკატით ავტორიზაცია და ჭკვიანი პროქსის CA-ის გადამოწმება პარამეტრებიდან"
       ],
       "Cancel": [
-        ""
+        "გაუქმება"
       ],
       "Clone a template": [
         "შაბლონის კლონირება"

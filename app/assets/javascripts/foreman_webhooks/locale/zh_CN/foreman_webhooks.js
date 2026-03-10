@@ -6,7 +6,7 @@
         "Project-Id-Version": "foreman_webhooks 5.0.0",
         "Report-Msgid-Bugs-To": "",
         "PO-Revision-Date": "2023-06-05 12:44+0000",
-        "Last-Translator": "Ondřej Gajdušek, 2025",
+        "Last-Translator": "Ondřej Gajdušek, 2026",
         "Language-Team": "Chinese (China) (https://app.transifex.com/foreman/teams/114/zh_CN/)",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
@@ -30,7 +30,7 @@
         "使用 Foreman 客户端证书授权并从设置验证智能代理 CA"
       ],
       "Cancel": [
-        ""
+        "取消"
       ],
       "Clone a template": [
         "克隆模板"
@@ -78,7 +78,7 @@
         "启用"
       ],
       "Enter valid URL": [
-        ""
+        "输入有效的 URL"
       ],
       "Error": [
         "错误"
@@ -90,7 +90,7 @@
         "向 ERB 导出 webhook 模板"
       ],
       "Field is required": [
-        ""
+        "字段是必需的"
       ],
       "General": [
         "常规"
@@ -156,10 +156,10 @@
         "程序代码片段"
       ],
       "Start typing to search...": [
-        ""
+        "开始输入来进行搜素..."
       ],
       "Submit": [
-        ""
+        "提交"
       ],
       "Subscribe to": [
         "订阅到"
@@ -264,7 +264,7 @@
         "将按原样发送"
       ],
       "X509 Certificate Authorities": [
-        ""
+        "X509 证书颁发机构"
       ],
       "X509 Certification Authorities concatenated in PEM format": [
         "以 PEM 格式串联的 X509 认证颁发机构"
