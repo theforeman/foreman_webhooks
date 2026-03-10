@@ -31,6 +31,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
 
   const isLoading = useSelector(selectIsLoading);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isPasswordDisabled, setIsPasswordDisabled] = useState(false);
   const id = toEdit;
 
@@ -57,6 +58,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   }, [isPasswordSet]);
 
   const handleSubmit = values => {
+    setIsSubmitting(true);
     if (isPasswordDisabled) {
       delete values.password;
     }
@@ -69,6 +71,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
         handleSuccess: () => {
           onSuccess();
         },
+        handleError: () => setIsSubmitting(false),
         errorToast: ({ response }) =>
           // eslint-disable-next-line camelcase
           response?.data?.error?.full_messages?.[0] || response,
@@ -113,6 +116,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
           onCancel={onEditCancel}
           isPasswordDisabled={isPasswordDisabled}
           setIsPasswordDisabled={setIsPasswordDisabled}
+          isSubmitting={isSubmitting}
         />
       )}
     </Modal>

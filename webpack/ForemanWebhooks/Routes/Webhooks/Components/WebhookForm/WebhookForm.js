@@ -16,6 +16,7 @@ const WebhookForm = ({
   isEventsLoading,
   isPasswordDisabled,
   setIsPasswordDisabled,
+  isSubmitting,
 }) => {
   const webhookTemplates = templates.map(t => ({ value: t.id, label: t.name }));
 
@@ -77,13 +78,18 @@ const WebhookForm = ({
       <ActionGroup>
         <Button
           ouiaId="submit-webhook-form"
-          isDisabled={verifyFields()}
+          isDisabled={verifyFields() || isSubmitting}
           variant="primary"
           onClick={() => handleSubmit(inputValues)}
         >
           {__('Submit')}
         </Button>
-        <Button ouiaId="cancel-webhook-form" variant="link" onClick={onCancel}>
+        <Button
+          ouiaId="cancel-webhook-form"
+          variant="link"
+          onClick={onCancel}
+          isDisabled={isSubmitting}
+        >
           {__('Cancel')}
         </Button>
       </ActionGroup>
@@ -101,11 +107,13 @@ WebhookForm.propTypes = {
   isTemplatesLoading: PropTypes.bool.isRequired,
   isPasswordDisabled: PropTypes.bool,
   setIsPasswordDisabled: PropTypes.func,
+  isSubmitting: PropTypes.bool,
 };
 
 WebhookForm.defaultProps = {
   isPasswordDisabled: false,
   setIsPasswordDisabled: null,
+  isSubmitting: false,
 };
 
 export default WebhookForm;

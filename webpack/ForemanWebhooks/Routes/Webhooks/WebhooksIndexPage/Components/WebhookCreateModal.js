@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalVariant } from '@patternfly/react-core';
 import { useDispatch } from 'react-redux';
@@ -15,6 +15,7 @@ import './WebhookModal.scss';
 
 const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
   const dispatch = useDispatch();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const initialWebhookValues = {
     name: '',
@@ -33,6 +34,7 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
   };
 
   const handleSubmit = values => {
+    setIsSubmitting(true);
     dispatch(
       APIActions.post({
         url: foremanUrl(`/api${WEBHOOKS_PATH}`),
@@ -42,7 +44,7 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
         handleSuccess: () => {
           onSuccess();
         },
-        handleError: () => {},
+        handleError: () => setIsSubmitting(false),
         errorToast: ({ response }) =>
           // eslint-disable-next-line camelcase
           response?.data?.error?.full_messages?.[0] || response,
@@ -64,6 +66,7 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
         handleSubmit={handleSubmit}
         initialValues={initialWebhookValues}
         onCancel={onCancel}
+        isSubmitting={isSubmitting}
       />
     </Modal>
   );
