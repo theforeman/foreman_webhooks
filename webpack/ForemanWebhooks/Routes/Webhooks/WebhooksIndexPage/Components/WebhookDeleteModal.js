@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { APIActions } from 'foremanReact/redux/API';
@@ -12,8 +12,10 @@ import { WEBHOOK_DELETE_MODAL_ID } from '../../constants';
 const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
   const { id, name } = toDelete;
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const dispatch = useDispatch();
-  const handleSubmit = () =>
+  const handleSubmit = () => {
+    setIsSubmitting(true);
     dispatch(
       APIActions.delete({
         url: foremanUrl(`/api/v2/webhooks/${id}`),
@@ -24,8 +26,10 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
           // eslint-disable-next-line camelcase
           response?.response?.data?.error?.full_messages?.[0] || response,
         handleSuccess: onSuccess,
+        handleError: () => setIsSubmitting(false),
       })
     );
+  };
 
   return (
     <Modal
@@ -45,6 +49,7 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
           ouiaId="submitBtn"
           key="confirm"
           variant="danger"
+          isDisabled={isSubmitting}
           onClick={handleSubmit}
         >
           {__('Delete')}
@@ -53,6 +58,7 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
           ouiaId="cancelBtn"
           key="cancel"
           variant="link"
+          isDisabled={isSubmitting}
           onClick={modalState.closeModal}
         >
           {__('Cancel')}

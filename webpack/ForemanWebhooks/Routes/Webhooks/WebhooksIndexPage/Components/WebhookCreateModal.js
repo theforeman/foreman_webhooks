@@ -15,8 +15,8 @@ import './WebhookModal.scss';
 
 const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
   const dispatch = useDispatch();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
   const initialWebhookValues = {
     name: '',
     target_url: '',
@@ -34,7 +34,7 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
   };
 
   const handleSubmit = values => {
-    setIsLoading(true);
+    setIsSubmitting(true);
     dispatch(
       APIActions.post({
         url: foremanUrl(`/api${WEBHOOKS_PATH}`),
@@ -43,9 +43,8 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
         successToast: () => __('Webhook was successfully created.'),
         handleSuccess: () => {
           onSuccess();
-          setIsLoading(false);
         },
-        handleError: () => setIsLoading(false),
+        handleError: () => setIsSubmitting(false),
         errorToast: ({ response }) =>
           // eslint-disable-next-line camelcase
           response?.data?.error?.full_messages?.[0] || response,
@@ -64,10 +63,10 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
       title={__('Create Webhook')}
     >
       <ConnectedWebhookForm
-        isLoading={isLoading}
         handleSubmit={handleSubmit}
         initialValues={initialWebhookValues}
         onCancel={onCancel}
+        isSubmitting={isSubmitting}
       />
     </Modal>
   );

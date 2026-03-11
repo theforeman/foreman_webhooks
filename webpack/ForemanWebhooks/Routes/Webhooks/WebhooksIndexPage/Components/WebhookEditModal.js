@@ -15,9 +15,11 @@ import {
   WEBHOOK_API_REQUEST_KEY,
   WEBHOOK_EDIT_MODAL_ID,
   WEBHOOKS_API_PLAIN_PATH,
+  WEBHOOK_API_UPDATE_KEY,
 } from '../../constants';
 
 import {
+  selectIsLoading,
   selectWebhookValues,
   selectWebhookTemplateId,
 } from './WebhookEditModalSelectors';
@@ -27,8 +29,10 @@ import './WebhookModal.scss';
 const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   const dispatch = useDispatch();
 
+  const isLoading = useSelector(selectIsLoading);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isPasswordDisabled, setIsPasswordDisabled] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const id = toEdit;
 
   const isPasswordSet = useSelector(selectWebhookValues).passwordSet;
@@ -54,30 +58,26 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   }, [isPasswordSet]);
 
   const handleSubmit = values => {
-    setIsLoading(true);
+    setIsSubmitting(true);
     if (isPasswordDisabled) {
       delete values.password;
     }
     dispatch(
       put({
         url: foremanUrl(`/api${WEBHOOKS_PATH}/${id}`),
-        key: WEBHOOK_API_REQUEST_KEY,
+        key: WEBHOOK_API_UPDATE_KEY,
         params: { ...values, controller: 'webhooks' },
         successToast: () => __('Webhook was successfully updated.'),
         handleSuccess: () => {
           onSuccess();
-          setIsLoading(false);
         },
+        handleError: () => setIsSubmitting(false),
         errorToast: ({ response }) =>
           // eslint-disable-next-line camelcase
           response?.data?.error?.full_messages?.[0] || response,
       })
     );
   };
-
-  useEffect(() => {
-    if (initialWebhookValues.id) setIsLoading(false);
-  }, [initialWebhookValues.id]);
 
   useEffect(() => {
     if (id) {
@@ -111,12 +111,12 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
         <Loading />
       ) : (
         <ConnectedWebhookForm
-          isLoading={isLoading}
           handleSubmit={handleSubmit}
           initialValues={initialWebhookValues}
           onCancel={onEditCancel}
           isPasswordDisabled={isPasswordDisabled}
           setIsPasswordDisabled={setIsPasswordDisabled}
+          isSubmitting={isSubmitting}
         />
       )}
     </Modal>

@@ -25,11 +25,12 @@ import {
 const params = { page: 1, search: 'snippet = false', per_page: 'all' };
 
 const ConnectedWebhookForm = ({
-  isLoading,
   onCancel,
   handleSubmit,
   initialValues,
   isPasswordDisabled,
+  setIsPasswordDisabled,
+  isSubmitting,
 }) => {
   const dispatch = useDispatch();
 
@@ -59,7 +60,6 @@ const ConnectedWebhookForm = ({
 
   return (
     <WebhookForm
-      isLoading={isLoading}
       templates={templates}
       availableEvents={availableEvents}
       onCancel={onCancel}
@@ -68,20 +68,25 @@ const ConnectedWebhookForm = ({
       isTemplatesLoading={isTemplatesLoading}
       isEventsLoading={isEventsLoading}
       isPasswordDisabled={isPasswordDisabled}
+      setIsPasswordDisabled={setIsPasswordDisabled}
+      isSubmitting={isSubmitting}
     />
   );
 };
 
 ConnectedWebhookForm.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object.isRequired,
   isPasswordDisabled: PropTypes.bool,
+  setIsPasswordDisabled: PropTypes.func,
+  isSubmitting: PropTypes.bool,
 };
 
 ConnectedWebhookForm.defaultProps = {
   isPasswordDisabled: false,
+  setIsPasswordDisabled: null,
+  isSubmitting: false,
 };
 
 export default ConnectedWebhookForm;

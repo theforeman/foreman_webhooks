@@ -41,15 +41,24 @@ const WrappedWebhooksTable = props => {
       modalsStates={{
         testModal: {
           isOpen: isTestModalOpen,
-          closeModal: () => setIsTestModalOpen(false),
+          closeModal: () => {
+            setToTest({});
+            setIsTestModalOpen(false);
+          },
         },
         deleteModal: {
           isOpen: isDeleteModalOpen,
-          closeModal: () => setIsDeleteModalOpen(false),
+          closeModal: () => {
+            setToDelete({});
+            setIsDeleteModalOpen(false);
+          },
         },
         editModal: {
           isOpen: isEditModalOpen,
-          closeModal: () => setIsEditModalOpen(false),
+          closeModal: () => {
+            setToEdit(0);
+            setIsEditModalOpen(false);
+          },
         },
       }}
       webhookActions={webhookActions}

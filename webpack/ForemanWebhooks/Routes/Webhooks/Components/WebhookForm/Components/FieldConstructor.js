@@ -28,7 +28,6 @@ const FormField = ({
   type,
   required,
   options,
-  isLoading,
   validated,
   value,
   disabled,
@@ -36,11 +35,11 @@ const FormField = ({
   placeholder,
   errMsg,
   fieldId,
+  setIsPasswordDisabled,
   ...props
 }) => {
   const [fieldValidated, setFieldValidated] = useState('default');
   const [firstLoad, setFirstLoad] = useState(true);
-  const [isDisabled, setIsDisabled] = useState(disabled);
 
   const requiredValidate = () => {
     if (firstLoad || !required) return;
@@ -58,10 +57,6 @@ const FormField = ({
   }, []);
 
   useEffect(() => {
-    setIsDisabled(disabled);
-  }, [disabled]);
-
-  useEffect(() => {
     requiredValidate();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
@@ -76,7 +71,7 @@ const FormField = ({
           onChange={(_, newValue) => {
             setValue(name, newValue);
           }}
-          isDisabled={isLoading || isDisabled}
+          isDisabled={disabled}
           isRequired={required}
           type={type}
           validated={fieldValidated}
@@ -94,7 +89,7 @@ const FormField = ({
           value={value ?? ''}
           onChange={(_, newValue) => setValue(name, newValue)}
           isRequired={required}
-          isDisabled={isLoading || isDisabled}
+          isDisabled={disabled}
           type={type}
           validated={fieldValidated}
           placeholder={placeholder}
@@ -121,7 +116,7 @@ const FormField = ({
   }
   return (
     <>
-      {name === 'password' && (isDisabled || disabled) ? (
+      {name === 'password' && disabled && setIsPasswordDisabled ? (
         <Grid hasGutter={false}>
           <GridItem span={11}>
             <TextInput
@@ -129,7 +124,7 @@ const FormField = ({
               value={value ?? ''}
               id={fieldId ?? `id-${name}`}
               onChange={localHandler}
-              isDisabled={isLoading || isDisabled}
+              isDisabled={disabled}
               isRequired={required}
               type={type}
               validated={fieldValidated}
@@ -141,7 +136,7 @@ const FormField = ({
           <GridItem span={1}>
             <Button
               ouiaId={`reset-${name}`}
-              onClick={() => setIsDisabled(false)}
+              onClick={() => setIsPasswordDisabled(!disabled)}
               variant="control"
               icon={<PencilAltIcon />}
             />
@@ -153,11 +148,9 @@ const FormField = ({
           value={value ?? ''}
           id={fieldId ?? `id-${name}`}
           onChange={localHandler}
-          isDisabled={isLoading || isDisabled}
           isRequired={required}
           type={type}
           validated={fieldValidated}
-          placeholder={placeholder}
           onBlur={requiredValidate}
           autoComplete={type === 'password' ? 'new-password' : null}
         />
@@ -283,7 +276,6 @@ FormField.propTypes = {
       label: PropTypes.string.isRequired,
     })
   ),
-  isLoading: PropTypes.bool,
   validated: PropTypes.string,
   placeholder: PropTypes.string,
   errMsg: PropTypes.string,
@@ -303,7 +295,6 @@ FormField.defaultProps = {
   required: false,
   allowClear: false,
   options: [],
-  isLoading: false,
   disabled: false,
   value: '',
   fieldId: undefined,
