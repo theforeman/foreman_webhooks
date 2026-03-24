@@ -168,13 +168,16 @@ class Api::V2::WebhookTemplatesControllerTest < ActionController::TestCase
   end
 
   test 'should clone template' do
-    original_webhook_template = FactoryBot.create(:webhook_template)
+    original_webhook_template = FactoryBot.create(:webhook_template, locked: true)
     post :clone, params: { id: original_webhook_template.to_param,
                            webhook_template: { name: 'MyClone' } }
     assert_response :success
     template = ActiveSupport::JSON.decode(@response.body)
     assert_equal(template['name'], 'MyClone')
     assert_equal(template['template'], original_webhook_template.template)
+    refute_equal(template['id'], original_webhook_template.id, 'Clone ID different from original')
+    assert_equal(template['cloned_from_id'], original_webhook_template.id)
+    assert_equal(template['locked'], false)
     refute_equal(template['id'], original_webhook_template.id)
   end
 

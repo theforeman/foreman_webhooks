@@ -76,8 +76,11 @@ module Api
       param :id, :identifier, required: true
       param_group :webhook_template_clone, as: :create
       def clone
-        @webhook_template = @webhook_template.dup
+        original = @webhook_template
+        @webhook_template = original.dup
+        @webhook_template.cloned_from = original
         @webhook_template.name = params[:webhook_template][:name]
+        @webhook_template.locked = false
         process_response @webhook_template.save
       end
 
