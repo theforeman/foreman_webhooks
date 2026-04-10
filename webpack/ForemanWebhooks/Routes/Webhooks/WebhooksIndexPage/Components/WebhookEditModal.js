@@ -69,6 +69,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
         params: { ...values, controller: 'webhooks' },
         successToast: () => __('Webhook was successfully updated.'),
         handleSuccess: () => {
+          setIsSubmitting(false);
           onSuccess();
         },
         handleError: () => setIsSubmitting(false),

@@ -14,6 +14,7 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const dispatch = useDispatch();
+
   const handleSubmit = () => {
     setIsSubmitting(true);
     dispatch(
@@ -25,7 +26,10 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
         errorToast: response =>
           // eslint-disable-next-line camelcase
           response?.response?.data?.error?.full_messages?.[0] || response,
-        handleSuccess: onSuccess,
+        handleSuccess: () => {
+          setIsSubmitting(false);
+          onSuccess();
+        },
         handleError: () => setIsSubmitting(false),
       })
     );

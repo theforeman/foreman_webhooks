@@ -4,13 +4,13 @@ export const WEBHOOKS_PAGE_HIDE_LOADING = 'WEBHOOKS_PAGE_HIDE_LOADING';
 export const WEBHOOKS_PAGE_SHOW_LOADING = 'WEBHOOKS_PAGE_SHOW_LOADING';
 export const WEBHOOKS_PAGE_CLEAR_ERROR = 'WEBHOOKS_PAGE_CLEAR_ERROR';
 
-export const WEBHOOKS_API_PATH = '/api/v2/webhooks?include_permissions=true';
+export const WEBHOOKS_API_PATH = '/api/webhooks?include_permissions=true';
 export const WEBHOOKS_PATH = '/webhooks';
-export const WEBHOOKS_API_REQUEST_KEY = 'WEBHOOKS';
+export const WEBHOOKS_API_REQUEST_KEY = 'webhooks';
 
 export const WEBHOOK_TEMPLATES_API_PATH =
   '/api/v2/webhook_templates?include_permissions=true';
-export const WEBHOOKS_API_PLAIN_PATH = '/api/v2/webhooks';
+export const WEBHOOKS_API_PLAIN_PATH = '/api/webhooks';
 export const WEBHOOK_TEMPLATES_API_REQUEST_KEY = 'WEBHOOK_TEMPLATES';
 export const WEBHOOK_API_REQUEST_KEY = 'WEBHOOK';
 export const WEBHOOK_API_UPDATE_KEY = 'WEBHOOK_UPDATE';
