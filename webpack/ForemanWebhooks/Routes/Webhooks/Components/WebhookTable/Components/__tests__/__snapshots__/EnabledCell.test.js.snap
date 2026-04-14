@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`EnabledCell should render blank cell 1`] = `<BanIcon />`;
-
-exports[`EnabledCell should render marked cell 1`] = `<CheckIcon />`;

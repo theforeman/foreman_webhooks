@@ -1,14 +1,26 @@
-import { testComponentSnapshotsWithFixtures } from '@theforeman/test';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import EnabledCell from '../EnabledCell';
 
-const fixtures = {
-  'should render blank cell': {
-    condition: false,
-  },
-  'should render marked cell': {
-    condition: true,
-  },
-};
+jest.mock('@patternfly/react-icons', () => ({
+  CheckIcon: () => <span data-testid="check-icon" />,
+  BanIcon: () => <span data-testid="ban-icon" />,
+}));
 
-describe('EnabledCell', () =>
-  testComponentSnapshotsWithFixtures(EnabledCell, fixtures));
+describe('EnabledCell', () => {
+  it('renders the check icon when condition is true', () => {
+    render(<EnabledCell condition />);
+
+    expect(screen.getByTestId('check-icon')).toBeInTheDocument();
+    expect(screen.queryByTestId('ban-icon')).not.toBeInTheDocument();
+  });
+
+  it('renders the ban icon when condition is false', () => {
+    render(<EnabledCell condition={false} />);
+
+    expect(screen.getByTestId('ban-icon')).toBeInTheDocument();
+    expect(screen.queryByTestId('check-icon')).not.toBeInTheDocument();
+  });
+});

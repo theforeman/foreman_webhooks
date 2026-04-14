@@ -25,7 +25,9 @@ describe('WebhooksIndexPage - Integration Test', () => {
       </Router>
     );
 
-    expect(component.exists('WebhooksTable')).toEqual(true);
+    expect(component.find('[data-testid="table-index-page"]').exists()).toEqual(
+      true
+    );
     expect(component.exists('WebhookCreateModal')).toEqual(true);
   });
 });
