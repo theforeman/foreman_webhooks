@@ -1,5 +1,17 @@
 import React from 'react';
-import EnabledCell from '../EnabledCell';
+import PropTypes from 'prop-types';
+import { CheckIcon, BanIcon } from '@patternfly/react-icons';
+
+const EnabledCell = ({ condition }) =>
+  condition ? <CheckIcon /> : <BanIcon />;
+
+EnabledCell.propTypes = {
+  condition: PropTypes.bool,
+};
+
+EnabledCell.defaultProps = {
+  condition: false,
+};
 
 const enabledCellFormatter = () => (value, extra) => {
   const condition = extra?.rowData != null ? value : value?.enabled;

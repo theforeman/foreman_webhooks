@@ -101,7 +101,7 @@ const WebhooksIndexPage = () => {
   const columns = {
     name: {
       title: __('Name'),
-      wrapper: nameToEditFormatter('webhooks', onEditClick),
+      wrapper: nameToEditFormatter(onEditClick),
       isSorted: true,
     },
     target_url: {
