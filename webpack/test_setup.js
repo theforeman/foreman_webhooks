@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-unresolved
+import 'foremanJSTestSetup';
+
 jest.mock('foremanReact/history', () => ({
   history: {
     action: 'PUSH',
