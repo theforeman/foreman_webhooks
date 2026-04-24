@@ -32,7 +32,7 @@ describe('WebhooksIndexPage - Integration Test', () => {
       </Router>
     );
 
-    expect(component.find('#foreman-page').exists()).toEqual(true);
+    expect(component.find('table[role="grid"]').exists()).toEqual(true);
     expect(component.exists('WebhookCreateModal')).toEqual(true);
   });
 });

@@ -10,7 +10,6 @@ import {
 } from '../constants';
 
 import {
-  selectWebhooks,
   selectPage,
   selectPerPage,
   selectSearch,
@@ -21,11 +20,9 @@ import WebhookCreateModal from './Components/WebhookCreateModal';
 import WebhookDeleteModal from './Components/WebhookDeleteModal';
 import WebhookEditModal from './Components/WebhookEditModal';
 import WebhookTestModal from './Components/WebhookTestModal';
-import {
-  nameToEditFormatter,
-  enabledCellFormatter,
-  actionCellFormatter,
-} from '../Components/WebhookTable/Components/Formatters';
+import nameToEditFormatter from '../Components/WebhookTable/Components/Formatters/nameToEditFormatter';
+import enabledCellFormatter from '../Components/WebhookTable/Components/Formatters/enabledCellFormatter';
+import actionCellFormatter from '../Components/WebhookTable/Components/Formatters/actionCellFormatter';
 
 import { reloadWithSearch, fetchAndPush } from '../WebhooksPageActions';
 
@@ -33,7 +30,6 @@ const WebhooksIndexPage = () => {
   const dispatch = useDispatch();
 
   const search = useSelector(selectSearch);
-  const webhooks = useSelector(selectWebhooks);
   const page = useSelector(selectPage);
   const perPage = useSelector(selectPerPage);
   const itemCount = useSelector(selectSubtotal);
@@ -160,7 +156,6 @@ const WebhooksIndexPage = () => {
         apiOptions={{ key: WEBHOOKS_API_REQUEST_KEY }}
         customCreateAction={() => openModal}
         columns={columns}
-        rows={webhooks}
         id="webhooks-table"
         key="webhooks-table"
       />

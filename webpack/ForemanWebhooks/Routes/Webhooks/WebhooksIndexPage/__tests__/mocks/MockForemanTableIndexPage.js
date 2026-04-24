@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-function MockForemanTableIndexPage({ header, customCreateAction, rows = [] }) {
+import { selectWebhooks } from '../../../WebhooksPageSelectors';
+
+function MockForemanTableIndexPage({ header, customCreateAction }) {
+  const rows = useSelector(selectWebhooks);
   const onCreate = customCreateAction ? customCreateAction() : undefined;
   return (
     <div data-testid="webhooks-table-index">
@@ -23,13 +27,11 @@ function MockForemanTableIndexPage({ header, customCreateAction, rows = [] }) {
 MockForemanTableIndexPage.propTypes = {
   header: PropTypes.string,
   customCreateAction: PropTypes.func,
-  rows: PropTypes.arrayOf(PropTypes.object),
 };
 
 MockForemanTableIndexPage.defaultProps = {
   header: '',
   customCreateAction: null,
-  rows: [],
 };
 
 export default MockForemanTableIndexPage;

@@ -13,11 +13,27 @@ import {
   webhooks as webhooksFixture,
 } from './WebhooksIndexPage.fixtures';
 
-jest.mock('../../Components/WebhookTable/Components/Formatters', () => ({
-  nameToEditFormatter: () => () => null,
-  enabledCellFormatter: () => () => null,
-  actionCellFormatter: () => () => null,
-}));
+jest.mock(
+  '../../Components/WebhookTable/Components/Formatters/nameToEditFormatter',
+  () => ({
+    __esModule: true,
+    default: () => () => null,
+  })
+);
+jest.mock(
+  '../../Components/WebhookTable/Components/Formatters/enabledCellFormatter',
+  () => ({
+    __esModule: true,
+    default: () => () => null,
+  })
+);
+jest.mock(
+  '../../Components/WebhookTable/Components/Formatters/actionCellFormatter',
+  () => ({
+    __esModule: true,
+    default: () => () => null,
+  })
+);
 
 jest.mock('foremanReact/components/PF4/TableIndexPage/TableIndexPage', () => ({
   __esModule: true,
