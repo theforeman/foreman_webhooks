@@ -7,7 +7,7 @@ import {
   APIMiddleware,
 } from 'foremanReact/redux/API';
 
-import ConnectedWebhooksIndexPage from '../index';
+import ConnectedWebhooksIndexPage from '../WebhooksIndexPage';
 
 import * as selectors from '../../WebhooksPageSelectors';
 import * as editSelectors from '../Components/WebhookEditModalSelectors';
