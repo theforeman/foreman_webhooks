@@ -5,7 +5,7 @@ inherit_gem:
     - default.yml
 
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.0
 
 Metrics:
   Enabled: false

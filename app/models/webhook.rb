@@ -11,7 +11,7 @@ class Webhook < ApplicationRecord
 
   graphql_type 'ForemanWebhooks::Types::Webhook'
 
-  EVENT_POSTFIX = ".#{Foreman::Observable::DEFAULT_NAMESPACE}"
+  EVENT_POSTFIX = ".#{Foreman::Observable::DEFAULT_NAMESPACE}".freeze
 
   DEFAULT_PAYLOAD_TEMPLATE = 'Webhook Template - Payload Default'
 
