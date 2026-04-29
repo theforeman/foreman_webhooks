@@ -13,4 +13,9 @@ EnabledCell.defaultProps = {
   condition: false,
 };
 
-export default EnabledCell;
+const enabledCellFormatter = () => (value, extra) => {
+  const condition = extra?.rowData != null ? value : value?.enabled;
+  return <EnabledCell condition={Boolean(condition)} />;
+};
+
+export default enabledCellFormatter;

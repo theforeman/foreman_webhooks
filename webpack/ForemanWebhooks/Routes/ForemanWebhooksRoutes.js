@@ -1,5 +1,5 @@
 import React from 'react';
-import ConnectedWebhooksIndexPage from './Webhooks/WebhooksIndexPage';
+import ConnectedWebhooksIndexPage from './Webhooks/WebhooksIndexPage/WebhooksIndexPage';
 
 const ForemanWebhooksRoutes = [
   {

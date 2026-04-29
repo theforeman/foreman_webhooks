@@ -42,6 +42,7 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
         params: { ...values, controller: 'webhooks' },
         successToast: () => __('Webhook was successfully created.'),
         handleSuccess: () => {
+          setIsSubmitting(false);
           onSuccess();
         },
         handleError: () => setIsSubmitting(false),
