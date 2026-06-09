@@ -12,6 +12,7 @@ import {
   ModalVariant,
 } from '@patternfly/react-core';
 
+import FieldConstructor from 'foremanReact/components/common/FieldConstructor/FieldConstructor';
 import { APIActions } from 'foremanReact/redux/API';
 import {
   WEBHOOK_TEST_MODAL_ID,
@@ -19,7 +20,6 @@ import {
 } from '../../constants';
 
 import './WebhookModal.scss';
-import FieldConstructor from 'foremanReact/components/common/FieldConstructor/FieldConstructor';
 
 const WebhookTestModal = ({ toTest, modalState }) => {
   const dispatch = useDispatch();
