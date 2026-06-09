@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
+import FieldConstructor from 'foremanReact/components/common/FieldConstructor/FieldConstructor';
 import { sprintf, translate as __ } from 'foremanReact/common/I18n';
 
 import './WebhookFormTabs.css';
-import FieldConstructor from './FieldConstructor';
 
 const WebhookFormTabs = ({
   inputValues,

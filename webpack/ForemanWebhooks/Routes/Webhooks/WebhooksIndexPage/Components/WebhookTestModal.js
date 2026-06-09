@@ -19,7 +19,7 @@ import {
 } from '../../constants';
 
 import './WebhookModal.scss';
-import FieldConstructor from '../../Components/WebhookForm/Components/FieldConstructor';
+import FieldConstructor from 'foremanReact/components/common/FieldConstructor/FieldConstructor';
 
 const WebhookTestModal = ({ toTest, modalState }) => {
   const dispatch = useDispatch();
