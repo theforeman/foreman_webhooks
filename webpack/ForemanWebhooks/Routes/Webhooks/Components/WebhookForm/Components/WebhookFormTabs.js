@@ -173,7 +173,6 @@ const WebhookFormTabs = ({
             placeholder={__(
               "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
             )}
-            inputSizeClass="col-md-8"
             rows={8}
             setValue={updateFieldValue}
           />
@@ -200,7 +199,6 @@ const WebhookFormTabs = ({
             label={__('HTTP Headers')}
             labelHelp={__('Optional. Must be a JSON object (ERB allowed)')}
             placeholder='{&#13;&#10;"X-Shellhook-Arg-1": "value",&#13;&#10;"X-Shellhook-Arg-2": "<%= @object.id %>"&#13;&#10;}'
-            inputSizeClass="col-md-8"
             rows={8}
             setValue={updateFieldValue}
           />

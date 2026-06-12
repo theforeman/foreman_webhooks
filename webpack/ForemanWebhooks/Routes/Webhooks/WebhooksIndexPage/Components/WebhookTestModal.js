@@ -80,7 +80,6 @@ const WebhookTestModal = ({ toTest, modalState }) => {
           label={__('Payload')}
           labelHelp={__('Will be sent as is')}
           placeholder="{&#13;&#10;id: 1,&#13;&#10;name: test&#13;&#10;}"
-          inputSizeClass="col-md-8"
           rows={8}
           value={value.payload}
           setValue={(key, val) => {
