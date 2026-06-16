@@ -48,7 +48,7 @@ const WebhookFormTabs = ({
             type="select"
             label={__('Subscribe to')}
             required
-            allowClear={false}
+            allowClear
             options={availableEvents}
             isLoading={isEventsLoading}
             placeholder={__('Start typing to search...')}
@@ -93,7 +93,7 @@ const WebhookFormTabs = ({
             type="select"
             label={__('Template')}
             required
-            allowClear={false}
+            allowClear
             options={webhookTemplates}
             isLoading={isTemplatesLoading}
             placeholder={__('Start typing to search...')}
@@ -105,7 +105,7 @@ const WebhookFormTabs = ({
             type="select"
             label={__('HTTP Method')}
             required
-            allowClear={false}
+            allowClear
             options={httpMethods}
             placeholder={__('Start typing to search...')}
           />
