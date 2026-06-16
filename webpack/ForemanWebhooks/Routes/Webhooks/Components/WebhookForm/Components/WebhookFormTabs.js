@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 
+import FieldConstructor from 'foremanReact/components/common/FieldConstructor/FieldConstructor';
 import { sprintf, translate as __ } from 'foremanReact/common/I18n';
 
 import './WebhookFormTabs.css';
-import FieldConstructor from './FieldConstructor';
 
 const WebhookFormTabs = ({
   inputValues,
@@ -48,7 +48,7 @@ const WebhookFormTabs = ({
             type="select"
             label={__('Subscribe to')}
             required
-            allowClear={false}
+            allowClear
             options={availableEvents}
             isLoading={isEventsLoading}
             placeholder={__('Start typing to search...')}
@@ -93,7 +93,7 @@ const WebhookFormTabs = ({
             type="select"
             label={__('Template')}
             required
-            allowClear={false}
+            allowClear
             options={webhookTemplates}
             isLoading={isTemplatesLoading}
             placeholder={__('Start typing to search...')}
@@ -105,7 +105,7 @@ const WebhookFormTabs = ({
             type="select"
             label={__('HTTP Method')}
             required
-            allowClear={false}
+            allowClear
             options={httpMethods}
             placeholder={__('Start typing to search...')}
           />
@@ -173,7 +173,6 @@ const WebhookFormTabs = ({
             placeholder={__(
               "Optional CAs in PEM format concatenated to verify the receiver's SSL certificate"
             )}
-            inputSizeClass="col-md-8"
             rows={8}
             setValue={updateFieldValue}
           />
@@ -200,7 +199,6 @@ const WebhookFormTabs = ({
             label={__('HTTP Headers')}
             labelHelp={__('Optional. Must be a JSON object (ERB allowed)')}
             placeholder='{&#13;&#10;"X-Shellhook-Arg-1": "value",&#13;&#10;"X-Shellhook-Arg-2": "<%= @object.id %>"&#13;&#10;}'
-            inputSizeClass="col-md-8"
             rows={8}
             setValue={updateFieldValue}
           />

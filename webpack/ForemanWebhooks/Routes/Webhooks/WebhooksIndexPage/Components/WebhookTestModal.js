@@ -12,6 +12,7 @@ import {
   ModalVariant,
 } from '@patternfly/react-core';
 
+import FieldConstructor from 'foremanReact/components/common/FieldConstructor/FieldConstructor';
 import { APIActions } from 'foremanReact/redux/API';
 import {
   WEBHOOK_TEST_MODAL_ID,
@@ -19,7 +20,6 @@ import {
 } from '../../constants';
 
 import './WebhookModal.scss';
-import FieldConstructor from '../../Components/WebhookForm/Components/FieldConstructor';
 
 const WebhookTestModal = ({ toTest, modalState }) => {
   const dispatch = useDispatch();
@@ -80,7 +80,6 @@ const WebhookTestModal = ({ toTest, modalState }) => {
           label={__('Payload')}
           labelHelp={__('Will be sent as is')}
           placeholder="{&#13;&#10;id: 1,&#13;&#10;name: test&#13;&#10;}"
-          inputSizeClass="col-md-8"
           rows={8}
           value={value.payload}
           setValue={(key, val) => {
