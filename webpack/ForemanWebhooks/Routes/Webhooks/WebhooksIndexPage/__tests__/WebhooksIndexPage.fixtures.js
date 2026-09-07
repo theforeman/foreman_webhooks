@@ -38,9 +38,10 @@ export const queryParams = {
   ...querySort,
 };
 
-export const stateFactory = state => ({
+export const stateFactory = (state = {}, { status } = {}) => ({
   API: {
     [WEBHOOKS_API_REQUEST_KEY]: {
+      ...(status !== undefined && { status }),
       response: {
         ...stateParams,
         ...state,
