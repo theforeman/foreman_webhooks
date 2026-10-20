@@ -4,11 +4,6 @@
   "description": "This plugins allows to configure Webhooks for Foreman.",
   "main": "index.js",
   "scripts": {
-    "lint": "tfm-lint --plugin -d /webpack",
-    "test": "tfm-test --plugin",
-    "test:watch": "tfm-test --plugin --watchAll",
-    "test:current": "tfm-test --plugin --watch",
-    "publish-coverage": "tfm-publish-coverage",
     "create-react-component": "yo react-domain"
   },
   "repository": {
@@ -18,15 +13,8 @@
   "bugs": {
     "url": "https://projects.theforeman.org/projects/webhooks/issues"
   },
-  "peerDependencies": {
-    "@theforeman/vendor": "^8.15.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.7.0",
-    "@theforeman/builder": ">= 0",
-    "@theforeman/test": ">= 0",
-    "@theforeman/vendor-dev": ">= 0",
-    "@theforeman/eslint-plugin-foreman": ">= 0",
     "babel-eslint": "^10.0.0",
     "eslint": "^6.8.0",
     "eslint-plugin-spellcheck": "^0.0.17",
