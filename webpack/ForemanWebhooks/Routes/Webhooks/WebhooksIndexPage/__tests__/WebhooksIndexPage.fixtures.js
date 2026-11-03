@@ -100,12 +100,3 @@ export const spySelector = selectors => {
   selectors.selectMessage.mockImplementation(() => ({}));
 };
 
-export const spyEditSelector = selectors => {
-  jest.spyOn(selectors, 'selectIsLoading');
-  jest.spyOn(selectors, 'selectWebhookValues');
-  jest.spyOn(selectors, 'selectWebhookTemplateId');
-
-  selectors.selectIsLoading.mockImplementation(() => false);
-  selectors.selectWebhookValues.mockImplementation(() => ({}));
-  selectors.selectWebhookTemplateId.mockImplementation(() => 1);
-};
