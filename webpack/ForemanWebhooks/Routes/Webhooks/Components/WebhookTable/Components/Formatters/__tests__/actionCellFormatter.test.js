@@ -4,18 +4,6 @@ import '@testing-library/jest-dom';
 
 import actionCellFormatter from '../actionCellFormatter';
 
-jest.mock(
-  'foremanReact/components/common/table',
-  () => ({
-    cellFormatter: content => (
-      <div data-testid="cell-formatter-mock">
-        {content === false ? null : content}
-      </div>
-    ),
-  }),
-  { virtual: true }
-);
-
 jest.mock('../../ActionButtons/ActionButton', () => {
   // eslint-disable-next-line global-require
   const PropTypes = require('prop-types');
@@ -50,13 +38,12 @@ describe('actionCellFormatter', () => {
     jest.clearAllMocks();
   });
 
-  it('wraps the action control in cellFormatter when rowData is present and the row is editable', () => {
+  it('renders the action control when rowData is present and the row is editable', () => {
     const formatter = actionCellFormatter(webhookActions);
     const row = { id: 10, name: 'Wh', can_edit: true, can_delete: true };
 
     render(formatter(null, { rowData: row }));
 
-    expect(screen.getByTestId('cell-formatter-mock')).toBeInTheDocument();
     const action = screen.getByTestId('action-button');
     expect(action).toHaveAttribute('data-id', '10');
     expect(action).toHaveAttribute('data-name', 'Wh');
@@ -75,23 +62,22 @@ describe('actionCellFormatter', () => {
     );
   });
 
-  it('renders falsy content through cellFormatter when rowData is present but the row is not editable', () => {
+  it('renders nothing when rowData is present but the row is not editable', () => {
     const formatter = actionCellFormatter(webhookActions);
     const row = { id: 5, name: 'B', can_edit: false };
 
-    render(formatter(null, { rowData: row }));
+    const { container } = render(formatter(null, { rowData: row }));
 
-    expect(screen.getByTestId('cell-formatter-mock')).toBeInTheDocument();
+    expect(container).toBeEmptyDOMElement();
     expect(screen.queryByTestId('action-button')).not.toBeInTheDocument();
   });
 
-  it('returns the action control without cellFormatter when rowData is omitted', () => {
+  it('returns the action control when rowData is omitted', () => {
     const formatter = actionCellFormatter(webhookActions);
     const row = { id: 20, name: 'Direct', can_edit: true, canDelete: true };
 
     render(formatter(row));
 
-    expect(screen.queryByTestId('cell-formatter-mock')).not.toBeInTheDocument();
     expect(screen.getByTestId('action-button')).toHaveAttribute(
       'data-id',
       '20'
