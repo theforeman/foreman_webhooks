@@ -1,5 +1,4 @@
 import React from 'react';
-import { cellFormatter } from 'foremanReact/components/common/table';
 import { ActionButton } from '../ActionButtons/ActionButton';
 
 const actionCellFormatter = webhookActions => (value, extra) => {
@@ -17,7 +16,7 @@ const actionCellFormatter = webhookActions => (value, extra) => {
     />
   );
 
-  return extra?.rowData != null ? cellFormatter(content) : content;
+  return content;
 };
 
 export default actionCellFormatter;
