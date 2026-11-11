@@ -60,6 +60,6 @@ class WebhookTemplate < Template
   end
 
   def support_preview?
-    false
+    webhooks.any?
   end
 end
