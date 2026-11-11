@@ -31,12 +31,6 @@ const WebhookTestModal = ({ toTest, modalState }) => {
 
   const [value, setValue] = useState(initialTestValues);
 
-  const errorToast = error =>
-    sprintf(
-      __('Webhook test failed: %s'),
-      error?.response?.data?.error?.message
-    );
-
   const handleSubmit = values => {
     dispatch(
       APIActions.post({
@@ -47,7 +41,8 @@ const WebhookTestModal = ({ toTest, modalState }) => {
           controller: 'webhooks',
         },
         successToast: () => sprintf(__('Webhook %s test was successful'), name),
-        errorToast: error => errorToast(error),
+        errorToast: (_error, parsedMessage) =>
+          sprintf(__('Webhook test failed: %s'), parsedMessage),
         handleSuccess: () => modalState.closeModal(),
       })
     );
