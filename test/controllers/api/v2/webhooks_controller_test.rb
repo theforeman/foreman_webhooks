@@ -4,7 +4,7 @@ require 'test_plugin_helper'
 
 class Api::V2::WebhooksControllerTest < ActionController::TestCase
   valid_attrs = { name: 'webhook_test', event: 'host_created.event.foreman',
-                  target_url: 'https://app.example.com' }
+                  target_url: 'https://app.example.com', http_method: 'POST' }
 
   def setup
     @webhook = FactoryBot.create(:webhook)
@@ -41,6 +41,8 @@ class Api::V2::WebhooksControllerTest < ActionController::TestCase
     assert response.key?('event')
     assert_equal response['name'], valid_attrs[:name]
     assert_equal response['event'], valid_attrs[:event]
+    assert response['enabled']
+    assert Webhook.find(response['id']).enabled?
   end
 
   test 'should update name' do
@@ -59,6 +61,23 @@ class Api::V2::WebhooksControllerTest < ActionController::TestCase
     response = JSON.parse(@response.body)
     assert response.key?('event')
     assert_equal response['event'], new_event
+  end
+
+  # Migrated from Robottelo tests/foreman/cli/test_webhook.py::TestWebhook::test_webhook_disabled_enabled (state transitions).
+  test 'should disable and enable webhook' do
+    assert @webhook.enabled?
+
+    put :update, params: { id: @webhook.id, webhook: { enabled: false } }
+    assert_response :success
+    response = JSON.parse(@response.body)
+    assert_equal false, response['enabled']
+    assert_not @webhook.reload.enabled?
+
+    put :update, params: { id: @webhook.id, webhook: { enabled: true } }
+    assert_response :success
+    response = JSON.parse(@response.body)
+    assert response['enabled']
+    assert @webhook.reload.enabled?
   end
 
   test 'should not create with invalid name' do
@@ -85,6 +104,14 @@ class Api::V2::WebhooksControllerTest < ActionController::TestCase
     assert_response :unprocessable_entity
   end
 
+  # Migrated from Robottelo tests/foreman/cli/test_webhook.py::TestWebhook::test_negative_update_invalid_url.
+  test 'should not update with invalid target_url' do
+    original_url = @webhook.target_url
+    put :update, params: { id: @webhook.id, webhook: { target_url: '$%^##@***' } }
+    assert_response :unprocessable_entity
+    assert_equal original_url, @webhook.reload.target_url
+  end
+
   test 'search webhook' do
     get :index, params: { search: @webhook.name, format: 'json' }
     assert_response :success, "search webhook name: '#{@webhook.name}'" \
@@ -97,6 +124,41 @@ class Api::V2::WebhooksControllerTest < ActionController::TestCase
   test 'should update webhook' do
     put :update, params: { id: @webhook.to_param, webhook: valid_attrs }
     assert_response :success
+  end
+
+  # Migrated from Robottelo tests/foreman/api/test_webhook.py::TestWebhook::test_positive_valid_method.
+  test 'should create webhook with valid http_method' do
+    %w[POST GET PUT DELETE PATCH].each do |method|
+      assert_difference('Webhook.unscoped.count') do
+        post :create, params: { webhook: valid_attrs.merge(http_method: method, webhook_template_id: @webhook_template.id) }
+      end
+      assert_response :created
+      response = JSON.parse(@response.body)
+      assert_equal response['http_method'], method
+    end
+  end
+
+  # Migrated from Robottelo tests/foreman/api/test_webhook.py::TestWebhook::test_negative_invalid_method.
+  test 'should not create webhooks with invalid http_method' do
+    assert_difference('Webhook.unscoped.count', 0) do
+      post :create, params: { webhook: valid_attrs.merge(http_method: 'INVALID', webhook_template_id: @webhook_template.id) }
+    end
+    assert_response :unprocessable_entity
+  end
+
+  # Migrated from Robottelo tests/foreman/api/test_webhook.py::TestWebhook::test_positive_end_to_end (HTTP method update).
+  test 'should update http_method' do
+    put :update, params: { id: @webhook.id, webhook: { http_method: 'PUT' } }
+    assert_response :success
+    response = JSON.parse(@response.body)
+    assert response.key?('http_method')
+    assert_equal response['http_method'], 'PUT'
+  end
+
+  # Migrated from Robottelo tests/foreman/api/test_webhook.py::TestWebhook::test_negative_invalid_method (HTTP method validation on update).
+  test 'should not update with invalid http_method' do
+    put :update, params: { id: @webhook.id, webhook: { http_method: 'INVALID' } }
+    assert_response :unprocessable_entity
   end
 
   test 'should destroy webhook' do
