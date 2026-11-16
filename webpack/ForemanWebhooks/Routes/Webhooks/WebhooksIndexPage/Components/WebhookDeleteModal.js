@@ -5,7 +5,12 @@ import { APIActions } from 'foremanReact/redux/API';
 import { useDispatch } from 'react-redux';
 import { sprintf, translate as __ } from 'foremanReact/common/I18n';
 import { foremanUrl } from 'foremanReact/common/helpers';
-import { Modal, Button, ModalVariant } from '@patternfly/react-core';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalFooter,
+} from '@patternfly/react-core';
 
 import { WEBHOOK_DELETE_MODAL_ID } from '../../constants';
 
@@ -38,17 +43,20 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
   return (
     <Modal
       position="top"
-      variant={ModalVariant.small}
+      variant="small"
       id={WEBHOOK_DELETE_MODAL_ID}
       ouiaId={WEBHOOK_DELETE_MODAL_ID}
-      title={__('Confirm Webhook Deletion')}
       isOpen={modalState.isOpen}
       onClose={modalState.closeModal}
-      description={sprintf(
-        __('You are about to delete %s. Are you sure?'),
-        name
-      )}
-      actions={[
+    >
+      <ModalHeader
+        title={__('Confirm Webhook Deletion')}
+        description={sprintf(
+          __('You are about to delete %s. Are you sure?'),
+          name
+        )}
+      />
+      <ModalFooter>
         <Button
           ouiaId="submitBtn"
           key="confirm"
@@ -57,7 +65,7 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
           onClick={handleSubmit}
         >
           {__('Delete')}
-        </Button>,
+        </Button>
         <Button
           ouiaId="cancelBtn"
           key="cancel"
@@ -66,9 +74,9 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
           onClick={modalState.closeModal}
         >
           {__('Cancel')}
-        </Button>,
-      ]}
-    />
+        </Button>
+      </ModalFooter>
+    </Modal>
   );
 };
 
