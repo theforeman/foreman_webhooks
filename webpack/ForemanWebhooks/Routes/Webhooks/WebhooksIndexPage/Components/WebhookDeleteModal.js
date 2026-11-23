@@ -23,9 +23,7 @@ const WebhookDeleteModal = ({ toDelete, onSuccess, modalState }) => {
         key: WEBHOOK_DELETE_MODAL_ID,
         successToast: () =>
           sprintf(__('Webhook %s was successfully deleted'), name),
-        errorToast: response =>
-          // eslint-disable-next-line camelcase
-          response?.response?.data?.error?.full_messages?.[0] || response,
+        errorToast: true,
         handleSuccess: () => {
           setIsSubmitting(false);
           onSuccess();

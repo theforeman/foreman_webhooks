@@ -73,9 +73,7 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
           onSuccess();
         },
         handleError: () => setIsSubmitting(false),
-        errorToast: ({ response }) =>
-          // eslint-disable-next-line camelcase
-          response?.data?.error?.full_messages?.[0] || response,
+        errorToast: true,
       })
     );
   };
