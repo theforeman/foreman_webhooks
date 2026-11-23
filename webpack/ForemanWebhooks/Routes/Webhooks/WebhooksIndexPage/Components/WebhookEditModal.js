@@ -6,7 +6,7 @@ import { translate as __ } from 'foremanReact/common/I18n';
 import Loading from 'foremanReact/components/Loading';
 import { foremanUrl } from 'foremanReact/common/helpers';
 import { get, put } from 'foremanReact/redux/API';
-import { Modal, ModalVariant } from '@patternfly/react-core';
+import { Modal, ModalHeader, ModalBody } from '@patternfly/react-core';
 
 import ConnectedWebhookForm from '../../Components/WebhookForm';
 
@@ -99,25 +99,27 @@ const WebhookEditModal = ({ toEdit, onSuccess, modalState }) => {
   return (
     <Modal
       position="top"
-      variant={ModalVariant.medium}
+      variant="medium"
       id={WEBHOOK_EDIT_MODAL_ID}
       ouiaId={WEBHOOK_EDIT_MODAL_ID}
       isOpen={modalState.isOpen}
       onClose={modalState.closeModal}
-      title={`${__('Edit')} ${modalTitle}`}
     >
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <ConnectedWebhookForm
-          handleSubmit={handleSubmit}
-          initialValues={initialWebhookValues}
-          onCancel={onEditCancel}
-          isPasswordDisabled={isPasswordDisabled}
-          setIsPasswordDisabled={setIsPasswordDisabled}
-          isSubmitting={isSubmitting}
-        />
-      )}
+      <ModalHeader title={`${__('Edit')} ${modalTitle}`} />
+      <ModalBody>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <ConnectedWebhookForm
+            handleSubmit={handleSubmit}
+            initialValues={initialWebhookValues}
+            onCancel={onEditCancel}
+            isPasswordDisabled={isPasswordDisabled}
+            setIsPasswordDisabled={setIsPasswordDisabled}
+            isSubmitting={isSubmitting}
+          />
+        )}
+      </ModalBody>
     </Modal>
   );
 };

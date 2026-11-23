@@ -9,7 +9,8 @@ import {
   Button,
   ActionGroup,
   Modal,
-  ModalVariant,
+  ModalHeader,
+  ModalBody,
 } from '@patternfly/react-core';
 
 import FieldConstructor from 'foremanReact/components/common/FieldConstructor/FieldConstructor';
@@ -50,54 +51,56 @@ const WebhookTestModal = ({ toTest, modalState }) => {
 
   return (
     <Modal
-      variant={ModalVariant.medium}
+      variant="medium"
       isOpen={modalState.isOpen}
       onClose={modalState.closeModal}
       id={WEBHOOK_TEST_MODAL_ID}
       ouiaId={WEBHOOK_TEST_MODAL_ID}
-      title={`${__('Test')} ${name}`}
       className="webhooks-modal"
     >
-      {`${sprintf(__('You are about to test %s webhook.'), name)} `}
-      {`${__(
-        'Please, note that this will not contain actual information or render the attached template.'
-      )} `}
-      {`${__(
-        'In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object.'
-      )} `}
-      {__('You can specify below a custom payload to test the webhook with.')}
-      <br />
-      <br />
-      <Form>
-        <FieldConstructor
-          name="payload"
-          type="textarea"
-          label={__('Payload')}
-          labelHelp={__('Will be sent as is')}
-          placeholder="{&#13;&#10;id: 1,&#13;&#10;name: test&#13;&#10;}"
-          rows={8}
-          value={value.payload}
-          setValue={(key, val) => {
-            setValue(prev => ({ ...prev, [key]: val }));
-          }}
-        />
-        <ActionGroup>
-          <Button
-            ouiaId="submit-webhook-form"
-            variant="primary"
-            onClick={() => handleSubmit(value)}
-          >
-            {__('Submit')}
-          </Button>
-          <Button
-            ouiaId="cancel-webhook-form"
-            variant="link"
-            onClick={modalState.closeModal}
-          >
-            {__('Cancel')}
-          </Button>
-        </ActionGroup>
-      </Form>
+      <ModalHeader title={`${__('Test')} ${name}`} />
+      <ModalBody>
+        {`${sprintf(__('You are about to test %s webhook.'), name)} `}
+        {`${__(
+          'Please, note that this will not contain actual information or render the attached template.'
+        )} `}
+        {`${__(
+          'In case you are using dynamic URL (ERB template), this will not be rendered correctly due to the absence of a real object.'
+        )} `}
+        {__('You can specify below a custom payload to test the webhook with.')}
+        <br />
+        <br />
+        <Form>
+          <FieldConstructor
+            name="payload"
+            type="textarea"
+            label={__('Payload')}
+            labelHelp={__('Will be sent as is')}
+            placeholder="{&#13;&#10;id: 1,&#13;&#10;name: test&#13;&#10;}"
+            rows={8}
+            value={value.payload}
+            setValue={(key, val) => {
+              setValue(prev => ({ ...prev, [key]: val }));
+            }}
+          />
+          <ActionGroup>
+            <Button
+              ouiaId="submit-webhook-form"
+              variant="primary"
+              onClick={() => handleSubmit(value)}
+            >
+              {__('Submit')}
+            </Button>
+            <Button
+              ouiaId="cancel-webhook-form"
+              variant="link"
+              onClick={modalState.closeModal}
+            >
+              {__('Cancel')}
+            </Button>
+          </ActionGroup>
+        </Form>
+      </ModalBody>
     </Modal>
   );
 };

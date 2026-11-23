@@ -118,7 +118,7 @@ describe('WebhooksIndexPage integration', () => {
     await screen.findByText('my-webhook');
 
     expect(
-      screen.queryByRole('dialog', { name: 'Create Webhook' })
+      screen.queryByRole('dialog', { name: /Create Webhook/ })
     ).not.toBeInTheDocument();
 
     await userEvent.click(
@@ -126,7 +126,7 @@ describe('WebhooksIndexPage integration', () => {
     );
 
     expect(
-      screen.getByRole('dialog', { name: 'Create Webhook' })
+      screen.getByRole('dialog', { name: /Create Webhook/ })
     ).toBeInTheDocument();
   });
 });

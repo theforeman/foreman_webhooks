@@ -24,7 +24,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     assert_selector 'h1', text: 'Webhooks'
 
     click_button 'Create new'
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
 
     fill_in_typeahead('id-event', subscribe_to)
     fill_in 'id-name', with: hook_name
@@ -45,7 +45,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     visit '/webhooks'
     wait_for_ajax
     click_webhook_name(hook_name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
 
     assert_field_value('id-name', hook_name)
     assert_typeahead_value('id-event', subscribe_to)
@@ -60,7 +60,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     assert_checkbox_unchecked('id-verify_ssl')
 
     click_cancel_button
-    assert_no_selector '.pf-v5-c-modal-box'
+    assert_no_selector '.pf-v6-c-modal-box'
 
     webhook = Webhook.find_by(name: hook_name)
     assert webhook, "Webhook '#{hook_name}' was not created"
@@ -85,7 +85,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     visit '/webhooks'
     wait_for_ajax
     click_webhook_name(webhook.name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
 
     fill_in_typeahead('id-event', new_subscribe_to)
     fill_in 'id-name', with: '', fill_options: { clear: :backspace }
@@ -102,7 +102,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     visit '/webhooks'
     wait_for_ajax
     click_webhook_name(new_hook_name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
 
     assert_field_value('id-name', new_hook_name)
     assert_typeahead_value('id-event', new_subscribe_to)
@@ -112,7 +112,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     assert_checkbox_checked('id-enabled')
 
     click_cancel_button
-    assert_no_selector '.pf-v5-c-modal-box'
+    assert_no_selector '.pf-v6-c-modal-box'
 
     webhook.reload
     assert webhook.password.present?, 'Password was cleared after update'
@@ -133,14 +133,14 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     visit '/webhooks'
     wait_for_ajax
     click_webhook_name(first_webhook.name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
     click_cancel_button
     wait_for_ajax
     click_webhook_name(second_webhook.name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
     assert_field_value('id-name', second_webhook.name)
     click_cancel_button
-    assert_no_selector '.pf-v5-c-modal-box'
+    assert_no_selector '.pf-v6-c-modal-box'
   end
 
   test 'should update password' do
@@ -154,7 +154,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     visit '/webhooks'
     wait_for_ajax
     click_webhook_name(webhook.name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
     click_tab('Credentials')
     click_change_password_button
     fill_in 'id-password', with: new_password
@@ -179,12 +179,12 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
     visit '/webhooks'
     wait_for_ajax
     click_webhook_name(first_webhook.name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
 
     click_cancel_button
     wait_for_ajax
     click_webhook_name(second_webhook.name)
-    assert_selector '.pf-v5-c-modal-box'
+    assert_selector '.pf-v6-c-modal-box'
 
     fill_in 'id-name', with: '', fill_options: { clear: :backspace }
     fill_in 'id-name', with: 'UpdatedAPITestWebhook'
@@ -271,7 +271,7 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
   end
 
   def click_submit_button
-    modal = find('.pf-v5-c-modal-box', wait: 10)
+    modal = find('.pf-v6-c-modal-box', wait: 10)
     button = modal.find(:ouia_component_id, 'submit-webhook-form', wait: 10, visible: :all)
     wait_for { !button.disabled? }
     page.execute_script('arguments[0].scrollIntoView({block: "center"})', button.native)
@@ -279,14 +279,14 @@ class WebhooksIntegrationTest < IntegrationTestWithJavascript
   end
 
   def click_cancel_button
-    modal = find('.pf-v5-c-modal-box', wait: 10)
+    modal = find('.pf-v6-c-modal-box', wait: 10)
     button = modal.find('button', text: 'Cancel', match: :first, wait: 10, visible: :all)
     page.execute_script('arguments[0].scrollIntoView({block: "center"})', button.native)
     page.execute_script('arguments[0].click()', button.native)
   end
 
   def click_change_password_button
-    modal = find('.pf-v5-c-modal-box', wait: 10)
+    modal = find('.pf-v6-c-modal-box', wait: 10)
     button = modal.find(:ouia_component_id, 'reset-password', wait: 10, visible: :all)
     page.execute_script('arguments[0].scrollIntoView({block: "center"})', button.native)
     page.execute_script('arguments[0].click()', button.native)

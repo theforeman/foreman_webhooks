@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, ModalVariant } from '@patternfly/react-core';
+import { Modal, ModalHeader, ModalBody } from '@patternfly/react-core';
 import { useDispatch } from 'react-redux';
 
 import { translate as __ } from 'foremanReact/common/I18n';
@@ -54,19 +54,21 @@ const WebhookCreateModal = ({ onSuccess, onCancel, isOpen }) => {
   return (
     <Modal
       position="top"
-      variant={ModalVariant.medium}
+      variant="medium"
       isOpen={isOpen}
       onClose={onCancel}
       id={WEBHOOK_CREATE_MODAL_ID}
       ouiaId={WEBHOOK_CREATE_MODAL_ID}
-      title={__('Create Webhook')}
     >
-      <ConnectedWebhookForm
-        handleSubmit={handleSubmit}
-        initialValues={initialWebhookValues}
-        onCancel={onCancel}
-        isSubmitting={isSubmitting}
-      />
+      <ModalHeader title={__('Create Webhook')} />
+      <ModalBody>
+        <ConnectedWebhookForm
+          handleSubmit={handleSubmit}
+          initialValues={initialWebhookValues}
+          onCancel={onCancel}
+          isSubmitting={isSubmitting}
+        />
+      </ModalBody>
     </Modal>
   );
 };
